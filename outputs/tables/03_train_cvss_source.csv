@@ -1,0 +1,5 @@
+cvss_source,cves,positives,rate_%,share_of_exploited_%
+cisa-adp (other),15267,107,0.7,42.6
+cna,41814,144,0.34,57.4
+none,8,0,0.0,0.0
+nvd,17179,0,0.0,0.0

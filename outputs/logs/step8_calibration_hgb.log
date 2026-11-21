@@ -1,0 +1,44 @@
+loaded cached OOT scores oot_fused_scores.parquet
+[hgb] recall@110 by period: {'wf_2023': np.float64(39.7), 'wf_2024h1': np.float64(55.6), 'val': np.float64(47.1)} selection 47.4 (expected 47.4), worst 39.7 (expected 39.7)
+                        method           held_out     n  positives    brier  log_loss  mean_pred  observed_rate
+                         platt            wf_2023 28816        121 0.004120  0.027199   0.001694       0.004199
+                         platt          wf_2024h1 20379         45 0.002165  0.013874   0.005535       0.002208
+                         platt                val 19574         68 0.003399  0.019165   0.004136       0.003474
+                         platt in-sample (pooled) 68769        234 0.003332  0.019516   0.003388       0.003403
+                      isotonic            wf_2023 28816        121 0.004136  0.028851   0.001885       0.004199
+                      isotonic          wf_2024h1 20379         45 0.002128  0.013674   0.005742       0.002208
+                      isotonic                val 19574         68 0.003410  0.018920   0.003946       0.003474
+                      isotonic in-sample (pooled) 68769        234 0.003275  0.018908   0.003403       0.003403
+               isotonic_merged            wf_2023 28816        121 0.004130  0.026100   0.002146       0.004199
+               isotonic_merged          wf_2024h1 20379         45 0.002169  0.013734   0.005655       0.002208
+               isotonic_merged                val 19574         68 0.003408  0.018970   0.003962       0.003474
+               isotonic_merged in-sample (pooled) 68769        234 0.003314  0.019040   0.003403       0.003403
+constant base rate (reference)             pooled 68769        234 0.003391  0.022735   0.003403       0.003403
+
+mean leave-one-period-out:
+                    brier  log_loss
+method                            
+isotonic        0.003224  0.020481
+isotonic_merged 0.003235  0.019601
+platt           0.003228  0.020079
+CHOSEN: platt
+{
+ "0.5": 0.00095,
+ "0.9": 0.00961,
+ "0.95": 0.01492,
+ "0.98": 0.02408,
+ "0.99": 0.03092,
+ "0.995": 0.0403,
+ "0.999": 0.0576,
+ "1.0": 0.09441
+}
+                   pred       obs      n  pos
+bin                                          
+[0.0, 0.5)     0.000441  0.000669  34384   23
+[0.5, 0.9)     0.003316  0.002726  27509   75
+[0.9, 0.95)    0.011813  0.009019   3437   31
+[0.95, 0.98)   0.018401  0.018905   2063   39
+[0.98, 0.99)   0.026964  0.040115    698   28
+[0.99, 0.995)  0.034365  0.050898    334   17
+[0.995, 1.0)   0.051515  0.061047    344   21
+done in 0s

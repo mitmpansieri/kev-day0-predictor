@@ -1,0 +1,39 @@
+CVSS 3.x formula self-test: 100.00% of 5,000 dev CNA scores reproduced
+                                                 label 0  label 1
+CVEs in sample                                    641.00   319.00
+with CNA CVSS today                               369.00   199.00
+...no CNA CVSS event at all (unchanged)           138.00    91.00
+...with CNA CVSS events                           231.00   108.00
+   first vector present before 1st event           26.00    12.00
+   added on day 0-7                               193.00    95.00
+CNA CVSS first added >7 d after pub                12.00     1.00
+first vector != today's                             7.00    11.00
+share changed, of all with CNA CVSS %               1.90     5.53
+ever >1 distinct vector (incl. reverted)            7.00    11.00
+score up (v3)                                       5.00     7.00
+score down (v3)                                     2.00     2.00
+mean delta (v3, changed only)                       0.39     1.64
+crossed 9.0 upward (v3)                             0.00     2.00
+history starts >7 d after pub                      80.00    31.00
+no CNA CVSS today but CNA CVSS event in history     1.00     0.00
+
+changed CNA vectors (first 30):
+        cve_id  label               first_status                                                                   first_vector                                                                   current_vector  first_score  current_score
+CVE-2022-41082      1 present_before_first_event                                            AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                              AV:A/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H          8.8            8.0
+CVE-2023-21779      0 present_before_first_event                                            AV:L/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:H                                              AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H          7.3            7.8
+ CVE-2023-1162      0 present_before_first_event                                            AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L                                              AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H          6.3            7.2
+CVE-2023-24880      1 present_before_first_event                                            AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L                                              AV:L/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L          5.4            4.4
+CVE-2023-22260      0 present_before_first_event                                            AV:N/AC:L/PR:L/UI:R/S:U/C:N/I:L/A:N                                              AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N          3.5            5.4
+CVE-2023-28043      0 present_before_first_event                                            AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L                                              AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:N          6.3            6.5
+CVE-2023-36884      1 present_before_first_event                                            AV:P/AC:H/PR:H/UI:R/S:U/C:N/I:N/A:N                                              AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:H          0.0            7.5
+CVE-2023-23574      0 present_before_first_event                                            AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:L                                              AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H          7.1            8.8
+CVE-2023-36845      1 present_before_first_event                                            AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N                                              AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H          5.3            9.8
+CVE-2023-36761      1 present_before_first_event                                            AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N                                              AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N          6.2            6.5
+CVE-2023-22518      1 present_before_first_event                                            AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:H                                              AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H          9.1           10.0
+CVE-2023-47046      0                 added_day0                                            AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H                                              AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N          7.8            5.5
+ CVE-2023-6019      0                 added_day0                                            AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H                                              AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H         10.0            9.8
+ CVE-2024-3400      1                 added_day0                                            AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H                                              AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H          9.8           10.0
+ CVE-2024-4040      1                 added_day0                                            AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:N/A:N                                              AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H          7.7            9.8
+CVE-2024-24919      1                 added_day0                                            AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N                                              AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N          7.5            8.6
+ CVE-2024-9463      1                 added_day0 AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N/AU:N/R:U/V:C/RE:H/U:Red AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:N/SA:N/AU:N/R:U/V:C/RE:H/U:Amber          NaN            9.9
+ CVE-2024-9465      1                 added_day0 AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:H/SI:N/SA:N/AU:N/R:U/V:C/RE:H/U:Red AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:L/VA:N/SC:H/SI:N/SA:N/AU:N/R:U/V:C/RE:H/U:Amber          NaN            9.2

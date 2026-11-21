@@ -1,0 +1,131 @@
+year,vendor,exploited,caught by headline @110,vendor seen in dev,vendor exploited in dev
+2025,microsoft,28,16,True,True
+2025,google,10,7,True,True
+2025,apple,8,7,True,True
+2025,fortinet,7,7,True,True
+2025,ivanti,7,4,True,True
+2025,cisco,6,4,True,True
+2025,gladinet,3,0,False,False
+2025,netscaler,3,1,True,False
+2025,oracle,3,3,True,True
+2025,qualcomm,3,0,True,True
+2025,sonicwall,3,0,True,True
+2025,telemessage,3,0,False,False
+2025,adobe,2,2,True,True
+2025,advantive,2,0,False,False
+2025,cna:cve@mitre.org,2,0,True,True
+2025,cna:security@vmware.com,2,2,True,True
+2025,commvault,2,0,True,False
+2025,crushftp,2,1,True,True
+2025,dassault syst mes,2,0,True,False
+2025,freepbx,2,0,True,False
+2025,n able,2,0,True,False
+2025,palo alto networks,2,1,True,True
+2025,samsung mobile,2,0,True,True
+2025,sap,2,0,True,False
+2025,sysaid,2,1,True,False
+2025,vmware,2,2,True,True
+2025,watchguard,2,1,True,False
+2025,zyxel,2,0,True,True
+2025,7 zip,1,0,True,False
+2025,apache foundation,1,0,True,True
+2025,array networks,1,0,False,False
+2025,asus,1,0,True,False
+2025,aviatrix,1,0,False,False
+2025,brocade,1,0,True,False
+2025,centos webpanel,1,0,False,False
+2025,connectwise,1,0,True,True
+2025,craft,1,0,False,False
+2025,craftcms,1,0,True,False
+2025,edimax,1,0,True,False
+2025,erlang,1,1,True,False
+2025,facebook,1,0,True,False
+2025,fortra,1,0,True,True
+2025,freetype,1,0,False,False
+2025,geoserver,1,0,True,True
+2025,git,1,0,True,False
+2025,gogs,1,0,True,False
+2025,hewlett packard enterprise hpe,1,0,True,False
+2025,juniper networks,1,0,True,True
+2025,langflow ai,1,1,False,False
+2025,libraesva,1,0,False,False
+2025,linux,1,0,True,True
+2025,meta,1,1,True,False
+2025,mongodb,1,0,True,False
+2025,motex,1,0,False,False
+2025,n8n io,1,0,False,False
+2025,nakivo,1,0,False,False
+2025,qualitia,1,0,False,False
+2025,reviewdog,1,0,False,False
+2025,roundcube,1,0,True,True
+2025,samsung electronics,1,1,True,False
+2025,sitecore,1,1,False,False
+2025,smartertools,1,1,True,False
+2025,srimax,1,0,False,False
+2025,tj actions,1,0,True,False
+2025,tp link,1,0,True,False
+2025,trend micro,1,1,True,True
+2025,trimble,1,0,True,False
+2025,triofox,1,0,False,False
+2025,wftpserver,1,1,False,False
+2025,win rar,1,0,False,False
+2025,yiiframework,1,0,False,False
+2026,microsoft,23,5,True,True
+2026,cisco,13,4,True,True
+2026,google,6,1,True,True
+2026,ivanti,5,5,True,True
+2026,fortinet,4,4,True,True
+2026,adobe,3,1,True,True
+2026,berriai,3,0,True,False
+2026,jfrog,3,0,True,False
+2026,linux,3,0,True,True
+2026,netscaler,3,0,True,False
+2026,solarwinds,3,0,True,True
+2026,trueconf,3,0,True,False
+2026,ubiquiti,3,0,True,False
+2026,vmware,3,1,True,True
+2026,apple,2,0,True,True
+2026,arista networks,2,0,True,False
+2026,checkpoint,2,0,True,True
+2026,langflow ai,2,0,False,False
+2026,litespeed,2,0,True,False
+2026,n able,2,0,True,False
+2026,oracle,2,2,True,True
+2026,palo alto networks,2,2,True,True
+2026,smartertools,2,0,True,False
+2026,sonicwall,2,0,True,True
+2026,wordpress,2,0,True,False
+2026,zimbra,2,0,True,False
+2026,apache foundation,1,0,True,True
+2026,aquasecurity,1,0,True,False
+2026,avb disc soft,1,1,False,False
+2026,balbooa com,1,0,False,False
+2026,beyondtrust,1,1,True,True
+2026,dd wrt,1,0,True,False
+2026,dell,1,1,True,False
+2026,drupal,1,1,True,False
+2026,gnu,1,1,True,False
+2026,ibm,1,0,True,True
+2026,icagenda com,1,0,False,False
+2026,jetbrains,1,0,True,True
+2026,joomlack fr,1,0,False,False
+2026,joomlacontenteditor net,1,0,False,False
+2026,joomshaper net,1,0,False,False
+2026,kestra io,1,0,False,False
+2026,marimo team,1,0,False,False
+2026,metabase,1,0,True,False
+2026,mirasvit,1,1,False,False
+2026,mlflow,1,0,True,False
+2026,notepad plus plus,1,0,True,False
+2026,nrwl,1,0,False,False
+2026,progress,1,0,True,True
+2026,ptc,1,0,True,False
+2026,qualcomm,1,0,True,True
+2026,sangoma,1,0,True,False
+2026,simplehelp,1,1,False,False
+2026,soliton k k,1,0,False,False
+2026,splunk,1,0,True,False
+2026,tanstack,1,0,True,False
+2026,trend micro,1,0,True,True
+2026,webpros,1,1,False,False
+2026,wso2,1,0,True,False

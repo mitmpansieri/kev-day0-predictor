@@ -1,0 +1,3 @@
+year,random CVEs,exploited CVEs,KEV group mean |SHAP| (random),KEV group share of all |SHAP| %,"KEV group mean SHAP, exploited","KEV group mean SHAP, non-exploited (random)",% of non-exploited with KEV push > +1,% of exploited with KEV push > +1,rank of 'vendor KEV entries (365 d)'
+2025,900,159,0.8241303675963358,20.980329277280525,1.0577119403025894,0.0018965465963046138,18.75,54.088050314465406,16
+2026,1100,135,0.9782359357667973,23.470536643662324,1.0436088093696612,0.23045359515608957,26.636363636363637,59.25925925925925,17

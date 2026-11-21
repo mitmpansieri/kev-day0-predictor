@@ -1,0 +1,3 @@
+label,edited_CVEs,edited_%_of_label,median_chars_changed,mean_chars_changed,median_%_of_text,share_edits_>200_chars_%,median_n_edits
+negatives (sample),74,12.3,22.0,52.0,10.0,8.1,1.0
+positives (all),97,30.4,53.0,147.0,16.0,20.6,1.0

@@ -1,0 +1,2 @@
+Brier (calibrated),Brier (constant base rate),log loss (calibrated),log loss (constant),mean predicted,observed rate,note
+0.0033928755158504917,0.0034619274682754528,0.018880055245282718,0.023139283165166415,0.003895591618759935,0.003473996117298457,IN-SAMPLE for the dry run (val is part of the calibrator's fit data)

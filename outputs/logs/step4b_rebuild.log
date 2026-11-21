@@ -1,0 +1,82 @@
+NVD download 2022-01-01 -> 2026-09-06 (WITHOUT API key)
+[progress] windows 1/19 done | CVEs so far: 6,016
+[progress] windows 2/19 done | CVEs so far: 12,264
+[progress] windows 3/19 done | CVEs so far: 18,618
+[progress] windows 4/19 done | CVEs so far: 24,788
+[progress] windows 5/19 done | CVEs so far: 31,369
+[progress] windows 6/19 done | CVEs so far: 38,713
+[progress] windows 7/19 done | CVEs so far: 45,486
+[progress] windows 8/19 done | CVEs so far: 53,337
+[progress] windows 9/19 done | CVEs so far: 61,305
+[progress] windows 10/19 done | CVEs so far: 73,167
+[progress] windows 11/19 done | CVEs so far: 81,608
+[progress] windows 12/19 done | CVEs so far: 92,429
+[progress] windows 13/19 done | CVEs so far: 103,553
+[progress] windows 14/19 done | CVEs so far: 115,563
+[progress] windows 15/19 done | CVEs so far: 126,574
+[progress] windows 16/19 done | CVEs so far: 138,488
+[progress] windows 17/19 done | CVEs so far: 152,850
+[progress] windows 18/19 done | CVEs so far: 171,715
+[progress] windows 19/19 done | CVEs so far: 201,783
+KEV: kev_20261120.csv
+Duplicate cve_ids removed: 0
+
+Raw records 201,783 | duplicates removed 0 | dropped by censoring 5,380 | KEV snapshot 2026-11-18
+CVEs: 196,403 | positives (KEV <= 90 d): 613 (0.31%) | labels complete up to 2026-08-20
+In KEV but added after 90 days (label 0): 193
+In KEV before NVD publication (negative gap, label 1): 59
+
+By year:
+            cves  positives  rate_%
+published                          
+2022       25073         85   0.339
+2023       28816        121   0.420
+2024       39953        113   0.283
+2025       48150        159   0.330
+2026       54411        135   0.248
+
+Splits:
+             from          to    cves  positives  rate_%
+split                                                   
+train  2022-01-01  2024-06-30   74268        251   0.338
+val    2024-07-01  2024-12-31   19574         68   0.347
+test   2025-01-01  2026-08-20  102561        294   0.287
+
+Walk-forward folds:
+  2022-2022 -> 2023: train 25,073 (85 pos) | test 28,816 (121 pos)
+  2022-2023 -> 2024: train 53,889 (206 pos) | test 39,953 (113 pos)
+  2022-2024 -> 2025: train 93,842 (319 pos) | test 48,150 (159 pos)
+
+cvss_source: {'cna': 136203, 'other': 36449, 'nvd': 22193, 'none': 1558}
+cvss_version: {'3.1': 175384, '4.0': 12683, '3.0': 6765, nan: 1558, '2.0': 13}
+
+Missing values (count, share):
+  description (empty)           0  0.00%
+  cvss_score                1,558  0.79%
+  vendor                   37,664  19.18%
+All columns with missing values (share):
+vendor                  0.1918
+product                 0.1369
+cvss_source_id          0.0079
+cvss_version            0.0079
+cvss_score              0.0079
+cvss_vector             0.0079
+attack_vector           0.0079
+attack_complexity       0.0079
+privileges_required     0.0079
+user_interaction        0.0079
+scope                   0.0726
+conf_impact             0.0079
+integ_impact            0.0079
+avail_impact            0.0079
+exploitability_score    0.0725
+impact_score            0.0725
+cvss_cna_score          0.3065
+cvss_cna_severity       0.3065
+cvss_cna_vector         0.3065
+cvss_cna_version        0.3065
+kev_date_added          0.9959
+days_to_kev             0.9959
+
+Saved 196,403 rows -> data/cve_dataset.parquet
+Saved dev.parquet (93,842 rows) and test_locked.parquet (102,561 rows) - do not open test_locked before Phase 6

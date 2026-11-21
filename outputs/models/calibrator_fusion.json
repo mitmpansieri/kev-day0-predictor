@@ -1,0 +1,89 @@
+{
+  "chosen": "isotonic_merged",
+  "fit_on": "pooled OOT fused scores: WF 2023, WF 2024-H1, val",
+  "n": 68769,
+  "positives": 234,
+  "lopo_brier": {
+    "isotonic": 0.0032129,
+    "isotonic_merged": 0.0032173,
+    "platt": 0.0032187
+  },
+  "lopo_log_loss": {
+    "isotonic": 0.018386,
+    "isotonic_merged": 0.018169,
+    "platt": 0.018149
+  },
+  "base_rate": 0.003403,
+  "prob_at_fused_score": {
+    "0.5": 0.00043,
+    "0.9": 0.01625,
+    "0.95": 0.03595,
+    "0.98": 0.0479,
+    "0.99": 0.11064,
+    "0.995": 0.11064,
+    "0.999": 0.11064,
+    "1.0": 0.11064
+  },
+  "steps": [
+    {
+      "fused_from": 0.001124,
+      "n": 42210,
+      "positives": 18,
+      "prob": 0.000426
+    },
+    {
+      "fused_from": 0.575186,
+      "n": 7828,
+      "positives": 16,
+      "prob": 0.002044
+    },
+    {
+      "fused_from": 0.660498,
+      "n": 8383,
+      "positives": 23,
+      "prob": 0.002744
+    },
+    {
+      "fused_from": 0.767724,
+      "n": 2281,
+      "positives": 10,
+      "prob": 0.004384
+    },
+    {
+      "fused_from": 0.803311,
+      "n": 4109,
+      "positives": 37,
+      "prob": 0.009005
+    },
+    {
+      "fused_from": 0.888294,
+      "n": 2215,
+      "positives": 36,
+      "prob": 0.016253
+    },
+    {
+      "fused_from": 0.948921,
+      "n": 612,
+      "positives": 22,
+      "prob": 0.035948
+    },
+    {
+      "fused_from": 0.964598,
+      "n": 689,
+      "positives": 33,
+      "prob": 0.047896
+    },
+    {
+      "fused_from": 0.983981,
+      "n": 207,
+      "positives": 13,
+      "prob": 0.062802
+    },
+    {
+      "fused_from": 0.988661,
+      "n": 235,
+      "positives": 26,
+      "prob": 0.110638
+    }
+  ]
+}

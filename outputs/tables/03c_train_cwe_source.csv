@@ -1,0 +1,5 @@
+cwe_fallback_source,cves,positives,rate_%,share_of_pos_%
+cna,39498,110,0.28,43.8
+nvd,30932,139,0.45,55.4
+cisa_adp,2999,2,0.07,0.8
+none,839,0,0.0,0.0

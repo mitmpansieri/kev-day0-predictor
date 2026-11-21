@@ -1,0 +1,24 @@
+{
+  "role": "DEPLOYMENT / DEMO model (Step H). NOT used for any reported number; Phase 6 results = dev_hgb.joblib",
+  "fit_on": "dev + test (all labelled data)",
+  "n": 196403,
+  "positives": 613,
+  "published_from": "2022-01-01",
+  "published_to": "2026-08-20",
+  "kev_file": "kev_20261120.csv",
+  "settings": {
+    "hgb": {
+      "encoding": "onehot",
+      "learning_rate": 0.03,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 100
+    },
+    "max_iter": 300,
+    "random_state": 0
+  },
+  "created": "2026-11-21T15:20:53",
+  "sha256": {
+    "hgb": "627441c1e8435f731eb99c2d02d78be078ca7ec89de2d3ddfa211de35428a312"
+  },
+  "frozen_phase6_model_sha256": "d8773945ca9512db4f73b34866ea6c0f0fd0272403d93670c130beff088499b7"
+}

@@ -1,0 +1,8 @@
+method,type,selection (3-period mean),WF 2023,WF 2024-H1,worst period,worst seed (selection),val recall@110 [CI] (ensemble for nets),val recall@305 [CI] (ensemble for nets),val PR-AUC
+gradient boosting (05a),tabular,47.4,39.7,55.6,39.7,,47.1 [36–60],67.6 [57–79],0.049
+(c) late fusion: gradient boosting + text MLP (5 seeds),tabular + text,46.7,46.3,51.1,42.6,,42.6 [30–55],64.7 [54–77],0.037
+(b) gradient boosting + OOF text score,tabular + text,45.3,42.1,51.1,42.1,,42.6 [32–55],63.2 [51–74],0.048
+(a) tabular+text MLP (5 seeds),tabular + text,44.8,47.4,48.0,38.8,42.6,38.2 [27–50],75.0 [63–84],0.112
+text MLP (5 seeds),text only,39.5,43.0,44.9,30.6,38.7,32.4 [20–43],50.0 [38–63],0.041
+text LR,text only,39.2,43.0,51.1,23.5,,23.5 [14–34],45.6 [33–58],0.02
+"phrase, then CVSS (CNA)",best day-0 rule,34.1,39.3,34.9,28.1,,28.1 [17–38],42.7 [31–55],0.069

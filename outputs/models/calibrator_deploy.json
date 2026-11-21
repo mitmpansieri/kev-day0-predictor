@@ -1,0 +1,78 @@
+{
+  "method": "Platt on logit(score), time-ordered OOF half-years",
+  "coef": 0.7695763078957671,
+  "intercept": -4.942455622270297,
+  "folds": [
+    {
+      "half-year": "2023H1",
+      "fit CVEs": 25073,
+      "fit positives": 85,
+      "scored CVEs": 14107,
+      "scored positives": 50
+    },
+    {
+      "half-year": "2023H2",
+      "fit CVEs": 39180,
+      "fit positives": 135,
+      "scored CVEs": 14709,
+      "scored positives": 71
+    },
+    {
+      "half-year": "2024H1",
+      "fit CVEs": 53889,
+      "fit positives": 206,
+      "scored CVEs": 20379,
+      "scored positives": 45
+    },
+    {
+      "half-year": "2024H2",
+      "fit CVEs": 74268,
+      "fit positives": 251,
+      "scored CVEs": 19574,
+      "scored positives": 68
+    },
+    {
+      "half-year": "2025H1",
+      "fit CVEs": 93842,
+      "fit positives": 319,
+      "scored CVEs": 23641,
+      "scored positives": 88
+    },
+    {
+      "half-year": "2025H2",
+      "fit CVEs": 117483,
+      "fit positives": 407,
+      "scored CVEs": 24509,
+      "scored positives": 71
+    },
+    {
+      "half-year": "2026H1",
+      "fit CVEs": 141992,
+      "fit positives": 478,
+      "scored CVEs": 35840,
+      "scored positives": 96
+    },
+    {
+      "half-year": "2026H2",
+      "fit CVEs": 177832,
+      "fit positives": 574,
+      "scored CVEs": 18571,
+      "scored positives": 39
+    }
+  ],
+  "oof CVEs": 171330,
+  "oof positives": 528,
+  "base rate": 0.0030817720189108737,
+  "Brier leave-one-half-year-out": 0.002991801796428482,
+  "Brier constant": 0.003072274700134331,
+  "log loss LOHO": 0.017464489958542564,
+  "log loss constant": 0.020896596322351704,
+  "mean predicted (in-sample)": 0.0030680719924675195,
+  "p at OOF score quantiles 50/90/99/99.9%": [
+    0.0007525047404364771,
+    0.008176245967709595,
+    0.03329511340144049,
+    0.07129085724655829
+  ],
+  "role": "INDICATIVE probability for the demo; primary demo output = within-month percentile"
+}

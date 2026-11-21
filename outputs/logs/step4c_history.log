@@ -1,0 +1,41 @@
+history sample: 919 CVEs (319 positives); 919 to download, ~100 min
+[progress] 25/919 downloaded
+[progress] 50/919 downloaded
+[progress] 75/919 downloaded
+[progress] 100/919 downloaded
+[progress] 125/919 downloaded
+[progress] 150/919 downloaded
+[progress] 175/919 downloaded
+[progress] 200/919 downloaded
+[progress] 225/919 downloaded
+[progress] 250/919 downloaded
+    retry 1/8 after ReadTimeout, sleeping 2s
+[progress] 275/919 downloaded
+    retry 1/8 after ReadTimeout, sleeping 2s
+[progress] 300/919 downloaded
+[progress] 325/919 downloaded
+[progress] 350/919 downloaded
+[progress] 375/919 downloaded
+[progress] 400/919 downloaded
+[progress] 425/919 downloaded
+[progress] 450/919 downloaded
+[progress] 475/919 downloaded
+[progress] 500/919 downloaded
+[progress] 525/919 downloaded
+[progress] 550/919 downloaded
+[progress] 575/919 downloaded
+[progress] 600/919 downloaded
+[progress] 625/919 downloaded
+[progress] 650/919 downloaded
+[progress] 675/919 downloaded
+[progress] 700/919 downloaded
+[progress] 725/919 downloaded
+[progress] 750/919 downloaded
+[progress] 775/919 downloaded
+[progress] 800/919 downloaded
+[progress] 825/919 downloaded
+[progress] 850/919 downloaded
+[progress] 875/919 downloaded
+[progress] 900/919 downloaded
+[progress] 919/919 downloaded
+DONE history download

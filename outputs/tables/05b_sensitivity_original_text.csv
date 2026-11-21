@@ -1,0 +1,3 @@
+model,Spearman (sample CVEs),Spearman (edited CVEs only),val recall@110 today,val recall@110 earliest
+text LR,0.9766684318276398,0.9359200512808057,0.23529411764705882,0.2647058823529412
+(b) gradient boosting + OOF text score,,,0.4264705882352941,0.45588235294117646

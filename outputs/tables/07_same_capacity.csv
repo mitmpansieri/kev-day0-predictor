@@ -1,0 +1,5 @@
+comparison,patches / month,GB recall %,comparator recall %,extra exploited caught / year
+"GB vs phrase, then CVSS (CNA) ranking, both at K = 110/month",110.0,33.651029856387,25.176614185701162,14.948869243089813
+"GB vs CVSS (CNA) ranking, both at K = 110/month",110.0,33.651029856387,18.575415908921038,26.593383003329954
+"GB vs CVSS>=9 (CNA) rule, at the rule's own capacity",384.9,51.70068027210885,41.156462585034014,18.599999999999998
+"GB vs phrase OR CVSS>=9 (CNA) rule, at the rule's own capacity",386.55,51.70068027210885,47.27891156462585,7.799999999999998

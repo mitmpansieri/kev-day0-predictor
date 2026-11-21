@@ -1,0 +1,17 @@
+,label 0,label 1
+CVEs in sample,641.0,319.0
+with CNA CVSS today,369.0,199.0
+...no CNA CVSS event at all (unchanged),138.0,91.0
+...with CNA CVSS events,231.0,108.0
+   first vector present before 1st event,26.0,12.0
+   added on day 0-7,193.0,95.0
+CNA CVSS first added >7 d after pub,12.0,1.0
+first vector != today's,7.0,11.0
+"share changed, of all with CNA CVSS %",1.9,5.53
+ever >1 distinct vector (incl. reverted),7.0,11.0
+score up (v3),5.0,7.0
+score down (v3),2.0,2.0
+"mean delta (v3, changed only)",0.39,1.64
+crossed 9.0 upward (v3),0.0,2.0
+history starts >7 d after pub,80.0,31.0
+no CNA CVSS today but CNA CVSS event in history,1.0,0.0

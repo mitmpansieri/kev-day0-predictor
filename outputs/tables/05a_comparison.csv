@@ -1,0 +1,7 @@
+method,type,val recall@110 [CI],val recall@305 [CI],WF 2023,WF 2024-H1,WF worst,val PR-AUC
+random,reference,3.5,9.6,,,,
+CVSS (CNA) ranking,day-0 rule,23.7 [13–33],38.3 [27–50],20.3,28.4,20.3,0.011
+"phrase, then CVSS (CNA)",day-0 rule,28.1 [17–38],42.7 [31–55],39.3,34.9,34.9,0.069
+generous CVSS (fallback) ranking,rule with hindsight (upper bound),15.1 [6–25],38.5 [27–51],,,,0.011
+logistic regression,model (tabular),30.9 [21–43],58.8 [46–70],53.7,28.9,28.9,0.071
+gradient boosting,model (tabular),47.1 [36–60],67.6 [57–79],39.7,55.6,39.7,0.049

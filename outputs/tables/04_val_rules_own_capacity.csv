@@ -1,0 +1,5 @@
+rule,patches/month,caught,recall_%,recall_95CI,precision_%
+CVSS>=9 (CNA),196,23,33.8,23–45,1.95
+CVSS>=7 (CNA),1089,44,64.7,53–75,0.67
+phrase OR CVSS>=9 (CNA),197,26,38.2,26–50,2.2
+generous CVSS>=9 (fallback),313,28,41.2,29–53,1.49

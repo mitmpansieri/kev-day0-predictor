@@ -1,0 +1,2 @@
+year,CVEs,positives,months,gradient boosting (headline) @110,late fusion (alternative) @110,"phrase, then CVSS (CNA) @110","EPSS (first score, <=7 d after pub) @110",EPSS (score by day 1) @110
+2024,19574,68,6,47.1 [36–60],42.6 [30–55],28.1 [17–38],36.8 [25–48],36.8 [25–49]

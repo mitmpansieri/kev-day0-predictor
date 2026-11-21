@@ -1,0 +1,5 @@
+rule,score used,patches/month,caught,recall_%,precision_%
+CVSS >= 9,(a) day-0: CNA score only,110,55,21.9,1.68
+CVSS >= 9,(b) fallback score (cna>other>nvd),306,88,35.1,0.96
+CVSS >= 7,(a) day-0: CNA score only,614,118,47.0,0.64
+CVSS >= 7,(b) fallback score (cna>other>nvd),1204,214,85.3,0.59

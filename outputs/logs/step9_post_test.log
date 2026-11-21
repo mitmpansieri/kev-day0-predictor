@@ -1,0 +1,110 @@
+check: frozen model on rebuilt test features reproduces the Phase 6 scores exactly
+  2025Q1: fit on 82,992 CVEs / 287 pos (published < 2024-10-03) in 6s
+  2025Q2: fit on 93,842 CVEs / 319 pos (published < 2025-01-01) in 7s
+  2025Q3: fit on 106,218 CVEs / 365 pos (published < 2025-04-02) in 9s
+  2025Q4: fit on 117,657 CVEs / 407 pos (published < 2025-07-03) in 10s
+  2026Q1: fit on 129,571 CVEs / 443 pos (published < 2025-10-03) in 11s
+  2026Q2: fit on 141,992 CVEs / 478 pos (published < 2026-01-01) in 13s
+  2026Q3: fit on 157,379 CVEs / 519 pos (published < 2026-04-02) in 17s
+
+== 1a. recall@110 by year ==
+year                                              2025          2026
+positives                                          159           135
+gradient boosting (headline) @110         41.9 [34–50]  23.9 [17–32]
+late fusion (alternative) @110            39.1 [31–47]  17.8 [12–25]
+phrase, then CVSS (CNA) @110              29.5 [22–37]  20.0 [13–27]
+CVSS (CNA) ranking @110                   19.2 [13–26]  17.8 [11–25]
+EPSS (first score, <=7 d after pub) @110  29.6 [23–37]  29.6 [21–37]
+EPSS (score by day 1) @110                29.6 [23–37]  29.6 [21–37]
+random @110                                        2.7           1.7
+
+== 1b. volume vs capacity ==
+     period  months  CVEs / month  exploited / month  K=110 as % of monthly CVEs  CVSS>=9 (CNA) / month  CVEs from vendors with earlier KEV entries / month
+dev 2022-24      36        2606.7                8.9                         4.2                  123.8                                               695.7
+       2025      12        4012.5               13.2                         2.7                  237.5                                              1246.2
+       2026       8        6801.4               16.9                         1.6                  606.0                                              2375.8
+
+== 1c. recall at a constant share of each month ==
+year                                                                                       2025                                                        2026
+budget                               4.22% of each month's CVEs (= 110 in an average dev month)  4.22% of each month's CVEs (= 110 in an average dev month)
+patches / month (avg)                                                                     169.3                                                       287.0
+gradient boosting (headline)                                                               49.7                                                        34.1
+late fusion (alternative)                                                                  48.4                                                        34.1
+phrase, then CVSS (CNA)                                                                    33.8                                                        31.2
+CVSS (CNA) ranking                                                                         23.4                                                        29.1
+EPSS (first score, <=7 d after pub)                                                        38.9                                                        39.1
+EPSS (score by day 1)                                                                      38.9                                                        39.3
+
+== 1d. rank of exploited CVEs (within-month percentile) ==
+                             method  year  median percentile of exploited CVEs  share of exploited in top 1% of month  share in top 5%
+       gradient boosting (headline)  2025                                 95.6                                   25.8             51.6
+       gradient boosting (headline)  2026                                 92.5                                   17.0             35.6
+          late fusion (alternative)  2025                                 95.5                                   20.1             50.3
+          late fusion (alternative)  2026                                 92.3                                   13.3             37.8
+            phrase, then CVSS (CNA)  2025                                 92.2                                   21.4             39.6
+            phrase, then CVSS (CNA)  2026                                 89.6                                   17.8             36.3
+                 CVSS (CNA) ranking  2025                                 87.3                                   10.1             28.9
+                 CVSS (CNA) ranking  2026                                 88.6                                   15.6             34.1
+EPSS (first score, <=7 d after pub)  2025                                 92.8                                   23.9             40.3
+EPSS (first score, <=7 d after pub)  2026                                 89.5                                   25.2             43.0
+              EPSS (score by day 1)  2025                                 92.8                                   23.9             40.3
+              EPSS (score by day 1)  2026                                 89.2                                   25.2             42.2
+
+== 1e. vendor / KEV mix of exploited CVEs ==
+year                                              2025   2026
+exploited                                        159.0  135.0
+% vendor seen in dev                              83.6   88.9
+% vendor exploited in dev                         62.3   59.3
+% vendor had KEV entry before publication         68.6   70.4
+% with CNA CVSS                                   84.3   91.1
+% CNA CVSS >= 9                                   36.5   46.7
+% exploitation phrase day 0                       11.3    3.7
+% vendor missing (CNA used)                        2.5    0.0
+headline catch rate, vendor had KEV entry %       53.2   31.6
+headline catch rate, vendor without KEV entry %   18.0    7.5
+ALL CVEs from vendors with KEV entry / month    1246.2 2375.8
+
+ top vendors 2025:
+ year      vendor  exploited  caught by headline @110  vendor seen in dev  vendor exploited in dev
+ 2025   microsoft         28                       16                True                     True
+ 2025      google         10                        7                True                     True
+ 2025       apple          8                        7                True                     True
+ 2025    fortinet          7                        7                True                     True
+ 2025      ivanti          7                        4                True                     True
+ 2025       cisco          6                        4                True                     True
+ 2025    gladinet          3                        0               False                    False
+ 2025   netscaler          3                        1                True                    False
+ 2025      oracle          3                        3                True                     True
+ 2025    qualcomm          3                        0                True                     True
+ 2025   sonicwall          3                        0                True                     True
+ 2025 telemessage          3                        0               False                    False
+
+ top vendors 2026:
+ year     vendor  exploited  caught by headline @110  vendor seen in dev  vendor exploited in dev
+ 2026  microsoft         23                        5                True                     True
+ 2026      cisco         13                        4                True                     True
+ 2026     google          6                        1                True                     True
+ 2026     ivanti          5                        5                True                     True
+ 2026   fortinet          4                        4                True                     True
+ 2026      adobe          3                        1                True                     True
+ 2026    berriai          3                        0                True                    False
+ 2026      jfrog          3                        0                True                    False
+ 2026      linux          3                        0                True                     True
+ 2026  netscaler          3                        0                True                    False
+ 2026 solarwinds          3                        0                True                     True
+ 2026   trueconf          3                        0                True                    False
+
+== 2. rolling retrain ==
+  period  positives  frozen @110 rolling @110  rolling - frozen (pts)        diff CI  P(rolling better)  train CVEs  train positives  of which test-period positives
+  2025Q1         46 39.1 [23–52] 39.1 [25–53]                     0.0   [-5.3, +8.3]                0.5     82992.0            287.0                             0.0
+  2025Q2         42 44.4 [31–61] 44.4 [31–61]                     0.0   [+0.0, +0.0]                0.0     93842.0            319.0                             0.0
+  2025Q3         36 38.9 [21–56] 25.0 [11–41]                   -13.9  [-30.0, +2.9]                0.0    106218.0            365.0                            46.0
+  2025Q4         35 45.7 [29–63] 40.0 [21–55]                    -5.7  [-21.4, +6.9]                0.1    117657.0            407.0                            88.0
+  2026Q1         40 37.8 [23–54] 35.6 [21–51]                    -2.2 [-17.1, +14.3]                0.4    129571.0            443.0                           124.0
+  2026Q2         56 25.3 [15–38] 37.5 [25–52]                    12.2  [+3.1, +22.4]                1.0    141992.0            478.0                           159.0
+  2026Q3         39   7.7 [0–18]  17.9 [6–32]                    10.3  [-3.4, +23.7]                0.9    157379.0            519.0                           200.0
+    2025        159 41.9 [34–50] 37.5 [30–45]                    -4.4   [-9.7, +0.7]                0.0         NaN              NaN                             NaN
+    2026        135 23.9 [17–32] 31.3 [24–40]                     7.4  [+0.0, +15.2]                1.0         NaN              NaN                             NaN
+all test        294 33.7 [28–39] 34.7 [29–40]                     1.0   [-3.3, +5.6]                0.7         NaN              NaN                             NaN
+
+done in 222s

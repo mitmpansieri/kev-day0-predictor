@@ -1,0 +1,7 @@
+method,type,rule patches/month,rule recall %,recall@110 % [95% CI],recall@305 % [95% CI],PR-AUC
+random,benchmark,,,3.5,9.6,
+CVSS (CNA) ranking,benchmark,196,33.8,23.7 [13–33],38.3 [27–50],0.011
+"phrase, then CVSS (CNA)",benchmark,197,38.2,28.1 [17–38],42.7 [31–55],0.069
+generous CVSS (fallback) ranking,"benchmark (hindsight, upper bound)",313,41.2,15.1 [6–25],38.5 [27–51],0.011
+CVSS>=7 (CNA) rule,benchmark,1089,64.7,= CVSS (CNA) ranking,= CVSS (CNA) ranking,
+preview: logistic regression (day-0 tabular),model preview (Phase 5),,,36.8,67.6,0.108

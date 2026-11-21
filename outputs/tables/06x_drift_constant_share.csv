@@ -1,0 +1,3 @@
+year,budget,patches / month (avg),gradient boosting (headline),late fusion (alternative),"phrase, then CVSS (CNA)",CVSS (CNA) ranking,"EPSS (first score, <=7 d after pub)",EPSS (score by day 1)
+2025,4.22% of each month's CVEs (= 110 in an average dev month),169.32183883548944,49.685534591194966,48.42767295597484,33.77705003743263,23.359132743650722,38.90328705857658,38.90328705857658
+2026,4.22% of each month's CVEs (= 110 in an average dev month),287.0084290616142,34.074074074074076,34.074074074074076,31.230792357453495,29.093736410134856,39.091954140937176,39.25925925925926

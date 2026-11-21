@@ -1,0 +1,33 @@
+EPSS for test: 102,561 CVEs, 595 publication days
+  20/595 publication days | 2,722/102,561 CVEs scored | 71 queries | 69s
+  40/595 publication days | 4,995/102,561 CVEs scored | 138 queries | 131s
+  60/595 publication days | 7,993/102,561 CVEs scored | 223 queries | 206s
+  80/595 publication days | 10,463/102,561 CVEs scored | 285 queries | 265s
+  100/595 publication days | 13,771/102,561 CVEs scored | 364 queries | 337s
+  120/595 publication days | 15,980/102,561 CVEs scored | 423 queries | 400s
+  140/595 publication days | 19,023/102,561 CVEs scored | 500 queries | 477s
+  160/595 publication days | 21,009/102,561 CVEs scored | 562 queries | 546s
+  180/595 publication days | 23,552/102,561 CVEs scored | 624 queries | 612s
+  200/595 publication days | 26,023/102,561 CVEs scored | 687 queries | 674s
+  220/595 publication days | 28,181/102,561 CVEs scored | 748 queries | 802s
+  240/595 publication days | 30,791/102,561 CVEs scored | 815 queries | 867s
+  260/595 publication days | 33,726/102,561 CVEs scored | 892 queries | 944s
+  280/595 publication days | 36,429/102,561 CVEs scored | 960 queries | 1015s
+  300/595 publication days | 39,019/102,561 CVEs scored | 1024 queries | 1085s
+  320/595 publication days | 41,456/102,561 CVEs scored | 1095 queries | 1161s
+  340/595 publication days | 43,449/102,561 CVEs scored | 1148 queries | 1221s
+  360/595 publication days | 47,309/102,561 CVEs scored | 1234 queries | 1312s
+  380/595 publication days | 50,127/102,561 CVEs scored | 1306 queries | 1392s
+  400/595 publication days | 53,210/102,561 CVEs scored | 1382 queries | 1474s
+  420/595 publication days | 56,455/102,561 CVEs scored | 1455 queries | 1557s
+  440/595 publication days | 60,393/102,561 CVEs scored | 1540 queries | 1653s
+  460/595 publication days | 64,705/102,561 CVEs scored | 1632 queries | 1754s
+  480/595 publication days | 68,567/102,561 CVEs scored | 1722 queries | 1851s
+  500/595 publication days | 73,022/102,561 CVEs scored | 1822 queries | 1956s
+  520/595 publication days | 77,632/102,561 CVEs scored | 1924 queries | 2066s
+  540/595 publication days | 83,040/102,561 CVEs scored | 2058 queries | 2194s
+  560/595 publication days | 88,304/102,561 CVEs scored | 2170 queries | 2307s
+  580/595 publication days | 94,949/102,561 CVEs scored | 2311 queries | 2433s
+  595/595 publication days | 102,552/102,561 CVEs scored | 2468 queries | 2571s
+lag (days) distribution: {0.0: 30624, 1.0: 71269, 2.0: 223, 3.0: 148, 4.0: 203, 5.0: 85, nan: 9}
+scored on publication day: 29.9% | within 7 days: 100.0%

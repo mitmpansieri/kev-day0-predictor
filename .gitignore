@@ -1,0 +1,33 @@
+# ---- Secrets (never commit) ----
+.env
+.env.*
+!.env.example
+
+# ---- Environments, editor and OS files ----
+.venv/
+.cache/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+.claude/
+
+# ---- Downloaded raw data and caches (re-create with scripts/download_all.sh) ----
+data/nvd_cache/
+data/nvd_history_cache/
+data/epss_cache/
+
+# ---- Large derived data, rebuilt by the pipeline (README "Full reproduction") ----
+data/cve_dataset.parquet
+data/dev.parquet
+data/test_locked.parquet
+data/epss_*.parquet
+data/phase6_scores_*.parquet
+data/oot_fused_scores.parquet
+data/post_test_rolling_scores.parquet
+data/embeddings/
+data/finetune/
+*.npy
+
+# KEPT on purpose (small): data/raw/kev_20261120.csv, data/shap_test.parquet, data/nvd_tool_cache/ (tool demo),
+# outputs/tables, outputs/figures, outputs/models (all < 2 MB), outputs/logs, notebooks, appendix.

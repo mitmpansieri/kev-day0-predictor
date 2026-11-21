@@ -1,0 +1,4 @@
+variant,val recall@110 %,val recall@305 %
+"day-0 KEV history (used): entries added BEFORE publication, own entry excluded",47.1,67.6
+"LEAKY (own entry): real dates, but the CVE's own KEV entry may count (if added before NVD publication)",45.6,67.6
+"NAIVE (today's catalogue): every entry counts regardless of date, own entry included",35.0,57.4

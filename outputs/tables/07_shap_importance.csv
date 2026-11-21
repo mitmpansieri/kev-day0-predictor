@@ -1,0 +1,23 @@
+feature,group,mean |SHAP| random CVEs,mean |SHAP| exploited CVEs
+CNA (who published),who: vendor / CNA / CWE,0.787,0.896
+vendor KEV entries (all time),KEV history (vendor/product),0.645,1.135
+CVSS score (CNA),CVSS (CNA),0.405,0.66
+description length,text: phrase + length,0.355,0.357
+CVSS PR,CVSS (CNA),0.353,0.37
+CWE (CNA),who: vendor / CNA / CWE,0.305,0.268
+vendor (or CNA),who: vendor / CNA / CWE,0.21,0.131
+days since vendor's last KEV entry,KEV history (vendor/product),0.197,0.251
+CVSS UI,CVSS (CNA),0.147,0.137
+CVSS C,CVSS (CNA),0.133,0.085
+CVSS I,CVSS (CNA),0.131,0.089
+number of CWEs,who: vendor / CNA / CWE,0.101,0.044
+CVSS AV,CVSS (CNA),0.096,0.086
+CVSS S,CVSS (CNA),0.054,0.086
+CVSS A,CVSS (CNA),0.052,0.046
+product KEV entries (all time),KEV history (vendor/product),0.035,0.093
+vendor KEV entries (last 365 d),KEV history (vendor/product),0.032,0.059
+CVSS AC,CVSS (CNA),0.02,0.029
+exploitation phrase (day 0),text: phrase + length,0.0,0.0
+CVSS AT,CVSS (CNA),0.0,0.0
+has CNA CVSS,CVSS (CNA),0.0,0.0
+vendor has any KEV entry,KEV history (vendor/product),0.0,0.0

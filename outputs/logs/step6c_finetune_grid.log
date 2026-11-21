@@ -1,0 +1,7 @@
+OMP: Warning #179: Function Can't set size of /tmp file failed:
+finetune grid: 93,842 dev CVEs | device = cpu
+  [lr1e-5_full seed 0 wf_2023] search 3,190 / stop 3,256 / refit 6,446 / eval 28,816
+W1120 16:25:49.665000 37296 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 11626.39it/s]
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/multiprocessing/resource_tracker.py:479: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-ai1087pk'}
+  warnings.warn(

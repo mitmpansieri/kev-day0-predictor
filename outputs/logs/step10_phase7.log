@@ -1,0 +1,71 @@
+explaining 2,584 test CVEs: random 2000, pos 294, flagged 300, example 3
+  100/2584 rows (41s)
+  200/2584 rows (84s)
+  300/2584 rows (125s)
+  400/2584 rows (166s)
+  500/2584 rows (210s)
+  600/2584 rows (250s)
+  700/2584 rows (288s)
+  800/2584 rows (327s)
+  900/2584 rows (364s)
+  1000/2584 rows (403s)
+  1100/2584 rows (440s)
+  1200/2584 rows (479s)
+  1300/2584 rows (518s)
+  1400/2584 rows (557s)
+  1500/2584 rows (596s)
+  1600/2584 rows (635s)
+  1700/2584 rows (674s)
+  1800/2584 rows (713s)
+  1900/2584 rows (757s)
+  2000/2584 rows (799s)
+  2100/2584 rows (834s)
+  2200/2584 rows (874s)
+  2300/2584 rows (915s)
+  2400/2584 rows (957s)
+  2500/2584 rows (993s)
+  2584/2584 rows (1022s)
+additivity check: max |sum(SHAP) + base - model log-odds| = 1.60e-14
+
+== mean |SHAP| (log-odds), 2,000 random test CVEs ==
+cna                      0.787
+vendor_kev_log_all       0.645
+cvss_cna_score           0.405
+desc_len                 0.355
+cvss_PR                  0.353
+cwe                      0.305
+vendor_key               0.210
+vendor_kev_days_since    0.197
+cvss_UI                  0.147
+cvss_C                   0.133
+cvss_I                   0.131
+n_cwes                   0.101
+cvss_AV                  0.096
+cvss_S                   0.054
+cvss_A                   0.052
+product_kev_log_all      0.035
+vendor_kev_log_365       0.032
+cvss_AC                  0.020
+phrase_day0              0.000
+cvss_AT                  0.000
+has_cna_cvss             0.000
+vendor_kev_any           0.000
+
+== examples ==
+             example         cve_id               published    vendor                                       product                  cna      cwe  cvss_cna_score                              cvss_cna_vector  label  days_to_kev  kev_ransomware    s_hgb  month_pct  in_top110
+caught exploited CVE CVE-2026-24858 2026-01-27 20:16:24.477  Fortinet                                      FortiWeb   psirt@fortinet.com  CWE-288             9.8 CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H      1          0.0           False 0.982973   1.000000       True
+missed exploited CVE CVE-2026-56155 2026-07-14 17:17:09.763 Microsoft                       Windows 10 Version 1607 secure@microsoft.com CWE-1220             7.8 CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H      1          0.0           False 0.819655   0.935779      False
+         false alarm CVE-2026-20079 2026-03-04 18:16:24.230     Cisco Cisco Secure Firewall Management Center (FMC)      psirt@cisco.com  CWE-288            10.0 CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H      0        189.0           False 0.979038   1.000000       True
+
+== ransomware ==
+subset                              all exploited exploited, not ransomware-linked ransomware-linked exploited
+method                                                                                                        
+CVSS (CNA) ranking                   18.6 [14–23]                     17.5 [13–22]                24.6 [11–39]
+EPSS (first score, <=7 d after pub)  29.6 [24–35]                     29.9 [24–35]                27.9 [15–42]
+EPSS (score by day 1)                29.6 [24–35]                     29.9 [24–35]                27.9 [15–42]
+gradient boosting (headline)         33.7 [28–39]                     32.2 [26–38]                42.2 [27–57]
+late fusion (alternative)            29.3 [24–35]                     28.0 [22–33]                37.2 [24–52]
+phrase, then CVSS (CNA)              25.2 [20–30]                     24.9 [19–30]                26.7 [13–41]
+{'rule': 'CVSS>=9 (CNA) at own capacity (385/month)', 'ransomware positives': 43, 'caught': 25, 'recall %': np.float64(58.13953488372093)}
+
+done in 1230s

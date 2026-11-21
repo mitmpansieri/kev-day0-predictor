@@ -1,0 +1,48 @@
+{
+  "fit_on": "dev (train+val)",
+  "n": 93842,
+  "positives": 319,
+  "kev_file": "kev_20261120.csv",
+  "created": "2026-11-20T18:55:14",
+  "epochs": [
+    3,
+    6,
+    3,
+    4,
+    4
+  ],
+  "es_months": [
+    "2024-07",
+    "2024-12"
+  ],
+  "settings": {
+    "hgb": {
+      "encoding": "onehot",
+      "learning_rate": 0.03,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 100
+    },
+    "text": {
+      "embedding": "minilm",
+      "hidden": [
+        64
+      ],
+      "lr": 0.001,
+      "seeds": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ]
+    }
+  },
+  "sha256": {
+    "hgb": "d8773945ca9512db4f73b34866ea6c0f0fd0272403d93670c130beff088499b7",
+    "mlp_s0": "3e0fe28113cb1bb4de6f771efe80ba186d3f869094541bda1e5a0759b2ca4c69",
+    "mlp_s1": "0f11c57e8d975c1e80e2f4f46cda490d53b8b0ebd570a0163698da20d6abe6c8",
+    "mlp_s2": "c87f6e2792fc7e8fe20687374950d5d6d18947d7b06970b50244d743ec0bf4e4",
+    "mlp_s3": "dc3fa043783a11ff090f603fc02c5c3ffdddd603826678de3f46a84763837426",
+    "mlp_s4": "87db1d54c0bf89c542dabd21bfd2b0595b8ea5abfdaca47c49329ddb238d5a56"
+  }
+}

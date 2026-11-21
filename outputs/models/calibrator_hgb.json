@@ -1,0 +1,29 @@
+{
+  "chosen": "platt",
+  "model": "hgb",
+  "input": "logit(clip(s_hgb, 1e-7, 1-1e-7))",
+  "fit_on": "pooled OOT scores: WF 2023, WF 2024-H1, val",
+  "n": 68769,
+  "positives": 234,
+  "lopo_brier": {
+    "isotonic": 0.0032245,
+    "isotonic_merged": 0.0032353,
+    "platt": 0.0032278
+  },
+  "lopo_log_loss": {
+    "isotonic": 0.020481,
+    "isotonic_merged": 0.019601,
+    "platt": 0.020079
+  },
+  "base_rate": 0.003403,
+  "prob_at_score_quantile": {
+    "0.5": 0.00095,
+    "0.9": 0.00961,
+    "0.95": 0.01492,
+    "0.98": 0.02408,
+    "0.99": 0.03092,
+    "0.995": 0.0403,
+    "0.999": 0.0576,
+    "1.0": 0.09441
+  }
+}

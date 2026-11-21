@@ -1,0 +1,5 @@
+rule,patches/month,caught,recall_%,precision_%
+CVSS >= 9 (CNA),110.0,55,21.9,1.68
+phrase only (today's text),2.0,36,14.3,48.65
+"phrase OR CVSS >= 9 (CNA), today's text",112.0,91,36.3,2.71
+"phrase OR CVSS >= 9 (CNA), publication-day text (recall only)",,92,36.7,

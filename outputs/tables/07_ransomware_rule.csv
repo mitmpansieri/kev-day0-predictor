@@ -1,0 +1,2 @@
+rule,ransomware positives,caught,recall %
+CVSS>=9 (CNA) at own capacity (385/month),43,25,58.13953488372093

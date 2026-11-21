@@ -1,0 +1,125 @@
+TEST: frozen dev models loaded, epochs [3, 6, 3, 4, 4] (sha256 verified)
+evaluation set: 102,561 CVEs, 294 positives, 20 months (2025-01-01 -> 2026-08-20)
+
+== recall@K ==
+                             method recall@110 [95% CI] recall@305 [95% CI]  PR-AUC
+       gradient boosting (headline)        33.7 [28–39]        49.3 [44–55]   0.053
+          late fusion (alternative)        29.3 [24–35]        48.0 [43–54]   0.048
+            phrase, then CVSS (CNA)        25.2 [20–30]        42.2 [36–48]   0.042
+                 CVSS (CNA) ranking        18.6 [14–23]        36.1 [30–41]   0.014
+   generous CVSS (fallback) ranking        17.8 [13–22]        31.6 [26–37]   0.015
+EPSS (first score, <=7 d after pub)        29.6 [24–35]        45.4 [40–51]   0.069
+              EPSS (score by day 1)        29.6 [24–35]        45.1 [39–51]   0.069
+            EPSS (day-0 score only)           5.1 [3–8]          9.9 [7–14]   0.003
+                             random                 NaN                 NaN   0.003
+
+== headline minus comparator ==
+                     headline minus   K  diff (pts)  CI lo  CI hi  P(headline better)
+          late fusion (alternative) 110         4.3   -1.0    9.1                 0.9
+          late fusion (alternative) 305         1.4   -4.1    6.6                 0.6
+            phrase, then CVSS (CNA) 110         8.5    1.7   15.3                 1.0
+            phrase, then CVSS (CNA) 305         7.1    0.3   14.2                 1.0
+                 CVSS (CNA) ranking 110        15.1    8.8   21.5                 1.0
+                 CVSS (CNA) ranking 305        13.2    6.6   20.1                 1.0
+   generous CVSS (fallback) ranking 110        15.8    8.9   22.4                 1.0
+   generous CVSS (fallback) ranking 305        17.7   11.0   24.6                 1.0
+EPSS (first score, <=7 d after pub) 110         4.1   -2.7   10.5                 0.9
+EPSS (first score, <=7 d after pub) 305         3.9   -3.1   11.5                 0.9
+              EPSS (score by day 1) 110         4.1   -2.7   10.5                 0.9
+              EPSS (score by day 1) 305         4.2   -2.9   11.7                 0.9
+            EPSS (day-0 score only) 110        28.5   22.2   34.5                 1.0
+            EPSS (day-0 score only) 305        39.4   32.5   46.3                 1.0
+
+== rules at own capacity vs model at same K ==
+                       rule  patches/month  rule recall %  rule precision %  headline recall % at same K  late fusion recall % at same K
+              CVSS>=9 (CNA)            385           41.2               1.6                         51.7                            55.4
+              CVSS>=7 (CNA)           2068           77.6               0.6                         87.8                            91.5
+    phrase OR CVSS>=9 (CNA)            387           47.3               1.8                         51.7                            55.4
+generous CVSS>=9 (fallback)            516           44.9               1.3                         56.5                            62.6
+
+== by quarter ==
+quarter  CVEs  positives  months gradient boosting (headline) @110 late fusion (alternative) @110 phrase, then CVSS (CNA) @110 EPSS (first score, <=7 d after pub) @110 EPSS (score by day 1) @110
+ 2025Q1 11946         46       3                      39.1 [23–52]                   40.2 [26–55]                 23.3 [11–36]                             23.9 [12–36]               23.9 [12–36]
+ 2025Q2 11695         42       3                      44.4 [31–61]                   39.7 [25–54]                 33.8 [19–49]                             35.7 [21–50]               35.7 [21–50]
+ 2025Q3 11725         36       3                      38.9 [21–56]                   38.9 [21–53]                 31.3 [17–48]                             25.0 [12–42]               25.0 [12–42]
+ 2025Q4 12784         35       3                      45.7 [29–63]                   37.1 [22–54]                 30.8 [14–47]                             34.3 [18–51]               34.3 [18–51]
+ 2026Q1 15152         40       3                      37.8 [23–54]                   52.5 [37–69]                  18.1 [6–32]                             47.5 [31–62]               47.5 [31–62]
+ 2026Q2 20688         56       3                      25.3 [15–38]                     5.4 [0–13]                 28.3 [16–41]                             21.4 [11–33]               21.4 [11–33]
+ 2026Q3 18571         39       2                        7.7 [0–18]                      0.0 [0–0]                  10.3 [2–21]                             23.1 [11–36]               23.1 [11–36]
+
+== by year ==
+year  CVEs  positives  months gradient boosting (headline) @110 late fusion (alternative) @110 phrase, then CVSS (CNA) @110 EPSS (first score, <=7 d after pub) @110 EPSS (score by day 1) @110
+2025 48150        159      12                      41.9 [34–50]                   39.1 [31–47]                 29.5 [22–37]                             29.6 [23–37]               29.6 [23–37]
+2026 54411        135       8                      23.9 [17–32]                   17.8 [12–25]                 20.0 [13–27]                             29.6 [21–37]               29.6 [21–37]
+
+== not yet in KEV (exploited CVEs counted only if KEV dateAdded > date of the EPSS score used) ==
+EPSS variant defining the cut               EPSS (first score, <=7 d after pub) EPSS (score by day 1) EPSS (day-0 score only)
+positives kept                                                              185                   185                     280
+positives dropped (KEV on/before EPSS date)                                 109                   109                      14
+gradient boosting (headline) @110                                  30.4 [24–37]          30.4 [24–37]            34.2 [28–40]
+gradient boosting (headline) @305                                  44.9 [38–52]          44.9 [38–52]            48.7 [43–55]
+late fusion (alternative) @110                                     23.8 [17–29]          23.8 [17–29]            29.0 [24–34]
+late fusion (alternative) @305                                     38.4 [32–46]          38.4 [32–46]            46.4 [41–52]
+phrase, then CVSS (CNA) @110                                       29.4 [23–36]          29.4 [23–36]            25.9 [20–31]
+phrase, then CVSS (CNA) @305                                       49.0 [42–56]          49.0 [42–56]            42.9 [37–49]
+CVSS (CNA) ranking @110                                            22.1 [16–28]          22.1 [16–28]            19.3 [14–24]
+CVSS (CNA) ranking @305                                            42.6 [35–49]          42.6 [35–49]            36.9 [31–43]
+generous CVSS (fallback) ranking @110                              20.3 [14–27]          20.3 [14–27]            18.2 [14–23]
+generous CVSS (fallback) ranking @305                              36.7 [30–44]          36.7 [30–44]            32.5 [27–39]
+EPSS (first score, <=7 d after pub) @110                            14.6 [9–20]           14.6 [9–20]            30.7 [26–36]
+EPSS (first score, <=7 d after pub) @305                           29.7 [23–36]          29.7 [23–36]            46.6 [41–52]
+EPSS (score by day 1) @110                                          14.6 [9–20]           14.6 [9–20]            30.7 [26–36]
+EPSS (score by day 1) @305                                         29.2 [23–36]          29.2 [23–36]            46.3 [40–52]
+EPSS (day-0 score only) @110                                         6.5 [3–10]            6.5 [3–10]               4.3 [2–7]
+EPSS (day-0 score only) @305                                        13.1 [9–19]           13.1 [9–19]              8.6 [5–12]
+
+== EPSS v3/v4 ==
+          EPSS model period  CVEs  positives  months gradient boosting (headline) @110 late fusion (alternative) @110 phrase, then CVSS (CNA) @110 EPSS (first score, <=7 d after pub) @110 EPSS (score by day 1) @110
+before 2025-03-17 (EPSS v3)  9742         44       3                      43.2 [29–59]                   46.6 [30–63]                 26.9 [14–40]                             40.9 [26–56]               40.9 [26–56]
+  from 2025-03-17 (EPSS v4) 92819        250      18                      32.8 [27–39]                   27.5 [22–33]                 25.3 [20–31]                             30.8 [25–36]               30.8 [25–36]
+
+== EPSS coverage (lag days) ==
+ negatives  positives  share of CVEs %
+     30562         62        29.859303
+     71039        230        69.489377
+       223          0         0.217432
+       146          2         0.144304
+       203          0         0.197931
+        85          0         0.082878
+         9          0         0.008775
+
+== calibration ==
+                                        0
+Brier (calibrated)               0.002816
+Brier (constant base rate)       0.002858
+log loss (calibrated)            0.016924
+log loss (constant)              0.019645
+mean predicted                   0.004154
+observed rate                    0.002867
+note                        out-of-sample
+                   n  positives  predicted  observed
+s_hgb                                               
+[0.0, 0.5)     51280         24   0.000829  0.000468
+[0.5, 0.9)     41022         93   0.004418  0.002267
+[0.9, 0.95)     5129         54   0.013477  0.010528
+[0.95, 0.98)    3069         51   0.021540  0.016618
+[0.98, 0.99)    1066         18   0.027288  0.016886
+[0.99, 0.995)    482         15   0.032103  0.031120
+[0.995, 1.0)     513         39   0.043777  0.076023
+
+== text seeds ==
+                    text seed  recall@110  recall@305
+                            0        28.2        49.0
+                            1        29.3        48.0
+                            2        28.9        47.6
+                            3        29.6        48.6
+                            4        29.9        48.5
+                         mean        29.2        48.3
+                        worst        28.2        47.6
+5-seed ensemble (late fusion)        29.3        48.0
+
+== sensitivity ==
+     variant  edited CVEs  edited positives  gradient boosting (headline) @110  late fusion @110
+as evaluated            0                 0                               33.7              29.3
+
+done in 515s

@@ -1,0 +1,3 @@
+split,model,eval CVEs,eval positives,budget,recall@3.4% of monthly CVEs,PR-AUC,"eval positives with a 'twin' in train (same vendor+month, exploited) %"
+date split (train -> val),"preview LR (C=0.1, balanced)",19574,68,3.37% of each month's CVEs,38.2,0.108,0.0
+random split,"preview LR (C=0.1, balanced)",19574,67,3.37% of each month's CVEs,59.1,0.126,50.7

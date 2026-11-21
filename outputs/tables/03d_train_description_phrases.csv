@@ -1,0 +1,14 @@
+phrase,positives,pos_%,negatives,neg_%,label_rate_if_present_%
+exploited in the wild,6,2.4,37,0.05,14.0
+actively exploited,25,10.0,1,0.001,96.2
+may have been exploited,5,2.0,0,0.0,100.0
+known exploited,0,0.0,0,0.0,
+KEV,0,0.0,0,0.0,
+aware of a report,30,12.0,1,0.001,96.8
+(any of the 6),36,14.3,38,0.051,48.6
+"limited, targeted exploitation",0,0.0,0,0.0,
+under active exploitation,0,0.0,0,0.0,
+exploitation in the wild,0,0.0,0,0.0,
+has/have been exploited,5,2.0,68,0.092,6.8
+being exploited,0,0.0,17,0.023,0.0
+(any of all 11),36,14.3,114,0.154,24.0

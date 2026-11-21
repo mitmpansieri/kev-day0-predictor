@@ -1,0 +1,8 @@
+method,selection (3-period mean),WF 2023,WF 2024-H1,worst period,worst seed,val recall@110 [CI],val recall@305 [CI],final model (Decision 11)
+gradient boosting (05a),47.4,39.7,55.6,39.7,,47.1 [36–60],67.6 [57–79],simpler alternative
+late fusion: boosting + fine-tuned (info only),47.2,46.3,51.1,44.1,,44.1 [31–56],77.9 [68–88],
+late fusion: boosting + text MLP,46.7,46.3,51.1,42.6,,42.6 [30–55],64.7 [54–77],<- headline
+"text MLP (05b, 5 seeds)",39.5,43.0,44.9,30.6,38.7,32.4 [20–43],50.0 [38–63],
+text LR (05b),39.2,43.0,51.1,23.5,,23.5,45.6,
+"fine-tuned MiniLM (lr1e-5_full, 2 seeds)",34.6,35.1,42.2,26.5,32.4,25.0 [15–36],57.4 [44–68],
+"phrase, then CVSS (CNA)",34.1,39.3,34.9,28.1,,28.1 [17–38],42.7 [31–55],

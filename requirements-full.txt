@@ -1,0 +1,7 @@
+# Full reproduction: core + text models (sentence embeddings, MLP, fine-tuned MiniLM). GPU = Apple MPS via src/gpu_run.py.
+-r requirements.txt
+torch==2.15.0
+sentence-transformers==6.3.0
+transformers==5.23.0
+tokenizers==0.23.3
+safetensors==0.8.0

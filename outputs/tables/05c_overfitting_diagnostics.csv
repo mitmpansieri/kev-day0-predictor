@@ -1,0 +1,13 @@
+period,setting,stop-loss min at epoch,stop-loss rise after min,train loss fell,train-stop gap at epoch 3,overfitting
+wf_2023,lr1e-5_full,3,0.0,True,-0.002,no
+wf_2023,lr2e-5_full,3,0.0,True,0.173,no
+wf_2023,lr1e-5_freeze,3,0.0,True,-0.029,no
+wf_2023,lr2e-5_freeze,3,0.0,True,0.024,no
+wf_2024h1,lr1e-5_full,3,0.0,True,0.483,no
+wf_2024h1,lr2e-5_full,1,0.334,True,1.113,yes
+wf_2024h1,lr1e-5_freeze,3,0.0,True,0.213,no
+wf_2024h1,lr2e-5_freeze,2,0.003,True,0.513,yes
+val,lr1e-5_full,2,0.007,True,0.058,yes
+val,lr2e-5_full,2,0.008,True,0.281,yes
+val,lr1e-5_freeze,3,0.0,True,-0.124,no
+val,lr2e-5_freeze,2,0.015,True,0.042,yes

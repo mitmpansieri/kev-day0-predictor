@@ -1,0 +1,101 @@
+vendor_key,cna,cwe,cvss_cna_score,has_cna_cvss,n_cwes,phrase_day0,desc_len,cvss_AV,cvss_AC,cvss_PR,cvss_UI,cvss_S,cvss_C,cvss_I,cvss_A,cvss_AT,vendor_kev_log_all,vendor_kev_log_365,vendor_kev_days_since,vendor_kev_any,product_kev_log_all
+oracle,secalert_us@oracle.com,NVD-CWE-noinfo,9.8,1,0,0,561,N,L,N,N,U,H,H,H,none,3.828641396489095,1.9459101490553132,6.0,1,0.0
+dps telecom,cve_disclosure@tech.gov.sg,CWE-284,7.6,1,1,0,341,A,L,L,N,U,H,H,L,none,0.0,0.0,3650.0,0,0.0
+webhue,audit@patchstack.com,CWE-79,7.1,1,1,0,238,N,L,N,R,C,L,L,L,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,86,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+microsoft,secure@microsoft.com,NVD-CWE-noinfo,9.0,1,0,0,61,A,L,L,N,C,H,H,H,none,4.454347296253507,4.454347296253507,1.0,1,0.0
+microsoft,secure@microsoft.com,CWE-20,7.8,1,1,0,74,L,L,L,N,U,H,H,H,none,5.676753802268282,3.258096538021482,8.0,1,0.0
+jenkins project,jenkinsci-cert@googlegroups.com,NVD-CWE-noinfo,,0,0,0,251,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+masaakitanaka,security@wordfence.com,CWE-89,7.5,1,1,0,850,N,L,N,N,U,H,N,N,none,0.0,0.0,3650.0,0,0.0
+fastify,security-advisories@github.com,CWE-283,6.5,1,1,0,1110,N,L,L,N,U,N,H,N,none,0.0,0.0,3650.0,0,0.0
+nicolargo,security-advisories@github.com,CWE-918,7.3,1,1,0,1142,N,L,L,N,X,H,H,N,N,0.0,0.0,3650.0,0,0.0
+imartinez,security@huntr.dev,CWE-79,4.7,1,1,0,298,N,L,N,R,C,L,N,N,none,0.0,0.0,3650.0,0,0.0
+prasadkirpekar,audit@patchstack.com,CWE-862,4.3,1,1,0,242,N,L,L,N,U,N,L,N,none,0.0,0.0,3650.0,0,0.0
+alexey golubnichenko,audit@patchstack.com,CWE-352,4.3,1,1,0,125,N,L,N,R,U,N,L,N,none,0.0,0.0,3650.0,0,0.0
+kubernetes,jordan@liggitt.net,CWE-532,6.5,1,1,0,422,L,L,L,N,C,H,N,N,none,0.0,0.0,3650.0,0,0.0
+iocharger,csirt@divd.nl,CWE-78,9.3,1,2,0,1434,N,L,L,N,P,H,H,H,N,0.0,0.0,3650.0,0,0.0
+wp maverick,audit@patchstack.com,CWE-79,5.9,1,1,0,259,N,L,H,R,C,L,L,L,none,0.0,0.0,3650.0,0,0.0
+zulip,security-advisories@github.com,CWE-287,8.2,1,1,0,720,N,L,N,N,U,H,L,N,none,0.0,0.0,3650.0,0,0.0
+linux,416baaa9-dc9f-4396-8d5f-8c081fb06d67,NVD-CWE-noinfo,8.1,1,0,0,1035,A,L,N,N,U,H,N,H,none,3.295836866004329,1.791759469228055,74.0,1,0.0
+huawei,psirt@huawei.com,CWE-311,7.5,1,1,0,156,L,H,H,N,C,H,H,H,none,0.0,0.0,3650.0,0,0.0
+microsoft,secure@microsoft.com,CWE-822,7.8,1,2,0,148,L,L,L,N,U,H,H,H,none,5.863631175598097,3.713572066704308,6.0,1,0.0
+code projects,cna@vuldb.com,CWE-74,7.3,1,2,0,311,N,L,N,N,U,L,L,L,none,0.0,0.0,3650.0,0,0.0
+mozilla,security@mozilla.org,NVD-CWE-noinfo,,0,0,0,281,none,none,none,none,none,none,none,none,none,2.6390573296152584,0.6931471805599453,213.0,1,1.791759469228055
+openharmony,scy@openharmony.io,CWE-287,8.4,1,1,0,297,L,L,N,N,U,H,H,H,none,0.0,0.0,3650.0,0,0.0
+linux,416baaa9-dc9f-4396-8d5f-8c081fb06d67,NVD-CWE-noinfo,7.8,1,0,0,2907,L,L,L,N,U,H,H,H,none,3.258096538021482,1.791759469228055,7.0,1,0.0
+yt dlp,security-advisories@github.com,CWE-78,8.3,1,1,0,1181,N,H,N,R,C,H,H,H,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,179,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,91,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,284,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,406,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,97,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+mediatek,security@mediatek.com,CWE-122,,0,1,0,299,none,none,none,none,none,none,none,none,none,0.6931471805599453,0.0,1462.0,1,0.0
+webfactory,audit@patchstack.com,CWE-79,5.9,1,1,0,202,N,L,H,R,C,L,L,L,none,0.0,0.0,3650.0,0,0.0
+ruby,security-advisories@github.com,CWE-120,1.7,1,2,0,545,N,L,N,N,X,N,N,L,P,0.0,0.0,3650.0,0,0.0
+nouthemes,audit@patchstack.com,CWE-200,6.5,1,1,0,198,N,L,L,N,U,H,N,N,none,0.0,0.0,3650.0,0,0.0
+qualcomm,product-security@qualcomm.com,CWE-20,7.8,1,1,0,129,L,L,L,N,U,H,H,H,none,2.1972245773362196,0.6931471805599453,210.0,1,0.0
+microsoft,secure@microsoft.com,CWE-125,5.5,1,1,0,103,L,L,N,R,U,H,N,N,none,5.948034989180646,3.8066624897703196,20.0,1,0.0
+cna:security@android.com,security@android.com,NVD-CWE-noinfo,,0,0,0,368,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+cna:security@opentext.com,security@opentext.com,NVD-CWE-noinfo,,0,0,0,86,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+iqonicdesign,audit@patchstack.com,CWE-434,9.9,1,1,0,193,N,L,L,N,C,H,H,H,none,0.0,0.0,3650.0,0,0.0
+ansys,zdi-disclosures@trendmicro.com,CWE-824,7.8,1,1,0,524,L,L,N,R,U,H,H,H,none,0.0,0.0,3650.0,0,0.0
+qualcomm,product-security@qualcomm.com,NVD-CWE-noinfo,7.5,1,0,0,199,N,L,N,N,U,N,N,H,none,1.3862943611198906,1.3862943611198906,121.0,1,0.0
+wpeverest,audit@patchstack.com,CWE-80,5.3,1,1,0,215,N,L,N,N,U,N,L,N,none,0.0,0.0,3650.0,0,0.0
+changmingxie,cna@vuldb.com,CWE-20,6.3,1,2,0,339,N,L,L,N,U,L,L,L,none,0.0,0.0,3650.0,0,0.0
+zabbix,security@zabbix.com,CWE-120,9.6,1,1,0,112,N,L,N,R,C,H,H,H,none,1.0986122886681098,0.0,597.0,1,0.0
+fullservices,security@wordfence.com,CWE-89,6.5,1,1,0,595,N,L,L,N,U,H,N,N,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,64,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+altium,4760f414-e1ae-4ff1-bdad-c7a9c3538b79,CWE-22,10.0,1,2,0,736,N,L,N,N,X,H,H,H,N,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,163,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+gogs,security-advisories@github.com,CWE-862,6.5,1,1,0,285,N,L,L,N,U,N,N,H,none,0.6931471805599453,0.6931471805599453,25.0,1,0.6931471805599453
+checkmk,security@checkmk.com,CWE-532,5.1,1,1,0,258,N,L,H,N,X,N,N,N,N,0.0,0.0,3650.0,0,0.0
+microsoft,secure@microsoft.com,NVD-CWE-noinfo,8.8,1,0,0,63,N,L,L,N,U,H,H,H,none,5.488937726156687,5.488937726156687,11.0,1,0.0
+wago,info@cert.vde.com,CWE-610,2.7,1,1,0,233,N,L,H,N,U,L,N,N,none,0.0,0.0,3650.0,0,0.0
+cordea,security-advisories@github.com,CWE-330,6.5,1,2,0,591,N,L,N,R,U,H,N,N,none,0.0,0.0,3650.0,0,0.0
+microsoft,secure@microsoft.com,NVD-CWE-noinfo,6.5,1,0,0,56,N,L,H,N,U,N,H,H,none,5.459585514144159,5.459585514144159,28.0,1,0.0
+oracle,secalert_us@oracle.com,NVD-CWE-noinfo,9.3,1,0,0,933,N,L,N,R,C,H,H,N,none,3.8066624897703196,1.791759469228055,5.0,1,0.0
+redistimeseries,security-advisories@github.com,CWE-122,7.7,1,1,0,545,N,H,L,N,X,H,H,H,N,0.0,0.0,3650.0,0,0.0
+clifgriffin,security@wordfence.com,CWE-79,6.1,1,1,0,406,N,L,N,R,C,L,L,N,none,0.0,0.0,3650.0,0,0.0
+surrealdb,disclosure@vulncheck.com,CWE-863,4.3,1,1,0,462,N,L,L,N,U,L,N,N,none,0.0,0.0,3650.0,0,0.0
+qualcomm,product-security@qualcomm.com,CWE-126,5.1,1,1,0,65,L,L,H,N,U,H,N,L,none,2.0794415416798357,1.6094379124341003,90.0,1,0.0
+brainstorm force,audit@patchstack.com,CWE-201,6.5,1,1,0,197,N,L,L,N,U,H,N,N,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,179,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+xwiki,security-advisories@github.com,CWE-79,5.4,1,1,0,232,N,L,N,R,U,L,L,N,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,132,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+divvydrive information,iletisim@usom.gov.tr,CWE-79,6.4,1,1,0,236,N,L,L,N,C,L,L,N,none,0.0,0.0,3650.0,0,0.0
+makeplane,security-advisories@github.com,CWE-918,9.3,1,1,0,293,N,L,N,N,C,N,L,H,none,0.0,0.0,3650.0,0,0.0
+cna:contact@wpscan.com,contact@wpscan.com,NVD-CWE-noinfo,,0,0,0,235,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+linux,416baaa9-dc9f-4396-8d5f-8c081fb06d67,NVD-CWE-noinfo,,0,0,0,1094,none,none,none,none,none,none,none,none,none,2.5649493574615367,0.0,375.0,1,0.0
+linux,416baaa9-dc9f-4396-8d5f-8c081fb06d67,NVD-CWE-noinfo,,0,0,0,435,none,none,none,none,none,none,none,none,none,3.1780538303479458,2.0794415416798357,71.0,1,0.0
+metagauss,audit@patchstack.com,CWE-288,7.5,1,1,0,245,N,L,N,N,U,N,H,N,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,146,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+grokability,security-advisories@github.com,CWE-601,6.1,1,1,0,405,N,L,N,R,C,L,L,N,none,0.0,0.0,3650.0,0,0.0
+netgear,a2826606-91e7-4eb6-899e-8484bd4575d5,CWE-20,4.3,1,1,0,179,A,L,H,N,X,N,H,N,N,2.1972245773362196,0.0,1370.0,1,0.0
+ameliabooking,security@wordfence.com,CWE-79,6.4,1,1,0,461,N,L,L,N,C,L,L,N,none,0.0,0.0,3650.0,0,0.0
+mozilla,security@mozilla.org,NVD-CWE-noinfo,,0,0,0,149,none,none,none,none,none,none,none,none,none,2.6390573296152584,0.6931471805599453,253.0,1,1.791759469228055
+metagauss,audit@patchstack.com,CWE-79,5.3,1,1,0,193,N,L,N,N,U,N,N,L,none,0.0,0.0,3650.0,0,0.0
+nvidia,psirt@nvidia.com,CWE-121,7.8,1,1,0,295,L,L,L,N,U,H,H,H,none,0.0,0.0,3650.0,0,0.0
+linux,416baaa9-dc9f-4396-8d5f-8c081fb06d67,NVD-CWE-noinfo,7.5,1,0,0,561,N,L,N,N,U,N,N,H,none,3.2188758248682006,1.6094379124341003,88.0,1,0.0
+mattermost,responsibledisclosure@mattermost.com,CWE-400,4.3,1,1,0,210,N,L,L,N,U,N,N,L,none,0.0,0.0,3650.0,0,0.0
+apple,product-security@apple.com,NVD-CWE-noinfo,,0,0,0,210,none,none,none,none,none,none,none,none,none,4.330733340286331,2.0794415416798357,236.0,1,1.791759469228055
+adobe,psirt@adobe.com,NVD-CWE-noinfo,5.3,1,0,0,409,N,L,N,N,U,N,N,L,none,4.3694478524670215,1.6094379124341003,29.0,1,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,174,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+themerex,audit@patchstack.com,CWE-98,8.1,1,1,0,65,N,H,N,N,U,H,H,H,none,0.0,0.0,3650.0,0,0.0
+tobit laboratories,vulnerability@ncsc.ch,CWE-601,5.3,1,1,0,711,N,L,N,R,X,L,L,N,N,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,232,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+adobe,psirt@adobe.com,CWE-79,4.8,1,1,0,332,N,L,H,R,C,L,L,N,none,4.23410650459726,1.791759469228055,37.0,1,0.0
+apple,product-security@apple.com,NVD-CWE-noinfo,,0,0,0,238,none,none,none,none,none,none,none,none,none,4.330733340286331,2.0794415416798357,236.0,1,1.791759469228055
+pepperl fuchs,info@cert.vde.com,CWE-306,8.2,1,1,0,170,N,L,N,N,U,L,N,H,none,0.0,0.0,3650.0,0,0.0
+google,chrome-cve-admin@google.com,CWE-416,,0,1,0,196,none,none,none,none,none,none,none,none,none,4.290459441148391,2.3978952727983707,21.0,1,0.6931471805599453
+cna:secure@intel.com,secure@intel.com,CWE-754,8.2,1,1,0,240,L,L,L,R,C,H,H,H,none,0.0,0.0,3650.0,0,0.0
+faraz quazi,audit@patchstack.com,CWE-352,5.4,1,1,0,111,N,L,N,R,U,N,L,L,none,0.0,0.0,3650.0,0,0.0
+pdf xchange,zdi-disclosures@trendmicro.com,CWE-787,7.8,1,1,0,509,L,L,N,R,U,H,H,H,none,0.0,0.0,3650.0,0,0.0
+oracle,secalert_us@oracle.com,NVD-CWE-noinfo,9.8,1,0,0,545,N,L,N,N,U,H,H,H,none,3.828641396489095,1.9459101490553132,6.0,1,0.0
+linux,cve-coordination@google.com,CWE-1188,5.8,1,1,0,485,L,H,L,N,U,L,H,L,none,2.302585092994046,2.1972245773362196,81.0,1,0.0
+itpison,twcert@cert.org.tw,CWE-918,5.3,1,1,0,268,N,L,N,N,U,L,N,N,none,0.0,0.0,3650.0,0,0.0
+eric sloan,audit@patchstack.com,CWE-862,5.4,1,1,0,273,N,L,L,N,U,N,L,L,none,0.0,0.0,3650.0,0,0.0
+xplodedthemes,security@wordfence.com,CWE-79,6.4,1,1,0,413,N,L,L,N,C,L,L,N,none,0.0,0.0,3650.0,0,0.0
+butterflymedia,security@wordfence.com,CWE-352,4.3,1,1,0,461,N,L,N,R,U,N,L,N,none,0.0,0.0,3650.0,0,0.0
+idattend pty,vdp@themissinglink.com.au,CWE-306,7.5,1,1,0,183,N,L,N,N,U,H,N,N,none,0.0,0.0,3650.0,0,0.0
+cna:cve@mitre.org,cve@mitre.org,NVD-CWE-noinfo,,0,0,0,242,none,none,none,none,none,none,none,none,none,0.0,0.0,3650.0,0,0.0
+themeum,security@wordfence.com,CWE-287,9.8,1,1,0,503,N,L,N,N,U,H,H,H,none,0.0,0.0,3650.0,0,0.0

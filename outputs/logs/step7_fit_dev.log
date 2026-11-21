@@ -1,0 +1,5 @@
+fit on ALL of dev: 2022-01-01 -> 2024-12-31, 93,842 CVEs, 319 positives
+  gradient boosting fit on 93,842 CVEs / 319 positives (8s)
+  MLP early-stopping set: 2024-07 -> 2024-12 (19,574 CVEs, 68 pos)
+  MLP best epochs (seeds [0, 1, 2, 3, 4]): [3, 6, 3, 4, 4]
+saved + reload check OK: {"epochs": [3, 6, 3, 4, 4], "es_months": ["2024-07", "2024-12"], "n": 93842, "positives": 319}

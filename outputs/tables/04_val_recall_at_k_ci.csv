@@ -1,0 +1,5 @@
+method,point@110,lo@110,hi@110,point@305,lo@305,hi@305
+"phrase, then CVSS (CNA)",28.1,16.9,38.2,42.7,31.2,54.5
+CVSS (CNA) ranking,23.7,13.4,33.3,38.3,27.1,50.0
+generous CVSS (fallback) ranking,15.1,5.8,25.4,38.5,27.3,50.8
+random,3.5,3.5,3.5,9.6,9.6,9.6

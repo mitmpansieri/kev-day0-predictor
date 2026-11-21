@@ -1,0 +1,13 @@
+EPSS for val: 19,574 CVEs, 181 publication days
+  20/181 publication days | 2,049/19,574 CVEs scored | 58 queries | 0s
+  40/181 publication days | 3,913/19,574 CVEs scored | 157 queries | 0s
+  60/181 publication days | 5,872/19,574 CVEs scored | 217 queries | 0s
+  80/181 publication days | 7,739/19,574 CVEs scored | 272 queries | 0s
+  100/181 publication days | 9,611/19,574 CVEs scored | 327 queries | 0s
+  120/181 publication days | 11,944/19,574 CVEs scored | 392 queries | 0s
+  140/181 publication days | 14,924/19,574 CVEs scored | 475 queries | 0s
+  160/181 publication days | 17,290/19,574 CVEs scored | 543 queries | 46s
+  180/181 publication days | 19,328/19,574 CVEs scored | 601 queries | 130s
+  181/181 publication days | 19,431/19,574 CVEs scored | 604 queries | 134s
+lag (days) distribution: {0.0: 2823, 1.0: 15845, 2.0: 401, 3.0: 21, 4.0: 67, 5.0: 79, 6.0: 80, 7.0: 115, nan: 143}
+scored on publication day: 14.4% | within 7 days: 99.3%

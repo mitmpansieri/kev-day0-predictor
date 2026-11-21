@@ -1,0 +1,7075 @@
+vendor_key,cves,positives,rate_%
+microsoft,2398,49,2.04
+apple,1099,32,2.91
+google,1326,26,1.96
+cna:cve@mitre.org,17120,25,0.15
+cisco,681,12,1.76
+fortinet,363,7,1.93
+adobe,1479,6,0.41
+cna:security@vmware.com,188,6,3.19
+ivanti,129,6,4.65
+atlassian,63,6,9.52
+juniper networks,253,5,1.98
+zyxel,93,5,5.38
+citrix,24,4,16.67
+qualcomm,680,3,0.44
+f5,175,3,1.71
+trend micro,148,3,2.03
+linux,2358,2,0.08
+cna:security@android.com,1033,2,0.19
+cna:secalert@redhat.com,870,2,0.23
+mozilla,474,2,0.42
+d link,273,2,0.73
+jetbrains,152,2,1.32
+qnap,130,2,1.54
+solarwinds,89,2,2.25
+progress,67,2,2.99
+palo alto networks,62,2,3.23
+zabbix,34,2,5.88
+arm,27,2,7.41
+sophos,25,2,8.0
+vmware,20,2,10.0
+cloud group,5,2,40.0
+ibm,1119,1,0.09
+samsung mobile,680,1,0.15
+apache foundation,605,1,0.17
+red hat,341,1,0.29
+cna:vulnreport@tenable.com,78,1,1.28
+cacti,37,1,2.7
+php group,21,1,4.76
+papercut,16,1,6.25
+fortra,14,1,7.14
+minio,11,1,9.09
+unitronics,11,1,9.09
+debian,7,1,14.29
+checkpoint,4,1,25.0
+linux kernel,4,1,25.0
+connectwise,3,1,33.33
+rejetto,3,1,33.33
+barracuda,1,1,100.0
+crushftp,1,1,100.0
+douglas wilson,1,1,100.0
+fxc,1,1,100.0
+igniterealtime,1,1,100.0
+justice av solutions,1,1,100.0
+roundcube,1,1,100.0
+cna:contact@wpscan.com,2503,0,0.0
+sourcecodester,973,0,0.0
+oracle,930,0,0.0
+cna:secure@intel.com,774,0,0.0
+siemens,689,0,0.0
+jenkins project,668,0,0.0
+mediatek,652,0,0.0
+huawei,638,0,0.0
+dell,598,0,0.0
+unisoc shanghai,590,0,0.0
+cna:cna@vuldb.com,518,0,0.0
+sap,418,0,0.0
+gitlab,384,0,0.0
+cna:report@snyk.io,310,0,0.0
+campcodes,265,0,0.0
+hewlett packard enterprise hpe,237,0,0.0
+nvidia,235,0,0.0
+unspecified,232,0,0.0
+bentley,210,0,0.0
+pdf xchange,203,0,0.0
+foxit,199,0,0.0
+tenda,189,0,0.0
+hcl,173,0,0.0
+xwiki,173,0,0.0
+tensorflow,166,0,0.0
+amd,160,0,0.0
+schneider electric,158,0,0.0
+mattermost,152,0,0.0
+nextcloud,150,0,0.0
+vim,148,0,0.0
+lenovo,147,0,0.0
+cna:patrick@puiterwijk.org,141,0,0.0
+delta electronics,127,0,0.0
+cna:support@hackerone.com,122,0,0.0
+discourse,118,0,0.0
+cna:security-alert@hpe.com,113,0,0.0
+pimcore,109,0,0.0
+rockwell automation,106,0,0.0
+zoom video communications,106,0,0.0
+cna:talos-cna@cisco.com,104,0,0.0
+kofax,97,0,0.0
+code projects,96,0,0.0
+cna:psirt@autodesk.com,95,0,0.0
+acronis,92,0,0.0
+hp,91,0,0.0
+netgear,83,0,0.0
+gtkwave,82,0,0.0
+insteon,82,0,0.0
+milesight,82,0,0.0
+microweber,80,0,0.0
+thorsten,80,0,0.0
+tp link,80,0,0.0
+splunk,77,0,0.0
+cna:help@fluidattacks.com,76,0,0.0
+phpgurukul,76,0,0.0
+glpi project,74,0,0.0
+synology,73,0,0.0
+codesys,70,0,0.0
+github,70,0,0.0
+openharmony,67,0,0.0
+sonicwall,64,0,0.0
+cna:cybersecurity@se.com,63,0,0.0
+hitachi energy,62,0,0.0
+siretta,62,0,0.0
+usememos,60,0,0.0
+autodesk,59,0,0.0
+liferay,59,0,0.0
+esri,58,0,0.0
+mitsubishi electric,58,0,0.0
+wpdevteam,58,0,0.0
+xen,58,0,0.0
+kashipara,56,0,0.0
+elastic,55,0,0.0
+asus,54,0,0.0
+devolutions,54,0,0.0
+go standard library,54,0,0.0
+itsourcecode,54,0,0.0
+moxa,54,0,0.0
+realmag777,54,0,0.0
+totolink,53,0,0.0
+nodejs,52,0,0.0
+tibco,52,0,0.0
+phoenix contact,50,0,0.0
+projectworlds pvt,50,0,0.0
+brocade,48,0,0.0
+wireshark foundation,48,0,0.0
+cybozu,46,0,0.0
+gpac,46,0,0.0
+honeywell,46,0,0.0
+mintplex labs,46,0,0.0
+opentext,46,0,0.0
+parisneo,46,0,0.0
+silabs com,45,0,0.0
+themeisle,45,0,0.0
+zephyrproject rtos,45,0,0.0
+ikus060,44,0,0.0
+radareorg,44,0,0.0
+abb,43,0,0.0
+cna:psirt@huawei.com,43,0,0.0
+codeastro,43,0,0.0
+omron,43,0,0.0
+toshiba tec,43,0,0.0
+cups easy,42,0,0.0
+hashicorp,42,0,0.0
+metagauss,42,0,0.0
+octopus deploy,42,0,0.0
+tcl,42,0,0.0
+matrix org,41,0,0.0
+mlflow,41,0,0.0
+schweitzer engineering laboratories,41,0,0.0
+suse,41,0,0.0
+ami,40,0,0.0
+ashlar vellum,40,0,0.0
+freerdp,40,0,0.0
+grafana,40,0,0.0
+woocommerce,40,0,0.0
+envoyproxy,39,0,0.0
+western digital,39,0,0.0
+wwbn,39,0,0.0
+abode,38,0,0.0
+cgal project,38,0,0.0
+openssl,38,0,0.0
+hitachi,37,0,0.0
+m files,37,0,0.0
+motorola,37,0,0.0
+openemr,37,0,0.0
+palantir,37,0,0.0
+stellarwp,37,0,0.0
+canonical,36,0,0.0
+cloudflare,36,0,0.0
+cna:hp-security-alert@hp.com,36,0,0.0
+os commerce,36,0,0.0
+tongda,36,0,0.0
+trellix,36,0,0.0
+byzoro,35,0,0.0
+answerdev,34,0,0.0
+argoproj,34,0,0.0
+ruijie,34,0,0.0
+sick,34,0,0.0
+ox,33,0,0.0
+cna:security-advisories@github.com,32,0,0.0
+libtiff,32,0,0.0
+roxnor,32,0,0.0
+vyperlang,32,0,0.0
+codepeople,31,0,0.0
+kashipara group,31,0,0.0
+lg,31,0,0.0
+librenms,31,0,0.0
+paddlepaddle,31,0,0.0
+rexroth,31,0,0.0
+salesagility,31,0,0.0
+typo3,31,0,0.0
+wproyal,31,0,0.0
+zscaler,31,0,0.0
+elecom,30,0,0.0
+honor,30,0,0.0
+idattend pty,30,0,0.0
+inhand networks,30,0,0.0
+lunary ai,30,0,0.0
+ping identity,30,0,0.0
+shopware,30,0,0.0
+thimpress,30,0,0.0
+netentsec,29,0,0.0
+brainstorm force,28,0,0.0
+froxlor,28,0,0.0
+hewlett packard enterprise,28,0,0.0
+hitachi vantara,28,0,0.0
+otrs,28,0,0.0
+artica pfms,27,0,0.0
+bdthemes,27,0,0.0
+eclipse foundation,27,0,0.0
+isc,27,0,0.0
+kubernetes,27,0,0.0
+openimageio project,27,0,0.0
+pandora fms,27,0,0.0
+prestashop,27,0,0.0
+rapid7,27,0,0.0
+wpchill,27,0,0.0
+bigbluebutton,26,0,0.0
+brainstormforce,26,0,0.0
+checkmk,26,0,0.0
+cna:f5sirt@f5.com,26,0,0.0
+inductive automation,26,0,0.0
+jgraph,26,0,0.0
+nec,26,0,0.0
+parallels,26,0,0.0
+robustel,26,0,0.0
+wedevs,26,0,0.0
+automattic,25,0,0.0
+averta,25,0,0.0
+devitemsllc,25,0,0.0
+expresstech,25,0,0.0
+hathway,25,0,0.0
+horner automation,25,0,0.0
+manageengine,25,0,0.0
+ptc,25,0,0.0
+sciencelogic,25,0,0.0
+secomea,25,0,0.0
+arista networks,24,0,0.0
+canon,24,0,0.0
+freebsd,24,0,0.0
+joomla project,24,0,0.0
+sante,24,0,0.0
+smub,24,0,0.0
+themeum,24,0,0.0
+accusoft,23,0,0.0
+automationdirect,23,0,0.0
+aveva,23,0,0.0
+bestwebsoft,23,0,0.0
+bosch,23,0,0.0
+broadcom,23,0,0.0
+cna:disclosure@vulncheck.com,23,0,0.0
+cna:sirt@brocade.com,23,0,0.0
+dassault syst mes,23,0,0.0
+star7th,23,0,0.0
+tenable,23,0,0.0
+axiomatic,22,0,0.0
+axis communications ab,22,0,0.0
+cna:secure@symantec.com,22,0,0.0
+contec,22,0,0.0
+fuji electric,22,0,0.0
+johnson controls,22,0,0.0
+magesh k21,22,0,0.0
+silicon labs,22,0,0.0
+ubiquiti,22,0,0.0
+voltronic power,22,0,0.0
+wago,22,0,0.0
+webtoffee,22,0,0.0
+yokogawa electric,22,0,0.0
+ansys,21,0,0.0
+cna:psirt@sick.de,21,0,0.0
+cna:psirt@us.ibm.com,21,0,0.0
+leap13,21,0,0.0
+lg electronics,21,0,0.0
+livehelperchat,21,0,0.0
+mruby,21,0,0.0
+softing,21,0,0.0
+tribe29,21,0,0.0
+wpdevart,21,0,0.0
+wpvibes,21,0,0.0
+10web,20,0,0.0
+cna:security@xiaomi.com,20,0,0.0
+cyberpower,20,0,0.0
+enalean,20,0,0.0
+facebook,20,0,0.0
+nozomi networks,20,0,0.0
+open automation,20,0,0.0
+open xchange,20,0,0.0
+parse community,20,0,0.0
+pegasystems,20,0,0.0
+quantumcloud,20,0,0.0
+supsystic,20,0,0.0
+thehappymonster,20,0,0.0
+wickedplugins,20,0,0.0
+zulip,20,0,0.0
+advantech,19,0,0.0
+cilium,19,0,0.0
+cna:audit@patchstack.com,19,0,0.0
+cna:psirt@zte.com.cn,19,0,0.0
+combodo,19,0,0.0
+contiki ng,19,0,0.0
+drupal,19,0,0.0
+fuji electric and hakko electronics,19,0,0.0
+gvectors team,19,0,0.0
+jtekt electronics,19,0,0.0
+mcafee,19,0,0.0
+nilsteampassnet,19,0,0.0
+proofpoint,19,0,0.0
+repute infosystems,19,0,0.0
+umbraco,19,0,0.0
+b r industrial automation,18,0,0.0
+cna:cybersecurity@dahuatech.com,18,0,0.0
+cna:securities@openeuler.org,18,0,0.0
+dataprobe,18,0,0.0
+directus,18,0,0.0
+f secure,18,0,0.0
+fedora,18,0,0.0
+gallagher,18,0,0.0
+getgrav,18,0,0.0
+gopi ramasamy,18,0,0.0
+gradio app,18,0,0.0
+hasthemes,18,0,0.0
+i thirteen web solution,18,0,0.0
+moby,18,0,0.0
+pkp,18,0,0.0
+polonel,18,0,0.0
+prasunsen,18,0,0.0
+stylemix,18,0,0.0
+stylemixthemes,18,0,0.0
+appleple,17,0,0.0
+cna:security@wordfence.com,17,0,0.0
+crm perks,17,0,0.0
+ge,17,0,0.0
+gz scripts,17,0,0.0
+hikvision,17,0,0.0
+ibos,17,0,0.0
+instantsoft,17,0,0.0
+jfrog,17,0,0.0
+libigl,17,0,0.0
+openeuler,17,0,0.0
+openzeppelin,17,0,0.0
+pjsip,17,0,0.0
+posimyththemes,17,0,0.0
+snipe,17,0,0.0
+vantage6,17,0,0.0
+zte,17,0,0.0
+amssplus,16,0,0.0
+azure rtos,16,0,0.0
+centreon,16,0,0.0
+cna:mitsubishielectric.psirt@yd.mitsubishielectric.co.jp,16,0,0.0
+cozmoslabs,16,0,0.0
+dataease,16,0,0.0
+emrevona,16,0,0.0
+extendthemes,16,0,0.0
+fatek automation,16,0,0.0
+joomunited,16,0,0.0
+mainwp,16,0,0.0
+mongodb,16,0,0.0
+netapp,16,0,0.0
+riot os,16,0,0.0
+themefusion,16,0,0.0
+triangle microworks,16,0,0.0
+veronalabs,16,0,0.0
+wbsairback,16,0,0.0
+weseek,16,0,0.0
+bdtask,15,0,0.0
+buffalo,15,0,0.0
+cna:security-alert@netapp.com,15,0,0.0
+dolibarr,15,0,0.0
+geoserver,15,0,0.0
+hgiga,15,0,0.0
+icegram,15,0,0.0
+inspireui,15,0,0.0
+jumpserver,15,0,0.0
+metersphere,15,0,0.0
+micro focus,15,0,0.0
+miniorange,15,0,0.0
+nik00726,15,0,0.0
+odoo,15,0,0.0
+pluggabl,15,0,0.0
+redis,15,0,0.0
+shakee93,15,0,0.0
+webfactory,15,0,0.0
+wpmet,15,0,0.0
+8theme,14,0,0.0
+andy moyle,14,0,0.0
+bigprof,14,0,0.0
+brechtvds,14,0,0.0
+cockpit hq,14,0,0.0
+codeigniter4,14,0,0.0
+denoland,14,0,0.0
+git,14,0,0.0
+itech,14,0,0.0
+janeczku,14,0,0.0
+livemesh,14,0,0.0
+mastodon,14,0,0.0
+modoboa,14,0,0.0
+naver,14,0,0.0
+nocodb,14,0,0.0
+nothings,14,0,0.0
+open babel,14,0,0.0
+opennms group,14,0,0.0
+opensuse,14,0,0.0
+reputeinfosystems,14,0,0.0
+spring,14,0,0.0
+tianocore,14,0,0.0
+villatheme,14,0,0.0
+wpdeveloper,14,0,0.0
+wpwax,14,0,0.0
+bytecodealliance,13,0,0.0
+codename065,13,0,0.0
+eprosima,13,0,0.0
+fastify,13,0,0.0
+getsentry,13,0,0.0
+gopiplus,13,0,0.0
+gstreamer,13,0,0.0
+hypr,13,0,0.0
+jetmonsters,13,0,0.0
+keerti1924,13,0,0.0
+lanner,13,0,0.0
+neutrinolabs,13,0,0.0
+pickplugins,13,0,0.0
+properfraction,13,0,0.0
+pyload,13,0,0.0
+softaculous,13,0,0.0
+strapi,13,0,0.0
+themefusecom,13,0,0.0
+timstrifler,13,0,0.0
+vcita,13,0,0.0
+veeam,13,0,0.0
+yifan,13,0,0.0
+1panel dev,12,0,0.0
+ailux,12,0,0.0
+akuvox,12,0,0.0
+artbees,12,0,0.0
+bitdefender,12,0,0.0
+boldthemes,12,0,0.0
+bug finder,12,0,0.0
+carlo gavazzi,12,0,0.0
+cna:reefs@jfrog.com,12,0,0.0
+eclipse,12,0,0.0
+fresenius kabi,12,0,0.0
+gaizhenbiao,12,0,0.0
+goauthentik,12,0,0.0
+gocd,12,0,0.0
+hestiacp,12,0,0.0
+imagerecycle,12,0,0.0
+implecode,12,0,0.0
+metabase,12,0,0.0
+octoprint,12,0,0.0
+ovarro,12,0,0.0
+philips,12,0,0.0
+phpscriptpoint,12,0,0.0
+saadiqbal,12,0,0.0
+snap one,12,0,0.0
+softlab,12,0,0.0
+themekraft,12,0,0.0
+trendnet,12,0,0.0
+wavlink,12,0,0.0
+weintek,12,0,0.0
+wireapp,12,0,0.0
+wow,12,0,0.0
+wpzoom,12,0,0.0
+xpdf,12,0,0.0
+zitadel,12,0,0.0
+zkteco,12,0,0.0
+zoneminder,12,0,0.0
+aio libs,11,0,0.0
+alextselegidis,11,0,0.0
+avaya,11,0,0.0
+b braun melsungen,11,0,0.0
+baserproject,11,0,0.0
+cna:cve@checkpoint.com,11,0,0.0
+cna:vuln@ca.com,11,0,0.0
+collne,11,0,0.0
+datahub project,11,0,0.0
+document foundation,11,0,0.0
+dromara,11,0,0.0
+ethyca,11,0,0.0
+fossbilling,11,0,0.0
+frappe,11,0,0.0
+gogs,11,0,0.0
+hallo welt,11,0,0.0
+jegtheme,11,0,0.0
+jordy meow,11,0,0.0
+kiwitcms,11,0,0.0
+lenels2,11,0,0.0
+maxon,11,0,0.0
+muffingroup,11,0,0.0
+myscada,11,0,0.0
+nautobot,11,0,0.0
+ni,11,0,0.0
+nmedia,11,0,0.0
+octobercms,11,0,0.0
+openfga,11,0,0.0
+opensearch project,11,0,0.0
+opensips,11,0,0.0
+oroinc,11,0,0.0
+peplink,11,0,0.0
+pluginbuilders,11,0,0.0
+podlove,11,0,0.0
+sielco,11,0,0.0
+simplephpscripts,11,0,0.0
+sysaid,11,0,0.0
+unitecms,11,0,0.0
+voovi social networking script,11,0,0.0
+westermo,11,0,0.0
+wpeverest,11,0,0.0
+wpmudev,11,0,0.0
+wpvividplugins,11,0,0.0
+yetiforcecompany,11,0,0.0
+absolute,10,0,0.0
+aenrich,10,0,0.0
+asustor,10,0,0.0
+awordpresslife,10,0,0.0
+chamilo,10,0,0.0
+cna:security@opentext.com,10,0,0.0
+corel,10,0,0.0
+craftcms,10,0,0.0
+creativethemeshq,10,0,0.0
+crocoblock,10,0,0.0
+curl,10,0,0.0
+cyberlord92,10,0,0.0
+danfoss,10,0,0.0
+e excellence,10,0,0.0
+eaton,10,0,0.0
+ec cube,10,0,0.0
+efs,10,0,0.0
+flatpressblog,10,0,0.0
+frenify,10,0,0.0
+fujitsu,10,0,0.0
+funnelforms,10,0,0.0
+givewp,10,0,0.0
+hitron,10,0,0.0
+home assistant,10,0,0.0
+hongdian,10,0,0.0
+instawp,10,0,0.0
+iobit,10,0,0.0
+itpison,10,0,0.0
+lansweeper,10,0,0.0
+line,10,0,0.0
+melapress,10,0,0.0
+moosocial,10,0,0.0
+ninjateam,10,0,0.0
+nlnet labs,10,0,0.0
+oisf,10,0,0.0
+ormazabal,10,0,0.0
+panasonic,10,0,0.0
+peepso,10,0,0.0
+php point of sale,10,0,0.0
+publify,10,0,0.0
+rails,10,0,0.0
+rednao,10,0,0.0
+seiko solutions,10,0,0.0
+sentrifugo,10,0,0.0
+sigstore,10,0,0.0
+socomec,10,0,0.0
+sonos,10,0,0.0
+squid cache,10,0,0.0
+thecosy,10,0,0.0
+themify,10,0,0.0
+trimble,10,0,0.0
+trueconf,10,0,0.0
+vektor,10,0,0.0
+visam,10,0,0.0
+wclovers,10,0,0.0
+woo,10,0,0.0
+wpmu dev,10,0,0.0
+a wp life,9,0,0.0
+alfio event,9,0,0.0
+aws,9,0,0.0
+beaverbuilder,9,0,0.0
+biplob adhikari,9,0,0.0
+biplob018,9,0,0.0
+bluez,9,0,0.0
+chatwoot,9,0,0.0
+cloudexplorer dev,9,0,0.0
+concrete cms,9,0,0.0
+cs australia,9,0,0.0
+dji,9,0,0.0
+docker,9,0,0.0
+elcomplus,9,0,0.0
+electron,9,0,0.0
+eset spol s r o,9,0,0.0
+fidelis cybersecurity,9,0,0.0
+forcepoint,9,0,0.0
+forgerock,9,0,0.0
+francoisjacquet,9,0,0.0
+fullworks,9,0,0.0
+g5theme,9,0,0.0
+ge healthcare,9,0,0.0
+getkirby,9,0,0.0
+gn themes,9,0,0.0
+hiroaki miyashita,9,0,0.0
+inisev,9,0,0.0
+kiboko labs,9,0,0.0
+levelfourstorefront,9,0,0.0
+mailcow,9,0,0.0
+misskey dev,9,0,0.0
+neorazorx,9,0,0.0
+nextauthjs,9,0,0.0
+nikon,9,0,0.0
+oceanwp,9,0,0.0
+onionshare,9,0,0.0
+openmrs,9,0,0.0
+openrapid,9,0,0.0
+pi websolution,9,0,0.0
+piigab,9,0,0.0
+propertyhive,9,0,0.0
+propump and controls,9,0,0.0
+puppet,9,0,0.0
+qualys,9,0,0.0
+rocket,9,0,0.0
+rrj,9,0,0.0
+sailpoint,9,0,0.0
+saleor,9,0,0.0
+saturday drive,9,0,0.0
+sewio,9,0,0.0
+softether vpn,9,0,0.0
+swift project,9,0,0.0
+techjewel,9,0,0.0
+themefic,9,0,0.0
+traefik,9,0,0.0
+tribulant,9,0,0.0
+tyche softwares,9,0,0.0
+unilogies,9,0,0.0
+zenml io,9,0,0.0
+algolplus,8,0,0.0
+asr,8,0,0.0
+azure,8,0,0.0
+becton dickinson and bd,8,0,0.0
+bender ebee,8,0,0.0
+berriai,8,0,0.0
+beyondtrust,8,0,0.0
+biosig project,8,0,0.0
+bitrix24,8,0,0.0
+bmc,8,0,0.0
+boldgrid,8,0,0.0
+bplugins,8,0,0.0
+chengdu,8,0,0.0
+contao,8,0,0.0
+crater invoice,8,0,0.0
+decidim,8,0,0.0
+deshang,8,0,0.0
+dompdf,8,0,0.0
+dspace,8,0,0.0
+elefant,8,0,0.0
+elementor,8,0,0.0
+emerson,8,0,0.0
+fanuc,8,0,0.0
+foliovision,8,0,0.0
+fuji electric hakko electronics,8,0,0.0
+ge digital,8,0,0.0
+ghost foundation,8,0,0.0
+git for windows,8,0,0.0
+gpriday,8,0,0.0
+gradle,8,0,0.0
+group arge energy and control,8,0,0.0
+h2oai,8,0,0.0
+hap wi,8,0,0.0
+hhyo,8,0,0.0
+hyperledger,8,0,0.0
+ideaboxcreations,8,0,0.0
+ionicabizau,8,0,0.0
+jeff starr,8,0,0.0
+jupyterhub,8,0,0.0
+kalcaddle,8,0,0.0
+kubeedge,8,0,0.0
+kylinsoft,8,0,0.0
+labvantage,8,0,0.0
+lahirudanushka,8,0,0.0
+lf edge zededa,8,0,0.0
+linksys,8,0,0.0
+louislam,8,0,0.0
+magazine3,8,0,0.0
+marco milesi,8,0,0.0
+measuresoft,8,0,0.0
+npm,8,0,0.0
+omeka,8,0,0.0
+patriksimek,8,0,0.0
+pencidesign,8,0,0.0
+php jabbers,8,0,0.0
+phpipam,8,0,0.0
+piotnet,8,0,0.0
+pixelgrade,8,0,0.0
+poly,8,0,0.0
+posimyth,8,0,0.0
+premio,8,0,0.0
+presstigers,8,0,0.0
+radiustheme,8,0,0.0
+realtek,8,0,0.0
+reolink,8,0,0.0
+rizinorg,8,0,0.0
+rust lang,8,0,0.0
+servicenow,8,0,0.0
+sharp,8,0,0.0
+shirasagi project,8,0,0.0
+shortpixel,8,0,0.0
+sierrawireless,8,0,0.0
+silverstripe,8,0,0.0
+smartypants,8,0,0.0
+snow,8,0,0.0
+softnext,8,0,0.0
+sourcegraph,8,0,0.0
+spiffy plugins,8,0,0.0
+stacklok,8,0,0.0
+synopsys,8,0,0.0
+teltonika,8,0,0.0
+tinymce,8,0,0.0
+tooljet,8,0,0.0
+tsolucio,8,0,0.0
+ultimatemember,8,0,0.0
+unified automation,8,0,0.0
+w3 eden,8,0,0.0
+wordpress,8,0,0.0
+wpdirectorykit,8,0,0.0
+wso2,8,0,0.0
+yithemes,8,0,0.0
+aa team,7,0,0.0
+admidio,7,0,0.0
+advantech iview,7,0,0.0
+airspan,7,0,0.0
+airspan networks,7,0,0.0
+anji plus,7,0,0.0
+aternity,7,0,0.0
+authzed,7,0,0.0
+avirtum,7,0,0.0
+awesome support team,7,0,0.0
+ays pro,7,0,0.0
+becton dickinson,7,0,0.0
+binhnguyenplus,7,0,0.0
+blackberry,7,0,0.0
+bottelet,7,0,0.0
+btcpayserver,7,0,0.0
+cambium networks,7,0,0.0
+causefx,7,0,0.0
+changingtec,7,0,0.0
+chocobozzz,7,0,0.0
+ciges,7,0,0.0
+click studios,7,0,0.0
+collaboraonline,7,0,0.0
+containerd,7,0,0.0
+control id,7,0,0.0
+cxbsoft,7,0,0.0
+david f carr,7,0,0.0
+dglingren,7,0,0.0
+dhis2,7,0,0.0
+dominion voting,7,0,0.0
+e4j s r l,7,0,0.0
+eisbaer scada,7,0,0.0
+electrolink,7,0,0.0
+emerson electric,7,0,0.0
+envothemes,7,0,0.0
+everest themes,7,0,0.0
+evmos,7,0,0.0
+f secure and withsecure,7,0,0.0
+fireeye,7,0,0.0
+flarum,7,0,0.0
+flipped aurora,7,0,0.0
+fluxcd,7,0,0.0
+fooplugins,7,0,0.0
+foru,7,0,0.0
+generex,7,0,0.0
+go toolchain,7,0,0.0
+guzzle,7,0,0.0
+helm,7,0,0.0
+https elementor com,7,0,0.0
+icewhaletech,7,0,0.0
+idemia,7,0,0.0
+illumina,7,0,0.0
+implem,7,0,0.0
+istio,7,0,0.0
+jewel theme,7,0,0.0
+js help desk,7,0,0.0
+juanpao,7,0,0.0
+jupyter server,7,0,0.0
+kanboard,7,0,0.0
+keysight,7,0,0.0
+kyverno,7,0,0.0
+ldapaccountmanager,7,0,0.0
+lester gamerz chan,7,0,0.0
+linux kernel organization,7,0,0.0
+lirantal,7,0,0.0
+litonice13,7,0,0.0
+live composer team,7,0,0.0
+ls electric,7,0,0.0
+lws,7,0,0.0
+magepeople team,7,0,0.0
+mailmunch,7,0,0.0
+max foundry,7,0,0.0
+mdt,7,0,0.0
+mgibbs189,7,0,0.0
+mia,7,0,0.0
+mindsdb,7,0,0.0
+miraheze,7,0,0.0
+moodle,7,0,0.0
+motorola solutions,7,0,0.0
+muneeb,7,0,0.0
+mz automation,7,0,0.0
+netatalk,7,0,0.0
+nicdark,7,0,0.0
+okta,7,0,0.0
+onthegosystems,7,0,0.0
+open telemetry,7,0,0.0
+openmage,7,0,0.0
+openvpn,7,0,0.0
+osticket,7,0,0.0
+pallets,7,0,0.0
+paritytech,7,0,0.0
+plainware,7,0,0.0
+pluginops,7,0,0.0
+premium addons for elementor,7,0,0.0
+profilepress membership team,7,0,0.0
+pterodactyl,7,0,0.0
+python foundation,7,0,0.0
+rapid,7,0,0.0
+robosoft,7,0,0.0
+saleswonder team tobias,7,0,0.0
+sciener,7,0,0.0
+secheron,7,0,0.0
+smart evision information,7,0,0.0
+snowflakedb,7,0,0.0
+solare,7,0,0.0
+south river,7,0,0.0
+specialk,7,0,0.0
+statamic,7,0,0.0
+strangerstudios,7,0,0.0
+symfony,7,0,0.0
+tabit,7,0,0.0
+tauri apps,7,0,0.0
+team heateor,7,0,0.0
+teamviewer,7,0,0.0
+telit cinterion,7,0,0.0
+texas instruments,7,0,0.0
+thales,7,0,0.0
+themepoints,7,0,0.0
+ukrsolution,7,0,0.0
+unlimited elements,7,0,0.0
+wallabag,7,0,0.0
+weaver,7,0,0.0
+webvitaly,7,0,0.0
+wordplus,7,0,0.0
+wpclever,7,0,0.0
+wpfactory,7,0,0.0
+wpgmaps,7,0,0.0
+wpinsider 1,7,0,0.0
+wpmanageninja,7,0,0.0
+xibosignage,7,0,0.0
+xootix,7,0,0.0
+yandex,7,0,0.0
+yannick lefebvre,7,0,0.0
+zhong bang,7,0,0.0
+zopefoundation,7,0,0.0
+zorem,7,0,0.0
+1e,6,0,0.0
+allegro ai,6,0,0.0
+arcserve,6,0,0.0
+auth0,6,0,0.0
+autolab,6,0,0.0
+avast,6,0,0.0
+awslabs,6,0,0.0
+baxter,6,0,0.0
+bfabiszewski,6,0,0.0
+bmaltais,6,0,0.0
+booking ultra pro,6,0,0.0
+buildroot,6,0,0.0
+cbot,6,0,0.0
+chcnav,6,0,0.0
+chunghwa telecom,6,0,0.0
+ckeditor,6,0,0.0
+cna:product.security@lge.com,6,0,0.0
+cna:psirt@fortinet.com,6,0,0.0
+codebard,6,0,0.0
+codelyfe,6,0,0.0
+deep sea electronics,6,0,0.0
+delta industrial automation,6,0,0.0
+dpgaspar,6,0,0.0
+easy digital downloads,6,0,0.0
+efacec,6,0,0.0
+ericcornelissen,6,0,0.0
+exim,6,0,0.0
+fahad mahmood,6,0,0.0
+festo,6,0,0.0
+filseclab,6,0,0.0
+flippercode,6,0,0.0
+forma,6,0,0.0
+freescout helpdesk,6,0,0.0
+funnelkit,6,0,0.0
+furuno,6,0,0.0
+ghozylab,6,0,0.0
+gravitl,6,0,0.0
+hamza417,6,0,0.0
+hancom,6,0,0.0
+hanwha vision,6,0,0.0
+hashthemes,6,0,0.0
+humansignal,6,0,0.0
+icinga,6,0,0.0
+ignazio scimone,6,0,0.0
+jan syski,6,0,0.0
+joseph c dolson,6,0,0.0
+kddi,6,0,0.0
+kromitgmbh,6,0,0.0
+libp2p,6,0,0.0
+litespeed,6,0,0.0
+luxion,6,0,0.0
+machinesense,6,0,0.0
+mantisbt,6,0,0.0
+narinder singh,6,0,0.0
+net snmp,6,0,0.0
+netty,6,0,0.0
+netweblogic,6,0,0.0
+nodebb,6,0,0.0
+open5gs,6,0,0.0
+openprinting,6,0,0.0
+orchardcms,6,0,0.0
+osnexus,6,0,0.0
+paid memberships pro,6,0,0.0
+photo gallery team,6,0,0.0
+planex communications,6,0,0.0
+project worlds,6,0,0.0
+pure storage,6,0,0.0
+qriouslad,6,0,0.0
+really simple plugins,6,0,0.0
+redhat com,6,0,0.0
+repox,6,0,0.0
+ricoh,6,0,0.0
+rubygems,6,0,0.0
+rundeck,6,0,0.0
+schoolbox pty,6,0,0.0
+shapedplugin,6,0,0.0
+shop beat,6,0,0.0
+shoplazza,6,0,0.0
+significant gravitas,6,0,0.0
+simplepress,6,0,0.0
+smackcoders,6,0,0.0
+snakeyaml,6,0,0.0
+squidex,6,0,0.0
+stitionai,6,0,0.0
+sylius,6,0,0.0
+symantec,6,0,0.0
+teplitsa of social,6,0,0.0
+tesla,6,0,0.0
+theme freesia,6,0,0.0
+themegrill,6,0,0.0
+themehunk,6,0,0.0
+themepunch ohg,6,0,0.0
+themesflat,6,0,0.0
+thomson,6,0,0.0
+trainingbusinesspros,6,0,0.0
+twisted,6,0,0.0
+tyler,6,0,0.0
+ubuntu budgie,6,0,0.0
+vercel,6,0,0.0
+wagtail,6,0,0.0
+warfareplugins,6,0,0.0
+weaveworks,6,0,0.0
+weka,6,0,0.0
+wintercms,6,0,0.0
+winwar media,6,0,0.0
+wolfssl,6,0,0.0
+wp statistics,6,0,0.0
+wpbakery,6,0,0.0
+wpkube,6,0,0.0
+wpopal,6,0,0.0
+wpxpo,6,0,0.0
+xiaomi,6,0,0.0
+xtemos,6,0,0.0
+xwiki contrib,6,0,0.0
+yoast,6,0,0.0
+yugabytedb,6,0,0.0
+0xjacky,5,0,0.0
+10web form builder team,5,0,0.0
+3uu,5,0,0.0
+a3rev,5,0,0.0
+aam,5,0,0.0
+accesspress themes,5,0,0.0
+actiontec,5,0,0.0
+adam skaat,5,0,0.0
+advplyr,5,0,0.0
+aethon,5,0,0.0
+aman086,5,0,0.0
+ampache,5,0,0.0
+anuko,5,0,0.0
+apollographql,5,0,0.0
+arduino,5,0,0.0
+ari soft,5,0,0.0
+arraytics,5,0,0.0
+automation direct,5,0,0.0
+avahi,5,0,0.0
+baicells,5,0,0.0
+bludit,5,0,0.0
+bookwyrm social,5,0,0.0
+boyiddha,5,0,0.0
+bylancer,5,0,0.0
+c ares,5,0,0.0
+carazo,5,0,0.0
+cbutlerjr,5,0,0.0
+cegid,5,0,0.0
+citirx,5,0,0.0
+ckan,5,0,0.0
+claris,5,0,0.0
+cna:browser-security@yandex-team.ru,5,0,0.0
+cna:disclose@cybersecurityworks.com,5,0,0.0
+commvault,5,0,0.0
+composer,5,0,0.0
+conduit contributors,5,0,0.0
+contec health,5,0,0.0
+contest gallery,5,0,0.0
+crafter,5,0,0.0
+creativeitem,5,0,0.0
+creativemindssolutions,5,0,0.0
+croixhaug,5,0,0.0
+ctrlo,5,0,0.0
+cubefs,5,0,0.0
+cym1102,5,0,0.0
+daniel powney,5,0,0.0
+datakit,5,0,0.0
+datasolution,5,0,0.0
+dcooney,5,0,0.0
+detheme,5,0,0.0
+dexma,5,0,0.0
+dfactory,5,0,0.0
+dfir iris,5,0,0.0
+digitalbazaar,5,0,0.0
+diygod,5,0,0.0
+dreamer,5,0,0.0
+edgarrojas,5,0,0.0
+electra,5,0,0.0
+elemntor,5,0,0.0
+eolinker,5,0,0.0
+etsi,5,0,0.0
+flatpak,5,0,0.0
+fobybus,5,0,0.0
+freeswitch,5,0,0.0
+freshtomato,5,0,0.0
+genians,5,0,0.0
+geonode,5,0,0.0
+gloriafood,5,0,0.0
+gnu c library,5,0,0.0
+gofiber,5,0,0.0
+gopeak,5,0,0.0
+graylog2,5,0,0.0
+gs plugins,5,0,0.0
+gssapi,5,0,0.0
+helix,5,0,0.0
+hinet,5,0,0.0
+hometory,5,0,0.0
+hoppscotch,5,0,0.0
+huggingface,5,0,0.0
+ibax,5,0,0.0
+idm sistemas qsige,5,0,0.0
+imartinez,5,0,0.0
+intergard,5,0,0.0
+inventree,5,0,0.0
+ipfs,5,0,0.0
+ivole,5,0,0.0
+j n breetvelt a k a opajaap,5,0,0.0
+jenkins,5,0,0.0
+juplink,5,0,0.0
+kareadita,5,0,0.0
+keystonejs,5,0,0.0
+kingsoft japan,5,0,0.0
+knime,5,0,0.0
+knowagelabs,5,0,0.0
+konica minolta,5,0,0.0
+lakernote,5,0,0.0
+langchain ai,5,0,0.0
+learningtimes,5,0,0.0
+libsyn,5,0,0.0
+llama cpp,5,0,0.0
+logitec,5,0,0.0
+mailerlite,5,0,0.0
+martin gibson,5,0,0.0
+mautic,5,0,0.0
+maxfoundry,5,0,0.0
+mbis,5,0,0.0
+medialize,5,0,0.0
+mesosoi,5,0,0.0
+michael winkler,5,0,0.0
+micodus,5,0,0.0
+mirantis,5,0,0.0
+mndpsingh287,5,0,0.0
+mobatime,5,0,0.0
+molongui,5,0,0.0
+moveaddons,5,0,0.0
+multivendorx,5,0,0.0
+mybb,5,0,0.0
+mythemeshop,5,0,0.0
+nexx,5,0,0.0
+notaryproject,5,0,0.0
+notepad plus plus,5,0,0.0
+ofofonobs,5,0,0.0
+online movie ticket booking system,5,0,0.0
+open metadata,5,0,0.0
+openbsd,5,0,0.0
+openfind,5,0,0.0
+opto 22,5,0,0.0
+owasp,5,0,0.0
+pax,5,0,0.0
+pdfcrowd,5,0,0.0
+pgadmin org,5,0,0.0
+phoenix,5,0,0.0
+phoronix test suite,5,0,0.0
+pluginsglpi,5,0,0.0
+premmerce,5,0,0.0
+py pdf,5,0,0.0
+qodeinteractive,5,0,0.0
+recipes,5,0,0.0
+recorp,5,0,0.0
+resort data processing,5,0,0.0
+rumpus,5,0,0.0
+sangfor,5,0,0.0
+santesoft,5,0,0.0
+saphira,5,0,0.0
+sauter,5,0,0.0
+scott paterson,5,0,0.0
+scrapy,5,0,0.0
+searchblox,5,0,0.0
+seccome,5,0,0.0
+sedlex,5,0,0.0
+sevenspark,5,0,0.0
+six apart,5,0,0.0
+smarty php,5,0,0.0
+socketio,5,0,0.0
+soflyy,5,0,0.0
+sparklemotion,5,0,0.0
+squirrly,5,0,0.0
+storeapps,5,0,0.0
+strategy11team,5,0,0.0
+synel,5,0,0.0
+tagdiv,5,0,0.0
+tainacan,5,0,0.0
+techlabpro1,5,0,0.0
+teluu,5,0,0.0
+thedotstore,5,0,0.0
+themehigh,5,0,0.0
+theonedev,5,0,0.0
+tms,5,0,0.0
+tychesoftwares,5,0,0.0
+valvepress,5,0,0.0
+vapor,5,0,0.0
+vipre,5,0,0.0
+wazuh,5,0,0.0
+webdorado,5,0,0.0
+weblizar,5,0,0.0
+wha,5,0,0.0
+wordpress org,5,0,0.0
+wp buy,5,0,0.0
+wp darko,5,0,0.0
+wp lab,5,0,0.0
+wp onlinesupport essential plugin,5,0,0.0
+wp swings,5,0,0.0
+wpengine,5,0,0.0
+xerial,5,0,0.0
+xlplugins,5,0,0.0
+y project,5,0,0.0
+yiisoft,5,0,0.0
+yooooomi,5,0,0.0
+yooslider,5,0,0.0
+zavio,5,0,0.0
+7 card,4,0,0.0
+a k i,4,0,0.0
+a10,4,0,0.0
+abstrium,4,0,0.0
+acurax,4,0,0.0
+aimeos,4,0,0.0
+alejandropascual,4,0,0.0
+aleksandar uro evi,4,0,0.0
+alexander fuchs,4,0,0.0
+alkacon,4,0,0.0
+allied telesis k k,4,0,0.0
+altair,4,0,0.0
+amazon web services,4,0,0.0
+ameliabooking,4,0,0.0
+anker,4,0,0.0
+apollo13themes,4,0,0.0
+aresit,4,0,0.0
+arris,4,0,0.0
+arslansoft,4,0,0.0
+artica tech,4,0,0.0
+ashanjay,4,0,0.0
+asterisk,4,0,0.0
+avo hq,4,0,0.0
+axiell,4,0,0.0
+azexo,4,0,0.0
+baden03,4,0,0.0
+badger meter,4,0,0.0
+becton dickinson bd,4,0,0.0
+benbusby,4,0,0.0
+bill minozzi,4,0,0.0
+blakeblackshear,4,0,0.0
+bowo,4,0,0.0
+brave,4,0,0.0
+brefphp,4,0,0.0
+brother industries,4,0,0.0
+buddyboss,4,0,0.0
+cdata,4,0,0.0
+cert cc,4,0,0.0
+changing information,4,0,0.0
+cifi,4,0,0.0
+cimatti consulting,4,0,0.0
+ciprian popescu,4,0,0.0
+clickhouse,4,0,0.0
+cloud foundry,4,0,0.0
+cna:psirt@hcl.com,4,0,0.0
+cna:security@openvpn.net,4,0,0.0
+codeprojects,4,0,0.0
+coderevolution,4,0,0.0
+codesupplyco,4,0,0.0
+cognex,4,0,0.0
+constant contact,4,0,0.0
+control web panel,4,0,0.0
+crmperks,4,0,0.0
+crossplane,4,0,0.0
+cththemes,4,0,0.0
+cubecart,4,0,0.0
+currencyrate today,4,0,0.0
+cusrev,4,0,0.0
+cyberchimps,4,0,0.0
+daext,4,0,0.0
+datadog,4,0,0.0
+davidanderson,4,0,0.0
+deepak anand,4,0,0.0
+delower186,4,0,0.0
+device42,4,0,0.0
+doofinder,4,0,0.0
+draytek,4,0,0.0
+easyuse digital,4,0,0.0
+eipstackgroup,4,0,0.0
+elegant themes,4,0,0.0
+espocrm,4,0,0.0
+estsoft,4,0,0.0
+etic telecom,4,0,0.0
+etoile web design,4,0,0.0
+exclusive addons,4,0,0.0
+extend themes,4,0,0.0
+fabulatech,4,0,0.0
+fanzila,4,0,0.0
+faronics,4,0,0.0
+fastly,4,0,0.0
+fatcat apps,4,0,0.0
+favethemes,4,0,0.0
+finastra,4,0,0.0
+firefly iii,4,0,0.0
+flexense,4,0,0.0
+flusity,4,0,0.0
+flyteorg,4,0,0.0
+fr d ric gilles,4,0,0.0
+frauscher,4,0,0.0
+fsas,4,0,0.0
+fujian kelixin communication,4,0,0.0
+gamipress,4,0,0.0
+ge gas power,4,0,0.0
+gimp,4,0,0.0
+gnu project,4,0,0.0
+go gitea,4,0,0.0
+golang org x image,4,0,0.0
+gopiplushotmailcom,4,0,0.0
+granth,4,0,0.0
+gravity master,4,0,0.0
+groundhogg,4,0,0.0
+h2o,4,0,0.0
+hm plugin,4,0,0.0
+honojs,4,0,0.0
+huaxia,4,0,0.0
+hwk fr,4,0,0.0
+i pro,4,0,0.0
+iagona,4,0,0.0
+ibm merge healthcare,4,0,0.0
+ichitaro,4,0,0.0
+ichitaro 2023,4,0,0.0
+input output hk,4,0,0.0
+ipcomm,4,0,0.0
+jason gauci,4,0,0.0
+jellyfin,4,0,0.0
+john west,4,0,0.0
+joynext,4,0,0.0
+jumpdemand,4,0,0.0
+jupyter,4,0,0.0
+justinbusa,4,0,0.0
+kaifa,4,0,0.0
+kaizencoders,4,0,0.0
+kanban for wordpress,4,0,0.0
+katex,4,0,0.0
+keyence,4,0,0.0
+kiuwan,4,0,0.0
+kron,4,0,0.0
+kubeoperator,4,0,0.0
+kuka,4,0,0.0
+labibahmed42,4,0,0.0
+laborofficefree,4,0,0.0
+labring,4,0,0.0
+laurent22,4,0,0.0
+layerslider,4,0,0.0
+lespeed,4,0,0.0
+lexmark,4,0,0.0
+logicaldoc,4,0,0.0
+logitech,4,0,0.0
+loopus,4,0,0.0
+lucian apostol,4,0,0.0
+luxsoft,4,0,0.0
+mahoroba kobo,4,0,0.0
+mammothology,4,0,0.0
+mariadb,4,0,0.0
+markoni,4,0,0.0
+matter labs,4,0,0.0
+max secure,4,0,0.0
+mdempfle,4,0,0.0
+mealie recipes,4,0,0.0
+media cp,4,0,0.0
+meta,4,0,0.0
+michael simpson,4,0,0.0
+microdicom,4,0,0.0
+mikrotik,4,0,0.0
+milan petrovic,4,0,0.0
+mingsoft,4,0,0.0
+monkey wrench,4,0,0.0
+motopress,4,0,0.0
+mudler,4,0,0.0
+mufeng,4,0,0.0
+naa986,4,0,0.0
+nasirahmed,4,0,0.0
+national keep cyber security services,4,0,0.0
+navetti,4,0,0.0
+ndijkstra,4,0,0.0
+netflix,4,0,0.0
+netskope,4,0,0.0
+nextscripts,4,0,0.0
+nfine,4,0,0.0
+nhi,4,0,0.0
+nixos,4,0,0.0
+node saml,4,0,0.0
+notrinos,4,0,0.0
+nsasoft,4,0,0.0
+nuxt,4,0,0.0
+octolize,4,0,0.0
+offis,4,0,0.0
+ollybach,4,0,0.0
+onlineoptimisation,4,0,0.0
+opencaching deutschland,4,0,0.0
+opencontainers,4,0,0.0
+opengnsys,4,0,0.0
+openrefine,4,0,0.0
+oppo,4,0,0.0
+oretnom23,4,0,0.0
+owncast,4,0,0.0
+p themes,4,0,0.0
+page visit counter,4,0,0.0
+pandaxgo,4,0,0.0
+paultgoodchild,4,0,0.0
+pepro dev group,4,0,0.0
+perfmatters,4,0,0.0
+pfsense,4,0,0.0
+pi hole,4,0,0.0
+pinterest,4,0,0.0
+pixelite,4,0,0.0
+plantuml,4,0,0.0
+plechev andrey,4,0,0.0
+plugincraft,4,0,0.0
+powercom,4,0,0.0
+priority,4,0,0.0
+projectdiscovery,4,0,0.0
+puma,4,0,0.0
+puneethreddyhc,4,0,0.0
+pylons,4,0,0.0
+qode interactive,4,0,0.0
+rack,4,0,0.0
+rakuten mobile,4,0,0.0
+rankmath,4,0,0.0
+rara theme,4,0,0.0
+red lion,4,0,0.0
+reviewx,4,0,0.0
+revmakx,4,0,0.0
+revolution slider,4,0,0.0
+rextheme,4,0,0.0
+richardgabriel,4,0,0.0
+riello ups,4,0,0.0
+rometheme,4,0,0.0
+rti,4,0,0.0
+rubengc,4,0,0.0
+rustaurius,4,0,0.0
+salon booking system,4,0,0.0
+sc0ttkclark,4,0,0.0
+scribit,4,0,0.0
+select themes,4,0,0.0
+sendpress,4,0,0.0
+senec,4,0,0.0
+sensormatic electronics a subsidiary of johnson controls,4,0,0.0
+shaonsina,4,0,0.0
+shopizer ecommerce,4,0,0.0
+siberiancms,4,0,0.0
+sicunet,4,0,0.0
+sjaved,4,0,0.0
+slickremix,4,0,0.0
+smartertools,4,0,0.0
+smp7 wp insider,4,0,0.0
+solwin infotech,4,0,0.0
+spikefinned,4,0,0.0
+spinnaker,4,0,0.0
+spotcam,4,0,0.0
+startrinity,4,0,0.0
+staxwp,4,0,0.0
+stevejburge,4,0,0.0
+subnet solutions,4,0,0.0
+sulu,4,0,0.0
+sunshinephotocart,4,0,0.0
+surya2developer,4,0,0.0
+synaptics,4,0,0.0
+t d and espec mic,4,0,0.0
+talya informatics,4,0,0.0
+tecno,4,0,0.0
+themelocation,4,0,0.0
+thrive themes,4,0,0.0
+tmt,4,0,0.0
+tobesoft,4,0,0.0
+tolgee,4,0,0.0
+tpm2,4,0,0.0
+twinpictures,4,0,0.0
+twister,4,0,0.0
+typora,4,0,0.0
+typps,4,0,0.0
+unclebob,4,0,0.0
+unimo,4,0,0.0
+unshiftio,4,0,0.0
+utarit information,4,0,0.0
+ux themes,4,0,0.0
+vicidial,4,0,0.0
+visualcomposer,4,0,0.0
+visualware,4,0,0.0
+vitejs,4,0,0.0
+vran dev,4,0,0.0
+vsourz digital,4,0,0.0
+warp tech,4,0,0.0
+wasiliy strecker contestgallery developer,4,0,0.0
+web settler,4,0,0.0
+webaways,4,0,0.0
+weforms,4,0,0.0
+weston embedded,4,0,0.0
+wiesemann theis,4,0,0.0
+wing ftp server,4,0,0.0
+wordpress foundation,4,0,0.0
+wordpresschef,4,0,0.0
+wp engine,4,0,0.0
+wpcalc,4,0,0.0
+wpcodefactory,4,0,0.0
+wpdatatables,4,0,0.0
+wpdevelop oplugins,4,0,0.0
+wpexpertsio,4,0,0.0
+wppool,4,0,0.0
+wpshopmart,4,0,0.0
+wpsoul,4,0,0.0
+wpweaver,4,0,0.0
+xinje,4,0,0.0
+xpro,4,0,0.0
+xunrui,4,0,0.0
+xwikisas,4,0,0.0
+xylus themes,4,0,0.0
+yith,4,0,0.0
+yonifre,4,0,0.0
+yotuwp,4,0,0.0
+yt dlp,4,0,0.0
+zestardtechnologies,4,0,0.0
+zgr,4,0,0.0
+10up,3,0,0.0
+4ra1n,3,0,0.0
+99robots,3,0,0.0
+aaron junker,3,0,0.0
+academy,3,0,0.0
+academy lms,3,0,0.0
+accessally,3,0,0.0
+acowebs,3,0,0.0
+acymailing,3,0,0.0
+addonmaster,3,0,0.0
+adfoxly,3,0,0.0
+adminer,3,0,0.0
+adtribes io,3,0,0.0
+advancedcoding,3,0,0.0
+agilelogix,3,0,0.0
+agilepoint,3,0,0.0
+ahmed kaludi mohammed kaludi,3,0,0.0
+ajay,3,0,0.0
+alain gonzalez,3,0,0.0
+alex raven,3,0,0.0
+alexander stokmann,3,0,0.0
+alexxit,3,0,0.0
+alfasado,3,0,0.0
+algosec,3,0,0.0
+ali2woo,3,0,0.0
+alimir,3,0,0.0
+all in one wp security firewall team,3,0,0.0
+amit agarwal,3,0,0.0
+amodat,3,0,0.0
+anchore,3,0,0.0
+appscreo,3,0,0.0
+apryse,3,0,0.0
+arc informatique,3,0,0.0
+archetyped,3,0,0.0
+arox solution,3,0,0.0
+arrow plugins,3,0,0.0
+artes os,3,0,0.0
+artifacthub,3,0,0.0
+ashish ajani,3,0,0.0
+astrotalks,3,0,0.0
+atlas copco,3,0,0.0
+atlas gondal,3,0,0.0
+awesomesupport,3,0,0.0
+awp classifieds team,3,0,0.0
+ayecode,3,0,0.0
+ays pro plugins,3,0,0.0
+backstage,3,0,0.0
+backupguard,3,0,0.0
+baker hughes bently nevada,3,0,0.0
+basix,3,0,0.0
+beancount,3,0,0.0
+beaver builder,3,0,0.0
+betteraddons,3,0,0.0
+biltay,3,0,0.0
+blaz k,3,0,0.0
+blocksera,3,0,0.0
+blogengine net,3,0,0.0
+blubrry,3,0,0.0
+blueglass,3,0,0.0
+bluemark,3,0,0.0
+bluenet,3,0,0.0
+booking algorithms,3,0,0.0
+bookstackapp,3,0,0.0
+bosch rexroth,3,0,0.0
+brett shumaker,3,0,0.0
+bricksforge,3,0,0.0
+builderio,3,0,0.0
+buymeacoffee,3,0,0.0
+bvrp,3,0,0.0
+byron,3,0,0.0
+callback,3,0,0.0
+campbell scientific,3,0,0.0
+castos,3,0,0.0
+caton,3,0,0.0
+cbc,3,0,0.0
+cdac,3,0,0.0
+cdex psa,3,0,0.0
+cemi tomasz pawe ek,3,0,0.0
+chetan gole,3,0,0.0
+choijun,3,0,0.0
+chrisbadgett,3,0,0.0
+chrisvrichardson,3,0,0.0
+chromium,3,0,0.0
+cisa,3,0,0.0
+cleantalk,3,0,0.0
+cms made simple,3,0,0.0
+cna:cybersecurity@hitachienergy.com,3,0,0.0
+cna:psirt-cna@flexerasoftware.com,3,0,0.0
+cna:secure@blackberry.com,3,0,0.0
+cna:vulnerability@kaspersky.com,3,0,0.0
+codeboxr,3,0,0.0
+codeboxr team,3,0,0.0
+codecanyon,3,0,0.0
+cogites,3,0,0.0
+comarch,3,0,0.0
+commend,3,0,0.0
+comparisonslider,3,0,0.0
+concept intermedia,3,0,0.0
+contentstudio,3,0,0.0
+control de ciber,3,0,0.0
+conversios,3,0,0.0
+creative solutions,3,0,0.0
+crewjam,3,0,0.0
+cronvel,3,0,0.0
+crudlab,3,0,0.0
+cvat ai,3,0,0.0
+cybonet,3,0,0.0
+cyclonedx,3,0,0.0
+darren cooney,3,0,0.0
+data consulting,3,0,0.0
+data443,3,0,0.0
+david cole,3,0,0.0
+david lingren,3,0,0.0
+davidfcarr,3,0,0.0
+deanoakley,3,0,0.0
+dearhive,3,0,0.0
+delinea,3,0,0.0
+dell emc,3,0,0.0
+demonisblack,3,0,0.0
+devklan,3,0,0.0
+dgtlmoon,3,0,0.0
+digisol,3,0,0.0
+digital ant,3,0,0.0
+dmg mori digital and next,3,0,0.0
+dmitry v ceo of ukr solution,3,0,0.0
+dos,3,0,0.0
+dotcms,3,0,0.0
+dover fueling solutions,3,0,0.0
+drakkan,3,0,0.0
+dream theme,3,0,0.0
+droitthemes,3,0,0.0
+dzikoysk,3,0,0.0
+easynolo,3,0,0.0
+ebm,3,0,0.0
+ecwid ecommerce,3,0,0.0
+edge22,3,0,0.0
+edward plainview,3,0,0.0
+efm networks,3,0,0.0
+eip stack group,3,0,0.0
+element hq,3,0,0.0
+elextensions,3,0,0.0
+elliot sowersby relywp,3,0,0.0
+elrondnetwork,3,0,0.0
+elvexys,3,0,0.0
+engelsystem,3,0,0.0
+envialosimple,3,0,0.0
+epiphyt,3,0,0.0
+eric teubert,3,0,0.0
+erudika,3,0,0.0
+esphome,3,0,0.0
+essential addons,3,0,0.0
+eteubert,3,0,0.0
+ethereum,3,0,0.0
+eurotel,3,0,0.0
+eventprime,3,0,0.0
+evergreen content poster,3,0,0.0
+exfo,3,0,0.0
+exiv2,3,0,0.0
+eyale vc,3,0,0.0
+eyecix,3,0,0.0
+ezoic,3,0,0.0
+ezviz,3,0,0.0
+f1logic,3,0,0.0
+faraday,3,0,0.0
+feather js,3,0,0.0
+featherplugins,3,0,0.0
+feathers sequalize,3,0,0.0
+fernandobt,3,0,0.0
+firmanet and,3,0,0.0
+five star plugins,3,0,0.0
+fla shop com,3,0,0.0
+flavorjones,3,0,0.0
+flector,3,0,0.0
+florent maillefaud,3,0,0.0
+florent73,3,0,0.0
+flowring,3,0,0.0
+fogproject,3,0,0.0
+follow redirects,3,0,0.0
+forkcms,3,0,0.0
+freefrom k k,3,0,0.0
+freepbx,3,0,0.0
+full compass,3,0,0.0
+galaxy services,3,0,0.0
+galaxyproject,3,0,0.0
+gamerz,3,0,0.0
+gandhihitesh9,3,0,0.0
+gangesh matta,3,0,0.0
+gatsbyjs,3,0,0.0
+general electric,3,0,0.0
+genie,3,0,0.0
+gerbv,3,0,0.0
+gesundheit bewegt,3,0,0.0
+gitpython developers,3,0,0.0
+glboy,3,0,0.0
+gnu,3,0,0.0
+gordon b hme antonio leutsch,3,0,0.0
+grandslambert,3,0,0.0
+grandstream,3,0,0.0
+graphite,3,0,0.0
+grassroot dicom,3,0,0.0
+gtmetrix,3,0,0.0
+haas,3,0,0.0
+halo dev,3,0,0.0
+hamid alinia,3,0,0.0
+hammadh,3,0,0.0
+harbor,3,0,0.0
+hastheme,3,0,0.0
+hdf5 group,3,0,0.0
+heateor,3,0,0.0
+hid global,3,0,0.0
+hima,3,0,0.0
+hongmaple,3,0,0.0
+horearadu,3,0,0.0
+hpe,3,0,0.0
+hpjansson,3,0,0.0
+https accel ppp org,3,0,0.0
+hwa jiuh digital,3,0,0.0
+iberezansky,3,0,0.0
+ibericode,3,0,0.0
+icsharpcode,3,0,0.0
+ieee,3,0,0.0
+inaba denki sangyo,3,0,0.0
+inc2734,3,0,0.0
+inea,3,0,0.0
+ingeteam,3,0,0.0
+inkscape,3,0,0.0
+intel,3,0,0.0
+intelbras,3,0,0.0
+interaction design team at university of applied sciences and arts in hildesheim germany,3,0,0.0
+intermesh,3,0,0.0
+internet computer,3,0,0.0
+intranda,3,0,0.0
+iosix,3,0,0.0
+ip2location,3,0,0.0
+irontec,3,0,0.0
+iss,3,0,0.0
+itarian,3,0,0.0
+j 3rk,3,0,0.0
+jackdewey,3,0,0.0
+jacques malgrange,3,0,0.0
+japan construction information center,3,0,0.0
+jason crouse veronalabs,3,0,0.0
+jeff sherk,3,0,0.0
+jeffparker,3,0,0.0
+jeroen peters,3,0,0.0
+jettison,3,0,0.0
+jhpyle,3,0,0.0
+jiangmin,3,0,0.0
+jianming,3,0,0.0
+joel starnes,3,0,0.0
+jonk follow me darling,3,0,0.0
+josevega,3,0,0.0
+judge0,3,0,0.0
+jung,3,0,0.0
+kajitori,3,0,0.0
+karmasis informatics,3,0,0.0
+kbdevice,3,0,0.0
+kevon adonis,3,0,0.0
+kingthemes,3,0,0.0
+kioware,3,0,0.0
+kitabisa,3,0,0.0
+kognetiks,3,0,0.0
+korenix,3,0,0.0
+kraftplugins,3,0,0.0
+kstover,3,0,0.0
+kubeflow,3,0,0.0
+kujirahand,3,0,0.0
+kunal nagar,3,0,0.0
+kylephillips,3,0,0.0
+kyocera document solutions,3,0,0.0
+labib ahmed,3,0,0.0
+ladela,3,0,0.0
+lamassu,3,0,0.0
+laminas,3,0,0.0
+lasso,3,0,0.0
+lauri karisola wp trio,3,0,0.0
+le yan,3,0,0.0
+lenderd,3,0,0.0
+lestrrat go,3,0,0.0
+libgit2,3,0,0.0
+linagora,3,0,0.0
+link whisper,3,0,0.0
+linzhaoguan,3,0,0.0
+lionscripts com,3,0,0.0
+lizardbyte,3,0,0.0
+lj apps,3,0,0.0
+lobehub,3,0,0.0
+maciej bis,3,0,0.0
+mahlamusa,3,0,0.0
+maiwei,3,0,0.0
+man group,3,0,0.0
+marios alexandrou,3,0,0.0
+mate desktop,3,0,0.0
+matthew fries,3,0,0.0
+mb connect line,3,0,0.0
+medtronic,3,0,0.0
+meks,3,0,0.0
+melisplatform,3,0,0.0
+memberpress,3,0,0.0
+membership,3,0,0.0
+merative,3,0,0.0
+meshery,3,0,0.0
+mestres do wp,3,0,0.0
+meta platforms,3,0,0.0
+metal3 io,3,0,0.0
+michael uno miunosoft,3,0,0.0
+michaelrsweet,3,0,0.0
+micronaut projects,3,0,0.0
+miled,3,0,0.0
+mmrs151,3,0,0.0
+modbus tools,3,0,0.0
+mohammed kaludi,3,0,0.0
+moment,3,0,0.0
+mondula,3,0,0.0
+monsterinsights,3,0,0.0
+moonlight stream,3,0,0.0
+morpheus65535,3,0,0.0
+movistar,3,0,0.0
+msi,3,0,0.0
+multisuns,3,0,0.0
+mutt,3,0,0.0
+namithjawahar,3,0,0.0
+nasa,3,0,0.0
+nec platforms,3,0,0.0
+nesote,3,0,0.0
+netdata,3,0,0.0
+netgsm,3,0,0.0
+netis,3,0,0.0
+nexryai,3,0,0.0
+nextcode,3,0,0.0
+nicheaddons,3,0,0.0
+nickboss,3,0,0.0
+nikola vasilijevski,3,0,0.0
+nintendo,3,0,0.0
+niteo,3,0,0.0
+nitin rathod,3,0,0.0
+nokia,3,0,0.0
+north grid,3,0,0.0
+nortonlifelock,3,0,0.0
+nxlog,3,0,0.0
+oci,3,0,0.0
+octokit,3,0,0.0
+oferwald,3,0,0.0
+oliva expertise,3,0,0.0
+olive themes,3,0,0.0
+oliver seidel bastian germann,3,0,0.0
+onnx,3,0,0.0
+open formulieren,3,0,0.0
+openedx,3,0,0.0
+openidc,3,0,0.0
+openkm,3,0,0.0
+opentsdb,3,0,0.0
+opf,3,0,0.0
+oring,3,0,0.0
+ovic team,3,0,0.0
+paul ryley,3,0,0.0
+paytm,3,0,0.0
+pcman,3,0,0.0
+peering manager,3,0,0.0
+pgjdbc,3,0,0.0
+phlex ruby,3,0,0.0
+phpfusion,3,0,0.0
+phpmybackuppro,3,0,0.0
+piccolo orm,3,0,0.0
+pinpoint world,3,0,0.0
+pion,3,0,0.0
+piotnetdotcom,3,0,0.0
+pixelfed,3,0,0.0
+pixelyoursite,3,0,0.0
+planet,3,0,0.0
+plone,3,0,0.0
+plugins360,3,0,0.0
+popupbuilder,3,0,0.0
+pos dienstleistung entwicklung vertrieb,3,0,0.0
+posthog,3,0,0.0
+powerdns,3,0,0.0
+pr gateway,3,0,0.0
+princeahmed,3,0,0.0
+profilegrid,3,0,0.0
+prometheus,3,0,0.0
+pt guy,3,0,0.0
+pukiwiki development team,3,0,0.0
+pyca,3,0,0.0
+pymedusa,3,0,0.0
+qdrant,3,0,0.0
+quadlayers,3,0,0.0
+quic go,3,0,0.0
+rabbitmq,3,0,0.0
+rainbowgeek,3,0,0.0
+rainygao,3,0,0.0
+rank math,3,0,0.0
+rarlab,3,0,0.0
+ray project,3,0,0.0
+red lion controls,3,0,0.0
+registrationmagic,3,0,0.0
+relevanssi,3,0,0.0
+remix4,3,0,0.0
+renesas,3,0,0.0
+renzo johnson,3,0,0.0
+requarks,3,0,0.0
+reservation diary,3,0,0.0
+resque,3,0,0.0
+rickxy,3,0,0.0
+roland barker xnau webdesign,3,0,0.0
+rolf van gelder,3,0,0.0
+rudloff,3,0,0.0
+run llama,3,0,0.0
+rust vmm,3,0,0.0
+rymera web,3,0,0.0
+s can,3,0,0.0
+saho,3,0,0.0
+sakura internet,3,0,0.0
+saleswonder team,3,0,0.0
+saltos,3,0,0.0
+samsung open source,3,0,0.0
+samuel marshall,3,0,0.0
+sandisk,3,0,0.0
+sato,3,0,0.0
+sauter controls,3,0,0.0
+saysis,3,0,0.0
+scidsg,3,0,0.0
+scott reilly,3,0,0.0
+seedprod,3,0,0.0
+seh computertechnik,3,0,0.0
+seiko epson,3,0,0.0
+seraphinite solutions,3,0,0.0
+servit solutions,3,0,0.0
+sevone,3,0,0.0
+shopfiles,3,0,0.0
+siadmin,3,0,0.0
+sichuan yougou,3,0,0.0
+signalwire,3,0,0.0
+simplesamlphp,3,0,0.0
+sinaextra,3,0,0.0
+sirv cdn and image hosting,3,0,0.0
+siteground,3,0,0.0
+sixlabors,3,0,0.0
+skyhigh,3,0,0.0
+skyhigh security,3,0,0.0
+skylot,3,0,0.0
+skymoonlabs,3,0,0.0
+smartstar,3,0,0.0
+smash balloon,3,0,0.0
+sminozzi,3,0,0.0
+soerennb,3,0,0.0
+softiron,3,0,0.0
+solana labs,3,0,0.0
+sonaar music,3,0,0.0
+spoonthemes,3,0,0.0
+standalonetech,3,0,0.0
+stefano lissa newsletter team,3,0,0.0
+stellar,3,0,0.0
+stephanie leary,3,0,0.0
+streamweasels,3,0,0.0
+stripe,3,0,0.0
+sumo,3,0,0.0
+suncreate,3,0,0.0
+sunnet,3,0,0.0
+supcon,3,0,0.0
+supsysticcom,3,0,0.0
+sureshchand12a,3,0,0.0
+survey maker team,3,0,0.0
+sveltejs,3,0,0.0
+svnlabs softwares,3,0,0.0
+svs websoft,3,0,0.0
+sygnoos,3,0,0.0
+synck graphica,3,0,0.0
+tacitine,3,0,0.0
+tadiran,3,0,0.0
+tagbox,3,0,0.0
+tailscale,3,0,0.0
+talent,3,0,0.0
+tatvic,3,0,0.0
+tcman,3,0,0.0
+tcpdump group,3,0,0.0
+teamplus,3,0,0.0
+telecommunication,3,0,0.0
+teleopti,3,0,0.0
+telepad,3,0,0.0
+tem,3,0,0.0
+tgstation,3,0,0.0
+theluckywp,3,0,0.0
+themenectar,3,0,0.0
+themesgrove,3,0,0.0
+themifyme,3,0,0.0
+thinkingreed,3,0,0.0
+thinkst,3,0,0.0
+thinutech,3,0,0.0
+thisaay,3,0,0.0
+thomas belser,3,0,0.0
+throughtek,3,0,0.0
+tiann,3,0,0.0
+tiencop,3,0,0.0
+tigroumeow,3,0,0.0
+tips and tricks hq,3,0,0.0
+tipsandtrickshq,3,0,0.0
+tj actions,3,0,0.0
+tms plugins,3,0,0.0
+tokio rs,3,0,0.0
+totvs,3,0,0.0
+traccar,3,0,0.0
+trustindex io,3,0,0.0
+tutao,3,0,0.0
+tvrock,3,0,0.0
+typelevel,3,0,0.0
+uapp,3,0,0.0
+ulf benjaminsson,3,0,0.0
+uncanny owl,3,0,0.0
+undsgn,3,0,0.0
+uniview,3,0,0.0
+uniway,3,0,0.0
+urkekg,3,0,0.0
+urllib3,3,0,0.0
+urve,3,0,0.0
+uscnanbu,3,0,0.0
+vaadin,3,0,0.0
+van der schaar lab,3,0,0.0
+vanessa219,3,0,0.0
+vark,3,0,0.0
+videowhisper,3,0,0.0
+vinod dalvi,3,0,0.0
+vinoj cardoza,3,0,0.0
+virusblokada,3,0,0.0
+visualmodo,3,0,0.0
+vitessio,3,0,0.0
+vjinfotech,3,0,0.0
+vova anokhin,3,0,0.0
+vriteio,3,0,0.0
+wacom,3,0,0.0
+watchdog,3,0,0.0
+web2py,3,0,0.0
+webcodin,3,0,0.0
+webnus,3,0,0.0
+webroot,3,0,0.0
+welotec,3,0,0.0
+wen solutions,3,0,0.0
+whatarmy,3,0,0.0
+wholesale team,3,0,0.0
+willyxj,3,0,0.0
+wiremock,3,0,0.0
+wisdmlabs,3,0,0.0
+wixtoolset,3,0,0.0
+wp event manager,3,0,0.0
+wp insider wpaffiliatemgr,3,0,0.0
+wp job portal,3,0,0.0
+wp overnight,3,0,0.0
+wp royal,3,0,0.0
+wp travel engine,3,0,0.0
+wpbean,3,0,0.0
+wpecommerce alexanderfoxc,3,0,0.0
+wpexperts,3,0,0.0
+wplegalpages,3,0,0.0
+wpmobile app,3,0,0.0
+wpomnia,3,0,0.0
+wpvncom,3,0,0.0
+wpwhitesecurity,3,0,0.0
+ws form,3,0,0.0
+wshberlin,3,0,0.0
+x org,3,0,0.0
+xarrow,3,0,0.0
+xiaobingby,3,0,0.0
+yas global team,3,0,0.0
+ydataai,3,0,0.0
+yikes,3,0,0.0
+yokogawa rental lease,3,0,0.0
+yordam information,3,0,0.0
+zadam,3,0,0.0
+zaytech,3,0,0.0
+zoho campaigns,3,0,0.0
+01 scripts,2,0,0.0
+07fly,2,0,0.0
+2j slideshow team,2,0,0.0
+42gears,2,0,0.0
+82flex,2,0,0.0
+9001,2,0,0.0
+a2,2,0,0.0
+aaron j,2,0,0.0
+aazztech,2,0,0.0
+abb busch jaeger,2,0,0.0
+abdolence,2,0,0.0
+abdul hakeem,2,0,0.0
+actions,2,0,0.0
+activitywatch,2,0,0.0
+actpro,2,0,0.0
+adam bowen,2,0,0.0
+adeel ahmed,2,0,0.0
+aditya infotech,2,0,0.0
+adive,2,0,0.0
+advanced booking calendar,2,0,0.0
+aerin,2,0,0.0
+aerouk,2,0,0.0
+af themes,2,0,0.0
+agg,2,0,0.0
+ahmyi,2,0,0.0
+ahwxorg,2,0,0.0
+ai3,2,0,0.0
+aimhubio,2,0,0.0
+aitthemes,2,0,0.0
+akbim computer,2,0,0.0
+alex benfica,2,0,0.0
+alex moss,2,0,0.0
+alexander ustimenko,2,0,0.0
+alexey golubnichenko,2,0,0.0
+alfnru,2,0,0.0
+algan,2,0,0.0
+alinto,2,0,0.0
+alivecor,2,0,0.0
+alotcer,2,0,0.0
+alvarotrigo,2,0,0.0
+amazing little poll,2,0,0.0
+amazon,2,0,0.0
+ameya ayame,2,0,0.0
+aminur islam,2,0,0.0
+anadnet,2,0,0.0
+analytify,2,0,0.0
+andrea tarantini,2,0,0.0
+andreas heigl,2,0,0.0
+andrew,2,0,0.0
+annyshow,2,0,0.0
+anssi laitila,2,0,0.0
+ant media,2,0,0.0
+anton bond,2,0,0.0
+anurag deshmukh,2,0,0.0
+apasionados,2,0,0.0
+apereo,2,0,0.0
+api2cart,2,0,0.0
+apolloconfig,2,0,0.0
+appcheap io,2,0,0.0
+apppresser team,2,0,0.0
+appsanywhere,2,0,0.0
+apptainer,2,0,0.0
+appwrite,2,0,0.0
+areal sas,2,0,0.0
+arnan de gans,2,0,0.0
+arshid,2,0,0.0
+artibot,2,0,0.0
+arul prasad j,2,0,0.0
+aruphash,2,0,0.0
+arvados,2,0,0.0
+as koc energy,2,0,0.0
+ashok rane,2,0,0.0
+asos information,2,0,0.0
+asset management system,2,0,0.0
+asustek computer,2,0,0.0
+atarim,2,0,0.0
+audio merchant,2,0,0.0
+audrasjb,2,0,0.0
+august infotech,2,0,0.0
+autopolisbg,2,0,0.0
+avimegladon,2,0,0.0
+aviplugins com,2,0,0.0
+avira,2,0,0.0
+aweber,2,0,0.0
+awesome togi,2,0,0.0
+axios italia,2,0,0.0
+azuracast,2,0,0.0
+azuread,2,0,0.0
+backblaze,2,0,0.0
+backie,2,0,0.0
+bainternet,2,0,0.0
+bala krishna sergey yakovlev,2,0,0.0
+bamboo mcr,2,0,0.0
+bandisoft international,2,0,0.0
+bannersky,2,0,0.0
+bareos,2,0,0.0
+barrykooij,2,0,0.0
+basercms users community,2,0,0.0
+bbs e theme,2,0,0.0
+beardev,2,0,0.0
+beaver builder team,2,0,0.0
+benjamin rojas,2,0,0.0
+benjjvi,2,0,0.0
+beplus,2,0,0.0
+bettershop,2,0,0.0
+bfintal,2,0,0.0
+bildsben,2,0,0.0
+billerickson,2,0,0.0
+binary husky,2,0,0.0
+birddog,2,0,0.0
+biteship,2,0,0.0
+bizswoop a cpf concepts brand,2,0,0.0
+biztechc,2,0,0.0
+blazethemes,2,0,0.0
+bloompixel,2,0,0.0
+blossom themes,2,0,0.0
+blossomthemes,2,0,0.0
+bluetree,2,0,0.0
+bob goetz,2,0,0.0
+bompus,2,0,0.0
+bookstack,2,0,0.0
+booster,2,0,0.0
+borbis media,2,0,0.0
+born05,2,0,0.0
+bracketspace,2,0,0.0
+brainstorm force us,2,0,0.0
+breakdance,2,0,0.0
+brevo,2,0,0.0
+bricks builder,2,0,0.0
+bright plugins,2,0,0.0
+brinia,2,0,0.0
+brivo,2,0,0.0
+brokercap,2,0,0.0
+bruno aesqe babic,2,0,0.0
+buddypress,2,0,0.0
+budibase,2,0,0.0
+burstbv,2,0,0.0
+business directory team,2,0,0.0
+bytebase,2,0,0.0
+c data,2,0,0.0
+calcom,2,0,0.0
+callrail,2,0,0.0
+capensis,2,0,0.0
+capnproto,2,0,0.0
+captainform,2,0,0.0
+carlos doral,2,0,0.0
+carrierwaveuploader,2,0,0.0
+cartflows,2,0,0.0
+catchsquare,2,0,0.0
+cecilapp,2,0,0.0
+cellinx,2,0,0.0
+celomitan,2,0,0.0
+cern,2,0,0.0
+certifi,2,0,0.0
+cesanta,2,0,0.0
+chainsafe,2,0,0.0
+charitable donations fundraising team,2,0,0.0
+charmbracelet,2,0,0.0
+chaskiq,2,0,0.0
+chatgptnextweb,2,0,0.0
+chop chop,2,0,0.0
+chris92de,2,0,0.0
+christian stefanescu,2,0,0.0
+chromiumembedded,2,0,0.0
+cimatti,2,0,0.0
+cires21,2,0,0.0
+clastix,2,0,0.0
+clavister,2,0,0.0
+clicktotweet com,2,0,0.0
+clinical genomics,2,0,0.0
+cloudlinux os,2,0,0.0
+cloudways,2,0,0.0
+cna:cna@cyber.gov.il,2,0,0.0
+cna:cret@cert.org,2,0,0.0
+cna:f86ef6dc-4d3a-42ad-8f28-e6d5547a5007,2,0,0.0
+cna:hirt@hitachi.co.jp,2,0,0.0
+cna:ics-cert@hq.dhs.gov,2,0,0.0
+cna:iletisim@usom.gov.tr,2,0,0.0
+cna:info@cert.vde.com,2,0,0.0
+cna:psirt@rockwellautomation.com,2,0,0.0
+cna:psirt@wdc.com,2,0,0.0
+cna:security@oppo.com,2,0,0.0
+cna:security@salesforce.com,2,0,0.0
+cna:security@sierrawireless.com,2,0,0.0
+code for recovery,2,0,0.0
+code parrots,2,0,0.0
+code snippets pro,2,0,0.0
+code tides,2,0,0.0
+codelessthemes,2,0,0.0
+codenotary,2,0,0.0
+codesavory,2,0,0.0
+codevibrant,2,0,0.0
+codexpert,2,0,0.0
+codexthemes,2,0,0.0
+codezips,2,0,0.0
+college management,2,0,0.0
+colorlibplugins,2,0,0.0
+cometbft,2,0,0.0
+complianz,2,0,0.0
+comtrend,2,0,0.0
+control by web,2,0,0.0
+convertkit,2,0,0.0
+convos chat,2,0,0.0
+cool plugins,2,0,0.0
+coolkit,2,0,0.0
+copy content protection team,2,0,0.0
+copymatic,2,0,0.0
+cornel raiu,2,0,0.0
+coschedule,2,0,0.0
+countly,2,0,0.0
+cp plus,2,0,0.0
+craftercms,2,0,0.0
+crate,2,0,0.0
+creative interactive media,2,0,0.0
+creative motion,2,0,0.0
+creativethemes,2,0,0.0
+cryout creations,2,0,0.0
+cryptomator,2,0,0.0
+cscode,2,0,0.0
+cservit,2,0,0.0
+cube js,2,0,0.0
+cveproject,2,0,0.0
+cybernetikz,2,0,0.0
+daanvandenbergh,2,0,0.0
+dahua,2,0,0.0
+daikin,2,0,0.0
+dalibo,2,0,0.0
+daniel s derstr m sidney van de stouwe,2,0,0.0
+danieliser,2,0,0.0
+dapr,2,0,0.0
+dario curvino,2,0,0.0
+datafeedrcom,2,0,0.0
+david artiss,2,0,0.0
+david gwyer,2,0,0.0
+david vongries,2,0,0.0
+dazzlersoft,2,0,0.0
+dece,2,0,0.0
+deepjavalibrary,2,0,0.0
+delucks,2,0,0.0
+denis,2,0,0.0
+dependencytrack,2,0,0.0
+dev blog,2,0,0.0
+devitems,2,0,0.0
+devnath verma,2,0,0.0
+devowl,2,0,0.0
+dexidp,2,0,0.0
+diagon,2,0,0.0
+didier sampaolo,2,0,0.0
+digital alert,2,0,0.0
+digital arts,2,0,0.0
+digiwin,2,0,0.0
+dimitar ivanov,2,0,0.0
+diracgrid,2,0,0.0
+distributed data,2,0,0.0
+divisupreme,2,0,0.0
+djo,2,0,0.0
+dmitrylitvinov,2,0,0.0
+dmtf,2,0,0.0
+dnesscarkey,2,0,0.0
+dnnsoftware,2,0,0.0
+dojin club micmnis,2,0,0.0
+dominion voting system,2,0,0.0
+dovgalyuk,2,0,0.0
+drew phillips,2,0,0.0
+dropbox,2,0,0.0
+dts electronics,2,0,0.0
+duongancol,2,0,0.0
+duracelltomi,2,0,0.0
+dylan james,2,0,0.0
+e2pdf com,2,0,0.0
+easy social feed,2,0,0.0
+easyappointments,2,0,0.0
+easyii,2,0,0.0
+econolite,2,0,0.0
+econosys system,2,0,0.0
+ecwid,2,0,0.0
+eggemplo,2,0,0.0
+elabftw,2,0,0.0
+elektronic,2,0,0.0
+elespare,2,0,0.0
+emarket design,2,0,0.0
+encode,2,0,0.0
+enphase,2,0,0.0
+envato,2,0,0.0
+eranfl,2,0,0.0
+ericsson,2,0,0.0
+ernest marcinko,2,0,0.0
+esds,2,0,0.0
+eset,2,0,0.0
+eskom,2,0,0.0
+eskom computer,2,0,0.0
+esmind,2,0,0.0
+espressif,2,0,0.0
+estatik,2,0,0.0
+everpress,2,0,0.0
+executable books,2,0,0.0
+exeebit,2,0,0.0
+extremepacs,2,0,0.0
+eyal fitoussi,2,0,0.0
+faboba,2,0,0.0
+fahadmahmood,2,0,0.0
+fancy product designer,2,0,0.0
+fancythemes,2,0,0.0
+fareharbor,2,0,0.0
+feedbackwp,2,0,0.0
+felix welberg,2,0,0.0
+fetch designs,2,0,0.0
+fhs opensource,2,0,0.0
+file manager,2,0,0.0
+filegator,2,0,0.0
+filezilla,2,0,0.0
+finex media,2,0,0.0
+first,2,0,0.0
+fish shell,2,0,0.0
+fivestarplugins,2,0,0.0
+fleetdm,2,0,0.0
+flightbycanto,2,0,0.0
+flothemes,2,0,0.0
+fluenx,2,0,0.0
+fluid cloudnative,2,0,0.0
+foliovision making web work for you,2,0,0.0
+formassembly drew buschhorn,2,0,0.0
+formzu,2,0,0.0
+foxcpp,2,0,0.0
+franklin fueling system,2,0,0.0
+frauscher sensortechnik,2,0,0.0
+freeben,2,0,0.0
+freertos,2,0,0.0
+frentix,2,0,0.0
+freshrss,2,0,0.0
+friendsofflarum,2,0,0.0
+friendsofsymfony1,2,0,0.0
+frogerme,2,0,0.0
+frouriojs,2,0,0.0
+fugu,2,0,0.0
+fuji soft,2,0,0.0
+fujifilm business inovation,2,0,0.0
+fullservices,2,0,0.0
+futuriowp,2,0,0.0
+g data,2,0,0.0
+galaxy weblinks,2,0,0.0
+galleryape,2,0,0.0
+galleryplugins,2,0,0.0
+garden io,2,0,0.0
+garykeorkunian,2,0,0.0
+gcornelisse,2,0,0.0
+generatepress,2,0,0.0
+genexis,2,0,0.0
+geni,2,0,0.0
+gentoo,2,0,0.0
+geotools,2,0,0.0
+geovision,2,0,0.0
+german mesky,2,0,0.0
+gessler,2,0,0.0
+getresponse,2,0,0.0
+ghostlander,2,0,0.0
+ghuger,2,0,0.0
+gilles dumas,2,0,0.0
+gin vue admin,2,0,0.0
+gioni,2,0,0.0
+github com gin gonic gin,2,0,0.0
+github com peterzen goresolver,2,0,0.0
+giuliopanda,2,0,0.0
+gl spice,2,0,0.0
+glen don l mongaya,2,0,0.0
+glenwpcoder,2,0,0.0
+glib,2,0,0.0
+glpi,2,0,0.0
+gnuboard,2,0,0.0
+go git,2,0,0.0
+go vela,2,0,0.0
+godaddy,2,0,0.0
+golang org x net,2,0,0.0
+gold plugins,2,0,0.0
+google golang org protobuf,2,0,0.0
+gopi plus,2,0,0.0
+gopkg in yaml v2,2,0,0.0
+goreleaser,2,0,0.0
+gqevu6bsiz,2,0,0.0
+grails,2,0,0.0
+greg ross,2,0,0.0
+grpc,2,0,0.0
+gruntjs,2,0,0.0
+guangdong,2,0,0.0
+gurumnetworks,2,0,0.0
+h3c,2,0,0.0
+habitica,2,0,0.0
+hakan demiray,2,0,0.0
+hans matzen,2,0,0.0
+haoqisir,2,0,0.0
+happyforms,2,0,0.0
+happymonster,2,0,0.0
+harish chouhan themeist,2,0,0.0
+hasherezade github,2,0,0.0
+hassan ali,2,0,0.0
+hector cabrera,2,0,0.0
+hedgedoc,2,0,0.0
+heimavista,2,0,0.0
+helderk,2,0,0.0
+helpdezk,2,0,0.0
+hennessey digital,2,0,0.0
+heroiclabs,2,0,0.0
+hibara,2,0,0.0
+hiddenpearls,2,0,0.0
+highfivery,2,0,0.0
+hijiri,2,0,0.0
+hitachi abb power grids,2,0,0.0
+hitsteps,2,0,0.0
+hj holdings,2,0,0.0
+hjiang,2,0,0.0
+hookandhook,2,0,0.0
+hospital management system,2,0,0.0
+howard ehrenberg,2,0,0.0
+httpie,2,0,0.0
+humhub,2,0,0.0
+huseyin berberoglu,2,0,0.0
+hybrid,2,0,0.0
+hyno,2,0,0.0
+hyperion,2,0,0.0
+hyperledger archives,2,0,0.0
+ibermatica,2,0,0.0
+icret,2,0,0.0
+icssolution,2,0,0.0
+ideastocode,2,0,0.0
+ietf,2,0,0.0
+if so plugin,2,0,0.0
+ifm,2,0,0.0
+ikea,2,0,0.0
+ilghera,2,0,0.0
+illid,2,0,0.0
+imagely,2,0,0.0
+imaging data commons,2,0,0.0
+impronta,2,0,0.0
+infinitum form,2,0,0.0
+infodoc,2,0,0.0
+infodrom,2,0,0.0
+infornweb,2,0,0.0
+infosoftbd,2,0,0.0
+ingenico,2,0,0.0
+inspirythemes,2,0,0.0
+instedd,2,0,0.0
+interlogix,2,0,0.0
+internet marketing ninjas,2,0,0.0
+intumit,2,0,0.0
+ioss,2,0,0.0
+ipython,2,0,0.0
+iqonic design,2,0,0.0
+istanbul soft informatics and consultancy,2,0,0.0
+it novum,2,0,0.0
+ithemelandco,2,0,0.0
+ithemes,2,0,0.0
+ivm development group,2,0,0.0
+jack arturo,2,0,0.0
+jackc,2,0,0.0
+jahastech,2,0,0.0
+james ward,2,0,0.0
+japan computer emergency response team coordination center jpcert cc,2,0,0.0
+japan system techniques,2,0,0.0
+javier carazo,2,0,0.0
+jeecgboot,2,0,0.0
+jeffrey wp,2,0,0.0
+jens maus,2,0,0.0
+joel james,2,0,0.0
+johannschopplich,2,0,0.0
+john brien,2,0,0.0
+jonashjalmarsson,2,0,0.0
+joomsky,2,0,0.0
+joris van montfort,2,0,0.0
+jose mortellaro,2,0,0.0
+jotform,2,0,0.0
+jqlang,2,0,0.0
+jquery validation,2,0,0.0
+juiker,2,0,0.0
+julianhille,2,0,0.0
+julien crego,2,0,0.0
+jupyterlab,2,0,0.0
+justinsainton,2,0,0.0
+jxpath,2,0,0.0
+kailey lampert,2,0,0.0
+kainelabs,2,0,0.0
+kaltura,2,0,0.0
+kaspersky,2,0,0.0
+katie,2,0,0.0
+katie seaborn,2,0,0.0
+kau boy,2,0,0.0
+keap,2,0,0.0
+keenetic,2,0,0.0
+kemal yazici pluginpress,2,0,0.0
+kepware,2,0,0.0
+kienso,2,0,0.0
+kiloview,2,0,0.0
+kimai,2,0,0.0
+kindspells,2,0,0.0
+king jim,2,0,0.0
+kivikakk,2,0,0.0
+klapp,2,0,0.0
+klbtheme,2,0,0.0
+knative,2,0,0.0
+knowbe4,2,0,0.0
+knplabs,2,0,0.0
+koush,2,0,0.0
+kozea,2,0,0.0
+kubevela,2,0,0.0
+kubiq,2,0,0.0
+kurudrive,2,0,0.0
+lanacodes,2,0,0.0
+lanyulei,2,0,0.0
+lavacode,2,0,0.0
+leadsquared,2,0,0.0
+leadster,2,0,0.0
+leantalk anti spam protection,2,0,0.0
+leantime,2,0,0.0
+leevio,2,0,0.0
+legalweb,2,0,0.0
+libaom,2,0,0.0
+librespeed,2,0,0.0
+libreswan project www libreswan org,2,0,0.0
+lightning ai,2,0,0.0
+lightningnetwork,2,0,0.0
+lim kai yang,2,0,0.0
+linbreux,2,0,0.0
+linear,2,0,0.0
+linkstackorg,2,0,0.0
+linux mint,2,0,0.0
+linuxdeepin,2,0,0.0
+livelyworks,2,0,0.0
+logichunt,2,0,0.0
+loginpress,2,0,0.0
+lukman nakib,2,0,0.0
+lvaudore,2,0,0.0
+macaron,2,0,0.0
+macho themes,2,0,0.0
+machothemes,2,0,0.0
+mad fish digital,2,0,0.0
+maennchen1 de,2,0,0.0
+magarsus consultancy,2,0,0.0
+magenet,2,0,0.0
+magepeopleteam,2,0,0.0
+magneticlab s rl,2,0,0.0
+magnigenie,2,0,0.0
+mailoptin popup builder team,2,0,0.0
+makedeb,2,0,0.0
+marceljm,2,0,0.0
+marco steinbrecher,2,0,0.0
+mark kinchin,2,0,0.0
+mark stockton,2,0,0.0
+mark tilly,2,0,0.0
+markedjs,2,0,0.0
+marktext,2,0,0.0
+marty thornley,2,0,0.0
+marubon,2,0,0.0
+master slider,2,0,0.0
+mat bao,2,0,0.0
+matomoteam,2,0,0.0
+matt manning,2,0,0.0
+max yi,2,0,0.0
+maxim glazunov,2,0,0.0
+mback2k,2,0,0.0
+meikyo electric,2,0,0.0
+meitar,2,0,0.0
+mergen,2,0,0.0
+mermaid js,2,0,0.0
+metaphor creations,2,0,0.0
+mha sistemas,2,0,0.0
+michael dempfle,2,0,0.0
+microchip,2,0,0.0
+microengine,2,0,0.0
+micromatch,2,0,0.0
+microsoftgraph,2,0,0.0
+microworld,2,0,0.0
+miele,2,0,0.0
+mightypirates,2,0,0.0
+mightythemes,2,0,0.0
+mihail barinov,2,0,0.0
+mikewire rocksolid,2,0,0.0
+miniflux,2,0,0.0
+ministry of justice,2,0,0.0
+ministry of land infrastructure transport and tourism japan,2,0,0.0
+minoji,2,0,0.0
+mischiefmarmot,2,0,0.0
+mitchell bennis,2,0,0.0
+mitmproxy,2,0,0.0
+mkucej,2,0,0.0
+mobsf,2,0,0.0
+monetizemore,2,0,0.0
+monikabrzica,2,0,0.0
+mooj org,2,0,0.0
+moreconvert team,2,0,0.0
+mosparo,2,0,0.0
+mr digital,2,0,0.0
+mr vibe,2,0,0.0
+mra13,2,0,0.0
+mschaef,2,0,0.0
+multilaser,2,0,0.0
+multiversx,2,0,0.0
+munirkamal,2,0,0.0
+munsoft,2,0,0.0
+mycred,2,0,0.0
+n media,2,0,0.0
+n squared,2,0,0.0
+nabil lemsieh,2,0,0.0
+nahsra,2,0,0.0
+nalam 1,2,0,0.0
+namelessmc,2,0,0.0
+navidrome,2,0,0.0
+nayrathemes,2,0,0.0
+neha goel,2,0,0.0
+neil gee,2,0,0.0
+neo4j,2,0,0.0
+nepxion,2,0,0.0
+netcomm,2,0,0.0
+netmodule,2,0,0.0
+neutron,2,0,0.0
+nexb,2,0,0.0
+next4biz crm bpm,2,0,0.0
+nextend,2,0,0.0
+nextendweb,2,0,0.0
+nhn,2,0,0.0
+nickys,2,0,0.0
+nikeo,2,0,0.0
+nimeshrmr,2,0,0.0
+ningzichun,2,0,0.0
+ninja team,2,0,0.0
+noah kagan,2,0,0.0
+node fetch,2,0,0.0
+nootheme,2,0,0.0
+nortonlifelock gendigital,2,0,0.0
+nose graze,2,0,0.0
+nosilver4u,2,0,0.0
+nrel,2,0,0.0
+nsthemes,2,0,0.0
+nuggethon,2,0,0.0
+nuuo,2,0,0.0
+nxp,2,0,0.0
+octa code,2,0,0.0
+oliver schl be,2,0,0.0
+oliverpos,2,0,0.0
+omnisend,2,0,0.0
+one,2,0,0.0
+online ada,2,0,0.0
+online book store project,2,0,0.0
+oopspam,2,0,0.0
+op tee,2,0,0.0
+open design alliance,2,0,0.0
+open mainframe project,2,0,0.0
+open policy agent,2,0,0.0
+open quantum safe,2,0,0.0
+openam consortium,2,0,0.0
+openbmc project,2,0,0.0
+opencast,2,0,0.0
+openclinica,2,0,0.0
+opencv,2,0,0.0
+opendds,2,0,0.0
+opendns,2,0,0.0
+openobserve,2,0,0.0
+openstack,2,0,0.0
+optimole,2,0,0.0
+orchestrated,2,0,0.0
+orckestra,2,0,0.0
+osamaesh,2,0,0.0
+osisoft,2,0,0.0
+ossrs,2,0,0.0
+osuuu,2,0,0.0
+outline,2,0,0.0
+owncloud,2,0,0.0
+oxygen builder,2,0,0.0
+packbackbooks,2,0,0.0
+pacsrapor,2,0,0.0
+pagebuildersandwich,2,0,0.0
+paijp,2,0,0.0
+palasthotel by edward bock katharina rompf,2,0,0.0
+palscode,2,0,0.0
+panva,2,0,0.0
+parsec automation,2,0,0.0
+part db,2,0,0.0
+pascal bajorat,2,0,0.0
+pascal casier,2,0,0.0
+paulprinting,2,0,0.0
+pauple,2,0,0.0
+pendulum project,2,0,0.0
+perrinalexandre05,2,0,0.0
+peter raschendorfer,2,0,0.0
+peter shaw,2,0,0.0
+pexle chris,2,0,0.0
+phan chuong,2,0,0.0
+phoeniixx,2,0,0.0
+photoboxone,2,0,0.0
+photon wp,2,0,0.0
+phpbits creative studio,2,0,0.0
+phpmemcachedadmin,2,0,0.0
+pilz,2,0,0.0
+pingcap,2,0,0.0
+pingkon,2,0,0.0
+piwigo,2,0,0.0
+pixela,2,0,0.0
+pixelemu,2,0,0.0
+plane,2,0,0.0
+playframework,2,0,0.0
+plesk,2,0,0.0
+pluck,2,0,0.0
+pluginever,2,0,0.0
+pluginlyspeaking,2,0,0.0
+poeditor,2,0,0.0
+poll maker team,2,0,0.0
+poll maker voting plugin team infotheme,2,0,0.0
+pomerium,2,0,0.0
+popup box team,2,0,0.0
+popup maker,2,0,0.0
+post smtp,2,0,0.0
+power line communications,2,0,0.0
+prasidhda malla,2,0,0.0
+pratikchaskar,2,0,0.0
+praveen goswami,2,0,0.0
+presscustomizr,2,0,0.0
+presspage entertainment,2,0,0.0
+pretty links,2,0,0.0
+profelis it consultancy,2,0,0.0
+projectcapsule,2,0,0.0
+psf,2,0,0.0
+psi 4ward,2,0,0.0
+ptrofimov,2,0,0.0
+px4,2,0,0.0
+python poetry,2,0,0.0
+pytorch,2,0,0.0
+qkmc rk,2,0,0.0
+qognify,2,0,0.0
+qos ch sarl,2,0,0.0
+qsige de idm sistemas,2,0,0.0
+qt project,2,0,0.0
+quanticalabs,2,0,0.0
+qube one,2,0,0.0
+quomodosoft,2,0,0.0
+radare2,2,0,0.0
+radykal,2,0,0.0
+rafflepress,2,0,0.0
+ragic,2,0,0.0
+ramon fincken,2,0,0.0
+rapidload,2,0,0.0
+ravanh,2,0,0.0
+razer,2,0,0.0
+reactphp,2,0,0.0
+real big plugins,2,0,0.0
+realtyna,2,0,0.0
+rebelcode,2,0,0.0
+red lion europe,2,0,0.0
+redbitcz,2,0,0.0
+redisbloom,2,0,0.0
+ree6 applications,2,0,0.0
+refirm labs,2,0,0.0
+renehermi,2,0,0.0
+reservation studio,2,0,0.0
+restrict,2,0,0.0
+rewardsfuel,2,0,0.0
+rgrove,2,0,0.0
+ricard torres,2,0,0.0
+richplugins,2,0,0.0
+rickardw,2,0,0.0
+rifartek,2,0,0.0
+rightpress,2,0,0.0
+rilwis,2,0,0.0
+rmountjoy92,2,0,0.0
+roamwifi,2,0,0.0
+robert macchi,2,0,0.0
+robin wilson,2,0,0.0
+robodk,2,0,0.0
+rocklobsterinc,2,0,0.0
+ronds,2,0,0.0
+roxlukas,2,0,0.0
+rozcom,2,0,0.0
+rtcamp,2,0,0.0
+rtxteam,2,0,0.0
+ruby git,2,0,0.0
+rulex rs,2,0,0.0
+russell jamieson,2,0,0.0
+rustcrypto,2,0,0.0
+saasproject booking package,2,0,0.0
+saemorris,2,0,0.0
+sajjad hossain,2,0,0.0
+sajjad hossain sagor,2,0,0.0
+samrtsoft,2,0,0.0
+satollo,2,0,0.0
+saturdaydrive,2,0,0.0
+savoir faire linux,2,0,0.0
+saxman,2,0,0.0
+scientech it solution,2,0,0.0
+scottopolis,2,0,0.0
+scylladb,2,0,0.0
+sdg,2,0,0.0
+secondlinethemes,2,0,0.0
+secvisogram,2,0,0.0
+seerox,2,0,0.0
+senol sahin,2,0,0.0
+seothemes,2,0,0.0
+sequi,2,0,0.0
+serverpod,2,0,0.0
+servmask,2,0,0.0
+setelsa security,2,0,0.0
+sguda,2,0,0.0
+shanxi diankeyun,2,0,0.0
+shareaholic,2,0,0.0
+sharethis,2,0,0.0
+sialweb,2,0,0.0
+sidekiq,2,0,0.0
+silkalns,2,0,0.0
+simple calendar,2,0,0.0
+simply static,2,0,0.0
+sismics,2,0,0.0
+sizam,2,0,0.0
+sizam design,2,0,0.0
+sk abul hasan,2,0,0.0
+skt themes,2,0,0.0
+sky,2,0,0.0
+slackero,2,0,0.0
+sma,2,0,0.0
+snap creek,2,0,0.0
+sni,2,0,0.0
+snp digital,2,0,0.0
+snyk,2,0,0.0
+soar cloud,2,0,0.0
+sofastack,2,0,0.0
+soft8soft,2,0,0.0
+softmed,2,0,0.0
+softneta,2,0,0.0
+solidwp,2,0,0.0
+sonalsinha21,2,0,0.0
+sonatype,2,0,0.0
+sony,2,0,0.0
+spa cart,2,0,0.0
+spacetime,2,0,0.0
+sparkle wp,2,0,0.0
+spider teams,2,0,0.0
+spotfire,2,0,0.0
+sprecher automation,2,0,0.0
+squelch,2,0,0.0
+sricam,2,0,0.0
+stalwartlabs,2,0,0.0
+stanfordnlp,2,0,0.0
+stangirard,2,0,0.0
+starcitizentools,2,0,0.0
+stephen darlington wandle,2,0,0.0
+stevespringett,2,0,0.0
+stiofansisland,2,0,0.0
+stormhill media,2,0,0.0
+strategy11 form builder team,2,0,0.0
+streamlit,2,0,0.0
+subnet,2,0,0.0
+subratamal,2,0,0.0
+suite crm,2,0,0.0
+sun moon rise,2,0,0.0
+sunell,2,0,0.0
+supercleanse,2,0,0.0
+supsystic com,2,0,0.0
+sviehb,2,0,0.0
+swashata,2,0,0.0
+swift ideas,2,0,0.0
+swiftylife,2,0,0.0
+switchwp,2,0,0.0
+syammohanm,2,0,0.0
+sylabs,2,0,0.0
+synacor,2,0,0.0
+syoyo,2,0,0.0
+sysbasics,2,0,0.0
+tabrisrp,2,0,0.0
+tagawa takao,2,0,0.0
+tagembed,2,0,0.0
+talend,2,0,0.0
+taosdata,2,0,0.0
+taphome,2,0,0.0
+team johnlong,2,0,0.0
+team yoast,2,0,0.0
+technowich,2,0,0.0
+techpowerup,2,0,0.0
+teledyne flir,2,0,0.0
+telstra,2,0,0.0
+templateinvaders,2,0,0.0
+templatesnext,2,0,0.0
+temporal,2,0,0.0
+teosoft,2,0,0.0
+theme horse,2,0,0.0
+theme nectar,2,0,0.0
+themeboy,2,0,0.0
+themeinprogress,2,0,0.0
+themeinwp,2,0,0.0
+themelooks,2,0,0.0
+themencode,2,0,0.0
+themeqx,2,0,0.0
+themisle,2,0,0.0
+thingsforrestaurants,2,0,0.0
+thinking,2,0,0.0
+thm mni ii,2,0,0.0
+thomas scholl,2,0,0.0
+tickera,2,0,0.0
+tigera,2,0,0.0
+tildearrow,2,0,0.0
+tim eckel,2,0,0.0
+timersys,2,0,0.0
+timhodson,2,0,0.0
+timo reith,2,0,0.0
+tips and tricks hq ruhul amin,2,0,0.0
+tislam100,2,0,0.0
+toast plugins,2,0,0.0
+todo,2,0,0.0
+tomdever,2,0,0.0
+topdevs,2,0,0.0
+totalsoft,2,0,0.0
+totara,2,0,0.0
+trailofbits,2,0,0.0
+trampgeek,2,0,0.0
+transloadit,2,0,0.0
+tribal,2,0,0.0
+trusted computing group,2,0,0.0
+trustyplugins,2,0,0.0
+tryghost,2,0,0.0
+tumult,2,0,0.0
+tunafish,2,0,0.0
+twigphp,2,0,0.0
+twinpictures baden03,2,0,0.0
+ubit information,2,0,0.0
+udn,2,0,0.0
+uffizio,2,0,0.0
+ultrajson,2,0,0.0
+unisign,2,0,0.0
+unitedthemes,2,0,0.0
+unitree robotics,2,0,0.0
+upqode,2,0,0.0
+userfeedback team,2,0,0.0
+uvdesk,2,0,0.0
+uyumsoft information system and,2,0,0.0
+vadi corporate information,2,0,0.0
+vadym k,2,0,0.0
+vaerys dawn,2,0,0.0
+valiano,2,0,0.0
+vanderwijk,2,0,0.0
+vanna ai,2,0,0.0
+vberkel,2,0,0.0
+vega,2,0,0.0
+velneo,2,0,0.0
+venugopal,2,0,0.0
+veribo roland murg,2,0,0.0
+verint,2,0,0.0
+vert x3,2,0,0.0
+vertaai,2,0,0.0
+vesystem,2,0,0.0
+vibethemes,2,0,0.0
+video gallery by total soft,2,0,0.0
+viessmann,2,0,0.0
+viewvc,2,0,0.0
+vinoth06,2,0,0.0
+virames,2,0,0.0
+visual composer,2,0,0.0
+vladimir anokhin,2,0,0.0
+voidcoders,2,0,0.0
+vowelweb,2,0,0.0
+vsourz1td,2,0,0.0
+w3c,2,0,0.0
+wade digital design,2,0,0.0
+walchem,2,0,0.0
+walter pinem,2,0,0.0
+wangshen,2,0,0.0
+wasmerio,2,0,0.0
+wbcomdesigns,2,0,0.0
+wcmp,2,0,0.0
+webangon,2,0,0.0
+webbaplugins,2,0,0.0
+webberzone,2,0,0.0
+webcodingplace,2,0,0.0
+webcraftplugins,2,0,0.0
+webhuntinfotech,2,0,0.0
+webinarpress,2,0,0.0
+webkul,2,0,0.0
+webmin,2,0,0.0
+webpushr web push notifications,2,0,0.0
+webvendome,2,0,0.0
+webwizardsdev,2,0,0.0
+wecon,2,0,0.0
+wellintech,2,0,0.0
+wepa,2,0,0.0
+westerndeal,2,0,0.0
+whisperfish,2,0,0.0
+willmot,2,0,0.0
+wiloke,2,0,0.0
+win 911,2,0,0.0
+wisa,2,0,0.0
+wisdomgarden,2,0,0.0
+withsecure,2,0,0.0
+wjj,2,0,0.0
+wokamoto,2,0,0.0
+wp,2,0,0.0
+wp automatic,2,0,0.0
+wp club manager,2,0,0.0
+wp codeus,2,0,0.0
+wp doctor,2,0,0.0
+wp easycart,2,0,0.0
+wp media,2,0,0.0
+wp sunshine,2,0,0.0
+wp wham,2,0,0.0
+wp zone,2,0,0.0
+wpbits,2,0,0.0
+wpblockart,2,0,0.0
+wpdevelop,2,0,0.0
+wpeventmanager,2,0,0.0
+wpfeedback,2,0,0.0
+wpforms,2,0,0.0
+wpgrim,2,0,0.0
+wpindeed,2,0,0.0
+wpjobportal,2,0,0.0
+wpjoli,2,0,0.0
+wpkoithemes,2,0,0.0
+wpmoose,2,0,0.0
+wpmu dev your all in one wordpress platform,2,0,0.0
+wpn xm,2,0,0.0
+wpo365,2,0,0.0
+wpoperation,2,0,0.0
+wpovernight,2,0,0.0
+wps,2,0,0.0
+wpsimpletools,2,0,0.0
+wpstream,2,0,0.0
+wpswings,2,0,0.0
+wptipsntricks,2,0,0.0
+wpvivid team,2,0,0.0
+wpweb,2,0,0.0
+wpzest,2,0,0.0
+wtriple,2,0,0.0
+wyze,2,0,0.0
+x stream,2,0,0.0
+xforwoocommerce,2,0,0.0
+xiamen four faith,2,0,0.0
+xinhu,2,0,0.0
+xintian,2,0,0.0
+xplodedthemes,2,0,0.0
+xstream,2,0,0.0
+xwp,2,0,0.0
+xydac,2,0,0.0
+xyzscripts,2,0,0.0
+yan,2,0,0.0
+yanheven,2,0,0.0
+yepas,2,0,0.0
+yiwent,2,0,0.0
+yoga class registration system,2,0,0.0
+yoomoney,2,0,0.0
+yordam informatics,2,0,0.0
+younes jfr,2,0,0.0
+yuan1994,2,0,0.0
+zachary segal,2,0,0.0
+zebra,2,0,0.0
+zemana,2,0,0.0
+zendrop,2,0,0.0
+zhongbangkeji,2,0,0.0
+zhongfucheng3y,2,0,0.0
+zimbra,2,0,0.0
+zinc,2,0,0.0
+zooz,2,0,0.0
+10 quality,1,0,0.0
+100plugins,1,0,0.0
+10to8,1,0,0.0
+1app,1,0,0.0
+1byte,1,0,0.0
+1j01,1,0,0.0
+202ecommerce,1,0,0.0
+2071174a,1,0,0.0
+2day sk webikon,1,0,0.0
+2j slideshow,1,0,0.0
+2kblater,1,0,0.0
+3breadt,1,0,0.0
+3com marketing,1,0,0.0
+3cx,1,0,0.0
+3d city database,1,0,0.0
+4d,1,0,0.0
+5 anker,1,0,0.0
+5 star plugins,1,0,0.0
+5280studios,1,0,0.0
+52north,1,0,0.0
+59sec,1,0,0.0
+7 zip,1,0,0.0
+7twenty,1,0,0.0
+8 degree themes,1,0,0.0
+93digital,1,0,0.0
+984 ru,1,0,0.0
+9seeds com,1,0,0.0
+a r jones,1,0,0.0
+a2 hosting,1,0,0.0
+a3sec,1,0,0.0
+aa web servant,1,0,0.0
+aaextention,1,0,0.0
+aahframe work,1,0,0.0
+aakash chakravarthy,1,0,0.0
+aakif kadiwala,1,0,0.0
+aankit,1,0,0.0
+aarvanshinfotech,1,0,0.0
+ab wp,1,0,0.0
+abacus research,1,0,0.0
+abast,1,0,0.0
+abdul ibad,1,0,0.0
+abel ruiz,1,0,0.0
+abematv,1,0,0.0
+abetlen,1,0,0.0
+abhay yadav,1,0,0.0
+abhilash1985,1,0,0.0
+about rentals,1,0,0.0
+abozain o7abeeb unitone,1,0,0.0
+abreen,1,0,0.0
+abrg,1,0,0.0
+abu bakar,1,0,0.0
+academy foundation,1,0,0.0
+access keys,1,0,0.0
+accessing template content without permissions,1,0,0.0
+accredible,1,0,0.0
+aceka,1,0,0.0
+acer,1,0,0.0
+acilia,1,0,0.0
+acme,1,0,0.0
+acritum,1,0,0.0
+acryldata,1,0,0.0
+active it zone,1,0,0.0
+active websight,1,0,0.0
+activecampaign,1,0,0.0
+activeim,1,0,0.0
+activeitzone,1,0,0.0
+activity log team,1,0,0.0
+acumos,1,0,0.0
+acymailing newsletter team,1,0,0.0
+ada l0velace,1,0,0.0
+adam dehaven,1,0,0.0
+adam retail automation,1,0,0.0
+adambard,1,0,0.0
+adamskaat,1,0,0.0
+adastra crypto,1,0,0.0
+adfinis,1,0,0.0
+adguardhome,1,0,0.0
+aditaas,1,0,0.0
+admesh,1,0,0.0
+admiror design studio com,1,0,0.0
+admont28,1,0,0.0
+adodb,1,0,0.0
+adrian m rchen,1,0,0.0
+adtran,1,0,0.0
+advanced ads,1,0,0.0
+advanced flamingo,1,0,0.0
+advanced iframe,1,0,0.0
+advcomsys com,1,0,0.0
+aeb labs,1,0,0.0
+aedart,1,0,0.0
+aeharding,1,0,0.0
+aenbleidd,1,0,0.0
+aerospike,1,0,0.0
+aesopinteractive,1,0,0.0
+affiliatewp,1,0,0.0
+afichet,1,0,0.0
+afs analytics,1,0,0.0
+aftab muni,1,0,0.0
+afterpay,1,0,0.0
+afzal multani,1,0,0.0
+agent evolution,1,0,0.0
+agenteasy,1,0,0.0
+agentejo,1,0,0.0
+agile point,1,0,0.0
+agnivade,1,0,0.0
+agronholm,1,0,0.0
+agt tech,1,0,0.0
+aguilatechnologies,1,0,0.0
+agy,1,0,0.0
+aharonyan,1,0,0.0
+ahorner,1,0,0.0
+aidin,1,0,0.0
+aiko it,1,0,0.0
+aipost,1,0,0.0
+airbnb,1,0,0.0
+airlift,1,0,0.0
+airtable,1,0,0.0
+airtower luna,1,0,0.0
+aiven,1,0,0.0
+aiven open,1,0,0.0
+aiyaz maheshpatel,1,0,0.0
+ajay d souza,1,0,0.0
+ajay lulia,1,0,0.0
+akana,1,0,0.0
+akarmenia,1,0,0.0
+akash soni,1,0,0.0
+akeneo,1,0,0.0
+akhlesh nagar a ankit,1,0,0.0
+akhtarujjaman shuvo,1,0,0.0
+akindo sushiro,1,0,0.0
+akinsoft,1,0,0.0
+akirk,1,0,0.0
+akshay menariya,1,0,0.0
+akuvok,1,0,0.0
+alagrede,1,0,0.0
+alan jackson,1,0,0.0
+alan tien,1,0,0.0
+alayacare,1,0,0.0
+albert peschar,1,0,0.0
+alcoda,1,0,0.0
+ale7714,1,0,0.0
+aleksandr guidrevitch,1,0,0.0
+aleksei polechin alek,1,0,0.0
+alerton,1,0,0.0
+alessio caiazza,1,0,0.0
+alex macarthur,1,0,0.0
+alex tselegidis,1,0,0.0
+alex volkov,1,0,0.0
+alexacrm,1,0,0.0
+alexander semikashev,1,0,0.0
+alexander suess,1,0,0.0
+alexanderlivanov,1,0,0.0
+alexei isaenko,1,0,0.0
+alexey trofimov,1,0,0.0
+alexmoss,1,0,0.0
+alexred,1,0,0.0
+alexufo,1,0,0.0
+algoritim,1,0,0.0
+ali forms,1,0,0.0
+ali irani,1,0,0.0
+ali khallad,1,0,0.0
+alireza sedghi,1,0,0.0
+alkaweb,1,0,0.0
+all bootstrap blocks,1,0,0.0
+all in one seo team,1,0,0.0
+all my web needs,1,0,0.0
+allegro,1,0,0.0
+allegroai,1,0,0.0
+alliedmodders,1,0,0.0
+allnet,1,0,0.0
+alma,1,0,0.0
+almosteffortless,1,0,0.0
+alobaidi,1,0,0.0
+alordiel,1,0,0.0
+alpata,1,0,0.0
+alpine press,1,0,0.0
+alpitronic,1,0,0.0
+alsendo sp z o o,1,0,0.0
+altair graphql,1,0,0.0
+altanic,1,0,0.0
+alter,1,0,0.0
+alttext ai,1,0,0.0
+alttextai,1,0,0.0
+aluka,1,0,0.0
+alumnionline web services,1,0,0.0
+amaa,1,0,0.0
+amadercode lab,1,0,0.0
+amans2k,1,0,0.0
+amauri,1,0,0.0
+amauric,1,0,0.0
+amazon ion,1,0,0.0
+amazonfire tv stick 3rd gen,1,0,0.0
+amcharts,1,0,0.0
+amd xilinx,1,0,0.0
+amin a rezapour,1,0,0.0
+amitsukapure,1,0,0.0
+amp mode,1,0,0.0
+amphp,1,0,0.0
+amtt,1,0,0.0
+analogwp,1,0,0.0
+ananich,1,0,0.0
+anant labs,1,0,0.0
+anasystem,1,0,0.0
+anders nor n,1,0,0.0
+anders thorborg,1,0,0.0
+andialbrecht,1,0,0.0
+andondesign,1,0,0.0
+andr br kling,1,0,0.0
+andrea landonio,1,0,0.0
+andrea pernici,1,0,0.0
+andreas m nch,1,0,0.0
+andreas sofantzis,1,0,0.0
+andrei ivasiuc,1,0,0.0
+andres felipe perea v,1,0,0.0
+andrew geeenville web design,1,0,0.0
+andy whalen,1,0,0.0
+anglersnet,1,0,0.0
+angus johnson,1,0,0.0
+anilankola,1,0,0.0
+ankit agarwal priyanshu mittal,1,0,0.0
+anmari,1,0,0.0
+annke,1,0,0.0
+anshul labs,1,0,0.0
+anshuln90,1,0,0.0
+ansibleguy,1,0,0.0
+antfu,1,0,0.0
+antoine hurkmans,1,0,0.0
+anton aleksandrov,1,0,0.0
+anton skorobogatov,1,0,0.0
+antonbolling,1,0,0.0
+antsanchez,1,0,0.0
+anvsoft,1,0,0.0
+any capture,1,0,0.0
+anycubic,1,0,0.0
+aol,1,0,0.0
+apache,1,0,0.0
+apache friends,1,0,0.0
+apachefriends,1,0,0.0
+apasionados apasionados del marketing netconsulting,1,0,0.0
+apereo foundation,1,0,0.0
+apexchat,1,0,0.0
+api platform,1,0,0.0
+apiman,1,0,0.0
+app1pro,1,0,0.0
+appium,1,0,0.0
+appmysite,1,0,0.0
+appneta,1,0,0.0
+appsbd,1,0,0.0
+appsmav,1,0,0.0
+appsmithorg,1,0,0.0
+apptivo,1,0,0.0
+aqua esolutions,1,0,0.0
+aquaforest,1,0,0.0
+aquasecurity,1,0,0.0
+aram kocharyan,1,0,0.0
+arangodb,1,0,0.0
+arasatasaygin,1,0,0.0
+arborator,1,0,0.0
+arc53,1,0,0.0
+arcadia,1,0,0.0
+archesproject,1,0,0.0
+archivebox,1,0,0.0
+archivista,1,0,0.0
+archivy,1,0,0.0
+arcsight,1,0,0.0
+ardereg,1,0,0.0
+ardupilot,1,0,0.0
+areal topkapi,1,0,0.0
+arekk,1,0,0.0
+areoi,1,0,0.0
+ari susanto,1,0,0.0
+ariadne,1,0,0.0
+arian khosravi norik davtian,1,0,0.0
+arjunsharda,1,0,0.0
+ark web,1,0,0.0
+armcode,1,0,0.0
+armember,1,0,0.0
+armoli,1,0,0.0
+armorx,1,0,0.0
+armorx global,1,0,0.0
+arne franken,1,0,0.0
+arno0x,1,0,0.0
+arnoldle,1,0,0.0
+arscode,1,0,0.0
+arsham mirshah,1,0,0.0
+arshidkv12,1,0,0.0
+artem abramovich,1,0,0.0
+arthmoor,1,0,0.0
+artio net,1,0,0.0
+artios media,1,0,0.0
+artistscope,1,0,0.0
+aruba it,1,0,0.0
+arunas liuiza,1,0,0.0
+asaancart,1,0,0.0
+asdqwe dev,1,0,0.0
+asghar hatampoor,1,0,0.0
+ashan jay,1,0,0.0
+askey,1,0,0.0
+aspengrovestudios,1,0,0.0
+aspose cloud marketplace,1,0,0.0
+asrashley,1,0,0.0
+assorted chips,1,0,0.0
+astoundify,1,0,0.0
+astropy,1,0,0.0
+asuswrt merlin,1,0,0.0
+asyncapi,1,0,0.0
+atakan au,1,0,0.0
+atampy25,1,0,0.0
+atanas yonkov,1,0,0.0
+atera,1,0,0.0
+atif n,1,0,0.0
+atlasvpn,1,0,0.0
+atm consulting,1,0,0.0
+atos unify,1,0,0.0
+atrocore,1,0,0.0
+attesawp,1,0,0.0
+attorneyonline,1,0,0.0
+atwellpub,1,0,0.0
+auburnforest,1,0,0.0
+aukejomm,1,0,0.0
+aures,1,0,0.0
+automated logic,1,0,0.0
+automatededitor com,1,0,0.0
+automatic1111,1,0,0.0
+automatorwp,1,0,0.0
+automattic jetpack crm team,1,0,0.0
+autowriter,1,0,0.0
+avalex,1,0,0.0
+avast avg,1,0,0.0
+avdor cis,1,0,0.0
+awesome motive,1,0,0.0
+awesome ug,1,0,0.0
+awesomestcode,1,0,0.0
+awesomized,1,0,0.0
+awsm innovations,1,0,0.0
+ayecode wordpress business directory plugins,1,0,0.0
+ayoub media,1,0,0.0
+azukaar,1,0,0.0
+b braun,1,0,0.0
+b r automation,1,0,0.0
+babel,1,0,0.0
+bachmann electronic,1,0,0.0
+bachmann visutec,1,0,0.0
+backdrop contrib,1,0,0.0
+badge team,1,0,0.0
+badhonrocks,1,0,0.0
+baidu,1,0,0.0
+balasaheb bhise,1,0,0.0
+balderdashy,1,0,0.0
+ballcat projects,1,0,0.0
+baptiste plac,1,0,0.0
+baptistearno,1,0,0.0
+baremetrics,1,0,0.0
+barracuda networks,1,0,0.0
+barronwaffles,1,0,0.0
+basecamp,1,0,0.0
+bastho,1,0,0.0
+bastianallgeier,1,0,0.0
+bastianon massimo,1,0,0.0
+bazelbuild,1,0,0.0
+bc security,1,0,0.0
+bdcom,1,0,0.0
+be devious web development,1,0,0.0
+beappsmobile,1,0,0.0
+beckhoff,1,0,0.0
+becton dickson bd,1,0,0.0
+bee,1,0,0.0
+beekeeper studio,1,0,0.0
+beijing netcon,1,0,0.0
+ben sb,1,0,0.0
+benbodhi,1,0,0.0
+benedict b maciej gryniuk,1,0,0.0
+benjamin guy,1,0,0.0
+benoit mercusot,1,0,0.0
+benoitc,1,0,0.0
+benoti,1,0,0.0
+bentley nevada a baker hughes subsidiary,1,0,0.0
+bentoml,1,0,0.0
+bepopiacompliant,1,0,0.0
+bernhard kau,1,0,0.0
+bernhard kux,1,0,0.0
+berocket,1,0,0.0
+bertha ai,1,0,0.0
+best practical solutions,1,0,0.0
+bestaddon com,1,0,0.0
+besttem,1,0,0.0
+betrend and ichiran,1,0,0.0
+bg tek,1,0,0.0
+bhagirath25,1,0,0.0
+bhavik patel,1,0,0.0
+bigcommerce,1,0,0.0
+biges safe life electronics,1,0,0.0
+bigfork,1,0,0.0
+bihell,1,0,0.0
+bill erickson,1,0,0.0
+binarycarpenter,1,0,0.0
+binarystash,1,0,0.0
+biscuit auth,1,0,0.0
+bit assist,1,0,0.0
+bitlydeveloper,1,0,0.0
+bitpressadmin,1,0,0.0
+bitrix,1,0,0.0
+bits and blooms,1,0,0.0
+bjrjk,1,0,0.0
+bkav,1,0,0.0
+bkg,1,0,0.0
+bkmacdaddy designs,1,0,0.0
+black and white digital,1,0,0.0
+black box,1,0,0.0
+blazemeter,1,0,0.0
+bleachbit,1,0,0.0
+blevesearch,1,0,0.0
+blindside networks,1,0,0.0
+blitz js,1,0,0.0
+bloafer,1,0,0.0
+blockmason,1,0,0.0
+blockonomics,1,0,0.0
+blocksmarket,1,0,0.0
+blog2social adenion,1,0,0.0
+blue coral,1,0,0.0
+blue planet,1,0,0.0
+blue yonder,1,0,0.0
+bluecoral,1,0,0.0
+blueglassch,1,0,0.0
+blynk,1,0,0.0
+bma,1,0,0.0
+bmattoso,1,0,0.0
+bmi adult kid calculator,1,0,0.0
+bobbingwide,1,0,0.0
+bobbysmith007,1,0,0.0
+bobthecow,1,0,0.0
+bogdan bendziukov,1,0,0.0
+bogdanfix,1,0,0.0
+boliquan,1,0,0.0
+bon plan gratos,1,0,0.0
+bonitasoft,1,0,0.0
+bony2023,1,0,0.0
+booking activities team,1,0,0.0
+bookingalgorithms,1,0,0.0
+boom,1,0,0.0
+booqable rental,1,0,0.0
+bootstrapped ventures,1,0,0.0
+borgbackup,1,0,0.0
+boris kuzmanov,1,0,0.0
+bosa themes,1,0,0.0
+boston sleep,1,0,0.0
+botanik,1,0,0.0
+boxbilling,1,0,0.0
+boxy studio,1,0,0.0
+boxystudio,1,0,0.0
+bozdoz,1,0,0.0
+bpampuch,1,0,0.0
+bpftrace,1,0,0.0
+bradley b dalina,1,0,0.0
+bradleyfalzon,1,0,0.0
+bradwenqiang,1,0,0.0
+brain storm force,1,0,0.0
+braincert,1,0,0.0
+braincert com,1,0,0.0
+brandbrilliance,1,0,0.0
+brandid,1,0,0.0
+brandonfire,1,0,0.0
+brandonwamboldt,1,0,0.0
+branko borilovic,1,0,0.0
+brantburnett,1,0,0.0
+brave ux,1,0,0.0
+brazenlygeek,1,0,0.0
+brettwooldridge,1,0,0.0
+brewlabs,1,0,0.0
+brian batt,1,0,0.0
+brian chappell,1,0,0.0
+brian d goad,1,0,0.0
+brianjessee,1,0,0.0
+brianmario,1,0,0.0
+bricco,1,0,0.0
+brice capobianco,1,0,0.0
+bricksbuilder,1,0,0.0
+brijesh kothari,1,0,0.0
+brix,1,0,0.0
+brizy io,1,0,0.0
+broadstreet xpress,1,0,0.0
+brokencrust,1,0,0.0
+brondahl,1,0,0.0
+brontobytes,1,0,0.0
+browserify,1,0,0.0
+bryan hadaway,1,0,0.0
+bryan lee,1,0,0.0
+bspkrs,1,0,0.0
+bubka,1,0,0.0
+buddyboss dmcc,1,0,0.0
+buddypress community,1,0,0.0
+builderall team,1,0,0.0
+buildfail,1,0,0.0
+buildwps,1,0,0.0
+bulkgate,1,0,0.0
+bulletin,1,0,0.0
+bullwark,1,0,0.0
+bulutses information,1,0,0.0
+bunny net,1,0,0.0
+burgersoftware,1,0,0.0
+burningx,1,0,0.0
+bustle,1,0,0.0
+butterfly button,1,0,0.0
+buy me a coffee,1,0,0.0
+bwoodsend,1,0,0.0
+by averta,1,0,0.0
+byconsole,1,0,0.0
+bydemes group,1,0,0.0
+bytedance k k,1,0,0.0
+bytedeco,1,0,0.0
+bytesforall,1,0,0.0
+bywater solutions,1,0,0.0
+cachethq,1,0,0.0
+cage web design rolf van gelder,1,0,0.0
+cainor,1,0,0.0
+cainthebest,1,0,0.0
+cakephp,1,0,0.0
+calameo,1,0,0.0
+calculators world,1,0,0.0
+calesanz,1,0,0.0
+calico,1,0,0.0
+calsign,1,0,0.0
+cambium,1,0,0.0
+camille verrier,1,0,0.0
+camilova,1,0,0.0
+campaign monitor,1,0,0.0
+camptocamp,1,0,0.0
+canto,1,0,0.0
+canva,1,0,0.0
+caphyon,1,0,0.0
+capnsquarepants,1,0,0.0
+capsadmin,1,0,0.0
+cardo,1,0,0.0
+caret,1,0,0.0
+careteditor,1,0,0.0
+carlos a sanz,1,0,0.0
+carlos moreira,1,0,0.0
+carlosfazenda,1,0,0.0
+carrrot,1,0,0.0
+cartpauj,1,0,0.0
+casgate,1,0,0.0
+cassia networks,1,0,0.0
+cassproject,1,0,0.0
+catalis,1,0,0.0
+catalyst connect,1,0,0.0
+catch plugins,1,0,0.0
+catch themes,1,0,0.0
+cavo connecting for a safer world,1,0,0.0
+cayenne,1,0,0.0
+cbeust,1,0,0.0
+cc tweaked,1,0,0.0
+cchetanonline,1,0,0.0
+cconover,1,0,0.0
+cea hpc,1,0,0.0
+cedcommerce,1,0,0.0
+ceikay,1,0,0.0
+centic9,1,0,0.0
+centros digitales,1,0,0.0
+cerberus ftp enterprise,1,0,0.0
+cesnet,1,0,0.0
+cevik informatics,1,0,0.0
+cf,1,0,0.0
+cfire24,1,0,0.0
+cgriego,1,0,0.0
+chaijs,1,0,0.0
+chainguard dev,1,0,0.0
+challenge,1,0,0.0
+chameleon power,1,0,0.0
+chandra shekhar sahu,1,0,0.0
+chanjet,1,0,0.0
+chanzhaoyu,1,0,0.0
+charactell,1,0,0.0
+charleskorn,1,0,0.0
+charlestsmith,1,0,0.0
+chart builder team,1,0,0.0
+chasil,1,0,0.0
+chatwork,1,0,0.0
+chbrown,1,0,0.0
+checkemail,1,0,0.0
+checkfront,1,0,0.0
+checkout plugins,1,0,0.0
+chedabob,1,0,0.0
+chemiker,1,0,0.0
+cherishsin,1,0,0.0
+chewkeanho,1,0,0.0
+chiefonboarding,1,0,0.0
+chilexpress,1,0,0.0
+chilidevs,1,0,0.0
+china unicom,1,0,0.0
+chinmoy paul chinmoy29,1,0,0.0
+chirp,1,0,0.0
+chris reynolds,1,0,0.0
+chris richardson,1,0,0.0
+chris roberts,1,0,0.0
+chris yee,1,0,0.0
+chris younger,1,0,0.0
+christian kramer hendrik thole,1,0,0.0
+christian salazar,1,0,0.0
+christina uechi,1,0,0.0
+christof servit,1,0,0.0
+christoph rado,1,0,0.0
+christopher finke,1,0,0.0
+chrisy,1,0,0.0
+chronoengine com,1,0,0.0
+chronosly,1,0,0.0
+churchthemes,1,0,0.0
+chuyencode,1,0,0.0
+cincopa,1,0,0.0
+circuitverse,1,0,0.0
+circutor,1,0,0.0
+citadel,1,0,0.0
+cityboss,1,0,0.0
+ciubotaru,1,0,0.0
+cjvnjde,1,0,0.0
+cksource,1,0,0.0
+claroty,1,0,0.0
+class upload php,1,0,0.0
+claudiosanches,1,0,0.0
+clavaque,1,0,0.0
+cleo,1,0,0.0
+clerk,1,0,0.0
+clever,1,0,0.0
+clever plugins,1,0,0.0
+cleverplugins com,1,0,0.0
+clevertap,1,0,0.0
+clickbar,1,0,0.0
+clickdatos,1,0,0.0
+clipboardagency,1,0,0.0
+clockwork,1,0,0.0
+cloud hypervisor,1,0,0.0
+cloud primero b v,1,0,0.0
+cloudburstmc,1,0,0.0
+cloudevents,1,0,0.0
+cloudfavorites,1,0,0.0
+cloudlinux,1,0,0.0
+cloudreve,1,0,0.0
+cluevo,1,0,0.0
+clusternet,1,0,0.0
+cmc3215,1,0,0.0
+cmoreira,1,0,0.0
+cna:cve-assign@fb.com,1,0,0.0
+cna:cve-coordination@google.com,1,0,0.0
+cna:cybersecurity@bd.com,1,0,0.0
+cna:emo@eclipse.org,1,0,0.0
+cna:infosec@edk2.groups.io,1,0,0.0
+cna:larry0@me.com,1,0,0.0
+cna:product-security@axis.com,1,0,0.0
+cna:productsecurity@jci.com,1,0,0.0
+cna:psirt-info@cyber.jp.nec.com,1,0,0.0
+cna:psirt@arista.com,1,0,0.0
+cna:psirt@bosch.com,1,0,0.0
+cna:psirt@nvidia.com,1,0,0.0
+cna:secteam@freebsd.org,1,0,0.0
+cna:security-alert@sophos.com,1,0,0.0
+cna:security-report@netflix.com,1,0,0.0
+cna:security@mozilla.org,1,0,0.0
+cna:security@nortonlifelock.com,1,0,0.0
+cna:security@openanolis.org,1,0,0.0
+cna:security@trendmicro.com,1,0,0.0
+cneumann,1,0,0.0
+cnoa,1,0,0.0
+cobbler,1,0,0.0
+cocagne,1,0,0.0
+cockpit cms,1,0,0.0
+cocos,1,0,0.0
+code cloudfoundry org archiver,1,0,0.0
+codeandmore,1,0,0.0
+codeastrology team,1,0,0.0
+codeat,1,0,0.0
+codebangers,1,0,0.0
+codecentric,1,0,0.0
+codection,1,0,0.0
+coded commerce,1,0,0.0
+codedrafty,1,0,0.0
+codeer,1,0,0.0
+codeflavors,1,0,0.0
+codehaus plexus,1,0,0.0
+codeisawesome,1,0,0.0
+codeixer,1,0,0.0
+codekraft,1,0,0.0
+codeless,1,0,0.0
+codemenschen,1,0,0.0
+codemiq,1,0,0.0
+codemshop,1,0,0.0
+codepeople paypaldev,1,0,0.0
+coder,1,0,0.0
+coderd repos,1,0,0.0
+codesolz,1,0,0.0
+codesys v3,1,0,0.0
+codeworkweb,1,0,0.0
+codex m,1,0,0.0
+codex team,1,0,0.0
+codexshaper,1,0,0.0
+codez,1,0,0.0
+codingjoe,1,0,0.0
+coleds,1,0,0.0
+collect chat,1,0,0.0
+collectchat,1,0,0.0
+collectiveaccess,1,0,0.0
+columbiasoft,1,0,0.0
+combined charging system,1,0,0.0
+cometd,1,0,0.0
+commenthol,1,0,0.0
+commscope,1,0,0.0
+concerted action,1,0,0.0
+conduit rust,1,0,0.0
+conlabzgmbh,1,0,0.0
+connekthq,1,0,0.0
+consensu io,1,0,0.0
+consensys,1,0,0.0
+consoletvs,1,0,0.0
+constantoine,1,0,0.0
+contact form with captcha,1,0,0.0
+contact form wpmanageninja,1,0,0.0
+contempoinc,1,0,0.0
+contemporary control system,1,0,0.0
+contemporary controls,1,0,0.0
+contribsys,1,0,0.0
+contrid,1,0,0.0
+controlbyweb,1,0,0.0
+convertbox,1,0,0.0
+conveythis,1,0,0.0
+cookie information a s,1,0,0.0
+cookiehub,1,0,0.0
+cookieinformation,1,0,0.0
+copperwall,1,0,0.0
+corazawaf,1,0,0.0
+corefortress,1,0,0.0
+corehr,1,0,0.0
+coremobile,1,0,0.0
+corewcf,1,0,0.0
+corincerami,1,0,0.0
+cortexproject,1,0,0.0
+corveda,1,0,0.0
+corydolphin,1,0,0.0
+covesa,1,0,0.0
+cowell information system,1,0,0.0
+coyav travel,1,0,0.0
+cozmoslabs madalin ungureanu antohe cristian,1,0,0.0
+cozmoslabs razvan mocanu madalin ungureanu cristophor hurduban,1,0,0.0
+cozmoslabs sareiodata,1,0,0.0
+cozyvision1,1,0,0.0
+cradlepoint,1,0,0.0
+crafatar,1,0,0.0
+crafthemes,1,0,0.0
+craig hewitt,1,0,0.0
+craigk5n,1,0,0.0
+crawlspider,1,0,0.0
+crealogix,1,0,0.0
+createit pl,1,0,0.0
+createplugin,1,0,0.0
+creative motion will bontrager,1,0,0.0
+creative solutions net,1,0,0.0
+creative themes,1,0,0.0
+creativeminds,1,0,0.0
+creatomatic,1,0,0.0
+crestron,1,0,0.0
+crisp,1,0,0.0
+crisp live chat,1,0,0.0
+criss swaim,1,0,0.0
+criticalmoments,1,0,0.0
+crossbeam rs,1,0,0.0
+crowdstrike,1,0,0.0
+cruddiy,1,0,0.0
+cryoutcreations,1,0,0.0
+csaba kissi,1,0,0.0
+csliuwy,1,0,0.0
+cssigniter team,1,0,0.0
+cssigniterteam,1,0,0.0
+ctf hacker,1,0,0.0
+cubewp,1,0,0.0
+culqi,1,0,0.0
+curiosity org,1,0,0.0
+currency wiki,1,0,0.0
+cusmin,1,0,0.0
+custom4web,1,0,0.0
+customily,1,0,0.0
+cuyz,1,0,0.0
+cve 2024 36480,1,0,0.0
+cwicly builder sl,1,0,0.0
+cxasm,1,0,0.0
+cxong,1,0,0.0
+cyanomiko,1,0,0.0
+cybellum,1,0,0.0
+cyber domain ontology,1,0,0.0
+cyberaz0r,1,0,0.0
+cyberus labs,1,0,0.0
+cyclonetheme,1,0,0.0
+cyface,1,0,0.0
+cyle conoly,1,0,0.0
+cytech,1,0,0.0
+d arteweb,1,0,0.0
+d relton,1,0,0.0
+d3wp,1,0,0.0
+dablelv,1,0,0.0
+daev tech,1,0,0.0
+dain,1,0,0.0
+daisuke takahashi extend wings,1,0,0.0
+damian gora,1,0,0.0
+damir calusic,1,0,0.0
+dan dulaney,1,0,0.0
+dan s art,1,0,0.0
+dan009,1,0,0.0
+dang ngoc binh,1,0,0.0
+daniel mores a huizinga,1,0,0.0
+daniele de rosa,1,0,0.0
+danielparks,1,0,0.0
+dannie herdyawan,1,0,0.0
+danny hearnah chubbyninjaa,1,0,0.0
+danswer ai,1,0,0.0
+danynab,1,0,0.0
+darrenofficial,1,0,0.0
+dart,1,0,0.0
+darylldoyle,1,0,0.0
+dasan networks,1,0,0.0
+daschtour,1,0,0.0
+database,1,0,0.0
+datafeedr com,1,0,0.0
+datalens tech,1,0,0.0
+dattateccom,1,0,0.0
+daurnimator,1,0,0.0
+dave jesch,1,0,0.0
+dave kiss,1,0,0.0
+dave ross,1,0,0.0
+davedoesdev,1,0,0.0
+davemckain,1,0,0.0
+daveshine,1,0,0.0
+david anderson,1,0,0.0
+david de boer,1,0,0.0
+david pokorny,1,0,0.0
+david st ckl,1,0,0.0
+david stockl,1,0,0.0
+david voswinkel,1,0,0.0
+davidmoreno,1,0,0.0
+davidoffneal,1,0,0.0
+davidsword,1,0,0.0
+davidvongries,1,0,0.0
+davinder singh,1,0,0.0
+dbartholomae,1,0,0.0
+dbrisinajumi,1,0,0.0
+dbt labs,1,0,0.0
+dd wrt,1,0,0.0
+dd32,1,0,0.0
+dean oakley,1,0,0.0
+debaat,1,0,0.0
+debiki,1,0,0.0
+debug js,1,0,0.0
+decentraland,1,0,0.0
+decon digital,1,0,0.0
+deconf net,1,0,0.0
+dedsecinside,1,0,0.0
+deepakkite,1,0,0.0
+deepen bajracharya,1,0,0.0
+deepset ai,1,0,0.0
+degamisu,1,0,0.0
+deis,1,0,0.0
+delabon,1,0,0.0
+delgan,1,0,0.0
+delhivery,1,0,0.0
+delicious brains,1,0,0.0
+delower,1,0,0.0
+deltra electronics,1,0,0.0
+deluxethemes,1,0,0.0
+demon1a,1,0,0.0
+demososo,1,0,0.0
+dena,1,0,0.0
+denis buka,1,0,0.0
+denis kobozev,1,0,0.0
+denishua,1,0,0.0
+denk,1,0,0.0
+denosaurs,1,0,0.0
+denx engineering,1,0,0.0
+denzel chia phire design,1,0,0.0
+deothemes,1,0,0.0
+derhansen,1,0,0.0
+desertsnowman,1,0,0.0
+desertsnowman shelob9,1,0,0.0
+designextreme,1,0,0.0
+designful,1,0,0.0
+designinvento,1,0,0.0
+designplus,1,0,0.0
+designs code,1,0,0.0
+designwall,1,0,0.0
+destiny gg,1,0,0.0
+detekt,1,0,0.0
+dev xiligroup com ms,1,0,0.0
+devaldi,1,0,0.0
+devcert,1,0,0.0
+devent,1,0,0.0
+devexpress,1,0,0.0
+devfelixmoira,1,0,0.0
+devscred,1,0,0.0
+devttys0,1,0,0.0
+dexta,1,0,0.0
+dextorlobo,1,0,0.0
+deye,1,0,0.0
+deytek informatics,1,0,0.0
+dfirkuiper,1,0,0.0
+dgcult,1,0,0.0
+dgewirtz,1,0,0.0
+dgraph io,1,0,0.0
+dgwyer,1,0,0.0
+dharmesh patel,1,0,0.0
+dholovnia,1,0,0.0
+diaenerrgie,1,0,0.0
+didi,1,0,0.0
+digamber pradhan,1,0,0.0
+digi,1,0,0.0
+digi international,1,0,0.0
+digita information,1,0,0.0
+digital agency,1,0,0.0
+digital communications,1,0,0.0
+digital peak com,1,0,0.0
+digital strategy,1,0,0.0
+digitalblue,1,0,0.0
+digitaldruid net,1,0,0.0
+digitalmeactivecampaign,1,0,0.0
+digitalpersona,1,0,0.0
+dimtion,1,0,0.0
+dinesh karki,1,0,0.0
+dipak c gajjar,1,0,0.0
+dirk1983,1,0,0.0
+diso development team,1,0,0.0
+divspot,1,0,0.0
+djamio1988,1,0,0.0
+django markdownx,1,0,0.0
+django ses,1,0,0.0
+django wiki,1,0,0.0
+djeet,1,0,0.0
+dmytriy cooperman,1,0,0.0
+dns stats,1,0,0.0
+dobos,1,0,0.0
+doc2k,1,0,0.0
+docolli,1,0,0.0
+dogecoin,1,0,0.0
+dogukanurker,1,0,0.0
+dokaninc,1,0,0.0
+domainsupport,1,0,0.0
+don benjamin,1,0,0.0
+don crowther,1,0,0.0
+dooblou,1,0,0.0
+doomsider,1,0,0.0
+doorkeeper gem,1,0,0.0
+dot tech,1,0,0.0
+dotmesh io,1,0,0.0
+dotsquares,1,0,0.0
+doublesharp,1,0,0.0
+douzone bizon,1,0,0.0
+download manager,1,0,0.0
+dps telecom,1,0,0.0
+dpup,1,0,0.0
+draftpress,1,0,0.0
+dragon path,1,0,0.0
+dragonexpert,1,0,0.0
+drazraeltod,1,0,0.0
+drd fleet leasing,1,0,0.0
+dream,1,0,0.0
+dream security,1,0,0.0
+dream0x01,1,0,0.0
+dreamfox,1,0,0.0
+dreryk sp z o o,1,0,0.0
+drogatkin,1,0,0.0
+drupal org,1,0,0.0
+drybjed,1,0,0.0
+dspreen,1,0,0.0
+dstar2018,1,0,0.0
+duc bui quang,1,0,0.0
+duet display,1,0,0.0
+duke git,1,0,0.0
+dulldusk,1,0,0.0
+duncanmcclean,1,0,0.0
+dunhakdis,1,0,0.0
+dupeoff com,1,0,0.0
+duplicator,1,0,0.0
+dwusercom,1,0,0.0
+dylan blokhuis,1,0,0.0
+dylanjkotze,1,0,0.0
+dynacase,1,0,0.0
+dynamicweblab,1,0,0.0
+e contract,1,0,0.0
+e webinformationco,1,0,0.0
+e2pdf,1,0,0.0
+earclink,1,0,0.0
+easeus,1,0,0.0
+easy form team,1,0,0.0
+easycorp,1,0,0.0
+easyphp,1,0,0.0
+easyrecipe,1,0,0.0
+easyregistrationforms,1,0,0.0
+easytor applications,1,0,0.0
+easyuse,1,0,0.0
+eatan,1,0,0.0
+eazyplugins,1,0,0.0
+ebics java,1,0,0.0
+ec web,1,0,0.0
+echo plugins,1,0,0.0
+echoplugins,1,0,0.0
+ecies,1,0,0.0
+eclipse californium,1,0,0.0
+eclipse leshan,1,0,0.0
+ecoscentric,1,0,0.0
+edgexfoundry,1,0,0.0
+editorconfig,1,0,0.0
+edm informatics,1,0,0.0
+edmundhung,1,0,0.0
+edoc intelligence,1,0,0.0
+edrhyme,1,0,0.0
+eemeli,1,0,0.0
+eemitch,1,0,0.0
+effectindex,1,0,0.0
+eftakhairul islam sirajus salayhin,1,0,0.0
+eg secure solutions,1,0,0.0
+egehan security,1,0,0.0
+ehuacui,1,0,0.0
+eightweb interactive,1,0,0.0
+eirudo,1,0,0.0
+eji osigwe,1,0,0.0
+ekakin,1,0,0.0
+ekino bilgi teknolojileri,1,0,0.0
+ekojr,1,0,0.0
+ekol informatics,1,0,0.0
+el tiempo,1,0,0.0
+elan,1,0,0.0
+elastic email sender,1,0,0.0
+elbanyaoui,1,0,0.0
+election services esc,1,0,0.0
+electron pdf,1,0,0.0
+electron userland,1,0,0.0
+elegant digital solutions,1,0,0.0
+elementinvader,1,0,0.0
+elementor com,1,0,0.0
+eli scheetz,1,0,0.0
+elightup,1,0,0.0
+elijahharry,1,0,0.0
+elise bosse,1,0,0.0
+elite,1,0,0.0
+elliotvs,1,0,0.0
+ellucian,1,0,0.0
+elra,1,0,0.0
+elsight,1,0,0.0
+emailgpt,1,0,0.0
+embano1,1,0,0.0
+embed swagger,1,0,0.0
+embedsocial,1,0,0.0
+embedthis,1,0,0.0
+embysupport,1,0,0.0
+emicklei,1,0,0.0
+emmanuel georjon,1,0,0.0
+emmflo,1,0,0.0
+emta grup,1,0,0.0
+enartia,1,0,0.0
+encourage,1,0,0.0
+endojs,1,0,0.0
+endortrails,1,0,0.0
+enea overclokk,1,0,0.0
+enej bajgoric gagan sandhu ctlt dev,1,0,0.0
+engineering consultancy machine equipment,1,0,0.0
+enigmaweb,1,0,0.0
+enocean,1,0,0.0
+ensdomains,1,0,0.0
+entech,1,0,0.0
+enterprisedb,1,0,0.0
+enterprisedt,1,0,0.0
+entronad,1,0,0.0
+envaysoft,1,0,0.0
+eprintsug,1,0,0.0
+eprolo,1,0,0.0
+epsiloncool,1,0,0.0
+erez hadas sonnenschein,1,0,0.0
+eric alli,1,0,0.0
+eric martin,1,0,0.0
+eric oliver m chler,1,0,0.0
+erikoglu,1,0,0.0
+erin garscadden,1,0,0.0
+erlef,1,0,0.0
+ermig1979,1,0,0.0
+erohtar,1,0,0.0
+erpnext,1,0,0.0
+ertano,1,0,0.0
+esapi,1,0,0.0
+escan,1,0,0.0
+esdoc,1,0,0.0
+esemono,1,0,0.0
+essential addons for elementor lite,1,0,0.0
+essentialplugin,1,0,0.0
+essitco,1,0,0.0
+esstat17,1,0,0.0
+estomed sp z o o,1,0,0.0
+eta dev,1,0,0.0
+etcd io,1,0,0.0
+eth account,1,0,0.0
+ethex,1,0,0.0
+ethitter,1,0,0.0
+etison,1,0,0.0
+etms,1,0,0.0
+eufy,1,0,0.0
+eupago,1,0,0.0
+european chemicals agency,1,0,0.0
+european environment agency,1,0,0.0
+eurosoft sp z o o,1,0,0.0
+evandro machado,1,0,0.0
+evarisk,1,0,0.0
+event espresso,1,0,0.0
+eventespresso,1,0,0.0
+events calendar,1,0,0.0
+eventsource,1,0,0.0
+eventstore,1,0,0.0
+everestthemes,1,0,0.0
+everthemess,1,0,0.0
+everywhere,1,0,0.0
+evgen yurchenko,1,0,0.0
+evolution events,1,0,0.0
+ewen lbh,1,0,0.0
+ewxrjk,1,0,0.0
+exactly www,1,0,0.0
+exactmetrics,1,0,0.0
+exafunction,1,0,0.0
+exagate,1,0,0.0
+excalidraw,1,0,0.0
+exciting,1,0,0.0
+exemys,1,0,0.0
+exifography,1,0,0.0
+exo,1,0,0.0
+explorerplusplus,1,0,0.0
+expo io,1,0,0.0
+exportfeed com,1,0,0.0
+expressionengine,1,0,0.0
+expressjs,1,0,0.0
+extendwp,1,0,0.0
+extplorer net,1,0,0.0
+eyoom,1,0,0.0
+ez suite,1,0,0.0
+ezsystems,1,0,0.0
+fabarea,1,0,0.0
+fabian von allmen,1,0,0.0
+fabio marzocca,1,0,0.0
+fabio rinaldi,1,0,0.0
+facelessuser,1,0,0.0
+factominer,1,0,0.0
+fahad mahmood alexandre faustino,1,0,0.0
+faikdjikic,1,0,0.0
+faktor vier,1,0,0.0
+famethemes,1,0,0.0
+faraz quazi,1,0,0.0
+farhannoor,1,0,0.0
+farmakom,1,0,0.0
+farmbot,1,0,0.0
+farsight tech nordic,1,0,0.0
+fasterxml,1,0,0.0
+fastline media,1,0,0.0
+fastwpspeed,1,0,0.0
+fat rat,1,0,0.0
+fatcatapps,1,0,0.0
+fatfreecrm,1,0,0.0
+faturamatik,1,0,0.0
+feathersjs,1,0,0.0
+federicoiosue,1,0,0.0
+fedor urvanov aram kocharyan,1,0,0.0
+fedora project,1,0,0.0
+felix moira,1,0,0.0
+felixschwarz,1,0,0.0
+feminer,1,0,0.0
+fermyon,1,0,0.0
+fernando briano,1,0,0.0
+fernhill,1,0,0.0
+fernus informatics,1,0,0.0
+feross,1,0,0.0
+festi team,1,0,0.0
+ffmpeg,1,0,0.0
+ffri security,1,0,0.0
+fgribreau,1,0,0.0
+field logic,1,0,0.0
+fieldcomm group,1,0,0.0
+file manager by bit form team,1,0,0.0
+filipe seabra,1,0,0.0
+filippo io nistec,1,0,0.0
+filips123,1,0,0.0
+filter custom fields taxonomies light,1,0,0.0
+financial services agency,1,0,0.0
+finixbit,1,0,0.0
+finnj,1,0,0.0
+firassaidi,1,0,0.0
+firebase,1,0,0.0
+firebirdsql,1,0,0.0
+firecracker microvm,1,0,0.0
+firelightwp,1,0,0.0
+first net japan,1,0,0.0
+fixbd,1,0,0.0
+fkrauthan,1,0,0.0
+flar2,1,0,0.0
+flash cgi,1,0,0.0
+flickdevs,1,0,0.0
+flink extended,1,0,0.0
+flitto,1,0,0.0
+florian fkrauthan krauthan,1,0,0.0
+florin arjocu,1,0,0.0
+flothemesplugins,1,0,0.0
+flowdee,1,0,0.0
+flowfact,1,0,0.0
+fluent,1,0,0.0
+fluent bit,1,0,0.0
+fluture js,1,0,0.0
+flyingweb,1,0,0.0
+flyn san,1,0,0.0
+flyzoo,1,0,0.0
+fmahmood,1,0,0.0
+fmeaddons,1,0,0.0
+folio,1,0,0.0
+fonttools,1,0,0.0
+foodcoopshop,1,0,0.0
+fooevents,1,0,0.0
+forcedotcom,1,0,0.0
+forescout,1,0,0.0
+forge12 interactive,1,0,0.0
+form plugin team ghozylab,1,0,0.0
+formfacade,1,0,0.0
+formforall,1,0,0.0
+formilla,1,0,0.0
+formsite,1,0,0.0
+fortect,1,0,0.0
+fortunefield,1,0,0.0
+forum one,1,0,0.0
+forumhulp,1,0,0.0
+forwardflip,1,0,0.0
+fotobook,1,0,0.0
+fotomoto,1,0,0.0
+foucciano,1,0,0.0
+foxoverflow,1,0,0.0
+foxskav,1,0,0.0
+fr d ric sheedy,1,0,0.0
+franciscop,1,0,0.0
+franklin electric fueling,1,0,0.0
+fredsmith,1,0,0.0
+free foundation,1,0,0.0
+free5gc,1,0,0.0
+freebpx,1,0,0.0
+freedom of press,1,0,0.0
+freedomofpress,1,0,0.0
+freefloat,1,0,0.0
+freephp 1,1,0,0.0
+freifunk gluon,1,0,0.0
+freshlight lab,1,0,0.0
+freshworks,1,0,0.0
+frhed,1,0,0.0
+fridgecow,1,0,0.0
+friendlyelec,1,0,0.0
+frioux,1,0,0.0
+frontaccounting,1,0,0.0
+fruitfulcode,1,0,0.0
+fsheedy,1,0,0.0
+fujidenolo solutions,1,0,0.0
+fujifilm business innovation,1,0,0.0
+fumon,1,0,0.0
+furbo,1,0,0.0
+furqan,1,0,0.0
+fusionpbx,1,0,0.0
+fusionplugin,1,0,0.0
+fuzzy,1,0,0.0
+g j p,1,0,0.0
+gabe livan,1,0,0.0
+gabia,1,0,0.0
+gabriel somoza joseph fitzgibbons,1,0,0.0
+gabriels,1,0,0.0
+gacjie,1,0,0.0
+gagliardetto,1,0,0.0
+gajshield,1,0,0.0
+galerio urda,1,0,0.0
+galette,1,0,0.0
+gallerycreator,1,0,0.0
+ganesh chandra,1,0,0.0
+garbowza,1,0,0.0
+garo,1,0,0.0
+garuda linux,1,0,0.0
+gary jezorski,1,0,0.0
+gautam thapar,1,0,0.0
+gdragon,1,0,0.0
+gecka,1,0,0.0
+geek code lab,1,0,0.0
+gelform,1,0,0.0
+gemini labs,1,0,0.0
+geminilabs,1,0,0.0
+gen,1,0,0.0
+generex computervertriebsgesellschaft mbh,1,0,0.0
+generic model organism database project,1,0,0.0
+genetec,1,0,0.0
+genetech solutions,1,0,0.0
+genialsouls,1,0,0.0
+geopython,1,0,0.0
+george gecewicz,1,0,0.0
+george pattihis,1,0,0.0
+geosolutions it,1,0,0.0
+geowebcache,1,0,0.0
+gerapy,1,0,0.0
+german krutov,1,0,0.0
+gesellix,1,0,0.0
+getbowtied,1,0,0.0
+getbutton,1,0,0.0
+getflowpaper,1,0,0.0
+getformwork,1,0,0.0
+getsimple,1,0,0.0
+getsocial s a,1,0,0.0
+gg tss implementations,1,0,0.0
+ggerganov,1,0,0.0
+gggggggg,1,0,0.0
+ggnomes,1,0,0.0
+giannopoulos kostas,1,0,0.0
+gift up,1,0,0.0
+gigamon,1,0,0.0
+ginger plugins,1,0,0.0
+ginuerzh,1,0,0.0
+giorgos sarigiannidis,1,0,0.0
+giovambattista fazioli,1,0,0.0
+gips nita,1,0,0.0
+gira,1,0,0.0
+git ecosystem,1,0,0.0
+git lfs,1,0,0.0
+github com artdarek go unzip,1,0,0.0
+github com aws aws sdk go,1,0,0.0
+github com btcsuite go socks,1,0,0.0
+github com cloudflare golz4,1,0,0.0
+github com dinever golf,1,0,0.0
+github com ecnepsnai web,1,0,0.0
+github com flynn noise,1,0,0.0
+github com go resty resty v2,1,0,0.0
+github com goadesign goa,1,0,0.0
+github com gorilla handlers,1,0,0.0
+github com ipld go codec dagpb,1,0,0.0
+github com justinas nosurf,1,0,0.0
+github com labstack echo v4,1,0,0.0
+github com masterminds goutils,1,0,0.0
+github com mojocn base64captcha,1,0,0.0
+github com nanobox io golang nanoauth,1,0,0.0
+github com ntbosscher gobase,1,0,0.0
+github com revel revel,1,0,0.0
+github com robbert229 jwt,1,0,0.0
+github com robotsandpencils go saml,1,0,0.0
+github com shamaton msgpack v2,1,0,0.0
+github com shiyanhui dht,1,0,0.0
+github com tendermint tendermint,1,0,0.0
+github com whyrusleeping tar utils,1,0,0.0
+github com yi ge unzip,1,0,0.0
+githuis,1,0,0.0
+gitpod,1,0,0.0
+gitsquared,1,0,0.0
+gitter badger,1,0,0.0
+glb,1,0,0.0
+glidernet,1,0,0.0
+global notification bar,1,0,0.0
+global scape,1,0,0.0
+glorylion,1,0,0.0
+glowlogix,1,0,0.0
+glox,1,0,0.0
+gluten,1,0,0.0
+gluwa,1,0,0.0
+gm information,1,0,0.0
+gmdragonx,1,0,0.0
+gmo internet group,1,0,0.0
+gnome,1,0,0.0
+gnpublisher,1,0,0.0
+go jose,1,0,0.0
+go prayer,1,0,0.0
+go4rayyan,1,0,0.0
+gohugoio,1,0,0.0
+golang org x text,1,0,0.0
+goldaddons,1,0,0.0
+goldbroker com,1,0,0.0
+gomarkdown,1,0,0.0
+gomo,1,0,0.0
+gonahkar,1,0,0.0
+goodbarber,1,0,0.0
+google chrome labs,1,0,0.0
+google cloud,1,0,0.0
+google maps v3 shortcode,1,0,0.0
+googlecloudplatform,1,0,0.0
+gookit,1,0,0.0
+gophergala,1,0,0.0
+gophish,1,0,0.0
+gost engine,1,0,0.0
+gotify,1,0,0.0
+govee,1,0,0.0
+gowebsmarty,1,0,0.0
+gperson,1,0,0.0
+gpsd,1,0,0.0
+grade us,1,0,0.0
+grandplugins,1,0,0.0
+grant kimball,1,0,0.0
+graph gophers,1,0,0.0
+graphisoft,1,0,0.0
+graphql rust,1,0,0.0
+gravity wiz,1,0,0.0
+green rocket security,1,0,0.0
+greenplum db,1,0,0.0
+greentreelabs,1,0,0.0
+greg priday,1,0,0.0
+gregross,1,0,0.0
+growthbook,1,0,0.0
+grup arge energy and control,1,0,0.0
+grupo alumne,1,0,0.0
+gsheetconnector,1,0,0.0
+gsmith,1,0,0.0
+gt3 soluciones,1,0,0.0
+gt3themes,1,0,0.0
+gturri,1,0,0.0
+guangdong baolun electronics,1,0,0.0
+guangzhou yingke electronic,1,0,0.0
+guardgiant brute force protection,1,0,0.0
+guelben,1,0,0.0
+guido,1,0,0.0
+guillemant david,1,0,0.0
+guizhou,1,0,0.0
+gullseye,1,0,0.0
+gumroad,1,0,0.0
+gurcharan singh,1,0,0.0
+gurgunday,1,0,0.0
+gus sevilla,1,0,0.0
+gutengeek,1,0,0.0
+gutenify,1,0,0.0
+gvectors,1,0,0.0
+gym management system project,1,0,0.0
+gztimewalker,1,0,0.0
+h c mingham smith,1,0,0.0
+h2database,1,0,0.0
+habibur rahman,1,0,0.0
+haet,1,0,0.0
+hahncreativegroup,1,0,0.0
+hail is,1,0,0.0
+haivision,1,0,0.0
+hakeemnala,1,0,0.0
+hakimel,1,0,0.0
+hal gatewood,1,0,0.0
+halmat,1,0,0.0
+halulu,1,0,0.0
+hamba,1,0,0.0
+hammock,1,0,0.0
+hanbiro,1,0,0.0
+handysoft,1,0,0.0
+hangzhou hopechart iot,1,0,0.0
+hannes etzelstorfer codemiq,1,0,0.0
+hans van eijsden niwreg,1,0,0.0
+hanssak,1,0,0.0
+haokekeji,1,0,0.0
+hapijs,1,0,0.0
+happy addons,1,0,0.0
+happy coders,1,0,0.0
+happybox,1,0,0.0
+happykite,1,0,0.0
+happyman,1,0,0.0
+haproxy,1,0,0.0
+hardik chavada,1,0,0.0
+hardik kalathiya,1,0,0.0
+harknell,1,0,0.0
+harmonic design,1,0,0.0
+harmr,1,0,0.0
+harrystech,1,0,0.0
+harvest,1,0,0.0
+hasura,1,0,0.0
+havelsan,1,0,0.0
+hazelcast,1,0,0.0
+hcabrera,1,0,0.0
+hcaptcha,1,0,0.0
+healthchecks,1,0,0.0
+hecheng,1,0,0.0
+hedef tracking,1,0,0.0
+heidenhain,1,0,0.0
+heights telecom,1,0,0.0
+heimdal,1,0,0.0
+helgatheviking,1,0,0.0
+helloasso,1,0,0.0
+helpdeskz,1,0,0.0
+henryholtgeerts,1,0,0.0
+henschen associates,1,0,0.0
+hercules design,1,0,0.0
+hesburgh libraries of notre dame,1,0,0.0
+heureka group,1,0,0.0
+hewarhewlett packard enterprise hpe,1,0,0.0
+hewlett packer enterprise hpe,1,0,0.0
+hex workshop,1,0,0.0
+heyewei,1,0,0.0
+hgzojer,1,0,0.0
+hhurz,1,0,0.0
+hicos,1,0,0.0
+hidden depth,1,0,0.0
+hidekazu ishikawa,1,0,0.0
+hideki tanaka,1,0,0.0
+highlight,1,0,0.0
+hikashop com,1,0,0.0
+hillstone,1,0,0.0
+himalaya saxena,1,0,0.0
+himanshu,1,0,0.0
+himanshu parashar,1,0,0.0
+himiklab,1,0,0.0
+himitzh,1,0,0.0
+hipcam,1,0,0.0
+hit reach,1,0,0.0
+hitron dvr,1,0,0.0
+hiwin,1,0,0.0
+hoffie,1,0,0.0
+holded,1,0,0.0
+holdennb,1,0,0.0
+holithemes,1,0,0.0
+homescript,1,0,0.0
+hongjing,1,0,0.0
+hopsoft,1,0,0.0
+horiondigital,1,0,0.0
+horovod,1,0,0.0
+hosseinhashemi,1,0,0.0
+host engineering,1,0,0.0
+hostinger,1,0,0.0
+hot themes,1,0,0.0
+hotjar,1,0,0.0
+hpi information,1,0,0.0
+htc,1,0,0.0
+htdat,1,0,0.0
+htmlunit,1,0,0.0
+htplugins,1,0,0.0
+http4s,1,0,0.0
+https adsanityplugin com,1,0,0.0
+https fooplugins com,1,0,0.0
+https github com mlwebtechnologies,1,0,0.0
+https github com stleary json java,1,0,0.0
+hu manity,1,0,0.0
+hu60t,1,0,0.0
+hualai xiaofang,1,0,0.0
+huandu,1,0,0.0
+huashi,1,0,0.0
+hughsk,1,0,0.0
+huiran,1,0,0.0
+hunter2 contributors,1,0,0.0
+hupe13,1,0,0.0
+hydrian,1,0,0.0
+hyland,1,0,0.0
+hyper,1,0,0.0
+hyperadev,1,0,0.0
+hypersql database,1,0,0.0
+hyundai,1,0,0.0
+i plug,1,0,0.0
+i3thuan5,1,0,0.0
+iain poulson,1,0,0.0
+iamdroppy,1,0,0.0
+ian haycox,1,0,0.0
+ian kennerley,1,0,0.0
+ian sadovy,1,0,0.0
+ibabar,1,0,0.0
+ibenic,1,0,0.0
+iboss,1,0,0.0
+ibotpeaches,1,0,0.0
+icecoder,1,0,0.0
+icehrm,1,0,0.0
+icepay,1,0,0.0
+icom,1,0,0.0
+iconics and mitsubishi electric,1,0,0.0
+iconicwp,1,0,0.0
+icontrolwp,1,0,0.0
+icopydoc,1,0,0.0
+icp das,1,0,0.0
+id project and consultancy services,1,0,0.0
+ideabox creations,1,0,0.0
+idisplay,1,0,0.0
+idmsistemas,1,0,0.0
+idopesok,1,0,0.0
+ieplexus,1,0,0.0
+iet ou,1,0,0.0
+iflychat team,1,0,0.0
+ifmeorg,1,0,0.0
+igamingmodules,1,0,0.0
+igor benic,1,0,0.0
+igor buyanov,1,0,0.0
+ihomefinder,1,0,0.0
+iish,1,0,0.0
+ijoomla com,1,0,0.0
+iksweb,1,0,0.0
+ilicmiljan,1,0,0.0
+illumio,1,0,0.0
+imbrn,1,0,0.0
+imgproxy,1,0,0.0
+imou,1,0,0.0
+impactpixel,1,0,0.0
+imran sayed,1,0,0.0
+in toto,1,0,0.0
+inavitas,1,0,0.0
+include,1,0,0.0
+indeed engineering,1,0,0.0
+indianic,1,0,0.0
+indico,1,0,0.0
+inex,1,0,0.0
+infinite uploads,1,0,0.0
+infinitietech,1,0,0.0
+infod74,1,0,0.0
+infogami,1,0,0.0
+infoline,1,0,0.0
+infomaniak network,1,0,0.0
+informalsystems,1,0,0.0
+infosatech,1,0,0.0
+infotelglpi,1,0,0.0
+infotheme,1,0,0.0
+ininet,1,0,0.0
+inkthemescom,1,0,0.0
+innate images,1,0,0.0
+innologi,1,0,0.0
+innosa,1,0,0.0
+innovative solutions,1,0,0.0
+inohom,1,0,0.0
+inoplugs,1,0,0.0
+inpersttion,1,0,0.0
+inprax,1,0,0.0
+inqsys,1,0,0.0
+instipod,1,0,0.0
+integrated control,1,0,0.0
+integration objects,1,0,0.0
+intellectualsites,1,0,0.0
+interactivegeomaps,1,0,0.0
+interfacelab,1,0,0.0
+internalerror503,1,0,0.0
+internet initiative japan,1,0,0.0
+internet marketing dojo,1,0,0.0
+intoxstudio,1,0,0.0
+intrado,1,0,0.0
+inunosinsi,1,0,0.0
+invernyx,1,0,0.0
+ioannup,1,0,0.0
+ionuticlanzan,1,0,0.0
+iovisor,1,0,0.0
+ipekyolu,1,0,0.0
+ipfire project,1,0,0.0
+ipld,1,0,0.0
+ipti,1,0,0.0
+ipushpull,1,0,0.0
+iqbalrony,1,0,0.0
+iqonicdesign,1,0,0.0
+irina sokolovskaya,1,0,0.0
+ironcad,1,0,0.0
+irrdnet,1,0,0.0
+isaacs,1,0,0.0
+ishanverma,1,0,0.0
+isharer and upredsun,1,0,0.0
+isoftforce,1,0,0.0
+israelb1,1,0,0.0
+issabel,1,0,0.0
+it path solutions,1,0,0.0
+it path solutions pvt,1,0,0.0
+it rays,1,0,0.0
+iterative,1,0,0.0
+itext,1,0,0.0
+itop,1,0,0.0
+itrs group,1,0,0.0
+ityouknow,1,0,0.0
+iulia cazan,1,0,0.0
+ivijanstefan,1,0,0.0
+ivpn,1,0,0.0
+izmir katip celebi university,1,0,0.0
+izmir katip elebi university,1,0,0.0
+j nowak,1,0,0.0
+j onasjones,1,0,0.0
+j s communication,1,0,0.0
+j s communications,1,0,0.0
+j0hnsmith,1,0,0.0
+jack kitterhing,1,0,0.0
+jackmail sarbacane,1,0,0.0
+jaed mosharraf pluginbazar team,1,0,0.0
+james irving swift,1,0,0.0
+james lao,1,0,0.0
+james mehorter,1,0,0.0
+jamesmartin,1,0,0.0
+jamf,1,0,0.0
+jamie poitra,1,0,0.0
+jamieblomerus,1,0,0.0
+jan peter lambeck 3uu,1,0,0.0
+janis elsts,1,0,0.0
+janko,1,0,0.0
+jannis thuemmig,1,0,0.0
+jason bobich,1,0,0.0
+jason lau,1,0,0.0
+jason rouet,1,0,0.0
+jasonraimondi,1,0,0.0
+jasper,1,0,0.0
+jatacid,1,0,0.0
+javaezlib,1,0,0.0
+javik,1,0,0.0
+jbahlquist,1,0,0.0
+jbl,1,0,0.0
+jc development team,1,0,0.0
+jcodex,1,0,0.0
+jcubic,1,0,0.0
+jcwasmx86,1,0,0.0
+jdownloads,1,0,0.0
+jean david daviet,1,0,0.0
+jeangalea,1,0,0.0
+jeff kelley,1,0,0.0
+jegstudio,1,0,0.0
+jens kuerschner,1,0,0.0
+jens t rnell,1,0,0.0
+jeremy o connell,1,0,0.0
+jeroen schmit,1,0,0.0
+jerryhanjj,1,0,0.0
+jervenbolleman,1,0,0.0
+jes madsen,1,0,0.0
+jesweb dev,1,0,0.0
+jetbackup,1,0,0.0
+jetty,1,0,0.0
+jfm so,1,0,0.0
+jgadbois,1,0,0.0
+jgm,1,0,0.0
+jhayghost,1,0,0.0
+jhipster,1,0,0.0
+jhy,1,0,0.0
+jianlinwei,1,0,0.0
+jim krill,1,0,0.0
+jimoty,1,0,0.0
+jinit9906,1,0,0.0
+jins,1,0,0.0
+jirutka,1,0,0.0
+jitendriya tripathy,1,0,0.0
+jiusi,1,0,0.0
+jja8,1,0,0.0
+jkohlbach,1,0,0.0
+jkriddle,1,0,0.0
+jlangch,1,0,0.0
+jmlapam,1,0,0.0
+jmpotato,1,0,0.0
+joachim jensen,1,0,0.0
+joakim ling,1,0,0.0
+joaqu n ruiz,1,0,0.0
+joaquimserafim,1,0,0.0
+jobin jose,1,0,0.0
+joby joseph,1,0,0.0
+joel hardi,1,0,0.0
+joelcj91,1,0,0.0
+johan van der wijk,1,0,0.0
+john newcombe,1,0,0.0
+john tendik,1,0,0.0
+john5223,1,0,0.0
+johnbillion,1,0,0.0
+johndarrel,1,0,0.0
+johnkolbert,1,0,0.0
+johnnash1975,1,0,0.0
+johnnson controls,1,0,0.0
+johnnypea,1,0,0.0
+jojaba,1,0,0.0
+jokr,1,0,0.0
+jon christopher,1,0,0.0
+jonathan daggerhart,1,0,0.0
+jonathankissam,1,0,0.0
+jongmyoung kim,1,0,0.0
+joniles,1,0,0.0
+jonkastonka,1,0,0.0
+joomboost com,1,0,0.0
+joomcode com,1,0,0.0
+joomlart com,1,0,0.0
+joomlatools,1,0,0.0
+joomstar com,1,0,0.0
+joost de valk,1,0,0.0
+joovii,1,0,0.0
+jorani,1,0,0.0
+jordansissel,1,0,0.0
+jory hogeveen,1,0,0.0
+jos fernandez,1,0,0.0
+jose lazo,1,0,0.0
+josecoelho randy hoyt steveclarkcouk vitaliy kukin eric le bail tom ransom,1,0,0.0
+joshfraz,1,0,0.0
+joshua eldridge,1,0,0.0
+jottlieb,1,0,0.0
+jp1016,1,0,0.0
+jp2112,1,0,0.0
+jpadilla,1,0,0.0
+jquery,1,0,0.0
+jr king eran schoellhorn,1,0,0.0
+jr00ck,1,0,0.0
+jrbecart,1,0,0.0
+jrspruitt,1,0,0.0
+jsdecena,1,0,0.0
+json smart,1,0,0.0
+json5,1,0,0.0
+jsonata js,1,0,0.0
+jsreport,1,0,0.0
+jstachio,1,0,0.0
+jstnmcbrd,1,0,0.0
+jsy 1,1,0,0.0
+jtermaat,1,0,0.0
+jtsternberg,1,0,0.0
+juangirini,1,0,0.0
+jubei,1,0,0.0
+jucktnich,1,0,0.0
+juju2143,1,0,0.0
+jules colle bdwm,1,0,0.0
+julian weinert cs m,1,0,0.0
+julien berthelot mpembed,1,0,0.0
+julien berthelot mpembed com,1,0,0.0
+junkcoder ristoniinemets,1,0,0.0
+jupyter lsp,1,0,0.0
+jurecapuder,1,0,0.0
+justarchinet,1,0,0.0
+justin k,1,0,0.0
+justin klein,1,0,0.0
+justin saad,1,0,0.0
+justin silver,1,0,0.0
+justin tadlock,1,0,0.0
+justsystems,1,0,0.0
+jvvlee,1,0,0.0
+k box,1,0,0.0
+ka yue,1,0,0.0
+kaden,1,0,0.0
+kadence wp,1,0,0.0
+kaidomc pm pl,1,0,0.0
+kainex,1,0,0.0
+kakadu pty,1,0,0.0
+kakao,1,0,0.0
+kakwa,1,0,0.0
+kalli dan,1,0,0.0
+kaloyan k tsvetkov,1,0,0.0
+kama,1,0,0.0
+kaminari,1,0,0.0
+kamlesh parmar,1,0,0.0
+kamyabsoft,1,0,0.0
+kangu,1,0,0.0
+kapasias,1,0,0.0
+kapetan,1,0,0.0
+kaplugins,1,0,0.0
+kardi,1,0,0.0
+karim salman,1,0,0.0
+karim79,1,0,0.0
+karishma arora,1,0,0.0
+karjasoft,1,0,0.0
+karl kiesinger,1,0,0.0
+karlatemp,1,0,0.0
+karma runner,1,0,0.0
+karsany,1,0,0.0
+kartverket,1,0,0.0
+kassi,1,0,0.0
+kathy darling,1,0,0.0
+katlings,1,0,0.0
+katz web services,1,0,0.0
+kaushik kalathiya,1,0,0.0
+kaya studio,1,0,0.0
+kayrasoft,1,0,0.0
+kbase,1,0,0.0
+kbjohnson90,1,0,0.0
+kc group,1,0,0.0
+kddi ntt docomo and softbank,1,0,0.0
+kde,1,0,0.0
+kebo,1,0,0.0
+kedi,1,0,0.0
+keisuke nakayama,1,0,0.0
+keith solomon,1,0,0.0
+kekotron,1,0,0.0
+kelvinmo,1,0,0.0
+kemory grubb,1,0,0.0
+kendysond,1,0,0.0
+kenny2github,1,0,0.0
+kenth hagstr m,1,0,0.0
+kerry kline,1,0,0.0
+kestrel,1,0,0.0
+kesz1,1,0,0.0
+kevin ohashi,1,0,0.0
+kevin weber,1,0,0.0
+kevinlangleyjr,1,0,0.0
+keycloak,1,0,0.0
+keywordrush,1,0,0.0
+kharim tomlinson,1,0,0.0
+khl32,1,0,0.0
+khodakhah,1,0,0.0
+khronos group,1,0,0.0
+kiddoware,1,0,0.0
+kieranoshea,1,0,0.0
+kilbot,1,0,0.0
+kilian evang,1,0,0.0
+king products net,1,0,0.0
+kingspan,1,0,0.0
+kirill2485,1,0,0.0
+kishor 23,1,0,0.0
+kkokko,1,0,0.0
+klarna,1,0,0.0
+klaviyo,1,0,0.0
+kludex,1,0,0.0
+kmint21,1,0,0.0
+knight lab,1,0,0.0
+knx association,1,0,0.0
+ko takagi,1,0,0.0
+koajs,1,0,0.0
+koanleeroy,1,0,0.0
+koda,1,0,0.0
+koda auto,1,0,0.0
+kodezen,1,0,0.0
+koenhuybrechts,1,0,0.0
+kolja nolte,1,0,0.0
+kong,1,0,0.0
+konloch,1,0,0.0
+kontron,1,0,0.0
+kopa theme,1,0,0.0
+kopatheme,1,0,0.0
+koroket,1,0,0.0
+korol yuriy aka shra,1,0,0.0
+koyo,1,0,0.0
+koyo electronics industries,1,0,0.0
+kphrx,1,0,0.0
+krakend,1,0,0.0
+kreativo pro,1,0,0.0
+kriesi,1,0,0.0
+krishaweb,1,0,0.0
+kriszyp,1,0,0.0
+kron tech,1,0,0.0
+krunal prajapati,1,0,0.0
+krzysztof wielog rski,1,0,0.0
+ks soft,1,0,0.0
+kubevirt,1,0,0.0
+kulwant nagi,1,0,0.0
+kunalnagar,1,0,0.0
+kusbandono,1,0,0.0
+kuzmanov,1,0,0.0
+kvvaradha,1,0,0.0
+kybernetikservices,1,0,0.0
+kyivstarteam,1,0,0.0
+kyle maurer,1,0,0.0
+kyle phillips,1,0,0.0
+kylebebak,1,0,0.0
+kyocera,1,0,0.0
+kyocera document solutions ta triumph adler and olivetti spa,1,0,0.0
+kyubisation,1,0,0.0
+kyuubl,1,0,0.0
+l is b,1,0,0.0
+l v n to n,1,0,0.0
+l2c2technologies,1,0,0.0
+l7 networks,1,0,0.0
+la studio,1,0,0.0
+labs64,1,0,0.0
+ladybirdweb,1,0,0.0
+lambdaisland,1,0,0.0
+lan messenger,1,0,0.0
+lanaccess,1,0,0.0
+landingi,1,0,0.0
+landis gyr,1,0,0.0
+langchain,1,0,0.0
+lantronix,1,0,0.0
+lapce,1,0,0.0
+laposta roel bousardt,1,0,0.0
+latchset,1,0,0.0
+latepoint,1,0,0.0
+laurence ohmybox info,1,0,0.0
+laverdet,1,0,0.0
+lawrenceowen gcubero acunnningham fmahmood,1,0,0.0
+laybuy,1,0,0.0
+layered,1,0,0.0
+lbell,1,0,0.0
+lcds,1,0,0.0
+lcds le o consultoria e desenvolvimento de sistemas ltda me,1,0,0.0
+lcweb,1,0,0.0
+le van toan,1,0,0.0
+leadconnector,1,0,0.0
+leadinfo,1,0,0.0
+leadtools,1,0,0.0
+leaky paywall,1,0,0.0
+leanote,1,0,0.0
+leap,1,0,0.0
+learndash,1,0,0.0
+learnmesomecodes,1,0,0.0
+ledgersmb,1,0,0.0
+lee le userback,1,0,0.0
+lemmynet,1,0,0.0
+lenze,1,0,0.0
+leo caseiro,1,0,0.0
+leo khoa,1,0,0.0
+leogermani,1,0,0.0
+leonardo giacone,1,0,0.0
+leotheme,1,0,0.0
+levertechadmin,1,0,0.0
+lfs book,1,0,0.0
+liam gladdy storm consultancy,1,0,0.0
+liam gladdy thirty8 digital,1,0,0.0
+liangliangyy,1,0,0.0
+libjxl,1,0,0.0
+libpano13,1,0,0.0
+libreform,1,0,0.0
+libuv,1,0,0.0
+libvips,1,0,0.0
+libwww perl,1,0,0.0
+licensemanager,1,0,0.0
+liedekef,1,0,0.0
+lierdakil,1,0,0.0
+lif platforms,1,0,0.0
+lifepoint informatics,1,0,0.0
+lifterlms,1,0,0.0
+liftkit,1,0,0.0
+lighttpd,1,0,0.0
+lightxun,1,0,0.0
+ligowave,1,0,0.0
+lima vm,1,0,0.0
+liman central management system,1,0,0.0
+lindell tss implementations,1,0,0.0
+link,1,0,0.0
+linkedin,1,0,0.0
+linkwhspr,1,0,0.0
+linux foundation,1,0,0.0
+lionscripts,1,0,0.0
+lipnitsk,1,0,0.0
+liquibase,1,0,0.0
+liquid design,1,0,0.0
+liquidfiles pty,1,0,0.0
+liquidpoll,1,0,0.0
+lisa,1,0,0.0
+lissy93,1,0,0.0
+litecart,1,0,0.0
+litespeedtech,1,0,0.0
+litestar org,1,0,0.0
+lithium,1,0,0.0
+little apps,1,0,0.0
+littlebigrefresh,1,0,0.0
+liuwoodscode,1,0,0.0
+liuwy dlsdys,1,0,0.0
+livebook dev,1,0,0.0
+livechat,1,0,0.0
+livescore bz,1,0,0.0
+livesupporti,1,0,0.0
+liyansong2018,1,0,0.0
+ljharb,1,0,0.0
+lnbits,1,0,0.0
+log4js node,1,0,0.0
+logaster,1,0,0.0
+lojban,1,0,0.0
+lokalyze,1,0,0.0
+long watch studio,1,0,0.0
+looking forward,1,0,0.0
+looks awesome,1,0,0.0
+loomio,1,0,0.0
+loopbackio,1,0,0.0
+looswebstudio,1,0,0.0
+lora net,1,0,0.0
+lordicon,1,0,0.0
+lorna timbah webgrrrl,1,0,0.0
+louis reingold,1,0,0.0
+lovasoa,1,0,0.0
+lovell,1,0,0.0
+lquixada,1,0,0.0
+ls industrial lsis ls electric,1,0,0.0
+lsegal,1,0,0.0
+luckyshot,1,0,0.0
+lud k melichar,1,0,0.0
+ludwig media,1,0,0.0
+luelista,1,0,0.0
+lukehutch,1,0,0.0
+lunar,1,0,0.0
+lunarnight laboratory,1,0,0.0
+luyadev,1,0,0.0
+lxml,1,0,0.0
+ly,1,0,0.0
+lycheeorg,1,0,0.0
+lynx technik,1,0,0.0
+m a vinoth kumar,1,0,0.0
+m s consulting,1,0,0.0
+m williams,1,0,0.0
+m0ver,1,0,0.0
+m1k1o,1,0,0.0
+maca134,1,0,0.0
+macbookandrew,1,0,0.0
+macpaw,1,0,0.0
+macroturk and internet,1,0,0.0
+macvim dev,1,0,0.0
+made with fuel,1,0,0.0
+madgicweb,1,0,0.0
+mafiatic,1,0,0.0
+mage ai,1,0,0.0
+magic hills pty,1,0,0.0
+magic logix,1,0,0.0
+magic post thumbnail,1,0,0.0
+magnet forensics,1,0,0.0
+magneticone,1,0,0.0
+mahesh vora,1,0,0.0
+maif,1,0,0.0
+mailrelay,1,0,0.0
+makeplane,1,0,0.0
+makestories team,1,0,0.0
+malihu,1,0,0.0
+malinky,1,0,0.0
+mandelo,1,0,0.0
+mandrill,1,0,0.0
+manikandan170890,1,0,0.0
+manish kumar agarwal,1,0,0.0
+manishkrag,1,0,0.0
+manoj thulasidas,1,0,0.0
+mansuf,1,0,0.0
+mantisbt plugins,1,0,0.0
+mantrabrain,1,0,0.0
+manuel masia pixedelic com,1,0,0.0
+manydesigns,1,0,0.0
+mapbox,1,0,0.0
+mapoor,1,0,0.0
+mapster,1,0,0.0
+mar10,1,0,0.0
+marcel bootsman,1,0,0.0
+marcel pol,1,0,0.0
+marcel schmilgeit,1,0,0.0
+marcelotorres,1,0,0.0
+marcin pietrzak,1,0,0.0
+marcinkazmierski,1,0,0.0
+marco almeida webdados,1,0,0.0
+marco gasi,1,0,0.0
+mark daniels,1,0,0.0
+markdown it,1,0,0.0
+markdown link extractor,1,0,0.0
+marker io,1,0,0.0
+marketing fire,1,0,0.0
+marketing rapel,1,0,0.0
+marketingfire,1,0,0.0
+marksoft,1,0,0.0
+markus seyer,1,0,0.0
+marmelab,1,0,0.0
+martin lees,1,0,0.0
+martyn chamberlin,1,0,0.0
+mas a carrier brand,1,0,0.0
+masteriyo,1,0,0.0
+masterk,1,0,0.0
+mat sz,1,0,0.0
+materialsproject,1,0,0.0
+math geon,1,0,0.0
+mathieu chartier,1,0,0.0
+mati skiba rav messer,1,0,0.0
+matias s,1,0,0.0
+matrikon a subsidiary of honeywell,1,0,0.0
+matt gibbs,1,0,0.0
+matt martz andy stratton,1,0,0.0
+matt mckenny,1,0,0.0
+matt van andel,1,0,0.0
+mattdeclaire,1,0,0.0
+matteo candura,1,0,0.0
+matthew muro,1,0,0.0
+matthias pfefferle automattic,1,0,0.0
+matthias wandel,1,0,0.0
+matthiask,1,0,0.0
+mattkrick,1,0,0.0
+maui marketing,1,0,0.0
+maurice,1,0,0.0
+mava,1,0,0.0
+max bond,1,0,0.0
+max bond andresc,1,0,0.0
+max chirkov,1,0,0.0
+maxboard,1,0,0.0
+maxim k,1,0,0.0
+maximatech,1,0,0.0
+maxime schoeni,1,0,0.0
+maxtech,1,0,0.0
+mayan edms,1,0,0.0
+mayanet,1,0,0.0
+mazda,1,0,0.0
+mbbhatti,1,0,0.0
+mbdavid,1,0,0.0
+mbeltwski,1,0,0.0
+mbloch,1,0,0.0
+mcl,1,0,0.0
+mcnardelli,1,0,0.0
+mcostales84,1,0,0.0
+mcu tools,1,0,0.0
+md jakir hosen,1,0,0.0
+mdalamin aol,1,0,0.0
+mdhadid,1,0,0.0
+mdp,1,0,0.0
+mechanicalsoup,1,0,0.0
+medart health services,1,0,0.0
+meddata,1,0,0.0
+media browser,1,0,0.0
+mediaarea,1,0,0.0
+mediabridge,1,0,0.0
+mediavine,1,0,0.0
+mediawiki,1,0,0.0
+medikoo,1,0,0.0
+meetyoucrop,1,0,0.0
+megaease,1,0,0.0
+megamain,1,0,0.0
+megamenu,1,0,0.0
+mehah,1,0,0.0
+mehanoid pro,1,0,0.0
+mehjabin orthi,1,0,0.0
+mehulkaklotar,1,0,0.0
+meinberg,1,0,0.0
+meizhou qingyunke,1,0,0.0
+mekshq,1,0,0.0
+melnaron,1,0,0.0
+memorysafety,1,0,0.0
+mepsan,1,0,0.0
+mercado pago,1,0,0.0
+mercari,1,0,0.0
+mercurius js,1,0,0.0
+meril,1,0,0.0
+merit lilin ent,1,0,0.0
+merv barrett,1,0,0.0
+mervb1,1,0,0.0
+mervin praison,1,0,0.0
+mestav,1,0,0.0
+meta4creations,1,0,0.0
+metabox,1,0,0.0
+metaphorcreations,1,0,0.0
+metaslider,1,0,0.0
+metaswitch,1,0,0.0
+metaventis,1,0,0.0
+mganss,1,0,0.0
+mgt commerce,1,0,0.0
+mhenrixon,1,0,0.0
+mholt,1,0,0.0
+mibuthu,1,0,0.0
+micah wood,1,0,0.0
+miccighel,1,0,0.0
+michael aronoff,1,0,0.0
+michael bester,1,0,0.0
+michael koch,1,0,0.0
+michael leithold,1,0,0.0
+michael mann,1,0,0.0
+michael nelson,1,0,0.0
+michael pretty prettyboymp,1,0,0.0
+michael schuppenies,1,0,0.0
+michael torbert,1,0,0.0
+michael tran,1,0,0.0
+michaelliao,1,0,0.0
+michaelschwarz,1,0,0.0
+michiel van eerd,1,0,0.0
+michlol,1,0,0.0
+mickael austoni,1,0,0.0
+mickey kay,1,0,0.0
+micrium,1,0,0.0
+micro,1,0,0.0
+micro research,1,0,0.0
+microkid,1,0,0.0
+microprogram,1,0,0.0
+microtik,1,0,0.0
+microweber dev,1,0,0.0
+miczflor,1,0,0.0
+mighty digital,1,0,0.0
+migrate,1,0,0.0
+migueldeicaza,1,0,0.0
+miguelo2008,1,0,0.0
+mihai iova,1,0,0.0
+mihail chepovskiy,1,0,0.0
+mihdan,1,0,0.0
+mika,1,0,0.0
+mike,1,0,0.0
+mike martel,1,0,0.0
+mike strand,1,0,0.0
+mikk mihkel nurges rebing o,1,0,0.0
+milan dini,1,0,0.0
+milmor,1,0,0.0
+mim,1,0,0.0
+minetest,1,0,0.0
+mineweb,1,0,0.0
+mingocommerce,1,0,0.0
+ministry of agriculture forestry and fisheries,1,0,0.0
+ministry of defense,1,0,0.0
+ministry of health labour and welfare,1,0,0.0
+minmax digital,1,0,0.0
+minova,1,0,0.0
+mirmay,1,0,0.0
+miro mannino,1,0,0.0
+mitsubishi electric india,1,0,0.0
+miunosoft,1,0,0.0
+mjs,1,0,0.0
+mlewand,1,0,0.0
+mlsoft,1,0,0.0
+mmaunder,1,0,0.0
+mmdeveloper,1,0,0.0
+mnbikeways,1,0,0.0
+moappi,1,0,0.0
+mobile vikings,1,0,0.0
+mobisoft,1,0,0.0
+modern tribe,1,0,0.0
+mohammad i okfie,1,0,0.0
+mohsinrasool,1,0,0.0
+moises heberle,1,0,0.0
+mojofywp,1,0,0.0
+molehill,1,0,0.0
+mollie,1,0,0.0
+momofoolish,1,0,0.0
+momoyoga,1,0,0.0
+monchito net,1,0,0.0
+moneytizer,1,0,0.0
+monitorclick,1,0,0.0
+monitorjbl,1,0,0.0
+montonio,1,0,0.0
+mooberry dreams,1,0,0.0
+moodle plugin saml auth,1,0,0.0
+mootools,1,0,0.0
+moove agency,1,0,0.0
+mooveagency,1,0,0.0
+mordauk,1,0,0.0
+morgawr,1,0,0.0
+moris dov,1,0,0.0
+moriyan jay,1,0,0.0
+morontt,1,0,0.0
+morris bryant ruben sargsyan,1,0,0.0
+mosbth,1,0,0.0
+moses smt,1,0,0.0
+moss web works,1,0,0.0
+motor admin,1,0,0.0
+motorola mobility,1,0,0.0
+movim,1,0,0.0
+movus,1,0,0.0
+moxi624,1,0,0.0
+mozilocms,1,0,0.0
+mpedraza2020,1,0,0.0
+mpntod,1,0,0.0
+mportuga,1,0,0.0
+mpvanwinkle77,1,0,0.0
+mr ebabi,1,0,0.0
+mr hdwplayer,1,0,0.0
+mrdemonwolf,1,0,0.0
+mrobit,1,0,0.0
+mrousavy,1,0,0.0
+mrtnmtth,1,0,0.0
+mrv tech,1,0,0.0
+mschwar,1,0,0.0
+msh134,1,0,0.0
+mskocik,1,0,0.0
+msyk,1,0,0.0
+mtab,1,0,0.0
+mubarakalmehairbi,1,0,0.0
+muffin group,1,0,0.0
+mujs,1,0,0.0
+muller digital,1,0,0.0
+multi column tag map,1,0,0.0
+multiparcels,1,0,0.0
+multisafepay,1,0,0.0
+muneeb ur rehman,1,0,0.0
+munir kamal,1,0,0.0
+musescore,1,0,0.0
+musilda,1,0,0.0
+mutagen io,1,0,0.0
+muyun,1,0,0.0
+myagileprivacy,1,0,0.0
+myshopkit,1,0,0.0
+mytechtalky,1,0,0.0
+n able,1,0,0.0
+n o u s open useful and simple,1,0,0.0
+n partner,1,0,0.0
+nadatel,1,0,0.0
+nagios,1,0,0.0
+nakashima masahiro,1,0,0.0
+nakiami,1,0,0.0
+nanning ontall,1,0,0.0
+naresh parmar,1,0,0.0
+narola infotech solutions llp,1,0,0.0
+nasir179125,1,0,0.0
+nasirkhan,1,0,0.0
+nate reist,1,0,0.0
+nathan vonnahme,1,0,0.0
+national show centre,1,0,0.0
+national sleep research resource,1,0,0.0
+national tax agency,1,0,0.0
+native grid,1,0,0.0
+nats io,1,0,0.0
+nattywp,1,0,0.0
+naturalintelligence,1,0,0.0
+navneil naicker,1,0,0.0
+navzme,1,0,0.0
+nayshlok,1,0,0.0
+nazmul hossain nihal,1,0,0.0
+nc3 lu,1,0,0.0
+ncode,1,0,0.0
+ncrafts,1,0,0.0
+ncsist manageengine,1,0,0.0
+ne,1,0,0.0
+nearform,1,0,0.0
+necta,1,0,0.0
+nektos,1,0,0.0
+nelio,1,0,0.0
+neo information,1,0,0.0
+neo4j contrib,1,0,0.0
+neomind,1,0,0.0
+nerdpressteam,1,0,0.0
+nervythemes,1,0,0.0
+neshan maps platform,1,0,0.0
+netdatasoft,1,0,0.0
+netegrity,1,0,0.0
+nethack,1,0,0.0
+nethserver,1,0,0.0
+netlify,1,0,0.0
+netmove,1,0,0.0
+netreviews sas,1,0,0.0
+netristv,1,0,0.0
+nette,1,0,0.0
+netu,1,0,0.0
+netvision,1,0,0.0
+netvision information,1,0,0.0
+network optix,1,0,0.0
+never5,1,0,0.0
+new nine,1,0,0.0
+newcomer1989,1,0,0.0
+newcontext oss,1,0,0.0
+newsletter team,1,0,0.0
+newsletter2go,1,0,0.0
+newspicks,1,0,0.0
+nextbx,1,0,0.0
+nextu,1,0,0.0
+nghttp2,1,0,0.0
+nheko reborn,1,0,0.0
+nicdark d o o,1,0,0.0
+nicearma,1,0,0.0
+nick halsey,1,0,0.0
+nick pelton,1,0,0.0
+nick powers,1,0,0.0
+nickduncan,1,0,0.0
+nickzren,1,0,0.0
+nico amarilla,1,0,0.0
+nico graff,1,0,0.0
+nico martin,1,0,0.0
+nicola modugno,1,0,0.0
+nicolas lemoine,1,0,0.0
+nicolas zeh,1,0,0.0
+nicolly,1,0,0.0
+niels van renselaar,1,0,0.0
+nielsbasjes,1,0,0.0
+nigauri,1,0,0.0
+nikelschubert,1,0,0.0
+nikhil vaghela,1,0,0.0
+nikola loncar,1,0,0.0
+nikolay strikhar,1,0,0.0
+nikooo777,1,0,0.0
+nikunj soni,1,0,0.0
+nima saberi,1,0,0.0
+nimble3,1,0,0.0
+ninjew,1,0,0.0
+nippon telegraph and telephone east ntt east and nippon telegraph and telephone west ntt west,1,0,0.0
+nitely,1,0,0.0
+niteothemes,1,0,0.0
+nitropack,1,0,0.0
+niushop,1,0,0.0
+nivit,1,0,0.0
+njba,1,0,0.0
+nko,1,0,0.0
+nltk,1,0,0.0
+no l jackson,1,0,0.0
+no vendor information,1,0,0.0
+noah hearle design extreme,1,0,0.0
+nobita,1,0,0.0
+node js,1,0,0.0
+nofearinc,1,0,0.0
+nomadcoder,1,0,0.0
+nonebot,1,0,0.0
+noor alam,1,0,0.0
+noptin newsletter,1,0,0.0
+nota info,1,0,0.0
+notifyvisitors,1,0,0.0
+novo media,1,0,0.0
+novuhq,1,0,0.0
+noxxienl,1,0,0.0
+npgsql,1,0,0.0
+nt1m,1,0,0.0
+ntn information,1,0,0.0
+ntpsec,1,0,0.0
+ntt data,1,0,0.0
+ntzapps,1,0,0.0
+nuajik,1,0,0.0
+nucleus genius,1,0,0.0
+nudgify,1,0,0.0
+nuget,1,0,0.0
+nuitka,1,0,0.0
+nukeviet,1,0,0.0
+nuknightlab,1,0,0.0
+numixtech,1,0,0.0
+nuxsmin,1,0,0.0
+nuxtlabs,1,0,0.0
+nym3r0s,1,0,0.0
+nyuccl,1,0,0.0
+oacstudio,1,0,0.0
+oauthlib,1,0,0.0
+obgm,1,0,0.0
+objectplanet,1,0,0.0
+obox,1,0,0.0
+obox themes,1,0,0.0
+obsidian,1,0,0.0
+ocdi,1,0,0.0
+oceanicjs,1,0,0.0
+oclc research,1,0,0.0
+ocsinventory,1,0,0.0
+octo sts,1,0,0.0
+octobox,1,0,0.0
+oduyo,1,0,0.0
+oduyo financial,1,0,0.0
+offshore web master,1,0,0.0
+oktora24,1,0,0.0
+oleksandrz,1,0,0.0
+olevmedia,1,0,0.0
+olive design,1,0,0.0
+ollpu,1,0,0.0
+om ak solutions,1,0,0.0
+ombi app,1,0,0.0
+ome,1,0,0.0
+omnisharp,1,0,0.0
+onc,1,0,0.0
+one week one tool,1,0,0.0
+onesignal,1,0,0.0
+onest,1,0,0.0
+oneuptime,1,0,0.0
+onewebsite,1,0,0.0
+onlaj,1,0,0.0
+onlyoffice,1,0,0.0
+ono oogami,1,0,0.0
+onpremise suremdm solution,1,0,0.0
+ons digital,1,0,0.0
+onshift,1,0,0.0
+ontraport,1,0,0.0
+opajaap,1,0,0.0
+opc foundation,1,0,0.0
+opc labs,1,0,0.0
+open feature,1,0,0.0
+open journal,1,0,0.0
+open mss,1,0,0.0
+open webui,1,0,0.0
+openacs,1,0,0.0
+openanolis,1,0,0.0
+openapitools,1,0,0.0
+openbmb,1,0,0.0
+opencart,1,0,0.0
+opencloudos,1,0,0.0
+opencti platform,1,0,0.0
+opencyclecompass,1,0,0.0
+openenclave,1,0,0.0
+openidentityplatform,1,0,0.0
+openkruise,1,0,0.0
+openlibrary,1,0,0.0
+openolat,1,0,0.0
+openpgpjs,1,0,0.0
+openpne project,1,0,0.0
+openrazer,1,0,0.0
+openreplay,1,0,0.0
+openseamap,1,0,0.0
+openshift,1,0,0.0
+openwhyd,1,0,0.0
+opmc,1,0,0.0
+oppia,1,0,0.0
+optimonk,1,0,0.0
+optinlyhq,1,0,0.0
+optinmonster popup builder team,1,0,0.0
+orangescrum,1,0,0.0
+orchardcore,1,0,0.0
+orchest,1,0,0.0
+orchidsoftware,1,0,0.0
+oren hahiashvili,1,0,0.0
+organic themes,1,0,0.0
+origin,1,0,0.0
+origincode,1,0,0.0
+originprotocol,1,0,0.0
+orion,1,0,0.0
+orthanc,1,0,0.0
+ortus solutions,1,0,0.0
+oslabs beta,1,0,0.0
+osm lab,1,0,0.0
+osmansorkar,1,0,0.0
+osoft,1,0,0.0
+otwthemes,1,0,0.0
+otwthemes com,1,0,0.0
+ovation s r l,1,0,0.0
+overdrive eletr nica,1,0,0.0
+ovh,1,0,0.0
+ovs,1,0,0.0
+owasp esapi,1,0,0.0
+owasp modsecurity,1,0,0.0
+owlet,1,0,0.0
+oxguy3,1,0,0.0
+oxyno zeta,1,0,0.0
+ozan canakli,1,0,0.0
+ozette plugins,1,0,0.0
+oznetmaster,1,0,0.0
+p r thernstr m,1,0,0.0
+p royal,1,0,0.0
+paessler,1,0,0.0
+pagelayer,1,0,0.0
+pagelayer team,1,0,0.0
+pagup,1,0,0.0
+pakpobox,1,0,0.0
+pal electronics,1,0,0.0
+palasthotel in person edward bock,1,0,0.0
+pallidlight,1,0,0.0
+panabit,1,0,0.0
+panasonic holdings,1,0,0.0
+panda security,1,0,0.0
+pandatix,1,0,0.0
+panicsteve,1,0,0.0
+pankaj jha,1,0,0.0
+pankajagarwal,1,0,0.0
+panterasoft,1,0,0.0
+panwei,1,0,0.0
+paoltaia,1,0,0.0
+papercut mf ng,1,0,0.0
+paperless ngx,1,0,0.0
+paradox security bahamas,1,0,0.0
+paramveer singh for arete it private,1,0,0.0
+parantez teknoloji,1,0,0.0
+parcel panel,1,0,0.0
+parcel pro,1,0,0.0
+pascal,1,0,0.0
+passionate brains,1,0,0.0
+patreon,1,0,0.0
+patrick robrecht,1,0,0.0
+paul bearne,1,0,0.0
+paul c schroeder,1,0,0.0
+paul jura nicolas montigny,1,0,0.0
+paul kehrer,1,0,0.0
+paul menard,1,0,0.0
+paulej,1,0,0.0
+paulledemon,1,0,0.0
+pavex,1,0,0.0
+pawaryogesh1989,1,0,0.0
+paxswill,1,0,0.0
+paxton,1,0,0.0
+pay rails,1,0,0.0
+payara platform,1,0,0.0
+payloadcms,1,0,0.0
+paystack,1,0,0.0
+paytr deme ve elektronik para kurulu u a,1,0,0.0
+payu india,1,0,0.0
+pb seo friendly images,1,0,0.0
+pca predict,1,0,0.0
+pdf embedder,1,0,0.0
+pdm project,1,0,0.0
+peach payments,1,0,0.0
+peachpay,1,0,0.0
+pedroetb,1,0,0.0
+peel,1,0,0.0
+pensopay,1,0,0.0
+peregrinethemes,1,0,0.0
+perfact,1,0,0.0
+perfectwpthemes,1,0,0.0
+perforce,1,0,0.0
+peter butler,1,0,0.0
+peter keung,1,0,0.0
+peter sterling,1,0,0.0
+petermu,1,0,0.0
+peterschulznl,1,0,0.0
+petesheppard84,1,0,0.0
+petri damst n,1,0,0.0
+pgadmin project,1,0,0.0
+pgpool global development group,1,0,0.0
+phil baker,1,0,0.0
+phil baylog,1,0,0.0
+phil ewels,1,0,0.0
+philip m hofer frumph,1,0,0.0
+philippe bernard,1,0,0.0
+philkurth,1,0,0.0
+phjounin,1,0,0.0
+phloc,1,0,0.0
+phonepe,1,0,0.0
+photo feed,1,0,0.0
+php crafts,1,0,0.0
+php server monitor,1,0,0.0
+phpbits,1,0,0.0
+phpkobo,1,0,0.0
+phpmyadmin,1,0,0.0
+phpradar,1,0,0.0
+phpwebdev,1,0,0.0
+phz76,1,0,0.0
+pibrewing,1,0,0.0
+pie register,1,0,0.0
+pierre jehan,1,0,0.0
+pierre lannoy,1,0,0.0
+pierre lannoy perfops one,1,0,0.0
+pierre lebedel,1,0,0.0
+pierrelannoy,1,0,0.0
+pinewise,1,0,0.0
+pingonline,1,0,0.0
+pip maintainers,1,0,0.0
+pippin williamson,1,0,0.0
+pixee,1,0,0.0
+pixel industry,1,0,0.0
+pixelative mohsin rafique,1,0,0.0
+pjaudiomv,1,0,0.0
+plaidweb,1,0,0.0
+plainware com,1,0,0.0
+planetlabs,1,0,0.0
+plankanban,1,0,0.0
+plannigan,1,0,0.0
+plasma web ru,1,0,0.0
+plausible io,1,0,0.0
+plausiblehq,1,0,0.0
+play ht,1,0,0.0
+play with docker,1,0,0.0
+plerdy,1,0,0.0
+plone cms,1,0,0.0
+pluginforage,1,0,0.0
+pluginkollektiv,1,0,0.0
+pluginsandsnippets,1,0,0.0
+pluginsware,1,0,0.0
+pluginus,1,0,0.0
+plus one,1,0,0.0
+plutolang,1,0,0.0
+plv8,1,0,0.0
+pmb services,1,0,0.0
+pnpm,1,0,0.0
+pocketbase,1,0,0.0
+podium lib,1,0,0.0
+pods framework team,1,0,0.0
+pogidude,1,0,0.0
+poikosoft,1,0,0.0
+pointhi,1,0,0.0
+pointware,1,0,0.0
+pokornydavid,1,0,0.0
+poljar,1,0,0.0
+polterguy,1,0,0.0
+pootlepress,1,0,0.0
+pop ups,1,0,0.0
+poporon,1,0,0.0
+poptin,1,0,0.0
+popup likebox team,1,0,0.0
+porpeeranut,1,0,0.0
+port bilis,1,0,0.0
+porto theme,1,0,0.0
+porty smart tech joint stock,1,0,0.0
+posimyth innovation,1,0,0.0
+postahsil,1,0,0.0
+postalserver,1,0,0.0
+posts to page,1,0,0.0
+postsnippets,1,0,0.0
+pouetnet,1,0,0.0
+pow auth,1,0,0.0
+powerfulwp,1,0,0.0
+poweriso,1,0,0.0
+powerpack,1,0,0.0
+powerpack addons for elementor,1,0,0.0
+powr,1,0,0.0
+powr io,1,0,0.0
+ppfeufer,1,0,0.0
+pradeep singh,1,0,0.0
+pragmaticmates,1,0,0.0
+prasathmani,1,0,0.0
+prashant baldha,1,0,0.0
+prashant walke,1,0,0.0
+prefecthq,1,0,0.0
+prem tiwari,1,0,0.0
+premium addons,1,0,0.0
+pressference,1,0,0.0
+pressfore,1,0,0.0
+presslabs,1,0,0.0
+prestashow,1,0,0.0
+prestaul,1,0,0.0
+pricelisto,1,0,0.0
+print pdf email by printfriendly,1,0,0.0
+prism it,1,0,0.0
+prism tech studios,1,0,0.0
+prismjs,1,0,0.0
+prismtechstudios,1,0,0.0
+priva,1,0,0.0
+privatebin,1,0,0.0
+privatesky,1,0,0.0
+privateuploader,1,0,0.0
+pro2col,1,0,0.0
+prodigasistemas,1,0,0.0
+prodys,1,0,0.0
+profaceoff,1,0,0.0
+profilegrid user profiles memberships groups and communities,1,0,0.0
+progress coproration,1,0,0.0
+prointegra s a,1,0,0.0
+projectsend,1,0,0.0
+proliz,1,0,0.0
+promis process,1,0,0.0
+promolayerpopupbuilder,1,0,0.0
+proper fraction,1,0,0.0
+propluginslab,1,0,0.0
+propovoice,1,0,0.0
+proscend,1,0,0.0
+proscend advice,1,0,0.0
+prosys opc,1,0,0.0
+protocolbuffers,1,0,0.0
+provectus,1,0,0.0
+psdtowpservice,1,0,0.0
+psicosi448,1,0,0.0
+pt trijaya digital grup,1,0,0.0
+pt woo plugins by webdados,1,0,0.0
+puddingbot,1,0,0.0
+pulsar web design,1,0,0.0
+pulse secure,1,0,0.0
+puneeth reddy,1,0,0.0
+pure chat,1,0,0.0
+pure chat by ruby,1,0,0.0
+purpleparrots,1,0,0.0
+purpleturtlepro,1,0,0.0
+purvabathe,1,0,0.0
+pwr plugins,1,0,0.0
+px org,1,0,0.0
+pycord development,1,0,0.0
+pydantic,1,0,0.0
+pyhtml2pdf,1,0,0.0
+pyinstaller,1,0,0.0
+pymatgen,1,0,0.0
+pypa,1,0,0.0
+pyramid solutions,1,0,0.0
+python mechanize,1,0,0.0
+python social auth,1,0,0.0
+pytorchlightning,1,0,0.0
+pyupio,1,0,0.0
+qamar sheeraz nasir ahmad,1,0,0.0
+qbittorrent,1,0,0.0
+qdocs,1,0,0.0
+qibosoft,1,0,0.0
+qidianbang,1,0,0.0
+qiskit,1,0,0.0
+qiwen,1,0,0.0
+qlik sense,1,0,0.0
+qmpaas,1,0,0.0
+qolsys,1,0,0.0
+qqworld,1,0,0.0
+qrio,1,0,0.0
+qrokes,1,0,0.0
+qt users jp,1,0,0.0
+qualityunit,1,0,0.0
+quanos,1,0,0.0
+quanticedge,1,0,0.0
+quantum cloud,1,0,0.0
+quinn rs,1,0,0.0
+quiz maker team,1,0,0.0
+qumos,1,0,0.0
+qwdigital,1,0,0.0
+qwerty23,1,0,0.0
+r mi leclercq,1,0,0.0
+r project,1,0,0.0
+raaj trambadia,1,0,0.0
+raajtram,1,0,0.0
+rabbitloader,1,0,0.0
+radgeek,1,0,0.0
+radical web design,1,0,0.0
+radio forge,1,0,0.0
+rafael dery,1,0,0.0
+rafiul17,1,0,0.0
+raghu goriya,1,0,0.0
+rahalaboulfeth,1,0,0.0
+rahman,1,0,0.0
+rahul aryan,1,0,0.0
+rahulsingh74388,1,0,0.0
+railmedia,1,0,0.0
+rajkakadiya,1,0,0.0
+rajnish arora,1,0,0.0
+rakib hasan,1,0,0.0
+ram ratan maurya codestag,1,0,0.0
+ramank775,1,0,0.0
+rameez iqbal,1,0,0.0
+ramseyk,1,0,0.0
+random banner,1,0,0.0
+randombit,1,0,0.0
+ransom christofferson,1,0,0.0
+raratheme,1,0,0.0
+rashed latif,1,0,0.0
+raspap,1,0,0.0
+rathena,1,0,0.0
+rating widget,1,0,0.0
+ravenclaw900,1,0,0.0
+ravichandra,1,0,0.0
+ravidhu dissanayake,1,0,0.0
+rayhanduitku,1,0,0.0
+razib,1,0,0.0
+rd station,1,0,0.0
+rdflib,1,0,0.0
+real time automation,1,0,0.0
+realbig team,1,0,0.0
+realfavicongenerator,1,0,0.0
+realwebcare,1,0,0.0
+rebeccastevens,1,0,0.0
+recruit,1,0,0.0
+red hat bootloader team,1,0,0.0
+red snapper,1,0,0.0
+redisson,1,0,0.0
+redlettuce,1,0,0.0
+redlettuce plugins,1,0,0.0
+redon tech,1,0,0.0
+redwood,1,0,0.0
+regpacks,1,0,0.0
+relative,1,0,0.0
+remarshal project,1,0,0.0
+remult,1,0,0.0
+remyb92,1,0,0.0
+ren hermenau,1,0,0.0
+renlm,1,0,0.0
+replit,1,0,0.0
+reportportal,1,0,0.0
+repuso,1,0,0.0
+rescue themes,1,0,0.0
+restpack,1,0,0.0
+revanced,1,0,0.0
+revenera,1,0,0.0
+revive,1,0,0.0
+revolut,1,0,0.0
+rf,1,0,0.0
+richard leishman t a webforward,1,0,0.0
+richteam,1,0,0.0
+rico macchi,1,0,0.0
+ricon,1,0,0.0
+ridhoq,1,0,0.0
+rigatur,1,0,0.0
+rigorous factory pattern,1,0,0.0
+rimes gold,1,0,0.0
+rise themes,1,0,0.0
+risheesh,1,0,0.0
+ritlabs,1,0,0.0
+rittal,1,0,0.0
+ritterim,1,0,0.0
+riyaz,1,0,0.0
+rizone soft,1,0,0.0
+rjbs,1,0,0.0
+rl institut,1,0,0.0
+rldd,1,0,0.0
+rlespinasse,1,0,0.0
+roadflow,1,0,0.0
+rob marsh sj,1,0,0.0
+robert heller,1,0,0.0
+robert schulz sprd net,1,0,0.0
+robin phillips,1,0,0.0
+robinbuschmann,1,0,0.0
+robmcvey,1,0,0.0
+robotsandpencils,1,0,0.0
+rocket apps,1,0,0.0
+rocket elements,1,0,0.0
+rocketgenius,1,0,0.0
+rocketsoft,1,0,0.0
+rofl0r,1,0,0.0
+rogierlankhorst,1,0,0.0
+roku,1,0,0.0
+roland murg,1,0,0.0
+rolands umbrovskis,1,0,0.0
+roman pronskiy,1,0,0.0
+room 34 creative services,1,0,0.0
+root3nl,1,0,0.0
+roots,1,0,0.0
+rotem dynamics,1,0,0.0
+rozbb,1,0,0.0
+rpetersen29,1,0,0.0
+rs485,1,0,0.0
+rsukhar,1,0,0.0
+rsyslog,1,0,0.0
+rts,1,0,0.0
+ruby,1,0,0.0
+rudderlabs,1,0,0.0
+ruddernation,1,0,0.0
+rukovoditel,1,0,0.0
+runsystem,1,0,0.0
+russellhaering,1,0,0.0
+rust blockchain,1,0,0.0
+rust ethereum,1,0,0.0
+rust osdev,1,0,0.0
+rustls,1,0,0.0
+rvola,1,0,0.0
+ryan duff peter westwood,1,0,0.0
+s134328,1,0,0.0
+saad iqbal,1,0,0.0
+saas,1,0,0.0
+sabnzbd,1,0,0.0
+sagarpatel124,1,0,0.0
+sage,1,0,0.0
+sagemathinc,1,0,0.0
+sagemcom,1,0,0.0
+sagernet,1,0,0.0
+sah comp,1,0,0.0
+sahumedia,1,0,0.0
+saiful islam,1,0,0.0
+saint,1,0,0.0
+saison information,1,0,0.0
+sakshi2610,1,0,0.0
+sakuraisayeki,1,0,0.0
+salesforce,1,0,0.0
+salesmanag0,1,0,0.0
+saleswonder biz,1,0,0.0
+sam perrow,1,0,0.0
+samba,1,0,0.0
+samboy,1,0,0.0
+sami ahmed siddiqui,1,0,0.0
+sammyb,1,0,0.0
+samsung,1,0,0.0
+samsung tv,1,0,0.0
+samuelkwle,1,0,0.0
+samuraigpt,1,0,0.0
+sanalogy,1,0,0.0
+sandeepsoni214,1,0,0.0
+sandisk professional,1,0,0.0
+sandor kovacs,1,0,0.0
+sandsprite,1,0,0.0
+sangoma,1,0,0.0
+sanic org,1,0,0.0
+sanluan,1,0,0.0
+sap successfactors,1,0,0.0
+saphali,1,0,0.0
+sapido,1,0,0.0
+sas institute,1,0,0.0
+saso nikolov,1,0,0.0
+satos,1,0,0.0
+satrya,1,0,0.0
+saumya majumder,1,0,0.0
+save as pdf plugin by pdfcrowd,1,0,0.0
+savvy wordpress development,1,0,0.0
+sayan datta,1,0,0.0
+sayful islam,1,0,0.0
+sayontan sinha,1,0,0.0
+saysky,1,0,0.0
+sbouey,1,0,0.0
+sbs20,1,0,0.0
+sbt,1,0,0.0
+schlage,1,0,0.0
+scikit learn,1,0,0.0
+scimone ignazio,1,0,0.0
+scott bolinger,1,0,0.0
+scott kingsley clark,1,0,0.0
+scottcwang,1,0,0.0
+scottpaterson,1,0,0.0
+scotttzhang,1,0,0.0
+scriptburn com,1,0,0.0
+scriptcoil,1,0,0.0
+scrollsequence,1,0,0.0
+sdd computer,1,0,0.0
+sea75300,1,0,0.0
+sealevel,1,0,0.0
+sean barton tortoise it,1,0,0.0
+searchiq,1,0,0.0
+searchwp,1,0,0.0
+sebastian krysmanski,1,0,0.0
+sebhildebrandt,1,0,0.0
+second2none,1,0,0.0
+secuever,1,0,0.0
+secupress,1,0,0.0
+secuwiz,1,0,0.0
+seed webs,1,0,0.0
+seenergy,1,0,0.0
+seers,1,0,0.0
+segmentio,1,0,0.0
+seiji42,1,0,0.0
+seleniumhq,1,0,0.0
+semantic release,1,0,0.0
+semenov,1,0,0.0
+semper plugins,1,0,0.0
+semver regex,1,0,0.0
+sendpulse,1,0,0.0
+sensei,1,0,0.0
+sentex,1,0,0.0
+seo guys at seopress,1,0,0.0
+seo scout,1,0,0.0
+seosamba,1,0,0.0
+seosbg,1,0,0.0
+sepidz,1,0,0.0
+sequelize,1,0,0.0
+sequentech,1,0,0.0
+seraphinitesoft,1,0,0.0
+serena villa,1,0,0.0
+sergey panasenko,1,0,0.0
+session,1,0,0.0
+setriosoft,1,0,0.0
+sew eurodrive,1,0,0.0
+sewpafly,1,0,0.0
+shaanxi chanming education,1,0,0.0
+shabti,1,0,0.0
+shabti kaplan,1,0,0.0
+shadeyouvpn com,1,0,0.0
+shafayat alam,1,0,0.0
+shambix,1,0,0.0
+shamsbd71,1,0,0.0
+shanghai brad,1,0,0.0
+shanghai cti navigation,1,0,0.0
+shanghai sunfull automation,1,0,0.0
+shannah,1,0,0.0
+shaoxing,1,0,0.0
+sharabindu,1,0,0.0
+shardlab,1,0,0.0
+sharkfest foundation,1,0,0.0
+sharp display solutions,1,0,0.0
+shazzad hossain khan,1,0,0.0
+shea bunge,1,0,0.0
+sheilazpy,1,0,0.0
+shelljs,1,0,0.0
+shemes,1,0,0.0
+shenzhen reachfar,1,0,0.0
+shenzhen youkate industrial,1,0,0.0
+shibang communications,1,0,0.0
+shield security,1,0,0.0
+shift tech,1,0,0.0
+shifuml,1,0,0.0
+shime,1,0,0.0
+shina system,1,0,0.0
+shingo,1,0,0.0
+shipping 100,1,0,0.0
+shirasagi,1,0,0.0
+shivashankerbhatta,1,0,0.0
+shoaib saleem,1,0,0.0
+shoheitanaka,1,0,0.0
+shokoanime,1,0,0.0
+shopconstruct,1,0,0.0
+shopify,1,0,0.0
+shoppingflux,1,0,0.0
+shopup,1,0,0.0
+showdownjs,1,0,0.0
+shred,1,0,0.0
+shrinitech,1,0,0.0
+shubhamjain,1,0,0.0
+sidequestvr,1,0,0.0
+siderolabs,1,0,0.0
+sifir bes education and informatics,1,0,0.0
+signiant,1,0,0.0
+sileht,1,0,0.0
+silverks,1,0,0.0
+silvia pfeiffer and andrew nimmo,1,0,0.0
+simbco,1,0,0.0
+simon chuang,1,0,0.0
+simon ward,1,0,0.0
+simon99,1,0,0.0
+simonpedge,1,0,0.0
+simonsmith,1,0,0.0
+simonw,1,0,0.0
+simple design,1,0,0.0
+simple share buttons,1,0,0.0
+simple sponsorships,1,0,0.0
+simplesite,1,0,0.0
+simplethemes,1,0,0.0
+sinatra,1,0,0.0
+sira jp,1,0,0.0
+sirv,1,0,0.0
+sirv com,1,0,0.0
+sitealert,1,0,0.0
+sitebridge,1,0,0.0
+siteclean,1,0,0.0
+sitefusion,1,0,0.0
+siteimprove,1,0,0.0
+sitepact,1,0,0.0
+siteserver,1,0,0.0
+sivel,1,0,0.0
+six2dez,1,0,0.0
+siyuan,1,0,0.0
+sjqzhang,1,0,0.0
+sjwall,1,0,0.0
+skoda auto,1,0,0.0
+skops dev,1,0,0.0
+skylab,1,0,0.0
+skylark holdings,1,0,0.0
+skymoon labs,1,0,0.0
+slawkens,1,0,0.0
+slic3r,1,0,0.0
+sliced invoices,1,0,0.0
+slicewp,1,0,0.0
+slimphp,1,0,0.0
+slims,1,0,0.0
+slowlyo,1,0,0.0
+smallweigit,1,0,0.0
+smartcalc es,1,0,0.0
+smartsoft,1,0,0.0
+smartsoftbuttonwidget,1,0,0.0
+smartweb infotech,1,0,0.0
+smi,1,0,0.0
+smplug in,1,0,0.0
+smtp2go,1,0,0.0
+snap,1,0,0.0
+snaporbital,1,0,0.0
+sniproxy,1,0,0.0
+snow ab,1,0,0.0
+snowflake connector python,1,0,0.0
+snoyberg,1,0,0.0
+so wp,1,0,0.0
+social login wp,1,0,0.0
+social media share buttons by sygnoos,1,0,0.0
+social share pro,1,0,0.0
+social snap,1,0,0.0
+socialmediafeather,1,0,0.0
+socket io,1,0,0.0
+socketry,1,0,0.0
+softaculous team,1,0,0.0
+softcreate,1,0,0.0
+softethervpn,1,0,0.0
+softmaker,1,0,0.0
+softmotions,1,0,0.0
+soisytech,1,0,0.0
+soketi,1,0,0.0
+solar,1,0,0.0
+solarwinds platform command injection vulnerability,1,0,0.0
+solid plugins,1,0,0.0
+solidres,1,0,0.0
+solidus,1,0,0.0
+solidusio,1,0,0.0
+soliloquy team,1,0,0.0
+solverwp com,1,0,0.0
+solwin,1,0,0.0
+some natalie,1,0,0.0
+someguy9,1,0,0.0
+soninow team,1,0,0.0
+sos berlin,1,0,0.0
+soshtolsus,1,0,0.0
+sound exchange,1,0,0.0
+soundcloud,1,0,0.0
+soundcloud lawrie malen,1,0,0.0
+soundminer,1,0,0.0
+sourcecodehero,1,0,0.0
+soxft,1,0,0.0
+space x chimp,1,0,0.0
+spacemeshos,1,0,0.0
+sparklewpthemes,1,0,0.0
+sparkpost,1,0,0.0
+sparksuite,1,0,0.0
+sparkweb interactive,1,0,0.0
+spassarop,1,0,0.0
+spbu,1,0,0.0
+speciesfilegroup,1,0,0.0
+specklesystems,1,0,0.0
+spicethemes,1,0,0.0
+spider themes,1,0,0.0
+spinacms,1,0,0.0
+splashtop,1,0,0.0
+splitbrain,1,0,0.0
+spoon radio japan,1,0,0.0
+spoon themes,1,0,0.0
+spotipy dev,1,0,0.0
+spreadsheetconverter,1,0,0.0
+spring by vmware tanzu,1,0,0.0
+sproctor,1,0,0.0
+spyrosvl,1,0,0.0
+sqlfluff,1,0,0.0
+sqlite,1,0,0.0
+sqlpad,1,0,0.0
+square,1,0,0.0
+squirrel,1,0,0.0
+sshnet,1,0,0.0
+ssn2013,1,0,0.0
+stage,1,0,0.0
+stakira,1,0,0.0
+stanfordvl,1,0,0.0
+starcounter jack,1,0,0.0
+starfish reviews,1,0,0.0
+stargate bukkit,1,0,0.0
+stark digital,1,0,0.0
+starlite api,1,0,0.0
+stars alliance,1,0,0.0
+start booking,1,0,0.0
+startbooking,1,0,0.0
+static web server,1,0,0.0
+status internet,1,0,0.0
+stb,1,0,0.0
+std cloud,1,0,0.0
+stefanberger,1,0,0.0
+stefano ottolenghi,1,0,0.0
+stefanoai,1,0,0.0
+step byte service,1,0,0.0
+step tools,1,0,0.0
+stephan spencer,1,0,0.0
+sterc,1,0,0.0
+sternenseemann,1,0,0.0
+steve curtis st pete design,1,0,0.0
+stevehenty,1,0,0.0
+stevejagodzinski,1,0,0.0
+steven a zahm,1,0,0.0
+steven henty,1,0,0.0
+stforscratch,1,0,0.0
+stiiv,1,0,0.0
+stimulusreflex,1,0,0.0
+stmicroelectronics stm32cube,1,0,0.0
+stoatoffear,1,0,0.0
+stockdio,1,0,0.0
+stpetedesign,1,0,0.0
+stranger studios,1,0,0.0
+strapi community,1,0,0.0
+strongswan,1,0,0.0
+structurizr,1,0,0.0
+struktur,1,0,0.0
+strukturag,1,0,0.0
+studio wombat,1,0,0.0
+studiopress,1,0,0.0
+studiowombat,1,0,0.0
+stylistwp,1,0,0.0
+sub iot,1,0,0.0
+subscribers com,1,0,0.0
+sucuri,1,0,0.0
+sudipto pratap mahato,1,0,0.0
+sugarsync,1,0,0.0
+suitedash one dashboard,1,0,0.0
+sukhchain singh,1,0,0.0
+sukohi,1,0,0.0
+suman bhattarai,1,0,0.0
+sumitomo electric information,1,0,0.0
+summar,1,0,0.0
+sumocoders,1,0,0.0
+sumome,1,0,0.0
+super 8,1,0,0.0
+super blog me,1,0,0.0
+super store finder,1,0,0.0
+superantispyware,1,0,0.0
+superfaktura,1,0,0.0
+supermailer,1,0,0.0
+supersmart me,1,0,0.0
+supersoju,1,0,0.0
+suplugins,1,0,0.0
+support genix,1,0,0.0
+supportcandy,1,0,0.0
+surakrai,1,0,0.0
+surbma,1,0,0.0
+surecart,1,0,0.0
+suresh kumar mukhiya,1,0,0.0
+suretriggers,1,0,0.0
+sustainsys,1,0,0.0
+sverde1,1,0,0.0
+svgator,1,0,0.0
+swadeshswain,1,0,0.0
+swaggo,1,0,0.0
+swapnil v patil,1,0,0.0
+swift sensors,1,0,0.0
+swift server,1,0,0.0
+switcherapi,1,0,0.0
+swte,1,0,0.0
+syam mohan,1,0,0.0
+sybre waaijer,1,0,0.0
+syed balkhi,1,0,0.0
+syltek,1,0,0.0
+symantec a division of broadcom,1,0,0.0
+symbiostock,1,0,0.0
+symbiote,1,0,0.0
+symptote,1,0,0.0
+syncthing,1,0,0.0
+syntactics,1,0,0.0
+synth,1,0,0.0
+syska led lights pvt,1,0,0.0
+sysstat,1,0,0.0
+systemk,1,0,0.0
+t bal mart n,1,0,0.0
+t d,1,0,0.0
+tablepress,1,0,0.0
+taboola,1,0,0.0
+taggbox,1,0,0.0
+tainacan org,1,0,0.0
+taiwan ca twca,1,0,0.0
+taiwan secom,1,0,0.0
+takanakui,1,0,0.0
+takayuki miyauchi,1,0,0.0
+takuya matsuyama,1,0,0.0
+talspotim,1,0,0.0
+tanghaibao,1,0,0.0
+tanstack,1,0,0.0
+taoeffect,1,0,0.0
+tapfiliate,1,0,0.0
+tasks,1,0,0.0
+tasmoadmin,1,0,0.0
+tastyigniter,1,0,0.0
+tauhidul alam,1,0,0.0
+tausworks,1,0,0.0
+tbezman,1,0,0.0
+tbk,1,0,0.0
+tc,1,0,0.0
+tcbarrett,1,0,0.0
+tdevs,1,0,0.0
+team giphy,1,0,0.0
+team plugins360,1,0,0.0
+teamamaze,1,0,0.0
+teamnewpipe,1,0,0.0
+tech9logy creators,1,0,0.0
+techblissonline com rajesh,1,0,0.0
+techeshta,1,0,0.0
+techkshetra info solutions,1,0,0.0
+technicolor,1,0,0.0
+technocrackers,1,0,0.0
+technovama,1,0,0.0
+teckel,1,0,0.0
+tecnick com,1,0,0.0
+tecrail,1,0,0.0
+tecson,1,0,0.0
+teedy,1,0,0.0
+teimas global,1,0,0.0
+tektoncd,1,0,0.0
+tel ster,1,0,0.0
+telenot electronic,1,0,0.0
+tempesta,1,0,0.0
+templatecookie,1,0,0.0
+templatemonster 2002,1,0,0.0
+temporal oss,1,0,0.0
+tencentos tiny,1,0,0.0
+teplitsa,1,0,0.0
+teradici,1,0,0.0
+termly,1,0,0.0
+ternstyle,1,0,0.0
+terrier tenacity,1,0,0.0
+terry lin,1,0,0.0
+teruten,1,0,0.0
+tethik,1,0,0.0
+tg soft,1,0,0.0
+tg123,1,0,0.0
+th3 822,1,0,0.0
+thales dis,1,0,0.0
+tharsis,1,0,0.0
+thedark,1,0,0.0
+thefreewindows,1,0,0.0
+theguidex,1,0,0.0
+theinnovs,1,0,0.0
+theme blvd,1,0,0.0
+theme my login,1,0,0.0
+theme palace,1,0,0.0
+themeblvd,1,0,0.0
+themefarmer,1,0,0.0
+themefuse,1,0,0.0
+themely,1,0,0.0
+themeprix,1,0,0.0
+themepunch,1,0,0.0
+themes awesome,1,0,0.0
+themify icons,1,0,0.0
+themis solutions,1,0,0.0
+thenahidul,1,0,0.0
+thenbrent,1,0,0.0
+theonlinehero tom skroza,1,0,0.0
+thephpleague,1,0,0.0
+thethingsnetwork,1,0,0.0
+theupdateframework,1,0,0.0
+thimo grauerholz,1,0,0.0
+this functional,1,0,0.0
+thm health,1,0,0.0
+thoefter,1,0,0.0
+tholum,1,0,0.0
+thom stark,1,0,0.0
+thomas maier,1,0,0.0
+three r solution japan,1,0,0.0
+thrive website design,1,0,0.0
+tianjin,1,0,0.0
+tianwell,1,0,0.0
+ticklishhoneybee,1,0,0.0
+tiff distribution,1,0,0.0
+tiggerswelt net,1,0,0.0
+tilda publishing,1,0,0.0
+till kr ss,1,0,0.0
+tillitis,1,0,0.0
+tim brattberg,1,0,0.0
+tim campus,1,0,0.0
+tim reeves david st ckl,1,0,0.0
+tim stephenson,1,0,0.0
+timber team contributors,1,0,0.0
+timely appointment,1,0,0.0
+timescale,1,0,0.0
+timvaniersel,1,0,0.0
+tinacms,1,0,0.0
+tinfoil,1,0,0.0
+tinymighty,1,0,0.0
+tinyproxy,1,0,0.0
+tinyweb,1,0,0.0
+tips and tricks hq josh401,1,0,0.0
+tips and tricks hq peter petreski,1,0,0.0
+tiredtyrant,1,0,0.0
+tise,1,0,0.0
+tktchurch,1,0,0.0
+tlsfuzzer,1,0,0.0
+tmaxsoft,1,0,0.0
+tmccombs,1,0,0.0
+tnb mobile solutions,1,0,0.0
+toastie studio,1,0,0.0
+tobias battenberg,1,0,0.0
+tobiasbg,1,0,0.0
+todiadiatmo,1,0,0.0
+toidicode com thanhtaivtt,1,0,0.0
+tomas,1,0,0.0
+tomas cordero,1,0,0.0
+tomas docs faq premium support,1,0,0.0
+tombh,1,0,0.0
+tomita masahiro,1,0,0.0
+tomphttp,1,0,0.0
+tonjoo,1,0,0.0
+tony zeoli,1,0,0.0
+tony zeoli tony hayes,1,0,0.0
+tooltip,1,0,0.0
+topaz,1,0,0.0
+topdigitaltrends,1,0,0.0
+torbjon,1,0,0.0
+tornadoweb,1,0,0.0
+torrentpier,1,0,0.0
+totalpress org,1,0,0.0
+totalpressorg,1,0,0.0
+totalsuite,1,0,0.0
+tovyblox,1,0,0.0
+toyoko inn it solution,1,0,0.0
+tqdm,1,0,0.0
+trackship,1,0,0.0
+trade pips,1,0,0.0
+tradebooster,1,0,0.0
+trane,1,0,0.0
+transbankdevelopers,1,0,0.0
+translator,1,0,0.0
+trasweb,1,0,0.0
+travelmap,1,0,0.0
+travelmate,1,0,0.0
+treasure data,1,0,0.0
+treyww,1,0,0.0
+tribe interactive,1,0,0.0
+triberr,1,0,0.0
+trident technolabs,1,0,0.0
+trihedral,1,0,0.0
+trillium rs,1,0,0.0
+trinhtuantai,1,0,0.0
+trinitronic,1,0,0.0
+tripetto,1,0,0.0
+tripodworks,1,0,0.0
+tritonmc,1,0,0.0
+trol intermedia sp z o o sp k,1,0,0.0
+trtek,1,0,0.0
+truelayer,1,0,0.0
+trumpf,1,0,0.0
+trumpf werkzeugmaschinen kg,1,0,0.0
+trustindex,1,0,0.0
+tryinteract,1,0,0.0
+tsina,1,0,0.0
+tsruban,1,0,0.0
+ttskch,1,0,0.0
+tu6ge,1,0,0.0
+tura,1,0,0.0
+turante,1,0,0.0
+turbowarp,1,0,0.0
+turn2honey,1,0,0.0
+turna,1,0,0.0
+turt2live,1,0,0.0
+turtlepod,1,0,0.0
+tussendoor internet marketing,1,0,0.0
+tutrantta,1,0,0.0
+tuya,1,0,0.0
+twardes,1,0,0.0
+twentysix26,1,0,0.0
+twinkle toes,1,0,0.0
+twinoaks computing,1,0,0.0
+txthinking,1,0,0.0
+tyan,1,0,0.0
+tynx,1,0,0.0
+typcn,1,0,0.0
+tzinfo,1,0,0.0
+u blox,1,0,0.0
+uakfdotb,1,0,0.0
+ualbertalib,1,0,0.0
+uapp group,1,0,0.0
+ubertidavide,1,0,0.0
+uboot,1,0,0.0
+ubuntu,1,0,0.0
+uclibc ng,1,0,0.0
+ucweb,1,0,0.0
+udecode,1,0,0.0
+udx,1,0,0.0
+uikit0,1,0,0.0
+ujwol bastakoti,1,0,0.0
+ulkem,1,0,0.0
+ulrikstrid,1,0,0.0
+ultimate member,1,0,0.0
+ultimateblocks,1,0,0.0
+ultimatelysocial,1,0,0.0
+ultravnc,1,0,0.0
+umair saleem,1,0,0.0
+umarbajwa,1,0,0.0
+umlaeute,1,0,0.0
+ummmmm,1,0,0.0
+uncanny automator uncanny owl,1,0,0.0
+unfocus projects,1,0,0.0
+uni pa university marketing computer internet trade,1,0,0.0
+uniconsent,1,0,0.0
+unified intents ab,1,0,0.0
+uniform server zero,1,0,0.0
+uniswap,1,0,0.0
+unitedover,1,0,0.0
+unitree,1,0,0.0
+univera computer system,1,0,0.0
+universitat polit cnica de val ncia upv,1,0,0.0
+university of cambridge,1,0,0.0
+university of central florida,1,0,0.0
+unknown o,1,0,0.0
+unpoly,1,0,0.0
+unyson,1,0,0.0
+updraftplus,1,0,0.0
+updraftplus com davidanderson,1,0,0.0
+uploadcare,1,0,0.0
+upress,1,0,0.0
+upsolution,1,0,0.0
+upthemes,1,0,0.0
+upwerd,1,0,0.0
+urban base,1,0,0.0
+uri template lite,1,0,0.0
+uriahs victor,1,0,0.0
+urql graphql,1,0,0.0
+usability dynamics,1,0,0.0
+usb memory direct,1,0,0.0
+usbarmory,1,0,0.0
+user local,1,0,0.0
+user meta,1,0,0.0
+user meta manager,1,0,0.0
+user registration login landing pages leadmagic,1,0,0.0
+userfrosting,1,0,0.0
+usersnap,1,0,0.0
+usr,1,0,0.0
+usta,1,0,0.0
+utahta,1,0,0.0
+utorrent,1,0,0.0
+uwe jacobs,1,0,0.0
+uzay baskul,1,0,0.0
+v2fly,1,0,0.0
+vagary digital,1,0,0.0
+valexandersaulys,1,0,0.0
+valmet dna,1,0,0.0
+valtech,1,0,0.0
+valtimo platform,1,0,0.0
+vantiva,1,0,0.0
+vanyukov,1,0,0.0
+varta storage,1,0,0.0
+varun kumar,1,0,0.0
+varunvairavanlc,1,0,0.0
+vathemes,1,0,0.0
+vaultdweller,1,0,0.0
+vcita com,1,0,0.0
+vector im,1,0,0.0
+vegagroup,1,0,0.0
+vegaprotocol,1,0,0.0
+vendure ecommerce,1,0,0.0
+venutius,1,0,0.0
+veon computer,1,0,0.0
+veragroup,1,0,0.0
+verapdf,1,0,0.0
+verbb,1,0,0.0
+veribilim computer,1,0,0.0
+very good plugins,1,0,0.0
+vi solutions,1,0,0.0
+viadat creations,1,0,0.0
+viafintech,1,0,0.0
+viakondratiuk,1,0,0.0
+vickyagravat,1,0,0.0
+victor,1,0,0.0
+victorferraresi,1,0,0.0
+victorfreitas,1,0,0.0
+videogallery,1,0,0.0
+videolan,1,0,0.0
+videousermanuals,1,0,0.0
+videowhisper com,1,0,0.0
+videoyield com,1,0,0.0
+vidishp,1,0,0.0
+viewcomponent,1,0,0.0
+viictory media,1,0,0.0
+viitorcloudvc,1,0,0.0
+vikas vatsa,1,0,0.0
+vikbooking hotel booking engine pms,1,0,0.0
+viliusle,1,0,0.0
+vinchin,1,0,0.0
+vinsdragonis,1,0,0.0
+virgial,1,0,0.0
+virgial berveling,1,0,0.0
+visegripped,1,0,0.0
+visio globe,1,0,0.0
+visitor analytics,1,0,0.0
+visser labs,1,0,0.0
+viszt p ter,1,0,0.0
+vivacityinfotechjaipur,1,0,0.0
+vivo,1,0,0.0
+viz rs,1,0,0.0
+vladimir prelovac,1,0,0.0
+vladimir statsenko,1,0,0.0
+vnotex,1,0,0.0
+voidcoders innovs,1,0,0.0
+voila dashboards,1,0,0.0
+volkswagen,1,0,0.0
+volkswagen group charging elli evbox,1,0,0.0
+vova07,1,0,0.0
+vryasage,1,0,0.0
+vue js,1,0,0.0
+vuukle,1,0,0.0
+vyas dipen,1,0,0.0
+w t,1,0,0.0
+w3speedster,1,0,0.0
+w8tcha,1,0,0.0
+walkeprashant,1,0,0.0
+wanderlustcodes,1,0,0.0
+wanhu,1,0,0.0
+wap nepal,1,0,0.0
+wappointment,1,0,0.0
+wapppress team,1,0,0.0
+wardee,1,0,0.0
+warfare plugins,1,0,0.0
+wargio,1,0,0.0
+waseem senjer,1,0,0.0
+wasmcloud,1,0,0.0
+wasmi labs,1,0,0.0
+waspthemes,1,0,0.0
+watchguard,1,0,0.0
+waterloo plugins,1,0,0.0
+wattisit,1,0,0.0
+way2neelam,1,0,0.0
+wbce,1,0,0.0
+wbcom designs,1,0,0.0
+wbolt team,1,0,0.0
+wbw,1,0,0.0
+wc lovers,1,0,0.0
+wc product table,1,0,0.0
+wc vendors,1,0,0.0
+wdm team,1,0,0.0
+weatheratlas,1,0,0.0
+web trendy,1,0,0.0
+web x,1,0,0.0
+web357,1,0,0.0
+webarea vera nedvyzhenko,1,0,0.0
+webauthn4j,1,0,0.0
+webbax,1,0,0.0
+webbistro,1,0,0.0
+webbjocke,1,0,0.0
+webbuilders group,1,0,0.0
+webcash,1,0,0.0
+webcource,1,0,0.0
+webcraftic,1,0,0.0
+webdetails,1,0,0.0
+webdevstudios,1,0,0.0
+webdzier,1,0,0.0
+webfood,1,0,0.0
+webguyio,1,0,0.0
+webhood io,1,0,0.0
+webhostings,1,0,0.0
+webinnane,1,0,0.0
+webkit,1,0,0.0
+webklex,1,0,0.0
+weblateorg,1,0,0.0
+webliberty,1,0,0.0
+webmat,1,0,0.0
+webpack,1,0,0.0
+webpsilon,1,0,0.0
+webshouter,1,0,0.0
+websmokers,1,0,0.0
+websockets,1,0,0.0
+websockets rs,1,0,0.0
+websoudan,1,0,0.0
+websupporter,1,0,0.0
+webtechideas,1,0,0.0
+webtechstreet,1,0,0.0
+webwizards,1,0,0.0
+webxmedia,1,0,0.0
+ween,1,0,0.0
+weightbasedshipping com,1,0,0.0
+weitong,1,0,0.0
+weiye jing,1,0,0.0
+welcart,1,0,0.0
+wen themes,1,0,0.0
+wenzhixin,1,0,0.0
+wepupil,1,0,0.0
+wesecur,1,0,0.0
+westguard,1,0,0.0
+wger project,1,0,0.0
+whaleal,1,0,0.0
+what3words,1,0,0.0
+whiletrue,1,0,0.0
+whitehsbg,1,0,0.0
+whitesource,1,0,0.0
+whitestudio,1,0,0.0
+whitewp,1,0,0.0
+whmcs bridge,1,0,0.0
+wholesale,1,0,0.0
+whydonate,1,0,0.0
+wibu,1,0,0.0
+widgetpack,1,0,0.0
+wikimedia,1,0,0.0
+wikisource,1,0,0.0
+wildweblab,1,0,0.0
+willnorris,1,0,0.0
+windscribe,1,0,0.0
+wipeout media,1,0,0.0
+wisecleaner,1,0,0.0
+wishfulthemes,1,0,0.0
+wmsedgar,1,0,0.0
+wobbie nl,1,0,0.0
+wojtekmaj,1,0,0.0
+wolfgang ertl,1,0,0.0
+wolfi dev,1,0,0.0
+wolt,1,0,0.0
+woo product importer,1,0,0.0
+wooassist,1,0,0.0
+woocommerce wordpress tutorials,1,0,0.0
+woodpecker ci,1,0,0.0
+wooplugins,1,0,0.0
+woorank,1,0,0.0
+woorockets,1,0,0.0
+wordable,1,0,0.0
+wordapp,1,0,0.0
+wordpress download manager,1,0,0.0
+wordpress org community,1,0,0.0
+wordpress performance team,1,0,0.0
+workos,1,0,0.0
+works mobile japan,1,0,0.0
+wouter dijkstra,1,0,0.0
+wowdevs,1,0,0.0
+wp all import,1,0,0.0
+wp auto listings,1,0,0.0
+wp backup solutions,1,0,0.0
+wp buddy,1,0,0.0
+wp chill,1,0,0.0
+wp cirrus,1,0,0.0
+wp compress,1,0,0.0
+wp desk,1,0,0.0
+wp directory kit,1,0,0.0
+wp discussion board,1,0,0.0
+wp easy pay,1,0,0.0
+wp email newsletter team fluentcrm,1,0,0.0
+wp enhanced,1,0,0.0
+wp etracker,1,0,0.0
+wp experts in team,1,0,0.0
+wp for win,1,0,0.0
+wp go maps,1,0,0.0
+wp google map,1,0,0.0
+wp hait,1,0,0.0
+wp happy coders,1,0,0.0
+wp hive,1,0,0.0
+wp hosting,1,0,0.0
+wp ical availability,1,0,0.0
+wp inventory manager,1,0,0.0
+wp map plugins,1,0,0.0
+wp marketing robot,1,0,0.0
+wp master ir,1,0,0.0
+wp military,1,0,0.0
+wp moose,1,0,0.0
+wp oauth server,1,0,0.0
+wp plugins pro,1,0,0.0
+wp reactions,1,0,0.0
+wp republic,1,0,0.0
+wp schema pro,1,0,0.0
+wp sharks,1,0,0.0
+wp shop ru,1,0,0.0
+wp site care,1,0,0.0
+wp smart editor,1,0,0.0
+wp spell check,1,0,0.0
+wp table builder,1,0,0.0
+wp zinc,1,0,0.0
+wp3sixty,1,0,0.0
+wpadmin,1,0,0.0
+wpallimport,1,0,0.0
+wpase,1,0,0.0
+wpassist me,1,0,0.0
+wpazure themes,1,0,0.0
+wpbrigade,1,0,0.0
+wpchefgadget,1,0,0.0
+wpchill media labs l l c,1,0,0.0
+wpcloudgallery,1,0,0.0
+wpclubmanager,1,0,0.0
+wpcoder,1,0,0.0
+wpcreativeidea,1,0,0.0
+wpcustomify,1,0,0.0
+wpdesk,1,0,0.0
+wpdive,1,0,0.0
+wpecommerce,1,0,0.0
+wpekaclub,1,0,0.0
+wpexperts io,1,0,0.0
+wpforms awesome motive,1,0,0.0
+wpforo,1,0,0.0
+wpfunnels,1,0,0.0
+wpfunnels team,1,0,0.0
+wpgear pro,1,0,0.0
+wpgem,1,0,0.0
+wpgens,1,0,0.0
+wpglobus,1,0,0.0
+wpgraphql,1,0,0.0
+wpify,1,0,0.0
+wpify s r o,1,0,0.0
+wpjobboard,1,0,0.0
+wpjohnny,1,0,0.0
+wplit pty,1,0,0.0
+wpmanage,1,0,0.0
+wpmessiah,1,0,0.0
+wpmobilepack com,1,0,0.0
+wponlinesupport,1,0,0.0
+wppal,1,0,0.0
+wppdf org,1,0,0.0
+wpplugins wordpress security plugins,1,0,0.0
+wppost,1,0,0.0
+wprepublic,1,0,0.0
+wps office,1,0,0.0
+wpserveur nicolaskulka wpformation,1,0,0.0
+wpsolutions hq,1,0,0.0
+wpstaging,1,0,0.0
+wpsurface,1,0,0.0
+wpsynchro,1,0,0.0
+wptb,1,0,0.0
+wptravel,1,0,0.0
+wpvar,1,0,0.0
+wpvar com,1,0,0.0
+wpzita,1,0,0.0
+writersystem,1,0,0.0
+x wrt,1,0,0.0
+xabier miranda,1,0,0.0
+xakuro,1,0,0.0
+xapi,1,0,0.0
+xcat2,1,0,0.0
+xdan,1,0,0.0
+xecuify,1,0,0.0
+xehub,1,0,0.0
+xenioushk,1,0,0.0
+xfinity soft,1,0,0.0
+xhyve,1,0,0.0
+xi,1,0,0.0
+xi s d,1,0,0.0
+xiamen four letter,1,0,0.0
+xiandafu,1,0,0.0
+xiaomac,1,0,0.0
+xiaozhuai,1,0,0.0
+xiboon,1,0,0.0
+xiongmai,1,0,0.0
+xithrius,1,0,0.0
+xjsv,1,0,0.0
+xlightftpd,1,0,0.0
+xmldom,1,0,0.0
+xnx3,1,0,0.0
+xoslab,1,0,0.0
+xpeedstudio,1,0,0.0
+xpodas,1,0,0.0
+xqueue,1,0,0.0
+xserver migrator,1,0,0.0
+xuexueli,1,0,0.0
+xuliangzhan,1,0,0.0
+xuxueli,1,0,0.0
+xzjie,1,0,0.0
+yahman,1,0,0.0
+yahoo,1,0,0.0
+yakir sitbon ariel klikstein,1,0,0.0
+yaklang,1,0,0.0
+yamaha,1,0,0.0
+yarkeev,1,0,0.0
+yarpp,1,0,0.0
+yaycommerce,1,0,0.0
+yaztek and computer,1,0,0.0
+ydalb,1,0,0.0
+ydb platform,1,0,0.0
+ydesignservices,1,0,0.0
+yetanalytics,1,0,0.0
+yetanotherstarsrating com,1,0,0.0
+yettiesoft,1,0,0.0
+yevhen kotelnytskyi,1,0,0.0
+yhz66,1,0,0.0
+ykm,1,0,0.0
+ylianst,1,0,0.0
+yms,1,0,0.0
+yoctoproject,1,0,0.0
+yogeshojha,1,0,0.0
+yokogawa,1,0,0.0
+yokogawa test measurement,1,0,0.0
+yomguithereal,1,0,0.0
+yongyou,1,0,0.0
+yontem informatics,1,0,0.0
+yoohoo plugins,1,0,0.0
+yordam,1,0,0.0
+yordam bilgi teknolojileri,1,0,0.0
+youngerheart,1,0,0.0
+yourls,1,0,0.0
+yourownprogrammer,1,0,0.0
+youzify,1,0,0.0
+ytti,1,0,0.0
+yuda lyu,1,0,0.0
+yudiz,1,0,0.0
+yudlee themes,1,0,0.0
+yugabyte,1,0,0.0
+yumpu,1,0,0.0
+yuna scatari,1,0,0.0
+yunjing,1,0,0.0
+yunohost apps,1,0,0.0
+yunyou,1,0,0.0
+yydevelopment,1,0,0.0
+zakstan,1,0,0.0
+zanematthew,1,0,0.0
+zarthus,1,0,0.0
+zauberzeug,1,0,0.0
+zayedbaloch,1,0,0.0
+zbl1996,1,0,0.0
+zealousweb,1,0,0.0
+zediious,1,0,0.0
+zelnickb,1,0,0.0
+zemena,1,0,0.0
+zenoss,1,0,0.0
+zenphoto,1,0,0.0
+zenstruck,1,0,0.0
+zephilou,1,0,0.0
+zephyr,1,0,0.0
+zero channel bbs plus developers,1,0,0.0
+zerobounce,1,0,0.0
+zerochannel,1,0,0.0
+zerocoin,1,0,0.0
+zeromicro,1,0,0.0
+zerotier,1,0,0.0
+zestard,1,0,0.0
+zhejiang land zongheng network,1,0,0.0
+zhejiang uniview and atsumi electric,1,0,0.0
+zhenfeng13,1,0,0.0
+zhuyi,1,0,0.0
+zia imtiaz,1,0,0.0
+ziftr,1,0,0.0
+zimma,1,0,0.0
+zionbuilder io,1,0,0.0
+ziparchive,1,0,0.0
+ziteboard,1,0,0.0
+zizou1988,1,0,0.0
+zksoftware biometric security solutions,1,0,0.0
+zmartzone,1,0,0.0
+zod,1,0,0.0
+zoho crm,1,0,0.0
+zoho forms,1,0,0.0
+zootemplate,1,0,0.0
+zorlan,1,0,0.0
+zozo,1,0,0.0
+zuken elmic,1,0,0.0
+zwaply,1,0,0.0
+zwczou,1,0,0.0
+zxcvbn ts,1,0,0.0
+zzdevelop,1,0,0.0

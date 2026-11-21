@@ -1,0 +1,5 @@
+rule,score,patches,patches_per_month,exploited_caught,exploited_missed,recall_%,precision_%
+CVSS >= 9,day-0 (CNA only),3280,110,55,196,21.9,1.68
+CVSS >= 9,generous (fallback),9162,306,88,163,35.1,0.96
+CVSS >= 7,day-0 (CNA only),18364,614,118,133,47.0,0.64
+CVSS >= 7,generous (fallback),36024,1204,214,37,85.3,0.59

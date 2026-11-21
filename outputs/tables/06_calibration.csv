@@ -1,0 +1,2 @@
+Brier (calibrated),Brier (constant base rate),log loss (calibrated),log loss (constant),mean predicted,observed rate,note
+0.002816204833120284,0.0028583693948578018,0.016924121410025996,0.019645288029005045,0.004153581272977407,0.002866586714248106,out-of-sample
