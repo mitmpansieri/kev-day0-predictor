@@ -46,6 +46,7 @@ docs/decision_log.md               dated decisions, the test protocol (fixed bef
 data/raw/kev_20261120.csv          dated CISA KEV snapshot (labels + KEV-history features)
 data/shap_test.parquet             SHAP values of the frozen model on test (notebook 4)
 data/nvd_tool_cache/               NVD responses used by the tool demo (offline re-runs)
+data/nvd_sources.csv               NVD source list: CNA identifier (e-mail or UUID) -> organisation name (tool display)
 outputs/tables, outputs/models     every result table; frozen Phase 6 models (dev_*), deployment model (deploy_hgb), calibrators
 outputs/logs                       run logs of each step
 ```
@@ -55,10 +56,11 @@ outputs/logs                       run logs of each step
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python src/build_notebooks.py                              # (re)generate notebooks 1-5
 .venv/bin/python src/run_notebook.py notebooks/1_data.ipynb          # or open in Jupyter / VS Code and Run All
-.venv/bin/python ciso_tool.py feed 2026-09-08 --top 20               # daily ranked patch list
-.venv/bin/python ciso_tool.py cve CVE-2026-12744                     # one CVE from NVD
+.venv/bin/python ciso_tool.py feed 2026-09-08 --top 20               # daily ranked patch list (table)
+.venv/bin/python ciso_tool.py cve CVE-2026-12744                     # one CVE from NVD (card)
 .venv/bin/python ciso_tool.py manual --vendor Fortinet --cna psirt@fortinet.com \
-    --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "Authentication bypass ..."
+    --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "Authentication bypass ..."   # card
+.venv/bin/python ciso_tool.py sources                                # refresh CNA names (data/nvd_sources.csv)
 ```
 
 **How the tool reads data**
@@ -72,9 +74,28 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 **Output per CVE**
 - Percentile vs the July 2026 reference month.
-- An indicative probability.
+- An indicative probability, also shown as a multiple of the 0.31% base rate.
 - PATCH NOW if the CVE is in the top 4.2% of a month, otherwise MONITOR.
 - The top 3 SHAP reasons, in plain words.
+
+`cve` and `manual` print a readable card; `feed` prints a ranked table. CNA identifiers (often UUIDs) are shown as
+organisation names from `data/nvd_sources.csv`, built from the keyless NVD source API with `ciso_tool.py sources`. The
+names are for display only; the model uses the raw identifiers it was trained on.
+
+Example card (`ciso_tool.py cve CVE-2026-77089`):
+```
+  CVE-2026-77089   published 2026-09-08   CNA: Commvault
+  Commvault / Commvault Cloud
+  CVSS (CNA): 9.3  (CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N)
+  DECISION:     PATCH NOW   (top 4.2% of a month's CVEs)
+  Percentile:   99.7  (scores higher than 99.7% of the 9,771 CVEs of July 2026)
+  Probability:  5.4% indicative chance of a CISA KEV listing within 90 days
+                = 17.2x the base rate (0.31% of all CVEs)
+  Why:
+    1. CNA CVSS score 9.3 -> strongly raises risk
+    2. published by CNA Commvault -> strongly raises risk
+    3. vendor's last KEV entry 494 days before publication -> moderately raises risk
+```
 
 ## Full reproduction (in order)
 Install `requirements-full.txt`; it adds PyTorch and sentence-transformers for the text models. GPU steps need Apple

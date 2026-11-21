@@ -15,13 +15,16 @@ Output per CVE:
   reasons      : top 3 SHAP contributions (permutation SHAP vs 100 training CVEs), in plain words.
 
 NVD access: public API without a key (5 requests / 30 s); the tool never reads .env. Responses are cached in
-data/nvd_tool_cache/ (a snapshot of NVD at fetch time; delete a file to refetch).
+data/nvd_tool_cache/ (a snapshot of NVD at fetch time; delete a file to refetch). CNA identifiers (e-mails or UUIDs)
+are shown as organisation names from data/nvd_sources.csv (NVD source API, refresh with `sources`); display only, the
+model itself uses the raw identifiers it was trained on.
 
 CLI (run from the repo root):
-  python ciso_tool.py cve CVE-2026-12345
-  python ciso_tool.py feed 2026-09-08 --top 20
+  python ciso_tool.py cve CVE-2026-12345                      -> one-CVE card
   python ciso_tool.py manual --vendor Fortinet --product FortiOS --cna psirt@fortinet.com \\
       --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "An authentication bypass ..."
+  python ciso_tool.py feed 2026-09-08 --top 20                -> ranked table for one publication day
+  python ciso_tool.py sources                                 -> refresh data/nvd_sources.csv (CNA names)
 """
 from __future__ import annotations
 
@@ -48,6 +51,8 @@ from tabular_models import build_X                                    # noqa: E4
 
 MODELS = ROOT / "outputs" / "models"
 CACHE = ROOT / "data" / "nvd_tool_cache"
+SOURCES_CSV = ROOT / "data" / "nvd_sources.csv"
+NVD_SOURCE_URL = "https://services.nvd.nist.gov/rest/json/source/2.0"
 BUDGET_SHARE = 0.0422                 # 110 / (93,842 dev CVEs / 36 months)
 DAY0_GRACE_DAYS = 7                   # phrases in descriptions fetched later than this are not provably day-0
 USER_AGENT = "kev-day0-predictor/1.0 (research tool; python-requests)"
@@ -64,6 +69,45 @@ LETTERS = {
     "A": ("availability impact", {"H": "high", "L": "low", "N": "none"}),
     "AT": ("attack requirements (v4)", {"N": "none", "P": "present"}),
 }
+
+
+# ------------------------------------------------------------------ CNA identifier -> organisation name
+_NAMES: dict[str, str] = {}
+
+
+def update_sources() -> pd.DataFrame:
+    """Download every NVD source (CNAs, ADPs) once, keyless, and save identifier -> name to data/nvd_sources.csv."""
+    session = requests.Session()
+    session.headers["User-Agent"] = USER_AGENT
+    rows, start, total = [], 0, None
+    while total is None or start < total:
+        r = session.get(NVD_SOURCE_URL, params={"resultsPerPage": 1000, "startIndex": start}, timeout=60)
+        r.raise_for_status()
+        page = r.json()
+        total = page["totalResults"]
+        for s in page.get("sources", []):
+            for ident in s.get("sourceIdentifiers", []):
+                rows.append({"identifier": ident.lower(), "name": s.get("name", "").strip()})
+        start += 1000
+        time.sleep(NVD_PAUSE)
+    df = pd.DataFrame(rows).drop_duplicates("identifier").sort_values("identifier")
+    df.to_csv(SOURCES_CSV, index=False)
+    _NAMES.clear()
+    return df
+
+
+def load_source_names() -> dict[str, str]:
+    if not _NAMES and SOURCES_CSV.exists():
+        s = pd.read_csv(SOURCES_CSV, keep_default_na=False)
+        _NAMES.update(dict(zip(s["identifier"], s["name"])))
+    return _NAMES
+
+
+def org_name(identifier) -> str:
+    """'3c1d8aa1-...' -> 'Ivanti'; unknown identifiers are shown as they are."""
+    if identifier is None or (isinstance(identifier, float) and np.isnan(identifier)):
+        return "(unknown)"
+    return load_source_names().get(str(identifier).lower(), str(identifier))
 
 
 # ------------------------------------------------------------------ model bundle
@@ -85,6 +129,8 @@ class Tool:
         self.bg = pd.read_csv(MODELS / "shap_background.csv", dtype={c: str for c in CATEGORICAL}, keep_default_na=False,
                               na_values={c: [""] for c in head if c not in CATEGORICAL})
         self.meta = meta
+        self.base_rate = meta["positives"] / meta["n"]       # 613 / 196,403 = 0.31% of CVEs listed in KEV within 90 d
+        load_source_names()
 
     def describe(self) -> str:
         return (f"deploy model: {self.meta['n']:,} labelled CVEs ({self.meta['published_from']} -> {self.meta['published_to']}), "
@@ -101,9 +147,11 @@ class Tool:
         out = pd.DataFrame({
             "cve_id": df["cve_id"], "published": df["published"].dt.strftime("%Y-%m-%d"),
             "vendor": df["vendor"].fillna("(not stated)"), "product": df["product"].fillna(""),
-            "cna_cvss": df["cvss_cna_score"], "score": s,
+            "cna": df["cna"].map(org_name), "cna_cvss": df["cvss_cna_score"],
+            "cvss_vector": df["cvss_cna_vector"].fillna(""), "score": s,
             "percentile": 100 * np.searchsorted(self.ref, s, side="left") / len(self.ref),
             "probability_%": 100 * self.cal.predict_proba(x.reshape(-1, 1))[:, 1],
+            "x_base_rate": self.cal.predict_proba(x.reshape(-1, 1))[:, 1] / self.base_rate,
             "decision": np.where(s >= self.threshold, "PATCH NOW", "MONITOR"),
             "notes": df.get("day0_note", pd.Series("", index=df.index)).fillna(""),
         })
@@ -164,9 +212,9 @@ def _strength(v: float) -> str:
 def reason_text(feat: str, value, shap_value: float) -> str:
     """One SHAP contribution in plain words: '<fact> -> strongly raises risk'."""
     if feat == "vendor_key":
-        fact = f"vendor not stated (publisher {str(value)[4:]})" if str(value).startswith("cna:") else f"vendor '{value}'"
+        fact = f"vendor not stated (publisher {org_name(str(value)[4:])})" if str(value).startswith("cna:") else f"vendor '{value}'"
     elif feat == "cna":
-        fact = f"published by CNA {value}"
+        fact = f"published by CNA {org_name(value)}"
     elif feat == "cwe":
         fact = f"weakness {value}" if value != "NVD-CWE-noinfo" else "no weakness (CWE) given by the CNA"
     elif feat == "cvss_cna_score":
@@ -271,6 +319,28 @@ def manual_cve(vendor: str | None, cna: str, description: str, vector: str | Non
         "cvss_cna_score": score, "cvss_cna_vector": vector, "has_cna_cvss": vector is not None, "day0_note": ""}])
 
 
+# ------------------------------------------------------------------ one-CVE card
+def card(row: pd.Series, tool: Tool) -> str:
+    """Readable summary of one scored CVE (row of Tool.score)."""
+    import re
+    vec = re.sub(r"/[A-Z]+:X(?=/|$)", "", row["cvss_vector"])          # v4: drop components that are 'X' (not set)
+    cvss = "no CNA CVSS" if pd.isna(row["cna_cvss"]) else f"{row['cna_cvss']:.1f}" + (f"  ({vec})" if vec else "")
+    vp = row["vendor"] + (f" / {row['product']}" if row["product"] else "")
+    line = "=" * 78
+    out = [line, f"  {row['cve_id']}   published {row['published']}   CNA: {row['cna']}", f"  {vp}", f"  CVSS (CNA): {cvss}", line,
+           f"  DECISION:     {row['decision']}" + ("   (top 4.2% of a month's CVEs)" if row["decision"] == "PATCH NOW" else "   (below the top-4.2% patch budget)"),
+           f"  Percentile:   {row['percentile']:.1f}  (" + ("in the top 0.1% of" if row["percentile"] >= 99.9 else f"scores higher than {row['percentile']:.1f}% of")
+           + f" the {len(tool.ref):,} CVEs of July 2026)",
+           f"  Probability:  {row['probability_%']:.1f}% indicative chance of a CISA KEV listing within 90 days",
+           f"                = {row['x_base_rate']:.1f}x the base rate ({100 * tool.base_rate:.2f}% of all CVEs)",
+           "  Why:"]
+    out += [f"    {i}. {row[f'reason_{i}']}" for i in (1, 2, 3) if row[f"reason_{i}"]]
+    if row["notes"]:
+        out.append(f"  Note: {row['notes']}")
+    out.append(line)
+    return "\n".join(out)
+
+
 # ------------------------------------------------------------------ CLI
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -282,23 +352,26 @@ def main(argv=None):
     for k in ["vendor", "product", "cna", "vector", "cwe", "description", "published"]:
         c.add_argument(f"--{k}", required=k in ("cna", "description"))
     c.add_argument("--score", type=float)
+    sub.add_parser("sources", help="refresh data/nvd_sources.csv (CNA identifier -> organisation name)")
     args = ap.parse_args(argv)
+    if args.cmd == "sources":
+        df = update_sources()
+        print(f"saved {len(df):,} source identifiers -> {SOURCES_CSV.relative_to(ROOT)}")
+        return
     tool = Tool()
     print(tool.describe())
     pd.set_option("display.width", 250); pd.set_option("display.max_colwidth", 80); pd.set_option("display.max_columns", 20)
-    if args.cmd == "cve":
-        res = tool.score(fetch_cve(args.cve_id, args.refresh))
-    elif args.cmd == "manual":
-        res = tool.score(manual_cve(args.vendor, args.cna, args.description, args.vector, args.score, args.cwe,
-                                    args.product, args.published))
-    else:
-        df = fetch_day(args.day, args.refresh)
-        res = tool.score(df, explain_top=args.top)
-        print(f"{args.day}: {len(res)} CVEs published; PATCH NOW: {(res['decision'] == 'PATCH NOW').sum()}")
-        res = res.head(args.top)
-    cols = ["rank", "cve_id", "vendor", "product", "cna_cvss", "percentile", "probability_%", "decision",
+    if args.cmd in ("cve", "manual"):
+        df = fetch_cve(args.cve_id, args.refresh) if args.cmd == "cve" else manual_cve(
+            args.vendor, args.cna, args.description, args.vector, args.score, args.cwe, args.product, args.published)
+        for _, row in tool.score(df).iterrows():
+            print(card(row, tool))
+        return
+    res = tool.score(fetch_day(args.day, args.refresh), explain_top=args.top)
+    print(f"{args.day}: {len(res)} CVEs published; PATCH NOW: {(res['decision'] == 'PATCH NOW').sum()}")
+    cols = ["rank", "cve_id", "vendor", "product", "cna", "cna_cvss", "percentile", "probability_%", "decision",
             "reason_1", "reason_2", "reason_3", "notes"]
-    print(res[cols].to_string(index=False, float_format=lambda v: f"{v:.1f}"))
+    print(res.head(args.top)[cols].to_string(index=False, float_format=lambda v: f"{v:.1f}"))
 
 
 if __name__ == "__main__":
