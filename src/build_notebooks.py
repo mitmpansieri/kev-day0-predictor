@@ -338,8 +338,9 @@ data 2022-01 → 2026-08-20; never used for any reported number) from **day-0 in
   KEV snapshot (the tool never downloads KEV).
 
 **Output per CVE:** within-month **percentile** vs the July 2026 reference month (primary), **indicative probability**
-(Platt on time-ordered out-of-fold scores) and how many times the 0.31% base rate it is, **decision** PATCH NOW / MONITOR at
-the **4.2%-of-monthly-CVEs budget**, and the **top 3 SHAP reasons** in plain words. Single CVEs are shown as a readable card,
+(Platt on time-ordered out-of-fold scores) and how many times the 0.31% base rate it is, a **tier** — PATCH NOW (within the
+monthly capacity, by default the evaluated **4.2% of a month's CVEs** ≈ 347 a month), WATCH (elevated risk, the next 3.5x
+capacity; recheck when news appears) or MONITOR — and the **top 3 SHAP reasons** in plain words. Single CVEs are shown as a readable card,
 a day's feed as a ranked table. CNA identifiers (often UUIDs) are shown as organisation names from `data/nvd_sources.csv`
 (NVD source API, keyless; display only). NVD is read without an API key (the tool never reads `.env`); responses are cached in
 `data/nvd_tool_cache/`, so this notebook re-runs offline. The same logic is available as a local web app with a 'Past CVEs' tab (frozen model's day-0 verdicts on the test period): `streamlit run app.py`.
@@ -361,8 +362,12 @@ Demo day **2026-09-08** (Microsoft Patch Tuesday), after the 2026-08-20 label cu
 deployment model's training data. Top 20 shown with reasons."""),
 code("""DAY = "2026-09-08"
 feed = tool.score(ct.fetch_day(DAY), explain_top=20)
-n_now = (feed["decision"] == "PATCH NOW").sum()
-print(f"{DAY}: {len(feed):,} CVEs published; PATCH NOW: {n_now} ({100 * n_now / len(feed):.1f}%) - the 4.2% budget is a MONTHLY share, so busy days such as Patch Tuesday take more")
+n = feed["decision"].value_counts()
+print(tool.budget_line())
+print(f"{DAY}: {len(feed):,} CVEs published; PATCH NOW {n['PATCH NOW']} ({100 * n['PATCH NOW'] / len(feed):.1f}%), WATCH {n['WATCH']}, MONITOR {n['MONITOR']}"
+      " - the budget is a MONTHLY share, so busy days such as Patch Tuesday take more")
+small = ct.Tool().set_capacity(110)
+print("at a capacity of 110 patches/month instead:", small.score(ct.fetch_day(DAY), explain_top=0)["decision"].value_counts().to_dict())
 display(feed.head(20)[COLS].round(1))
 notes = feed[feed["notes"] != ""]; print(f"CVEs with a day-0 note (wording removed / KEV snapshot older than publication): {len(notes)}")"""),
 md("""### Anecdotal: which of these are in CISA KEV now?
@@ -388,7 +393,7 @@ manual = pd.concat([ct.manual_cve("Acme Widgets", "security@acme.example", desc,
                     ct.manual_cve("Ivanti", "3c1d8aa1-5a33-4ea4-8992-aadd6440af75", desc, vec, cwe="CWE-121", product="Connect Secure", published="2026-11-20", cve_id="MANUAL-IVANTI")])
 for _, row in tool.score(manual).iterrows():
     print(ct.card(row, tool))"""),
-tk("The tool turns the evaluated model into a daily decision: each NVD entry gets a percentile against a full reference month, an indicative probability, a PATCH NOW / MONITOR decision at a volume-scaled budget, and the three facts that drove the score. On the demo day (1,559 CVEs, Patch Tuesday) 182 were PATCH NOW — more than 4.2% because the budget is a *monthly* share and Patch Tuesday is the busiest day. In the hand-typed example the same unauthenticated RCE description (CVSS 9.8) is PATCH NOW for both vendors, but the indicative probability is **10.0% for Ivanti vs 3.1% for an unknown vendor**: **who** is affected (KEV history, publisher) matters as much as severity, as in the SHAP analysis — which is why the model must be retrained as attacker attention moves (notebook 4)."),
+tk("The tool turns the evaluated model into a daily decision: each NVD entry gets a percentile against a full reference month, an indicative probability, a PATCH NOW / MONITOR decision at a volume-scaled budget, and the three facts that drove the score. On the demo day (1,559 CVEs, Patch Tuesday) 182 were PATCH NOW and 563 WATCH at the default capacity (36 PATCH NOW at 110 a month) — more than 4.2% because the budget is a *monthly* share and Patch Tuesday is the busiest day. In the hand-typed example the same unauthenticated RCE description (CVSS 9.8) is PATCH NOW for both vendors, but the indicative probability is **10.0% for Ivanti vs 3.1% for an unknown vendor**: **who** is affected (KEV history, publisher) matters as much as severity, as in the SHAP analysis — which is why the model must be retrained as attacker attention moves (notebook 4)."),
 ]
 
 for name, cells in [("1_data", nb1), ("2_train_validate", nb2), ("3_test", nb3), ("4_results_ciso", nb4), ("5_ciso_tool", nb5)]:

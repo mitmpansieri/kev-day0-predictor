@@ -10,8 +10,12 @@ Output per CVE:
   percentile   : share of July 2026 CVEs (reference month, 9,771 CVEs) that score lower. PRIMARY output.
   probability  : INDICATIVE chance of a CISA KEV listing within 90 days (Platt calibration on time-ordered
                  out-of-fold scores). Approximate; rankings are what was validated.
-  decision     : PATCH NOW if the CVE is in the top 4.22% of a month (the share of monthly CVEs that the
-                 110-patch capacity represented in 2022-24; volume-scaled budget), else MONITOR.
+  decision     : three tiers, from YOUR monthly capacity (default = the evaluated 4.22% of a month's CVEs, the share
+                 the 110-patch capacity represented in 2022-24):
+                   PATCH NOW = within this month's capacity (top capacity / expected monthly CVEs)
+                   WATCH     = elevated risk, the next `watch` CVEs (default 3.5x capacity); recheck when news appears
+                   MONITOR   = the rest
+                 Expected monthly volume = mean of the trailing 3 complete labelled months (2026-05..2026-07).
   reasons      : top 3 SHAP contributions (permutation SHAP vs 100 training CVEs), in plain words.
 
 NVD access: public API without a key (5 requests / 30 s); the tool never reads .env. Responses are cached in
@@ -24,6 +28,7 @@ CLI (run from the repo root):
   python ciso_tool.py manual --vendor Fortinet --product FortiOS --cna psirt@fortinet.com \\
       --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "An authentication bypass ..."
   python ciso_tool.py feed 2026-09-08 --top 20                -> ranked table for one publication day
+  options for cve / manual / feed: --capacity N (patches per month) --watch W (WATCH list size per month)
   python ciso_tool.py sources                                 -> refresh data/nvd_sources.csv (CNA names)
 """
 from __future__ import annotations
@@ -53,7 +58,9 @@ MODELS = ROOT / "outputs" / "models"
 CACHE = ROOT / "data" / "nvd_tool_cache"
 SOURCES_CSV = ROOT / "data" / "nvd_sources.csv"
 NVD_SOURCE_URL = "https://services.nvd.nist.gov/rest/json/source/2.0"
-BUDGET_SHARE = 0.0422                 # 110 / (93,842 dev CVEs / 36 months)
+BUDGET_SHARE = 0.0422                 # 110 / (93,842 dev CVEs / 36 months): the evaluated volume-scaled policy
+WATCH_MULT = 3.5                      # default WATCH list size = 3.5 x capacity
+VOLUME_MONTHS = ("2026-05", "2026-06", "2026-07")   # trailing 3 complete labelled months -> expected CVEs per month
 DAY0_GRACE_DAYS = 7                   # phrases in descriptions fetched later than this are not provably day-0
 USER_AGENT = "kev-day0-predictor/1.0 (research tool; python-requests)"
 NVD_PAUSE = 6.5                       # public rate limit without a key: 5 requests per rolling 30 s
@@ -120,7 +127,10 @@ class Tool:
         self.model = joblib.load(MODELS / "deploy_hgb.joblib")
         self.cal = joblib.load(MODELS / "calibrator_deploy.joblib")
         self.ref = np.sort(pd.read_csv(MODELS / "demo_reference_2026-07.csv")["score"].to_numpy())
-        self.threshold = float(np.quantile(self.ref, 1 - BUDGET_SHARE))
+        mo = pd.read_csv(ROOT / "outputs" / "tables" / "00_evo_monthly.csv").set_index("month")
+        self.volume_default = float(mo.loc[list(VOLUME_MONTHS), "cves"].mean())     # 8,216 CVEs / month
+        self.volume = self.volume_default
+        self.set_capacity()
         self.kev_path = sorted((ROOT / "data" / "raw").glob("kev_*.csv"))[-1]
         self.kev_date = pd.Timestamp(datetime.strptime(self.kev_path.stem.split("_")[1], "%Y%m%d"))
         self.kev = load_kev_raw(self.kev_path)
@@ -130,12 +140,51 @@ class Tool:
                               na_values={c: [""] for c in head if c not in CATEGORICAL})
         self.meta = meta
         self.base_rate = meta["positives"] / meta["n"]       # 613 / 196,403 = 0.31% of CVEs listed in KEV within 90 d
+        # publishers (CNAs) the model knows: read from the saved encoder, the model is not changed. One-hot encoding with
+        # min_frequency=100: CNAs with >= 100 training CVEs are learned individually; rarer and unseen CNAs share one
+        # "infrequent" bucket, which the model scores as higher risk.
+        enc = self.model["pre"].named_transformers_["hc"]
+        i = list(enc.feature_names_in_).index("cna")
+        infreq = set() if enc.infrequent_categories_[i] is None else set(enc.infrequent_categories_[i])
+        self.cna_seen = {str(c) for c in enc.categories_[i]}
+        self.cna_learned = self.cna_seen - {str(c) for c in infreq}
         load_source_names()
+
+    def set_capacity(self, capacity: float | None = None, watch: float | None = None, volume: float | None = None) -> "Tool":
+        """capacity = emergency patches per month (None = the evaluated 4.22% of expected monthly CVEs);
+        watch = size of the WATCH list per month (None = 3.5 x capacity). Thresholds are score quantiles of the
+        reference month at the shares capacity / volume and (capacity + watch) / volume. volume = expected new CVEs per
+        month (None = mean of the trailing 3 complete labelled months)."""
+        self.volume = self.volume_default if volume is None else float(volume)
+        self.share_patch = BUDGET_SHARE if capacity is None else min(1.0, capacity / self.volume)
+        self.capacity = self.share_patch * self.volume
+        self.watch = WATCH_MULT * self.capacity if watch is None else float(watch)
+        self.share_watch = min(1.0, self.share_patch + self.watch / self.volume)
+        self.threshold = float(np.quantile(self.ref, 1 - self.share_patch))
+        self.threshold_watch = float(np.quantile(self.ref, 1 - self.share_watch))
+        return self
+
+    def cna_status(self, cna) -> str:
+        """'learned' (>= 100 training CVEs), 'rare' (seen, < 100) or 'unseen' (never in training)."""
+        c = str(cna).lower()
+        return "learned" if c in self.cna_learned else "rare" if c in self.cna_seen else "unseen"
+
+    def known_cnas(self) -> pd.DataFrame:
+        """CNAs learned individually by the model, with organisation names (for the app's dropdown)."""
+        d = pd.DataFrame({"identifier": sorted(self.cna_learned)})
+        d["name"] = d["identifier"].map(org_name)
+        return d.sort_values("name", key=lambda x: x.str.lower()).reset_index(drop=True)
+
+    def budget_line(self) -> str:
+        src = (f"mean of {VOLUME_MONTHS[0]}..{VOLUME_MONTHS[-1]}" if self.volume == self.volume_default else "your estimate")
+        return (f"Emergency patch (PATCH NOW) = top {100 * self.share_patch:.1f}% of a month's CVEs given your capacity of "
+                f"{self.capacity:,.0f} patches/month; Watch = the next {self.watch:,.0f} (top {100 * self.share_watch:.1f}%). "
+                f"Expected volume {self.volume:,.0f} CVEs/month ({src}).")
 
     def describe(self) -> str:
         return (f"deploy model: {self.meta['n']:,} labelled CVEs ({self.meta['published_from']} -> {self.meta['published_to']}), "
                 f"sha256 {self.meta['sha256']['hgb'][:12]} | KEV snapshot {self.kev_path.name} | reference month 2026-07 "
-                f"({len(self.ref):,} CVEs) | PATCH NOW = top {100 * BUDGET_SHARE:.2f}% (score >= {self.threshold:.4f})")
+                f"({len(self.ref):,} CVEs)\n" + self.budget_line())
 
     # -------------------------------------------------------------- scoring
     def score(self, df: pd.DataFrame, explain_top: int | None = None) -> pd.DataFrame:
@@ -147,12 +196,12 @@ class Tool:
         out = pd.DataFrame({
             "cve_id": df["cve_id"], "published": df["published"].dt.strftime("%Y-%m-%d"),
             "vendor": df["vendor"].fillna("(not stated)"), "product": df["product"].fillna(""),
-            "cna": df["cna"].map(org_name), "cna_cvss": df["cvss_cna_score"],
+            "cna": df["cna"].map(org_name), "cna_status": df["cna"].map(self.cna_status), "cna_cvss": df["cvss_cna_score"],
             "cvss_vector": df["cvss_cna_vector"].fillna(""), "score": s,
             "percentile": 100 * np.searchsorted(self.ref, s, side="left") / len(self.ref),
             "probability_%": 100 * self.cal.predict_proba(x.reshape(-1, 1))[:, 1],
             "x_base_rate": self.cal.predict_proba(x.reshape(-1, 1))[:, 1] / self.base_rate,
-            "decision": np.where(s >= self.threshold, "PATCH NOW", "MONITOR"),
+            "decision": np.select([s >= self.threshold, s >= self.threshold_watch], ["PATCH NOW", "WATCH"], "MONITOR"),
             "notes": df.get("day0_note", pd.Series("", index=df.index)).fillna(""),
         })
         late = df["published"].dt.normalize() > self.kev_date
@@ -320,6 +369,20 @@ def manual_cve(vendor: str | None, cna: str, description: str, vector: str | Non
 
 
 # ------------------------------------------------------------------ one-CVE card
+TIER_LABEL = {"PATCH NOW": "Emergency patch (PATCH NOW)", "WATCH": "Watch", "MONITOR": "Monitor"}
+TIER_TEXT = {"PATCH NOW": "within your monthly patching capacity",
+             "WATCH": "elevated risk, not in this month's budget; recheck when news appears",
+             "MONITOR": "below the watch list; normal patch cycle"}
+
+
+CNA_WARNING = {
+    "unseen": "⚠️ This publisher was not seen in training; the model treats rare/unseen publishers as higher risk. "
+              "Interpret with caution.",
+    "rare": "⚠️ This publisher had fewer than 100 CVEs in training, so the model groups it with rare/unseen publishers, "
+            "which it treats as higher risk. Interpret with caution.",
+}
+
+
 def card(row: pd.Series, tool: Tool) -> str:
     """Readable summary of one scored CVE (row of Tool.score)."""
     import re
@@ -327,14 +390,20 @@ def card(row: pd.Series, tool: Tool) -> str:
     cvss = "no CNA CVSS" if pd.isna(row["cna_cvss"]) else f"{row['cna_cvss']:.1f}" + (f"  ({vec})" if vec else "")
     vp = row["vendor"] + (f" / {row['product']}" if row["product"] else "")
     line = "=" * 78
-    out = [line, f"  {row['cve_id']}   published {row['published']}   CNA: {row['cna']}", f"  {vp}", f"  CVSS (CNA): {cvss}", line,
-           f"  DECISION:     {row['decision']}" + ("   (top 4.2% of a month's CVEs)" if row["decision"] == "PATCH NOW" else "   (below the top-4.2% patch budget)"),
+    out = [line, f"  {row['cve_id']}   published on {row['published']} (UTC)   CNA: {row['cna']}", f"  {vp}", f"  CVSS (CNA): {cvss}", line,
+           f"  DECISION:     {TIER_LABEL[row['decision']]}   ({TIER_TEXT[row['decision']]})",
+           f"  Budget:       " + tool.budget_line(),
            f"  Percentile:   {row['percentile']:.1f}  (" + ("in the top 0.1% of" if row["percentile"] >= 99.9 else f"scores higher than {row['percentile']:.1f}% of")
            + f" the {len(tool.ref):,} CVEs of July 2026)",
            f"  Probability:  {row['probability_%']:.1f}% indicative chance of a CISA KEV listing within 90 days",
            f"                = {row['x_base_rate']:.1f}x the base rate ({100 * tool.base_rate:.2f}% of all CVEs)",
            "  Why:"]
     out += [f"    {i}. {row[f'reason_{i}']}" for i in (1, 2, 3) if row[f"reason_{i}"]]
+    if row.get("cna_status") in CNA_WARNING:
+        out.append("  " + CNA_WARNING[row["cna_status"]])
+    if pd.isna(row["cna_cvss"]):
+        out.append("  Note: No CVSS from the publisher (CNA) on day 0; NVD/CISA scores added later are ignored to avoid "
+                   "using information not available on publication day.")
     if row["notes"]:
         out.append(f"  Note: {row['notes']}")
     out.append(line)
@@ -345,10 +414,13 @@ def card(row: pd.Series, tool: Tool) -> str:
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
-    a = sub.add_parser("cve"); a.add_argument("cve_id"); a.add_argument("--refresh", action="store_true")
-    b = sub.add_parser("feed"); b.add_argument("day", help="YYYY-MM-DD"); b.add_argument("--top", type=int, default=20)
+    cap = argparse.ArgumentParser(add_help=False)
+    cap.add_argument("--capacity", type=float, help="emergency patches per month (default: 4.22%% of expected monthly CVEs)")
+    cap.add_argument("--watch", type=float, help="WATCH list size per month (default: 3.5 x capacity)")
+    a = sub.add_parser("cve", parents=[cap]); a.add_argument("cve_id"); a.add_argument("--refresh", action="store_true")
+    b = sub.add_parser("feed", parents=[cap]); b.add_argument("day", help="YYYY-MM-DD"); b.add_argument("--top", type=int, default=20)
     b.add_argument("--refresh", action="store_true")
-    c = sub.add_parser("manual")
+    c = sub.add_parser("manual", parents=[cap])
     for k in ["vendor", "product", "cna", "vector", "cwe", "description", "published"]:
         c.add_argument(f"--{k}", required=k in ("cna", "description"))
     c.add_argument("--score", type=float)
@@ -358,7 +430,7 @@ def main(argv=None):
         df = update_sources()
         print(f"saved {len(df):,} source identifiers -> {SOURCES_CSV.relative_to(ROOT)}")
         return
-    tool = Tool()
+    tool = Tool().set_capacity(args.capacity, args.watch)
     print(tool.describe())
     pd.set_option("display.width", 250); pd.set_option("display.max_colwidth", 80); pd.set_option("display.max_columns", 20)
     if args.cmd in ("cve", "manual"):
@@ -368,7 +440,8 @@ def main(argv=None):
             print(card(row, tool))
         return
     res = tool.score(fetch_day(args.day, args.refresh), explain_top=args.top)
-    print(f"{args.day}: {len(res)} CVEs published; PATCH NOW: {(res['decision'] == 'PATCH NOW').sum()}")
+    n = res["decision"].value_counts()
+    print(f"{args.day}: {len(res)} CVEs published; PATCH NOW {n.get('PATCH NOW', 0)}, WATCH {n.get('WATCH', 0)}, MONITOR {n.get('MONITOR', 0)}")
     cols = ["rank", "cve_id", "vendor", "product", "cna", "cna_cvss", "percentile", "probability_%", "decision",
             "reason_1", "reason_2", "reason_3", "notes"]
     print(res.head(args.top)[cols].to_string(index=False, float_format=lambda v: f"{v:.1f}"))

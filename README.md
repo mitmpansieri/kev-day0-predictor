@@ -3,6 +3,10 @@
 **On the day a vulnerability (CVE) is published, this project ranks it by the chance that attackers exploit it within 90
 days, so a security team can spend its limited emergency-patching time on the ones that matter.**
 
+> **Research prototype for an MIT course project. Not security advice; always follow your organisation's patching process.**
+
+Live demo: https://ciso-patch-advisor.streamlit.app/
+
 ## Glossary (one sentence each)
 | term | meaning |
 |---|---|
@@ -35,6 +39,7 @@ days, so a security team can spend its limited emergency-patching time on the on
 | **data leakage** | Using information during training that would not be known at prediction time, which inflates results. |
 | **drift** | The data changing over time, so a model trained on the past gets worse. |
 | **SHAP** | SHapley Additive exPlanations: splits one prediction into the contribution of each input, giving the "reasons". |
+| **PATCH NOW / WATCH / MONITOR** | The tool's three tiers: within this month's patching capacity / elevated risk but outside the budget (recheck when news appears) / the rest. |
 | **frozen vs deployment model** | The frozen model (trained on 2022–24) produced every test result; the deployment model (trained on all data to 2026-08) powers the tool and app. |
 | **MPS** | Apple's GPU backend, used only to compute text embeddings and fine-tune (full reproduction). |
 
@@ -61,16 +66,36 @@ Read in this order.
 | – | `src/`, `scripts/` | the code: download, features, models, evaluation, notebook builders |
 | – | `data/`, `outputs/` | the small data files, result tables, figures, trained models and run logs |
 
-**Launch the app:**
-```
-.venv/bin/streamlit run app.py
-```
-Then open http://localhost:8501. The app has three tabs:
-- **New CVE:** score a CVE by its ID, or type one in.
-- **Daily feed:** a ranked list for one day, downloadable as CSV.
-- **Past CVEs:** what the frozen model said on day 0 for any CVE of 2025 to Aug 2026, and whether it was exploited.
+> **Run the app locally (5 min).** You need Python 3.13 and git. Repository: https://github.com/mitmpansieri/kev-day0-predictor.git (private repository, access on request).
+>
+> macOS / Linux:
+> ```bash
+> git clone https://github.com/mitmpansieri/kev-day0-predictor.git kev-day0-predictor && cd kev-day0-predictor
+> python3.13 -m venv .venv
+> .venv/bin/pip install -r requirements.txt
+> .venv/bin/streamlit run app.py
+> ```
+> Windows (PowerShell):
+> ```powershell
+> git clone https://github.com/mitmpansieri/kev-day0-predictor.git kev-day0-predictor; cd kev-day0-predictor
+> py -3.13 -m venv .venv
+> .venv\Scripts\pip install -r requirements.txt
+> .venv\Scripts\streamlit run app.py
+> ```
+> The browser opens at http://localhost:8501. Stop the app with **Ctrl+C** in the terminal.
 
-It runs locally. It reads NVD without an API key and sends nothing else anywhere.
+The app has three tabs:
+- **New CVE:** score a CVE by its ID (with three "Try these" examples), or type one in.
+- **Daily feed:** a ranked list for one day, tiers highlighted, downloadable as CSV.
+- **Past CVEs:** what the frozen model said on day 0 for any CVE of 2025 to Aug 2026, at your capacity and at the evaluated K = 110, and whether it was exploited.
+
+The sidebar **"Your capacity"** sets everything else. You give patches per month, or analyst hours per month and hours per patch. The app turns that into a percentile threshold, using the expected monthly CVE volume: 8,216 a month, the mean of the last 3 complete labelled months, 2026-05 to 2026-07. You also set the expected new CVEs per month (editable) and the Watch list size (default about 3.5x capacity, 1,214 a month). A "Model freshness" badge shows how old the training data is. The sidebar then shows the historical coverage of that capacity on the test period for the model, the best rule and CVSS, with hours and dollars. These are historical estimates; only the 4.2% and K = 110 policies were formally evaluated.
+
+It runs locally. It reads NVD without an API key and sends nothing else anywhere. Usage statistics are switched off in `.streamlit/config.toml`.
+
+| New CVE | Daily feed | Past CVEs |
+|---|---|---|
+| ![New CVE tab](docs/screenshots/new_cve.png) | ![Daily feed tab](docs/screenshots/daily_feed.png) | ![Past CVEs tab](docs/screenshots/past_cves.png) |
 
 **Browsing cannot break anything.**
 - Notebooks, tool and app only *read* the committed data.
@@ -102,6 +127,7 @@ fixed in advance.
 **Drift**
 - Recall was 41.9% in 2025 but 23.9% in 2026.
 - Retraining every quarter (post-test, exploratory) gives 31.3% in 2026, and 148 patches a month (about $1.7M).
+- **Operating recommendation:** retrain every quarter and re-check capacity against CVE volume; the app's "Model freshness" badge turns orange 90 days after the training data end and red after 180.
 
 ## Quick start (no GPU, no API key; about 1 minute)
 ```bash
@@ -111,6 +137,7 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/streamlit run app.py                              # web app
 .venv/bin/python ciso_tool.py cve CVE-2026-12744            # command line: one CVE as a card
 .venv/bin/python ciso_tool.py feed 2026-09-08 --top 20      # one day as a ranked table
+.venv/bin/python ciso_tool.py feed 2026-09-08 --capacity 110 --watch 385   # same day at your own capacity
 .venv/bin/python ciso_tool.py manual --vendor Fortinet --cna psirt@fortinet.com \
     --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "Authentication bypass ..."
 .venv/bin/python ciso_tool.py sources                       # refresh CNA names (data/nvd_sources.csv)
@@ -118,7 +145,8 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 
 **What the tool and app use**
 - **Model and data:** the deployment model and day-0 information only. That is the CNA's own CVSS, CWE and vendor; exploitation wording only if fetched within 7 days of publication; KEV history only before publication, from the local snapshot.
-- **Output per CVE:** a percentile vs the July 2026 reference month; an indicative probability and its multiple of the base rate; PATCH NOW (top 4.2% of a month) or MONITOR; and 3 plain-word reasons.
+- **Output per CVE:** a percentile vs the July 2026 reference month; an indicative probability and its multiple of the base rate; a tier; and 3 plain-word reasons.
+- **Tiers:** PATCH NOW (within your monthly capacity: by default the evaluated 4.2% of a month's CVEs, about 347 a month), WATCH (the next 3.5x capacity by default), MONITOR (the rest). The `--capacity` and `--watch` options, or the app sidebar, change them.
 - **Past CVEs tab:** uses only the frozen model's day-0 test scores (`data/past_cves_test_frozen.parquet`), never the deployment model, which was trained on those CVEs.
 - **CNA names:** come from `data/nvd_sources.csv` and are for display only.
 
@@ -158,3 +186,4 @@ results are deterministic; fine-tuning can vary slightly across PyTorch versions
 - The model needs quarterly retraining and a capacity sized to CVE volume.
 - Small numbers: 294 test positives.
 - Probabilities are indicative.
+- Publishers (CNAs) with fewer than 100 training CVEs, or never seen, share one "rare/unseen" group that the model treats as higher risk. The tool and app show a warning for them, and the manual form offers the 121 publishers the model learned individually.
