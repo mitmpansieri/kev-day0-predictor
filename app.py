@@ -243,36 +243,53 @@ with tab_past:
             "publication day for every test CVE (2025-01-01 → 2026-08-20). It **never** uses the deployment model, which was "
             "trained on these CVEs and would look better than it is. The model's decision = the CVE's rank within its month vs "
             "your capacity (Emergency patch if rank ≤ capacity, Watch if rank ≤ capacity + watch list, otherwise Monitor). "
-            "Ranks use a fixed tie order, so totals can differ slightly from the reported results (34.0% vs 33.7% at 110 a month).")
+            "Ranks use a fixed tie order, so totals can differ slightly from the reported results (34.0% vs 33.7% at 110 a month). "
+            "Results for a single vendor rest on few exploited CVEs (often under 20): a small sample, read them as examples, "
+            "not as a performance estimate.")
     past = get_past()
     cap_n, watch_n = tool.capacity, tool.watch
     past = past.assign(your_decision=np.select([past["rank_in_month"] <= cap_n, past["rank_in_month"] <= cap_n + watch_n],
                                                [LABEL["PATCH NOW"], LABEL["WATCH"]], LABEL["MONITOR"]))
-    q = st.text_input("Search by CVE ID or vendor", "fortinet").strip().lower()
+    c1, c2 = st.columns([2, 1])
+    q_raw = c1.text_input("Search by CVE ID or vendor", "fortinet").strip()
+    q = q_raw.lower()
+    show_mode = c2.radio("Show", ["Exploited only", "All matching CVEs"], index=0, horizontal=True)
     if q:
         hit = past[past["cve_id"].str.lower().str.contains(q, regex=False) | past["vendor"].fillna("").str.lower().str.contains(q, regex=False)]
-        kev = hit[hit["label"] == 1]
-        st.markdown(f"Of the **{len(kev)}** exploited CVEs matching your search, the model flagged "
-                    f"**{int((kev['your_decision'] == LABEL['PATCH NOW']).sum())}** as emergency patches and "
-                    f"**{int((kev['your_decision'] == LABEL['WATCH']).sum())}** as Watch on publication day "
-                    f"(capacity {cap_n:,.0f}/month; {len(hit):,} matching CVEs in total, showing up to 300, exploited first).")
-        show = hit.sort_values(["label", "published"], ascending=[False, False]).head(300).reset_index(drop=True)
-        main = pd.DataFrame({
-            "CVE": show["cve_id"], "Published": show["published"], "Vendor": show["vendor"].fillna("(not stated)"),
-            "Model's decision on day 0": show["your_decision"],
-            "Exploited? (in KEV within 90 days)": show["label"].map({1: "YES", 0: "no"}),
-            "Added to KEV": show["kev_date_added"].fillna(""),
-            "Days after publication": show["days_to_kev"].map(lambda v: "" if pd.isna(v) else f"{v:.0f}")})
-        inv = {v: k for k, v in LABEL.items()}
-        st.dataframe(main.style.apply(lambda r: [ROW_BG[inv[r["Model's decision on day 0"]]]] * len(r), axis=1),
-                     hide_index=True, width="stretch", height=420)
-        with st.expander("Details: day-0 rank in month and the evaluated 110-a-month policy", expanded=False):
-            st.dataframe(pd.DataFrame({
-                "CVE": show["cve_id"], "Product": show["product"].fillna(""), "CNA": show["cna_name"], "CNA CVSS": show["cvss_cna_score"],
-                "Day-0 rank in month": show["rank_in_month"].map("{:,}".format) + " of " + show["cves_in_month"].map("{:,}".format),
-                "Emergency patch at 110/month (evaluated policy)": show["patch_at_k110"].map({True: "yes", False: "no"}),
-                "Ransomware-linked (KEV)": show["kev_ransomware"].map({True: "yes", False: "", None: ""})}),
-                hide_index=True, width="stretch", height=360)
+        kev, neg = hit[hit["label"] == 1], hit[hit["label"] == 0]
+        cnt = lambda d, t: int((d["your_decision"] == LABEL[t]).sum())
+        st.markdown(f"**{len(hit):,}** CVEs matching \"{q_raw}\" in 2025-26. **{len(kev)}** were exploited within 90 days: the "
+                    f"model flagged **{cnt(kev, 'PATCH NOW')}** as emergency patches, **{cnt(kev, 'WATCH')}** as Watch. Of the "
+                    f"**{len(neg):,}** not exploited, it flagged **{cnt(neg, 'PATCH NOW'):,}** as emergency patches (false alarms) "
+                    f"and **{cnt(neg, 'WATCH'):,}** as Watch. (Capacity {cap_n:,.0f}/month, Watch list {watch_n:,.0f}.)")
+        pool = kev if show_mode == "Exploited only" else hit
+        show = pool.sort_values(["label", "published"], ascending=[False, False]).head(300).reset_index(drop=True)
+        st.caption("Exploited = added to CISA's KEV list within 90 days of publication (the label the model was trained on). "
+                   "\"Later (N days)\" = added to KEV after that window, so it counts as not exploited here."
+                   + ("" if len(pool) <= 300 else f" Showing the first 300 of {len(pool):,}."))
+        def exploited(r):
+            if r["label"] == 1:
+                return "Yes"
+            return f"Later ({r['days_to_kev']:.0f} days)" if r["in_kev_ever"] and pd.notna(r["days_to_kev"]) else "No"
+        if show.empty:
+            st.info("No exploited CVEs among these matches. Choose 'All matching CVEs' to see the others.")
+        else:
+            main = pd.DataFrame({
+                "CVE": show["cve_id"], "Published": show["published"], "Vendor": show["vendor"].fillna("(not stated)"),
+                "Model's decision on day 0": show["your_decision"],
+                "Exploited within 90 days?": show.apply(exploited, axis=1) if len(show) else pd.Series(dtype=str),
+                "Added to KEV": show["kev_date_added"].fillna(""),
+                "Days after publication": show["days_to_kev"].map(lambda v: "" if pd.isna(v) else f"{v:.0f}")})
+            inv = {v: k for k, v in LABEL.items()}
+            st.dataframe(main.style.apply(lambda r: [ROW_BG[inv[r["Model's decision on day 0"]]]] * len(r), axis=1),
+                         hide_index=True, width="stretch", height=420)
+            with st.expander("Details: day-0 rank in month and the evaluated 110-a-month policy", expanded=False):
+                st.dataframe(pd.DataFrame({
+                    "CVE": show["cve_id"], "Product": show["product"].fillna(""), "CNA": show["cna_name"], "CNA CVSS": show["cvss_cna_score"],
+                    "Day-0 rank in month": show["rank_in_month"].map("{:,}".format) + " of " + show["cves_in_month"].map("{:,}".format),
+                    "Emergency patch at 110/month (evaluated policy)": show["patch_at_k110"].map({True: "yes", False: "no"}),
+                    "Ransomware-linked (KEV)": show["kev_ransomware"].map({True: "yes", False: "", None: ""})}),
+                    hide_index=True, width="stretch", height=360)
         if len(hit) == 1:
             r = hit.iloc[0]
             outcome = (f"added to KEV on {r['kev_date_added']} ({r['days_to_kev']:.0f} days after publication)" if r["in_kev_ever"]
