@@ -1,11 +1,11 @@
 # kev-day0-predictor: which new vulnerabilities will attackers exploit?
 
+### ▶ Live demo: [ciso-patch-advisor.streamlit.app](https://ciso-patch-advisor.streamlit.app/)
+
 **On the day a vulnerability (CVE) is published, this project ranks it by the chance that attackers exploit it within 90
 days, so a security team can spend its limited emergency-patching time on the ones that matter.**
 
 > **Research prototype for an MIT course project. Not security advice; always follow your organisation's patching process.**
-
-Live demo: https://ciso-patch-advisor.streamlit.app/
 
 ## Glossary (one sentence each)
 | term | meaning |
@@ -92,10 +92,6 @@ The app has three tabs:
 The sidebar **"Your capacity"** sets everything else. You give patches per month, or analyst hours per month and hours per patch. The app turns that into a percentile threshold, using the expected monthly CVE volume: 8,216 a month, the mean of the last 3 complete labelled months, 2026-05 to 2026-07. You also set the expected new CVEs per month (editable) and the Watch list size (default about 3.5x capacity, 1,214 a month). A "Model freshness" badge shows how old the training data is. The sidebar then shows the historical coverage of that capacity on the test period for the model, the best rule and CVSS, with hours and dollars. These are historical estimates; only the 4.2% and K = 110 policies were formally evaluated.
 
 It runs locally. It reads NVD without an API key and sends nothing else anywhere. Usage statistics are switched off in `.streamlit/config.toml`.
-
-| New CVE | Daily feed | Past CVEs |
-|---|---|---|
-| ![New CVE tab](docs/screenshots/new_cve.png) | ![Daily feed tab](docs/screenshots/daily_feed.png) | ![Past CVEs tab](docs/screenshots/past_cves.png) |
 
 **Browsing cannot break anything.**
 - Notebooks, tool and app only *read* the committed data.
