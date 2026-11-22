@@ -1,25 +1,96 @@
-# kev-day0-predictor: which new CVEs will attackers exploit?
+# kev-day0-predictor: which new vulnerabilities will attackers exploit?
 
-On the day a CVE is published, rank it by the probability that CISA lists it in **KEV within 90 days**. A
-vulnerability team then emergency-patches the top of each month's list instead of "everything with CVSS ≥ 9".
+**On the day a vulnerability (CVE) is published, this project ranks it by the chance that attackers exploit it within 90
+days, so a security team can spend its limited emergency-patching time on the ones that matter.**
 
-"Patch everything with CVSS ≥ 9" is an *assumed* baseline policy: a common practice, not verified for any specific
-organisation. Results are therefore also reported against other rules, against EPSS, and at every capacity K.
+## Glossary (one sentence each)
+| term | meaning |
+|---|---|
+| **CVE** | Common Vulnerabilities and Exposures: the public ID of one software flaw, e.g. CVE-2026-12744. |
+| **NVD** | National Vulnerability Database (US NIST): the public catalogue where every CVE is published with its details. |
+| **CNA** | CVE Numbering Authority: the organisation that publishes a CVE, often the vendor itself (e.g. Microsoft, Fortinet). |
+| **CVSS** | Common Vulnerability Scoring System: a 0–10 severity score of how bad a flaw would be *if* exploited. |
+| **CVSS vector** | The short code behind a CVSS score (e.g. AV:N = attackable over the network, PR:N = no login needed). |
+| **CWE** | Common Weakness Enumeration: the type of bug, e.g. CWE-288 "authentication bypass". |
+| **CISA** | US Cybersecurity and Infrastructure Security Agency. |
+| **KEV** | CISA's Known Exploited Vulnerabilities catalogue: CVEs with evidence of real-world exploitation; our label. |
+| **ADP** | Authorized Data Publisher: an organisation (e.g. CISA) that adds data to CVE records after publication. |
+| **EPSS** | Exploit Prediction Scoring System (FIRST): a public daily score of exploitation likelihood, our main benchmark. |
+| **day-0** | Information available on the CVE's publication day; anything added later is excluded from the model. |
+| **label** | 1 if CISA added the CVE to KEV within 90 days of NVD publication, else 0. |
+| **base rate** | The share of all CVEs with label 1: 0.31% (about 1 in 320). |
+| **K / capacity** | How many CVEs a team can emergency-patch per month (here 110, the monthly volume of "CVSS ≥ 9" in 2022–24). |
+| **recall@K** | Share of exploited CVEs caught when patching the top K of each month; our main metric. |
+| **PR-AUC** | Area under the precision-recall curve: a summary of ranking quality across all thresholds (secondary metric). |
+| **percentile** | Where a CVE's score sits among all CVEs of a reference month (99.7 = higher than 99.7% of them). |
+| **bootstrap CI** | A 95% confidence interval obtained by re-sampling the data 2,000 times. |
+| **logistic regression** | A simple linear classifier, used as a first model. |
+| **gradient boosting** | Many small decision trees added one after another, each fixing the previous ones' errors; our chosen model. |
+| **embeddings** | Numeric vectors that capture the meaning of a text, here produced by pretrained language models (MiniLM, BGE). |
+| **MLP** | Multi-layer perceptron: a small neural network, here trained on the description embeddings. |
+| **fine-tuning** | Further training a pretrained language model on our own labels. |
+| **late fusion** | Combining two models by averaging their within-month ranks. |
+| **calibration** | Turning model scores into probabilities that match observed frequencies (Platt scaling = a logistic fit). |
+| **walk-forward validation** | Train on the past and test on the following period, repeated over time, as in real use. |
+| **data leakage** | Using information during training that would not be known at prediction time, which inflates results. |
+| **drift** | The data changing over time, so a model trained on the past gets worse. |
+| **SHAP** | SHapley Additive exPlanations: splits one prediction into the contribution of each input, giving the "reasons". |
+| **frozen vs deployment model** | The frozen model (trained on 2022–24) produced every test result; the deployment model (trained on all data to 2026-08) powers the tool and app. |
+| **MPS** | Apple's GPU backend, used only to compute text embeddings and fine-tune (full reproduction). |
+
+## Today vs our approach
+- **Today (assumed policy):** emergency-patch every CVE with CVSS ≥ 9. This is a common severity-based practice; it has not been verified for any specific organisation.
+- **The problem:** CVSS measures how severe a flaw would be *if* exploited, not how *likely* it is to be exploited. Under 1% of CVEs are ever exploited, and many critical ones never are.
+- **Our approach:** on publication day, predict the likelihood that the CVE is added to CISA KEV within 90 days. Then patch the K most likely each month.
+- **Not tied to CVSS ≥ 9:** results are also compared with other rules, with EPSS, and at every capacity K, so the conclusion does not depend on the assumed policy.
+
+## Start here
+Read in this order.
+
+| # | where | what it is for |
+|---|---|---|
+| 1 | this README | the problem, the glossary, the results |
+| 2 | `notebooks/1_data.ipynb` | where the data comes from, how cybersecurity evolved since 2022, and the leaks we found and fixed |
+| 3 | `notebooks/2_train_validate.ipynb` | the metric, the baseline rules, rules vs ML vs text deep learning, how the model was chosen *before* testing |
+| 4 | `notebooks/3_test.ipynb` | the single test on 20 unseen months, and the comparison with EPSS |
+| 5 | `notebooks/4_results_ciso.ipynb` | why the model decides as it does (SHAP), drift, money and time saved, recommendations, limitations |
+| 6 | `notebooks/5_ciso_tool.ipynb` | the tool scoring a real day of new CVEs |
+| 7 | `app.py` | **the web app** (`streamlit run app.py`): new CVE, daily feed, past CVEs |
+| – | `appendix/` | the detailed working notebooks of each phase (long, for reviewers) |
+| – | `docs/decision_log.md` | every decision with its date, and the test protocol written before the test |
+| – | `src/`, `scripts/` | the code: download, features, models, evaluation, notebook builders |
+| – | `data/`, `outputs/` | the small data files, result tables, figures, trained models and run logs |
+
+**Launch the app:**
+```
+.venv/bin/streamlit run app.py
+```
+Then open http://localhost:8501. The app has three tabs:
+- **New CVE:** score a CVE by its ID, or type one in.
+- **Daily feed:** a ranked list for one day, downloadable as CSV.
+- **Past CVEs:** what the frozen model said on day 0 for any CVE of 2025 to Aug 2026, and whether it was exploited.
+
+It runs locally. It reads NVD without an API key and sends nothing else anywhere.
+
+**Browsing cannot break anything.**
+- Notebooks, tool and app only *read* the committed data.
+- Running them rewrites only the notebooks' own outputs and figures, and caches NVD replies.
+- The one-time test script refuses to run twice.
 
 ## Results
-**Test set:** 2025-01 → 2026-08-20, 102,561 CVEs, 294 exploited. The test set was evaluated once, with a protocol
+**Test set:** 2025-01 → 2026-08-20, 102,561 CVEs, 294 exploited. The test set was evaluated once, with the protocol
 fixed in advance.
 
-| method | recall@110 per month [95% CI] | recall@305 | not yet in KEV when EPSS scored @110 |
+| method | exploited CVEs caught with 110 patches/month [95% CI] | with 305/month | on CVEs not yet in KEV when EPSS scored |
 |---|---|---|---|
-| **gradient boosting (day-0 features)** | **33.7 [28–39]** | **49.3** | **30.4** |
-| late fusion (boosting + MiniLM text MLP) | 29.3 [24–35] | 48.0 | 23.8 |
-| EPSS, first score ≤ 7 days after publication | 29.6 [24–35] | 45.4 | 14.6 |
-| best day-0 rule (exploitation phrase, then CNA CVSS) | 25.2 [20–30] | 42.2 | 29.4 |
-| CNA CVSS ranking | 18.6 [14–23] | 36.1 | 22.1 |
+| **gradient boosting (day-0 features)** | **33.7% [28–39]** | **49.3%** | **30.4%** |
+| late fusion (boosting + text model) | 29.3% [24–35] | 48.0% | 23.8% |
+| EPSS, first score ≤ 7 days after publication | 29.6% [24–35] | 45.4% | 14.6% |
+| best day-0 rule (exploitation wording, then CNA CVSS) | 25.2% [20–30] | 42.2% | 29.4% |
+| CNA CVSS ranking | 18.6% [14–23] | 36.1% | 22.1% |
 
 **Comparisons**
-- Gradient boosting beats the best rule by **+8.5 points [+1.7, +15.3]**.
+- Gradient boosting beats the best rule by +8.5 points [+1.7, +15.3].
 - It leads every day-0 rule at every K from 10 to 1,000.
 - At the CVSS ≥ 9 rule's own 385 patches a month, it catches 51.7% vs 41.2%.
 - EPSS is ahead only at ≤ 50 patches a month.
@@ -30,109 +101,60 @@ fixed in advance.
 
 **Drift**
 - Recall was 41.9% in 2025 but 23.9% in 2026.
-- Retraining each quarter (post-test, exploratory) gives 31.3% in 2026, and 148 patches a month (about $1.7M) for the same coverage.
+- Retraining every quarter (post-test, exploratory) gives 31.3% in 2026, and 148 patches a month (about $1.7M).
 
-## Repo
-```
-notebooks/1_data.ipynb             data collection, evolution of cybersecurity (descriptive), leakage hunt
-notebooks/2_train_validate.ipynb   task/metric/splits, baselines, tabular ML vs text deep learning, model selection
-notebooks/3_test.ipynb             the single test evaluation, EPSS comparison, "not yet in KEV"
-notebooks/4_results_ciso.ipynb     SHAP, drift (post-test), business impact (editable assumptions), recommendations, limitations
-notebooks/5_ciso_tool.ipynb        demo of ciso_tool.py on a live NVD day (2026-09-08)
-ciso_tool.py                       the tool: one CVE (NVD id or typed in) or a daily NVD feed -> ranked patch list
-appendix/                          the detailed working notebooks (00 main report, 03-07), unchanged copies
-src/                               pipeline code (data, features, models, evaluation, notebook builders)
-docs/decision_log.md               dated decisions, the test protocol (fixed before test), progress log
-data/raw/kev_20261120.csv          dated CISA KEV snapshot (labels + KEV-history features)
-data/shap_test.parquet             SHAP values of the frozen model on test (notebook 4)
-data/nvd_tool_cache/               NVD responses used by the tool demo (offline re-runs)
-data/nvd_sources.csv               NVD source list: CNA identifier (e-mail or UUID) -> organisation name (tool display)
-outputs/tables, outputs/models     every result table; frozen Phase 6 models (dev_*), deployment model (deploy_hgb), calibrators
-outputs/logs                       run logs of each step
-```
-
-## Quick start: notebooks and tool (no GPU, no API key, about 1 minute)
+## Quick start (no GPU, no API key; about 1 minute)
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
-.venv/bin/python src/build_notebooks.py                              # (re)generate notebooks 1-5
-.venv/bin/python src/run_notebook.py notebooks/1_data.ipynb          # or open in Jupyter / VS Code and Run All
-.venv/bin/python ciso_tool.py feed 2026-09-08 --top 20               # daily ranked patch list (table)
-.venv/bin/python ciso_tool.py cve CVE-2026-12744                     # one CVE from NVD (card)
+.venv/bin/python src/build_notebooks.py                     # (re)generate notebooks 1-5
+.venv/bin/python src/run_notebook.py notebooks/1_data.ipynb # or open in Jupyter / VS Code and Run All
+.venv/bin/streamlit run app.py                              # web app
+.venv/bin/python ciso_tool.py cve CVE-2026-12744            # command line: one CVE as a card
+.venv/bin/python ciso_tool.py feed 2026-09-08 --top 20      # one day as a ranked table
 .venv/bin/python ciso_tool.py manual --vendor Fortinet --cna psirt@fortinet.com \
-    --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "Authentication bypass ..."   # card
-.venv/bin/python ciso_tool.py sources                                # refresh CNA names (data/nvd_sources.csv)
+    --vector "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H" --cwe CWE-288 --description "Authentication bypass ..."
+.venv/bin/python ciso_tool.py sources                       # refresh CNA names (data/nvd_sources.csv)
 ```
 
-**How the tool reads data**
-- It reads NVD **without an API key** and never reads `.env`. The limit is about 5 requests per 30 s.
-- Responses are cached in `data/nvd_tool_cache/`.
-
-**Day-0 rules the tool applies**
-- Only day-0 information is used: the CNA's own CVSS, CWE and vendor.
-- Exploitation wording counts only if the record was fetched within 7 days of publication.
-- Vendor/product KEV history uses only KEV entries added **before** publication, from the newest local `data/raw/kev_*.csv`.
-
-**Output per CVE**
-- Percentile vs the July 2026 reference month.
-- An indicative probability, also shown as a multiple of the 0.31% base rate.
-- PATCH NOW if the CVE is in the top 4.2% of a month, otherwise MONITOR.
-- The top 3 SHAP reasons, in plain words.
-
-`cve` and `manual` print a readable card; `feed` prints a ranked table. CNA identifiers (often UUIDs) are shown as
-organisation names from `data/nvd_sources.csv`, built from the keyless NVD source API with `ciso_tool.py sources`. The
-names are for display only; the model uses the raw identifiers it was trained on.
-
-Example card (`ciso_tool.py cve CVE-2026-77089`):
-```
-  CVE-2026-77089   published 2026-09-08   CNA: Commvault
-  Commvault / Commvault Cloud
-  CVSS (CNA): 9.3  (CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N)
-  DECISION:     PATCH NOW   (top 4.2% of a month's CVEs)
-  Percentile:   99.7  (scores higher than 99.7% of the 9,771 CVEs of July 2026)
-  Probability:  5.4% indicative chance of a CISA KEV listing within 90 days
-                = 17.2x the base rate (0.31% of all CVEs)
-  Why:
-    1. CNA CVSS score 9.3 -> strongly raises risk
-    2. published by CNA Commvault -> strongly raises risk
-    3. vendor's last KEV entry 494 days before publication -> moderately raises risk
-```
+**What the tool and app use**
+- **Model and data:** the deployment model and day-0 information only. That is the CNA's own CVSS, CWE and vendor; exploitation wording only if fetched within 7 days of publication; KEV history only before publication, from the local snapshot.
+- **Output per CVE:** a percentile vs the July 2026 reference month; an indicative probability and its multiple of the base rate; PATCH NOW (top 4.2% of a month) or MONITOR; and 3 plain-word reasons.
+- **Past CVEs tab:** uses only the frozen model's day-0 test scores (`data/past_cves_test_frozen.parquet`), never the deployment model, which was trained on those CVEs.
+- **CNA names:** come from `data/nvd_sources.csv` and are for display only.
 
 ## Full reproduction (in order)
-Install `requirements-full.txt`; it adds PyTorch and sentence-transformers for the text models. GPU steps need Apple
-MPS (`src/gpu_run.py`). An NVD key is optional and makes downloads about 10× faster. To use one, create `.env` with the
-line `NVD_API_KEY=<your key>`. It is git-ignored, and the code never prints it.
+Install `requirements-full.txt`; it adds PyTorch and sentence-transformers. GPU steps need Apple MPS. An NVD key is
+optional and makes downloads about 10× faster. To use one, put `NVD_API_KEY=<key>` in `.env`; that file is
+git-ignored and the key is never printed. Prefix each `src/...` command with `.venv/bin/python`. Seeds are fixed, so
+results are deterministic; fine-tuning can vary slightly across PyTorch versions.
 
 | # | step | needs | time |
 |---|---|---|---|
-| 1 | `bash scripts/download_all.sh`: NVD → change history → dataset with `description_day0` → EPSS (uses the committed KEV snapshot) | network | ~3.5 h without key |
+| 1 | `bash scripts/download_all.sh`: NVD → change history → dataset → EPSS (uses the committed KEV snapshot) | network | ~3.5 h without key |
 | 2 | `src/gpu_run.py embed` (MiniLM @1110a243, BGE-small @5c38ec7c) | GPU | ~7 min |
-| 3 | `src/build_nb03_exploration.py`, `build_nb04_baselines.py`, `build_nb05a_tabular.py`, `build_nb05b_text.py`, then `src/run_notebook.py notebooks/<name>.ipynb` each (writes the 03–05 tables) | CPU | 1–2 h |
-| 4 | `src/gpu_run.py finetune grid`, `src/gpu_run.py finetune seeds lr1e-5_full`, `build_nb05c_finetune.py` + run | GPU | ~95 min |
+| 3 | `src/build_nb03_exploration.py`, `build_nb04_baselines.py`, `build_nb05a_tabular.py`, `build_nb05b_text.py`, then `src/run_notebook.py notebooks/<name>.ipynb` for each | CPU | 1–2 h |
+| 4 | `src/gpu_run.py finetune grid`, `src/gpu_run.py finetune seeds lr1e-5_full`, `build_nb05c_finetune.py`, then run it | GPU | ~95 min |
 | 5 | `src/calibration.py fusion`, `src/calibration.py hgb`, `src/check_cna_cvss_stability.py`, `src/check_sensitivity_dev.py prepare`, `src/gpu_run.py embed-variant dev_uncertain_removed`, `src/check_sensitivity_dev.py` | CPU + GPU | ~20 min |
 | 6 | `src/final_model.py fit-dev` (frozen models + sha256) | CPU | ~5 min |
 | 7 | `src/phase6_test.py --dry-run` (must reproduce val 47.1 / 42.6) | CPU | ~10 min |
-| 8 | `src/gpu_run.py embed-test`, then `src/phase6_test.py --test --confirm-phase6`. This **refuses to run if test outputs exist**: the test set is evaluated once. | GPU, CPU | ~15 min |
-| 9 | `src/post_test_analysis.py`, `build_nb06_test.py` + run | CPU | ~4 min |
-| 10 | `src/final_model.py fit-all`, `src/final_model.py calibrate-deploy`, `src/phase7_explain.py`, `build_nb07_explain_impact.py` + run | CPU | ~25 min |
+| 8 | `src/gpu_run.py embed-test`, then `src/phase6_test.py --test --confirm-phase6` (refuses to run twice) | GPU, CPU | ~15 min |
+| 9 | `src/post_test_analysis.py`, `build_nb06_test.py`, then run it | CPU | ~4 min |
+| 10 | `src/final_model.py fit-all`, `src/final_model.py calibrate-deploy`, `src/phase7_explain.py`, `build_nb07_explain_impact.py`, then run it | CPU | ~25 min |
 | 11 | `src/build_main_tables.py`, then `src/build_notebooks.py` and run notebooks 1–5 | CPU | ~3 min |
 
-Prefix each `src/...` command with `.venv/bin/python`. Seeds are fixed, so results are deterministic. Fine-tuning
-results can vary slightly across MPS/PyTorch versions.
+## Leakage fixes and limitations
+**Leakage fixes** (details in notebook 1):
+- CVSS comes from the CNA only, because CISA-ADP scores were back-filled onto exploited CVEs.
+- CWE comes from the CNA only.
+- Exploitation wording added after publication is removed.
+- KEV history counts only entries added before publication.
+- The data are split by date; a random split inflates recall from 38% to 59%.
 
-## Leakage fixes
-- **CVSS:** CNA scores only. CISA-ADP scores were back-filled for exploited CVEs.
-- **CWE:** CNA CWEs only.
-- **Descriptions:** exploitation phrases absent from the first recorded version are removed.
-- **KEV history:** counts only entries added before publication.
-- **Splits:** by date. A random split inflates recall from 38% to 59%.
-
-Details are in notebook 1.
-
-## Limitations
+**Limitations:**
 - The CVSS ≥ 9 baseline is assumed.
 - The label is CISA's KEV selection.
-- CNAs sometimes revise their own CVSS later: 5.5% of exploited vs 1.9% of other CVEs.
+- CNAs revise their own CVSS later for 5.5% of exploited vs 1.9% of other CVEs.
 - EPSS comparison caveats: lookahead, a different target, and EPSS's use of KEV is assumed.
-- Drift: the model needs quarterly retraining and a capacity sized to CVE volume.
+- The model needs quarterly retraining and a capacity sized to CVE volume.
 - Small numbers: 294 test positives.
 - Probabilities are indicative.

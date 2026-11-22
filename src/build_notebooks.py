@@ -342,7 +342,7 @@ data 2022-01 → 2026-08-20; never used for any reported number) from **day-0 in
 the **4.2%-of-monthly-CVEs budget**, and the **top 3 SHAP reasons** in plain words. Single CVEs are shown as a readable card,
 a day's feed as a ranked table. CNA identifiers (often UUIDs) are shown as organisation names from `data/nvd_sources.csv`
 (NVD source API, keyless; display only). NVD is read without an API key (the tool never reads `.env`); responses are cached in
-`data/nvd_tool_cache/`, so this notebook re-runs offline.
+`data/nvd_tool_cache/`, so this notebook re-runs offline. The same logic is available as a local web app with a 'Past CVEs' tab (frozen model's day-0 verdicts on the test period): `streamlit run app.py`.
 
 {NAV}"""),
 code("""import os, sys, warnings
