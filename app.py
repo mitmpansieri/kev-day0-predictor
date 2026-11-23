@@ -145,15 +145,31 @@ with st.sidebar:
                               ("Sort by CVSS score", "CVSS (CNA) ranking")]]
     st.table(pd.DataFrame(rows).set_index(""))
     rule_k, rule_r = OWN.loc["CVSS>=9 (CNA)", "patches/month"], OWN.loc["CVSS>=9 (CNA)", "rule recall %"]
-    k_match = k_for_recall(ks, model_curve, rule_r)               # first capacity where the model matches the rule
-    n_match = 5 * round(k_match / 5)
-    saved_h = (rule_k - n_match) * hours_per_patch * 12
-    st.markdown(f"**Same protection as CVSS ≥ 9 with ~{n_match:,.0f} patches/month instead of {rule_k:,.0f}**")
-    st.markdown(f"{saved_h:,.0f} h/year saved · ${saved_h * rate:,.0f}/year saved",
-                help=f"({rule_k:,.0f} - {n_match:,.0f}) patches/month × {hours_per_patch:g} h × 12 = {saved_h:,.0f} h/year; "
-                     f"× ${rate:,.0f}/h = ${saved_h * rate:,.0f}/year. Same protection = {rule_r:.0f} of 100 exploited CVEs caught.")
-    st.caption(f"At your capacity: {caught('gradient boosting (headline)', k):.0f}{'' if in_range else '+'} of 100 caught vs "
-               f"{rule_r:.0f} for CVSS ≥ 9.")
+    # Dynamic comparison with the current CVSS >= 9 policy (385 patches/month, 41 of 100) at YOUR capacity
+    c_cap = round(k)                                              # capacity as displayed
+    r_cap = caught("gradient boosting (headline)", k)
+    d_r = round(r_cap) - round(rule_r)
+    d_k = round(rule_k) - c_cap                                   # > 0: fewer patches than the rule
+    rule_h = abs(d_k) * hours_per_patch * 12
+    hs = f"{rule_h:,.0f} h/year, ${rule_h * rate:,.0f}/year"
+    n_pt = f"{abs(d_k):,} {'fewer' if d_k > 0 else 'more'} patches"
+    if d_r > 0 and d_k > 0:
+        verdict = f"🟢 **Better and cheaper than CVSS ≥ 9:** {d_r:+d} of 100 caught with {n_pt} → **{hs} saved**."
+    elif d_r > 0 and d_k == 0:
+        verdict = f"🟠 **More protection, at no extra cost:** same number of patches, {d_r:+d} of 100 caught."
+    elif d_r > 0:
+        verdict = f"🟠 **More protection, at extra cost:** {d_r:+d} of 100 caught with {n_pt} → **{hs} extra**."
+    elif d_r < 0:
+        verdict = (f"🔴 **Cheaper, but less protection than CVSS ≥ 9:** {d_r:+d} of 100 caught, {n_pt} ({hs} "
+                   f"{'less spent' if d_k > 0 else 'extra'}).")
+    else:
+        verdict = (f"**Same protection ({rule_r:.0f} of 100)** with {n_pt} → **{hs} "
+                   f"{'saved' if d_k > 0 else 'extra'}**." if d_k else f"**Same protection ({rule_r:.0f} of 100)** with the same number of patches.")
+    st.markdown(f"**vs your current rule (CVSS ≥ 9):** {verdict}",
+                help=f"CVSS ≥ 9 rule on 2025-26 test data: {rule_k:,.0f} patches/month, {rule_r:.1f} of 100 caught. Model at "
+                     f"{c_cap:,}/month: {r_cap:.1f} of 100. |{rule_k:,.0f} - {c_cap:,}| = {abs(d_k):,} patches/month × "
+                     f"{hours_per_patch:g} h × 12 = {rule_h:,.0f} h/year; × ${rate:,.0f}/h = ${rule_h * rate:,.0f}/year "
+                     + ("(no difference)." if d_k == 0 else "extra." if d_k < 0 else "less spent." if d_r < 0 else "saved."))
     if k < ks.max():
         extra = marginal_per_100(ks, model_curve, k)
         n_txt = "fewer than 1" if round(extra) < 1 else f"about {extra:.0f}"
@@ -167,6 +183,21 @@ with st.sidebar:
     yearly_h = round(k) * hours_per_patch * 12                     # rounded capacity, as displayed
     st.write(f"Total analyst effort: {round(k):,} patches/month × {hours_per_patch:g} h = **{yearly_h:,.0f} hours/year ≈ "
              f"${yearly_h * rate:,.0f}/year** (cost of the patching work, not a saving).")
+    # Saving at YOUR capacity: patches/month that sorting by CVSS score would need to catch as many as the model does
+    c_round, r_model = c_cap, r_cap                               # same C and R as the comparison above
+    cvss_curve = 100 * curve["CVSS (CNA) ranking"].to_numpy()
+    if r_model > cvss_curve.max():
+        st.write(f"**Saved by the model (same protection):** sorting by CVSS doesn't reach {r_model:.0f} of 100 within {ks.max():,.0f} patches/month "
+                 "in our test data; the saving is larger than we can estimate.")
+    else:
+        x_cvss = 5 * round(k_for_recall(ks, cvss_curve, r_model) / 5)   # inverse lookup, rounded to 5
+        dyn_h = (x_cvss - c_round) * hours_per_patch * 12
+        st.markdown(f"**Saved by the model (same protection):** to catch {r_model:.0f} of 100 by sorting on CVSS score you'd need ~{x_cvss:,.0f} "
+                    f"patches/month → ({x_cvss:,.0f} - {c_round:,}) × {hours_per_patch:g} h × 12 = **{dyn_h:,.0f} h/year ≈ "
+                    f"${dyn_h * rate:,.0f}/year saved**.",
+                    help=f"Model at {c_round:,} patches/month catches {r_model:.1f} of 100 (2025-26 test). Sorting by CNA CVSS "
+                         f"score reaches that at ~{x_cvss:,.0f}/month. ({x_cvss:,.0f} - {c_round:,}) × {hours_per_patch:g} h × 12 = "
+                         f"{dyn_h:,.0f} h/year; × ${rate:,.0f}/h = ${dyn_h * rate:,.0f}/year.")
     st.caption("Historical estimates from the 2025-26 test period. The model wasn't retrained and was weaker in 2026 (savings "
                "smaller); retraining every quarter is recommended. Only the default setting matches the evaluated policy."
                + ("" if in_range else f" Above {ks.max():,.0f} patches/month the estimate is capped at the value for {ks.max():,.0f}."))
