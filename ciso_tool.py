@@ -383,6 +383,38 @@ CNA_WARNING = {
 }
 
 
+# ------------------------------------------------------------------ plain-language numbers (display only)
+def plain_percentile(pct: float) -> str:
+    """Percentile -> 'Riskier than X of every 1,000 CVEs published in a typical month' (X capped at 999)."""
+    x = min(999, int(np.floor(pct * 10 + 1e-9)))
+    return f"Riskier than {x:,} of every 1,000 CVEs published in a typical month"
+
+
+def fmt_percentile(pct: float) -> str:
+    """Percentile for display: '>99.9' when the CVE scores above (nearly) every reference CVE, never '100.0'."""
+    return ">99.9" if pct >= 99.95 else f"{pct:.1f}"
+
+
+def _round_n(n: float) -> int:
+    """'1 in N' rounded sensibly: whole numbers below 20, then steps of 5, 10, 50."""
+    step = 1 if n < 20 else 5 if n < 100 else 10 if n < 200 else 50
+    return int(max(1, step * round(n / step)))
+
+
+def plain_probability(prob_pct: float) -> str:
+    """Indicative probability (in %) -> 'About 1 in N CVEs like this one ...'."""
+    p = prob_pct / 100
+    head = "Fewer than 1 in 1,000" if p < 0.001 else f"About 1 in {_round_n(1 / p):,}"
+    return f"{head} CVEs like this one end up exploited (added to CISA KEV) within 90 days"
+
+
+def plain_base_rate(x: float, base_rate: float) -> str:
+    """Multiple of the base rate -> 'On average, 3 in 1,000 CVEs get exploited. This one is Xx riskier than average'."""
+    fmt = lambda v: f"{v:.1f}" if v < 10 else f"{v:,.0f}"
+    rel = f"{fmt(x)}x riskier than average" if x >= 1 else f"{fmt(1 / x)}x less risky than average"
+    return f"On average, {1000 * base_rate:.0f} in 1,000 CVEs get exploited. This one is {rel}"
+
+
 def card(row: pd.Series, tool: Tool) -> str:
     """Readable summary of one scored CVE (row of Tool.score)."""
     import re
@@ -393,10 +425,12 @@ def card(row: pd.Series, tool: Tool) -> str:
     out = [line, f"  {row['cve_id']}   published on {row['published']} (UTC)   CNA: {row['cna']}", f"  {vp}", f"  CVSS (CNA): {cvss}", line,
            f"  DECISION:     {TIER_LABEL[row['decision']]}   ({TIER_TEXT[row['decision']]})",
            f"  Budget:       " + tool.budget_line(),
-           f"  Percentile:   {row['percentile']:.1f}  (" + ("in the top 0.1% of" if row["percentile"] >= 99.9 else f"scores higher than {row['percentile']:.1f}% of")
-           + f" the {len(tool.ref):,} CVEs of July 2026)",
-           f"  Probability:  {row['probability_%']:.1f}% indicative chance of a CISA KEV listing within 90 days",
-           f"                = {row['x_base_rate']:.1f}x the base rate ({100 * tool.base_rate:.2f}% of all CVEs)",
+           f"  Percentile:   {fmt_percentile(row['percentile'])}  (vs the {len(tool.ref):,} CVEs of July 2026)",
+           f"                = {plain_percentile(row['percentile'])}",
+           f"  Probability:  {row['probability_%']:.1f}% (indicative)",
+           f"                = {plain_probability(row['probability_%'])}",
+           f"  Base rate:    {row['x_base_rate']:.1f}x the average ({100 * tool.base_rate:.2f}% of all CVEs)",
+           f"                = {plain_base_rate(row['x_base_rate'], tool.base_rate)}",
            "  Why:"]
     out += [f"    {i}. {row[f'reason_{i}']}" for i in (1, 2, 3) if row[f"reason_{i}"]]
     if row.get("cna_status") in CNA_WARNING:

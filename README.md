@@ -26,7 +26,9 @@ days, so a security team can spend its limited emergency-patching time on the on
 | **K / capacity** | How many CVEs a team can emergency-patch per month (here 110, the monthly volume of "CVSS ≥ 9" in 2022–24). |
 | **recall@K** | Share of exploited CVEs caught when patching the top K of each month; our main metric. |
 | **PR-AUC** | Area under the precision-recall curve: a summary of ranking quality across all thresholds (secondary metric). |
-| **percentile** | Where a CVE's score sits among all CVEs of a reference month (99.7 = higher than 99.7% of them). |
+| **percentile** | Where a CVE's score sits among all CVEs of a reference month (99.7 = higher than 99.7% of them). In the app: ranks this CVE against the 9,771 CVEs of July 2026; 99.8 means riskier than 998 of every 1,000. |
+| **probability (indicative)** | Approximate chance a CVE is added to CISA's KEV list within 90 days, from a calibrated model; best used to compare CVEs, not as an exact number. |
+| **times base rate** | On average 0.31% of CVEs (about 3 in 1,000) are added to KEV within 90 days; this number says how many times riskier a CVE is than an average one. |
 | **bootstrap CI** | A 95% confidence interval obtained by re-sampling the data 2,000 times. |
 | **logistic regression** | A simple linear classifier, used as a first model. |
 | **gradient boosting** | Many small decision trees added one after another, each fixing the previous ones' errors; our chosen model. |
@@ -89,7 +91,7 @@ The app has three tabs:
 - **Daily feed:** a ranked list for one day, tiers highlighted, downloadable as CSV.
 - **Past CVEs:** what the frozen model said on day 0 for any CVE of 2025 to Aug 2026, at your capacity and at the evaluated K = 110, and whether it was exploited.
 
-The sidebar **"Your capacity"** sets everything else. You give patches per month, or analyst hours per month and hours per patch. The app turns that into a percentile threshold, using the expected monthly CVE volume: 8,216 a month, the mean of the last 3 complete labelled months, 2026-05 to 2026-07. You also set the expected new CVEs per month (editable) and the Watch list size (default about 3.5x capacity, 1,214 a month). A "Model freshness" badge shows how old the training data is. The sidebar then shows the historical coverage of that capacity on the test period for the model, the best rule and CVSS, with hours and dollars. These are historical estimates; only the 4.2% and K = 110 policies were formally evaluated.
+The sidebar **"Your capacity"** sets everything else. You give patches per month, or analyst hours per month and hours per patch, or a target ("Plan by target": catch X% of exploited CVEs -> the patches and hours needed, a historical estimate read from the 2025-26 test recall-vs-capacity curve). The app turns that into a percentile threshold, using the expected monthly CVE volume: 8,216 a month, the mean of the last 3 complete labelled months, 2026-05 to 2026-07. You also set the expected new CVEs per month (editable) and the Watch list size (default about 3.5x capacity, 1,214 a month). A "Model freshness" badge shows how old the training data is. The sidebar then shows the historical coverage of that capacity on the test period for the model, the best rule and CVSS, with hours and dollars. These are historical estimates; only the 4.2% and K = 110 policies were formally evaluated.
 
 It runs locally. It reads NVD without an API key and sends nothing else anywhere. Usage statistics are switched off in `.streamlit/config.toml`.
 

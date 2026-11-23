@@ -53,6 +53,36 @@ def get_curve() -> pd.DataFrame:
     return pd.read_csv(CURVE).set_index("K per month")
 
 
+def k_for_recall(ks: np.ndarray, recall: np.ndarray, target: float) -> float:
+    """Inverse of the recall-vs-K curve: the first capacity (patches/month) where recall reaches target, interpolated
+    linearly between the tabulated K values (the curve is non-decreasing)."""
+    j = int(np.argmax(recall >= target))
+    if j == 0:
+        return float(ks[0])
+    return float(ks[j - 1] + (target - recall[j - 1]) / (recall[j] - recall[j - 1]) * (ks[j] - ks[j - 1]))
+
+
+def concave_envelope(ks: np.ndarray, recall: np.ndarray) -> np.ndarray:
+    """Upper concave envelope of the recall-vs-K curve (indices of its corner points). Its slope never increases, so
+    the marginal value read from it decreases steadily instead of following the curve's small bumps."""
+    h = [0]
+    for i in range(1, len(ks)):
+        h.append(i)
+        while len(h) >= 3 and ((recall[h[-2]] - recall[h[-3]]) * (ks[h[-1]] - ks[h[-3]])
+                               <= (recall[h[-1]] - recall[h[-3]]) * (ks[h[-2]] - ks[h[-3]])):
+            h.pop(-2)
+    return np.array(h)
+
+
+def marginal_per_100(ks: np.ndarray, recall: np.ndarray, k: float) -> float:
+    """Average extra exploited CVEs caught (out of 100) per 100 extra patches/month, over the window k-100 -> k+200
+    (clipped to the tabulated range), read from the concave envelope."""
+    h = concave_envelope(ks, recall)
+    lo, hi = max(ks[0], k - 100), min(ks[-1], k + 200)
+    env = lambda x: np.interp(x, ks[h], recall[h])
+    return 100 * (env(hi) - env(lo)) / (hi - lo)
+
+
 tool = get_tool()
 
 # ------------------------------------------------------------------------------------------- sidebar: capacity
@@ -68,15 +98,31 @@ with st.sidebar:
     volume = st.number_input("Expected new CVEs per month", 500, 50000, int(round(tool.volume_default)), 100)
     st.caption(f"Average of May-July 2026 ({tool.volume_default:,.0f}); adjust if you expect more or fewer.")
     default_cap = int(round(ct.BUDGET_SHARE * tool.volume_default))
-    how = st.radio("Set your capacity as", ["Emergency patches per month", "Analyst hours per month"])
+    curve = get_curve()
+    ks = curve.index.to_numpy(float)
+    model_curve = 100 * curve["gradient boosting (headline)"].to_numpy()
+    caught = lambda col, kk: 100 * np.interp(min(kk, ks.max()), ks, curve[col].to_numpy())
+    how = st.radio("Set your capacity as", ["Emergency patches per month", "Analyst hours per month", "Plan by target"],
+                   help="Plan by target: choose the share of exploited CVEs you want to catch; the app reads the patches "
+                        "needed from the model's 2025-26 test results.")
     hours_per_patch = st.number_input("Hours per emergency patch", 1.0, 40.0, 6.0, 0.5)
     if how == "Emergency patches per month":
         capacity = st.slider("Emergency patches per month", 25, 1500, default_cap, 5,
                              help=f"Default {default_cap} = the evaluated policy: 4.2% of a month's CVEs.")
-    else:
+    elif how == "Analyst hours per month":
         hours = st.number_input("Analyst hours per month for emergency patching", 50.0, 20000.0, float(default_cap * hours_per_patch), 50.0)
         capacity = int(max(1, round(hours / hours_per_patch)))
         st.write(f"= **{capacity:,} emergency patches per month**")
+    else:
+        lo, hi = int(np.ceil(model_curve.min())), int(np.floor(model_curve.max()))
+        target = st.slider("I want to catch __% of exploited CVEs", lo, hi, 50, 1,
+                           help=f"Possible range {lo}-{hi}%: the model's test results cover {ks.min():.0f}-{ks.max():,.0f} "
+                                "patches/month.")
+        capacity = int(round(k_for_recall(ks, model_curve, target)))
+        st.write(f"To catch **{target}%** of exploited CVEs: about **{capacity:,} emergency patches/month** = "
+                 f"**{capacity * hours_per_patch:,.0f} analyst hours/month** ({capacity * hours_per_patch * 12:,.0f} h/year).")
+        st.caption("Historical estimate: read from the model's recall-vs-capacity curve on 2025-26 test data (frozen model, "
+                   "never retrained in that period). Future months can differ.")
     default_watch = int(round(ct.WATCH_MULT * ct.BUDGET_SHARE * tool.volume_default))
     watch = st.slider("Watch list: extra CVEs to keep an eye on each month", 0, 3000, default_watch, 10,
                       help="Not patched now; recheck if exploit news appears.")
@@ -91,20 +137,25 @@ with st.sidebar:
     st.subheader("What this capacity would have caught (2025-26)")
     st.write("Out of every 100 CVEs later exploited (added to CISA's KEV list within 90 days), how many would have been in "
              "your emergency-patch list:")
-    curve = get_curve()
-    ks = curve.index.to_numpy(float)
     k = float(tool.capacity)
     in_range = k <= ks.max()
-    caught = lambda col, kk: 100 * np.interp(min(kk, ks.max()), ks, curve[col].to_numpy())
-    rows = [{"": name, "caught": f"{caught(col, k):.0f} of 100" + ("" if in_range else "+")}
+    rows =[{"": name, "caught": f"{caught(col, k):.0f} of 100" + ("" if in_range else "+")}
             for name, col in [("Our model", "gradient boosting (headline)"),
                               ("Best simple rule (exploit wording, then CVSS)", "phrase, then CVSS (CNA)"),
                               ("Sort by CVSS score", "CVSS (CNA) ranking")]]
     st.table(pd.DataFrame(rows).set_index(""))
+    if k < ks.max():
+        extra = marginal_per_100(ks, model_curve, k)
+        n_txt = "fewer than 1" if round(extra) < 1 else f"about {extra:.0f}"
+        st.write(f"**Marginal value:** each extra 100 patches/month (~{100 * hours_per_patch:,.0f} h) catches {n_txt} more "
+                 f"exploited CVEs out of 100 at your current setting.")
+        st.caption("Averaged from 100 below to 200 above your setting on a smoothed (concave) version of the test curve, "
+                   "so it falls steadily as capacity grows.")
+    else:
+        st.write(f"**Marginal value:** not estimated at {ks.max():,.0f}+ patches/month (test results stop at "
+                 f"{ks.max():,.0f}).")
     rule_k, rule_r = OWN.loc["CVSS>=9 (CNA)", "patches/month"], OWN.loc["CVSS>=9 (CNA)", "rule recall %"]
-    model_curve = 100 * curve["gradient boosting (headline)"].to_numpy()
-    j = int(np.argmax(model_curve >= rule_r))                       # first capacity where the model matches the rule
-    k_match = ks[j] if j == 0 else ks[j - 1] + (rule_r - model_curve[j - 1]) / (model_curve[j] - model_curve[j - 1]) * (ks[j] - ks[j - 1])
+    k_match = k_for_recall(ks, model_curve, rule_r)               # first capacity where the model matches the rule
     st.write(f"To catch as many as the CVSS ≥ 9 policy ({rule_r:.0f} of 100, using {rule_k:,.0f} patches/month), the model "
              f"needs only **about {5 * round(k_match / 5):,.0f} patches/month**.")
     yearly_h = k * hours_per_patch * 12
@@ -134,16 +185,30 @@ st.caption("Day-0 ranking of CVEs by the chance CISA lists them in KEV (Known Ex
            "percentile is the primary output. Local app: NVD is read without an API key; nothing else leaves this machine.")
 
 
+HELP_PCT = (f"Ranks this CVE against the {len(tool.ref):,} CVEs of July 2026. 99.8 means riskier than 998 of every 1,000.")
+HELP_PROB = ("Approximate chance this CVE is added to CISA's KEV list within 90 days, from a calibrated model. Best used "
+             "to compare CVEs, not as an exact number.")
+HELP_BASE = (f"On average {100 * tool.base_rate:.2f}% of CVEs (about {1000 * tool.base_rate:.0f} in 1,000) are added to KEV "
+             "within 90 days. This number says how many times riskier this CVE is than an average one.")
+
+
 def show_card(row: pd.Series) -> None:
     st.markdown(f"### :{TIER_COLOR[row['decision']]}[{LABEL[row['decision']]}] — {row['cve_id']}")
     st.write(ct.TIER_TEXT[row["decision"]].capitalize() + ". " + tool.budget_line())
     if row.get("cna_status") in ct.CNA_WARNING:
         st.warning(ct.CNA_WARNING[row["cna_status"]])
     c1, c2, c3 = st.columns(3)
-    c1.metric("Percentile (vs July 2026)", f"{row['percentile']:.1f}")
-    c2.metric("Indicative probability", f"{row['probability_%']:.1f}%")
-    c3.metric("vs base rate (0.31%)", f"{row['x_base_rate']:.1f}x")
+    c1.metric("Percentile (vs July 2026)", ct.fmt_percentile(row["percentile"]), help=HELP_PCT)
+    c1.caption(ct.plain_percentile(row["percentile"]) + ".")
+    c2.metric("Indicative probability", f"{row['probability_%']:.1f}%", help=HELP_PROB)
+    c2.caption(ct.plain_probability(row["probability_%"]) + ".")
+    c3.metric(f"vs base rate ({100 * tool.base_rate:.2f}%)", f"{row['x_base_rate']:.1f}x", help=HELP_BASE)
+    c3.caption(ct.plain_base_rate(row["x_base_rate"], tool.base_rate) + ".")
     st.code(ct.card(row, tool), language=None)
+    with st.expander("How to read these numbers", expanded=False):
+        st.markdown(f"- **Percentile:** {HELP_PCT}\n- **Probability:** {HELP_PROB}\n- **Times base rate:** {HELP_BASE}\n\n"
+                    "**Worked example:** Percentile 99.8, probability 9.7%, 31x base rate = riskier than 998 of 1,000 CVEs; "
+                    "about 1 in 10 like it get exploited; 31 times the average risk.")
 
 
 tab_new, tab_feed, tab_past = st.tabs(["New CVE", "Daily feed", "Past CVEs (test period)"])
@@ -224,7 +289,10 @@ with tab_feed:
         view["decision"] = view["decision"].map(LABEL)
         st.dataframe(view.rename(columns={"cve_id": "CVE", "decision": "decision", "cna": "CNA", "cna_cvss": "CNA CVSS",
                                           "probability_%": "probability %", "x_base_rate": "x base rate"})
-                     .style.apply(lambda r: [bg[r.name]] * len(r), axis=1), hide_index=True, width="stretch", height=520)
+                     .style.apply(lambda r: [bg[r.name]] * len(r), axis=1), hide_index=True, width="stretch", height=520,
+                     column_config={"percentile": st.column_config.NumberColumn(
+                         "percentile", format="%.1f",
+                         help="Rank vs the July 2026 reference month; 100.0 = riskier than every CVE in that month.")})
         st.download_button("Download CSV", res[cols + ["published", "score"]].to_csv(index=False).encode(),
                            file_name=f"kev_day0_ranking_{d}.csv", mime="text/csv")
 
