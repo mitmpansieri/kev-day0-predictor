@@ -144,6 +144,16 @@ with st.sidebar:
                               ("Best simple rule (exploit wording, then CVSS)", "phrase, then CVSS (CNA)"),
                               ("Sort by CVSS score", "CVSS (CNA) ranking")]]
     st.table(pd.DataFrame(rows).set_index(""))
+    rule_k, rule_r = OWN.loc["CVSS>=9 (CNA)", "patches/month"], OWN.loc["CVSS>=9 (CNA)", "rule recall %"]
+    k_match = k_for_recall(ks, model_curve, rule_r)               # first capacity where the model matches the rule
+    n_match = 5 * round(k_match / 5)
+    saved_h = (rule_k - n_match) * hours_per_patch * 12
+    st.markdown(f"**Same protection as CVSS ≥ 9 with ~{n_match:,.0f} patches/month instead of {rule_k:,.0f}**")
+    st.markdown(f"{saved_h:,.0f} h/year saved · ${saved_h * rate:,.0f}/year saved",
+                help=f"({rule_k:,.0f} - {n_match:,.0f}) patches/month × {hours_per_patch:g} h × 12 = {saved_h:,.0f} h/year; "
+                     f"× ${rate:,.0f}/h = ${saved_h * rate:,.0f}/year. Same protection = {rule_r:.0f} of 100 exploited CVEs caught.")
+    st.caption(f"At your capacity: {caught('gradient boosting (headline)', k):.0f}{'' if in_range else '+'} of 100 caught vs "
+               f"{rule_r:.0f} for CVSS ≥ 9.")
     if k < ks.max():
         extra = marginal_per_100(ks, model_curve, k)
         n_txt = "fewer than 1" if round(extra) < 1 else f"about {extra:.0f}"
@@ -154,23 +164,11 @@ with st.sidebar:
     else:
         st.write(f"**Marginal value:** not estimated at {ks.max():,.0f}+ patches/month (test results stop at "
                  f"{ks.max():,.0f}).")
-    rule_k, rule_r = OWN.loc["CVSS>=9 (CNA)", "patches/month"], OWN.loc["CVSS>=9 (CNA)", "rule recall %"]
-    k_match = k_for_recall(ks, model_curve, rule_r)               # first capacity where the model matches the rule
-    n_match = 5 * round(k_match / 5)
-    st.write(f"To catch as many as the CVSS ≥ 9 policy ({rule_r:.0f} of 100, using {rule_k:,.0f} patches/month), the model "
-             f"needs only **about {n_match:,.0f} patches/month**.")
-    saved_h = (rule_k - n_match) * hours_per_patch * 12
-    st.write(f"Compared with the CVSS ≥ 9 rule ({rule_k:,.0f} patches/month for {rule_r:.0f} of 100 caught), the model reaches "
-             f"the same protection with about {n_match:,.0f} patches/month: **{rule_k - n_match:,.0f} fewer patches ≈ "
-             f"{saved_h:,.0f} analyst hours/year ≈ ${saved_h * rate:,.0f}/year saved**.")
-    st.write(f"At your capacity ({k:,.0f} patches/month) you catch about **{caught('gradient boosting (headline)', k):.0f}"
-             f"{'' if in_range else '+'} of 100**, vs {rule_r:.0f} of 100 for the CVSS ≥ 9 rule using {rule_k:,.0f}.")
-    st.caption("Historical estimate (2025-26 test period; savings were smaller in 2026 without retraining).")
     yearly_h = round(k) * hours_per_patch * 12                     # rounded capacity, as displayed
     st.write(f"Total analyst effort: {round(k):,} patches/month × {hours_per_patch:g} h = **{yearly_h:,.0f} hours/year ≈ "
              f"${yearly_h * rate:,.0f}/year** (cost of the patching work, not a saving).")
-    st.caption("Estimated on 2025-26 data. The model wasn't retrained during that period and was weaker in 2026; retraining "
-               "every quarter is recommended. Only the default setting matches the evaluated policy."
+    st.caption("Historical estimates from the 2025-26 test period. The model wasn't retrained and was weaker in 2026 (savings "
+               "smaller); retraining every quarter is recommended. Only the default setting matches the evaluated policy."
                + ("" if in_range else f" Above {ks.max():,.0f} patches/month the estimate is capped at the value for {ks.max():,.0f}."))
 
     st.subheader("Model freshness")
@@ -187,20 +185,6 @@ with st.sidebar:
 # ------------------------------------------------------------------------------------------- header
 st.title("🛡️ Which new CVEs will attackers exploit?")
 st.warning(DISCLAIMER)
-
-# ------------------------------------------------------------------------------------------- headline value box
-with st.container(border=True):
-    st.subheader(":green[Value vs your current rule (CVSS ≥ 9)]")
-    v1, v2, v3 = st.columns(3)
-    v1.metric("Same protection with", f"~{n_match:,.0f} patches/month", delta=f"-{rule_k - n_match:,.0f} vs {rule_k:,.0f} (CVSS ≥ 9)",
-              delta_color="inverse", help=f"Patches/month the model needs to catch as many exploited CVEs as the CVSS ≥ 9 "
-                                          f"rule ({rule_r:.0f} of 100 with {rule_k:,.0f} patches/month).")
-    v2.metric("Analyst time saved", f"{saved_h:,.0f} h/year",
-              help=f"({rule_k:,.0f} - {n_match:,.0f}) patches/month × {hours_per_patch:g} h × 12 (hours per patch: sidebar).")
-    v3.metric("Cost saved", f"${saved_h * rate:,.0f}/year", help=f"Analyst time saved × ${rate:,.0f}/h (sidebar).")
-    st.markdown(f"At your capacity ({round(k):,}/month) you catch about **{caught('gradient boosting (headline)', k):.0f}"
-                f"{'' if in_range else '+'} of 100** exploited CVEs vs {rule_r:.0f} for CVSS ≥ 9.")
-    st.caption("Historical estimate, 2025-26 test period; savings were smaller in 2026 without retraining.")
 st.caption("Day-0 ranking of CVEs by the chance CISA lists them in KEV (Known Exploited Vulnerabilities) within 90 days. "
            "Three tiers from your capacity (sidebar): **Emergency patch (PATCH NOW)** (within this month's capacity), **Watch** "
            "(elevated risk, not in this month's budget; recheck when exploit news appears), **Monitor** (the rest). Probabilities are indicative; the "
