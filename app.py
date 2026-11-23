@@ -229,6 +229,177 @@ HELP_BASE = (f"On average {100 * tool.base_rate:.2f}% of CVEs (about {1000 * too
              "within 90 days. This number says how many times riskier this CVE is than an average one.")
 
 
+# ------------------------------------------------------------------------------------------- plain-English card (display only)
+CWE_NAMES = {   # short names of common CWEs (MITRE); others are shown by ID only
+    "CWE-20": "improper input validation", "CWE-22": "path traversal", "CWE-77": "command injection",
+    "CWE-78": "OS command injection", "CWE-79": "cross-site scripting", "CWE-89": "SQL injection",
+    "CWE-94": "code injection", "CWE-119": "memory buffer error", "CWE-120": "classic buffer overflow",
+    "CWE-121": "stack-based buffer overflow", "CWE-122": "heap-based buffer overflow", "CWE-125": "out-of-bounds read",
+    "CWE-134": "format string", "CWE-190": "integer overflow", "CWE-200": "information exposure",
+    "CWE-269": "improper privilege management", "CWE-276": "incorrect default permissions",
+    "CWE-284": "improper access control", "CWE-285": "improper authorization", "CWE-287": "improper authentication",
+    "CWE-288": "authentication bypass via an alternate path", "CWE-290": "authentication bypass by spoofing",
+    "CWE-306": "missing authentication for a critical function", "CWE-312": "cleartext storage of sensitive data",
+    "CWE-326": "weak encryption", "CWE-352": "cross-site request forgery", "CWE-362": "race condition",
+    "CWE-400": "uncontrolled resource consumption", "CWE-401": "memory leak", "CWE-416": "use after free",
+    "CWE-434": "unrestricted file upload", "CWE-476": "NULL pointer dereference", "CWE-502": "deserialization of untrusted data",
+    "CWE-601": "open redirect", "CWE-611": "XML external entity", "CWE-639": "authorization bypass via a user-controlled key",
+    "CWE-693": "protection mechanism failure", "CWE-770": "resource allocation without limits", "CWE-787": "out-of-bounds write",
+    "CWE-798": "hard-coded credentials", "CWE-822": "untrusted pointer dereference", "CWE-843": "type confusion",
+    "CWE-862": "missing authorization", "CWE-863": "incorrect authorization", "CWE-918": "server-side request forgery",
+    "CWE-1321": "prototype pollution",
+}
+ARROW = {("strongly", "raises"): "⬆️⬆️", ("moderately", "raises"): "⬆️", ("slightly", "raises"): "⬆️",
+         ("strongly", "lowers"): "⬇️⬇️", ("moderately", "lowers"): "⬇️", ("slightly", "lowers"): "⬇️"}
+CVSS_PLAIN = {   # (metric, value) -> plain words, for reasons and for reading the vector
+    ("AV", "N"): "attackable over the internet", ("AV", "A"): "attacker must be on the same local network",
+    ("AV", "L"): "needs local access to the device", ("AV", "P"): "needs physical access to the device",
+    ("AC", "L"): "low complexity", ("AC", "H"): "high complexity (hard to pull off)",
+    ("AT", "N"): "no special conditions needed", ("AT", "P"): "needs specific conditions to be present",
+    ("PR", "N"): "no login needed", ("PR", "L"): "needs a basic user login", ("PR", "H"): "needs an admin login",
+    ("UI", "N"): "no user action needed", ("UI", "R"): "needs a user to do something (e.g. click a link)",
+    ("UI", "P"): "needs a user to do something", ("UI", "A"): "needs a user to actively do something",
+    ("S", "U"): "impact limited to the vulnerable component", ("S", "C"): "can affect other components beyond the vulnerable one",
+}
+IMPACT_NAME = {"C": "data confidentiality", "I": "data integrity", "A": "system availability"}
+LEVEL_WORD = {"H": "high", "L": "low", "N": "no"}
+
+
+def nice_org(name: str) -> str:
+    """Display form of a CNA name: bare lowercase short names (e.g. 'ivanti') get a capital; e-mails/UUIDs stay as is."""
+    name = str(name)
+    return name[:1].upper() + name[1:] if name.islower() and "@" not in name and "." not in name and "-" not in name else name
+
+
+def vendor_product(row) -> str:
+    v = "" if row["vendor"] == "(not stated)" else str(row["vendor"])
+    prod = str(row["product"] or "")
+    if v and prod.lower().startswith(v.lower()):        # "Microsoft" + "Microsoft SQL Server" -> "Microsoft SQL Server"
+        v = ""
+    return " ".join(x for x in (v, prod) if x) or "Vendor not stated"
+
+
+def cvss_plain(vector: str) -> str:
+    """CNA CVSS vector (v3.x or v4.0) -> one plain-English phrase."""
+    parts = dict(p.split(":", 1) for p in str(vector).split("/")[1:] if ":" in p)
+    if not parts:
+        return ""
+    out = [CVSS_PLAIN[(m, parts[m])] for m in ("AV", "AC", "AT") if (m, parts.get(m)) in CVSS_PLAIN and parts[m] != "X"]
+    pr, ui = parts.get("PR"), parts.get("UI")
+    if pr == "N" and ui == "N":
+        out.append("no login and no user action needed")
+    else:
+        out += [CVSS_PLAIN[(m, parts[m])] for m in ("PR", "UI") if (m, parts.get(m)) in CVSS_PLAIN]
+    imp = {k: parts.get(k, parts.get("V" + k)) for k in ("C", "I", "A")}          # v4 uses VC / VI / VA
+    if all(v == "H" for v in imp.values()):
+        out.append("full impact on data and systems")
+    elif all(v == "N" for v in imp.values()):
+        out.append("no direct impact on data or systems")
+    elif all(v in LEVEL_WORD for v in imp.values()):
+        out.append(", ".join(f"{LEVEL_WORD[v]} impact on {IMPACT_NAME[k]}" for k, v in imp.items()))
+    if parts.get("S") == "C":
+        out.append(CVSS_PLAIN[("S", "C")])
+    return ", ".join(out)
+
+
+def reason_plain(reason: str, row) -> tuple[str, str]:
+    """One tool reason ('<fact> -> strongly raises risk', from ciso_tool.reason_text) -> (arrow, plain sentence).
+    Covers every template reason_text produces; anything unexpected is shown as is."""
+    import re
+    fact, _, eff = reason.rpartition(" -> ")
+    words = eff.split()
+    arrow = ARROW.get((words[0], words[1]), "•") if len(words) >= 2 else "•"
+    up = len(words) >= 2 and words[1] == "raises"
+    linked = f"historically linked to {'more' if up else 'less'} exploitation in our data"
+    vendor = "The vendor" if row["vendor"] == "(not stated)" else str(row["vendor"])
+    n = lambda s: int(s.replace(",", ""))
+    kev = "CISA's exploited list (KEV)"
+    if m := re.fullmatch(r"CNA CVSS score ([\d.]+)", fact):
+        s = float(m.group(1))
+        lvl = "Very high" if s >= 9 else "High" if s >= 7 else "Medium" if s >= 4 else "Low"
+        text = f"{lvl} severity score from the publisher ({s:.1f} / 10)"
+    elif fact == "no CVSS score from the CNA":
+        text = "No severity score from the publisher on day 0"
+    elif m := re.fullmatch(r"published by CNA (.+)", fact):
+        org = nice_org(m.group(1))
+        text = f"Published by {org}, {linked}"
+    elif m := re.fullmatch(r"vendor not stated \(publisher (.+)\)", fact):
+        text = f"No vendor named by the publisher ({nice_org(m.group(1))}), {linked}"
+    elif m := re.fullmatch(r"vendor '(.+)'", fact):
+        text = f"Vendor {m.group(1)}, {linked}"
+    elif m := re.fullmatch(r"weakness (CWE-\d+)", fact):
+        name = CWE_NAMES.get(m.group(1))
+        text = f"Weakness type {m.group(1)}" + (f" ({name})" if name else "") + f", {linked}"
+    elif fact == "weakness NVD-CWE-Other":
+        text = f"Weakness type given only as 'Other' (no specific CWE), {linked}"
+    elif m := re.fullmatch(r"weakness (.+)", fact):
+        text = f"Weakness type {m.group(1)}, {linked}"
+    elif fact == "no weakness (CWE) given by the CNA":
+        text = "No weakness type (CWE) given by the publisher"
+    elif fact in ("CNA gave a CVSS score", "CNA gave no CVSS score"):
+        text = "The publisher gave a severity score" if fact.endswith("a CVSS score") else "The publisher gave no severity score"
+    elif m := re.fullmatch(r"(\d+) CWE\(s\) given by the CNA", fact):
+        k = int(m.group(1))
+        text = "No weakness type listed by the publisher" if k == 0 else f"{k} weakness type{'s' if k > 1 else ''} listed by the publisher"
+    elif fact == "description says it is exploited (day 0)":
+        text = "The description says it is already being exploited"
+    elif fact == "no exploitation wording in the description":
+        text = "The description doesn't mention exploitation"
+    elif m := re.fullmatch(r"description length ([\d,]+) characters", fact):
+        text = f"Description is {n(m.group(1)):,} characters long"
+    elif m := re.fullmatch(r"vendor has ([\d,]+) earlier CISA KEV entries", fact):
+        k = n(m.group(1))
+        text = f"{vendor} has no CVEs on {kev} yet" if k == 0 else f"{vendor} already has {k:,} CVE{'s' if k > 1 else ''} on {kev}"
+    elif m := re.fullmatch(r"vendor had ([\d,]+) KEV entries in the year before publication", fact):
+        k = n(m.group(1))
+        text = (f"{vendor} had no CVEs added to {kev} in the year before" if k == 0
+                else f"{vendor} had {k:,} CVE{'s' if k > 1 else ''} added to {kev} in the year before")
+    elif fact == "vendor never in KEV before":
+        text = f"{vendor} has never had a CVE on {kev}"
+    elif m := re.fullmatch(r"vendor's last KEV entry (\d+) days before publication", fact):
+        d = int(m.group(1))
+        text = f"{vendor} had a CVE added to CISA's exploited list {d:,} day{'s' if d != 1 else ''} earlier"
+    elif fact in ("vendor already in KEV", "vendor never in KEV"):
+        text = f"{vendor} is already on {kev}" if fact == "vendor already in KEV" else f"{vendor} has never had a CVE on {kev}"
+    elif m := re.fullmatch(r"product has ([\d,]+) earlier KEV entries", fact):
+        k, prod = n(m.group(1)), (f"{row['product']}" if row["product"] else "This product")
+        text = f"{prod} has no earlier CVEs on {kev}" if k == 0 else f"{prod} already has {k:,} CVE{'s' if k > 1 else ''} on {kev}"
+    elif m := re.fullmatch(r"no CNA CVSS vector \((.+)\)", fact):
+        text = "No severity details (CVSS vector) from the publisher"
+    elif (m := re.fullmatch(r"(.+?): (.+)", fact)) and any(m.group(1) == nm for nm, _ in ct.LETTERS.values()):
+        key = next(k for k, (nm, _) in ct.LETTERS.items() if nm == m.group(1))
+        code = next((c for c, w in ct.LETTERS[key][1].items() if w == m.group(2)), None)
+        if key in IMPACT_NAME:
+            text = f"{LEVEL_WORD.get(code, m.group(2)).capitalize()} impact on {IMPACT_NAME[key]}"
+        else:
+            text = CVSS_PLAIN.get((key, code), f"{m.group(1)}: {m.group(2)}")
+            text = text[0].upper() + text[1:]
+    else:
+        text = fact[0].upper() + fact[1:] if fact else reason
+    return arrow, text
+
+
+def times(text: str) -> str:
+    """'31x riskier' -> '31× riskier' (display only; ciso_tool keeps 'x' for the command line)."""
+    import re
+    return re.sub(r"(\d)x (riskier|less risky)", r"\1× \2", text)
+
+
+def copy_summary(row, reasons) -> str:
+    """One plain paragraph to paste into a ticket or e-mail."""
+    pct, p, x = row["percentile"], row["probability_%"] / 100, row["x_base_rate"]
+    riskier = f"Riskier than {min(999, int(np.floor(pct * 10 + 1e-9))):,} of 1,000 CVEs in a typical month"
+    odds = "fewer than 1 in 1,000" if p < 0.001 else f"about 1 in {ct._round_n(1 / p):,}"
+    fmt = lambda v: f"{v:.1f}×" if v < 10 else f"{v:,.0f}×"
+    mult = f"{fmt(x)} average" if x >= 1 else f"about {fmt(1 / x)} less risky than average"
+    cvss = "no CVSS" if pd.isna(row["cna_cvss"]) else f"CVSS {row['cna_cvss']:.1f}"
+    names = {w.lower() for w in (str(row["vendor"]), str(row["product"] or "").split(" ")[0], nice_org(row["cna"])) if w}
+    lower1 = lambda t: t if t.split(" ")[0].lower() in names or t[:2].isupper() else t[0].lower() + t[1:]   # keep names
+    why = "; ".join(lower1(t) for _, t in reasons) or "none available"
+    return (f"{row['cve_id']} ({vendor_product(row)}, {cvss}): {LABEL[row['decision']]}. {riskier}; {odds} similar CVEs get "
+            f"exploited within 90 days ({mult}). Main reasons: {why}. Source: CISO Patch Advisor (research prototype).")
+
+
 def show_card(row: pd.Series) -> None:
     st.markdown(f"### :{TIER_COLOR[row['decision']]}[{LABEL[row['decision']]}] — {row['cve_id']}")
     st.write(ct.TIER_TEXT[row["decision"]].capitalize() + ". " + tool.budget_line())
@@ -237,14 +408,32 @@ def show_card(row: pd.Series) -> None:
     c1, c2, c3 = st.columns(3)
     c1.metric("Percentile (vs July 2026)", ct.fmt_percentile(row["percentile"]), help=HELP_PCT)
     c1.caption(ct.plain_percentile(row["percentile"]) + ".")
-    c2.metric("Indicative probability", f"{row['probability_%']:.1f}%", help=HELP_PROB)
+    c2.metric("Indicative probability", "<0.1%" if round(row["probability_%"], 1) == 0 else f"{row['probability_%']:.1f}%",
+              help=HELP_PROB)
     c2.caption(ct.plain_probability(row["probability_%"]) + ".")
-    c3.metric(f"vs base rate ({100 * tool.base_rate:.2f}%)", f"{row['x_base_rate']:.1f}x", help=HELP_BASE)
-    c3.caption(ct.plain_base_rate(row["x_base_rate"], tool.base_rate) + ".")
-    st.code(ct.card(row, tool), language=None)
+    c3.metric(f"vs base rate ({100 * tool.base_rate:.2f}%)", f"{row['x_base_rate']:.1f}×", help=HELP_BASE)
+    c3.caption(times(ct.plain_base_rate(row["x_base_rate"], tool.base_rate)) + ".")
+    vp = vendor_product(row)
+    st.markdown("#### About this CVE")
+    st.markdown(f"{vp} · published {row['published']} (UTC) · reported by {nice_org(row['cna'])}")
+    if pd.isna(row["cna_cvss"]):
+        st.markdown("No CVSS from the publisher (CNA) on day 0; NVD/CISA scores added later are ignored to avoid using "
+                    "information not available on publication day.")
+    else:
+        reading = cvss_plain(row["cvss_vector"])
+        st.markdown(f"Severity score from the publisher: **{row['cna_cvss']:.1f} / 10**" + (f" — {reading}" if reading else ""))
+    if row["notes"]:
+        st.caption(f"Note: {row['notes']}")
+    reasons = [reason_plain(row[f"reason_{i}"], row) for i in (1, 2, 3) if row[f"reason_{i}"]]
+    if reasons:
+        st.markdown("#### " + ("Why the model doesn't prioritise it" if row["decision"] == "MONITOR" else "Why the model flags it"))
+        st.markdown("\n".join(f"- {arrow} {text}" for arrow, text in reasons))
+        st.caption("⬆️⬆️ strongly raises · ⬆️ raises · ⬇️ lowers · ⬇️⬇️ strongly lowers the model's risk estimate.")
+    st.markdown("**Copy summary**")
+    st.code(copy_summary(row, reasons), language=None, wrap_lines=True)
     with st.expander("How to read these numbers", expanded=False):
         st.markdown(f"- **Percentile:** {HELP_PCT}\n- **Probability:** {HELP_PROB}\n- **Times base rate:** {HELP_BASE}\n\n"
-                    "**Worked example:** Percentile 99.8, probability 9.7%, 31x base rate = riskier than 998 of 1,000 CVEs; "
+                    "**Worked example:** Percentile 99.8, probability 9.7%, 31× base rate = riskier than 998 of 1,000 CVEs; "
                     "about 1 in 10 like it get exploited; 31 times the average risk.")
 
 
@@ -325,7 +514,7 @@ with tab_feed:
         bg = view["decision"].map(ROW_BG).tolist()
         view["decision"] = view["decision"].map(LABEL)
         st.dataframe(view.rename(columns={"cve_id": "CVE", "decision": "decision", "cna": "CNA", "cna_cvss": "CNA CVSS",
-                                          "probability_%": "probability %", "x_base_rate": "x base rate"})
+                                          "probability_%": "probability %", "x_base_rate": "× base rate"})   # display only; CSV keeps x_base_rate
                      .style.apply(lambda r: [bg[r.name]] * len(r), axis=1), hide_index=True, width="stretch", height=520,
                      column_config={"percentile": st.column_config.NumberColumn(
                          "percentile", format="%.1f",
